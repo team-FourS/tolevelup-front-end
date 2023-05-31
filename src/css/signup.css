@@ -1,0 +1,39 @@
+body{
+  background: url('../img/back_gradient.PNG');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.signUpForm{
+  margin: auto;
+  text-align: center;
+  width:300px; height: 450px;
+  background-color:#ffffff;
+  border-radius:5px;
+
+  /*로그인 폼 화면 가운데 배치*/
+  place-items: center;
+}
+
+.signUpID{
+  padding-bottom: 20px;
+}
+
+.signUpTitle{
+  font-size: 30px;
+  font-weight: 600;
+  color: #65C28E;
+}
+
+.signUpBox{
+  background-color: rgba(255, 255, 255, 0.884);
+  width: 270px; border-radius: 5px;
+}
+
+.btnsignUp{
+  width: 270px; height: 45px;
+  border: none; border-radius: 5px;
+  font-size: 15px;
+  color:white; background-color: #65C28E;
+  margin-top: 30px;
+}

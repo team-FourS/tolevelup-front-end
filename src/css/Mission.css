@@ -1,0 +1,65 @@
+
+/*
+.mission {
+  position: align;
+  top: 0;
+  width: 100%;
+  background-color: pink;
+}
+*/
+.layout{
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 75vh;
+  /* background-color: beige; */
+} 
+.pageTitle{
+  font-size: 40px; font-weight: 700;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
+.missionBlock{
+  display: inline-block;
+  margin: 0px 50px 50px 50px;
+  width: 400px;
+}
+
+
+.missionTitle{
+  color: seagreen; text-align: center;
+  font-size: 30px; font-weight: 700;
+  margin-bottom: 30px;
+  background-color: beige;
+}
+
+.btnMission{
+  color:white; background-color:mediumseagreen; border:none;
+  width: 110px; height: 45px; 
+  border-radius: 10px;
+  font-size: 17px;
+  margin: 15px 45px 0px 45px;
+  font-family: 'NanumSquareNeo-Variable';
+}
+
+.missionImg {
+  display: block;
+}
+
+.mainImg {
+  width: 130px;
+  height: 130px;
+  /* margin-bottom: 60px; */
+  margin: 35px;
+}
+
+@font-face {
+  font-family: 'NanumSquareNeo-Variable';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}

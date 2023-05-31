@@ -1,0 +1,24 @@
+.footer {
+    position: fixed;
+    width:100%;
+    bottom: 0;
+    height: 80px;
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.icon{
+    margin-left: 20px;
+    margin-right: 20px;
+    color: gray;
+}
+.my{
+    margin-left: 20px;
+    margin-right: 20px;
+    color:#65C28E;
+}
+.contents {
+    display: flex;
+}

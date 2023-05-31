@@ -1,0 +1,25 @@
+.App{
+  margin-top: 150px;
+}
+
+.btnMission{
+  color:white; background-color:mediumseagreen; border:none;
+  width: 110px; height: 45px; 
+  border-radius: 12px;
+  font-size: 17px;
+  
+}
+
+.checkBox{
+  font-size: 17px;
+  background-color: rgb(174, 228, 170);
+  width: 250px; height: 190px;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+
+.checkWrap{
+  text-align: left;
+  margin: 17px 30px 10px 30px; 
+}

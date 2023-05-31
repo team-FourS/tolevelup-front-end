@@ -1,0 +1,59 @@
+.layout{
+  display: inline-flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'NanumSquareNeo-Variable';
+}
+.main{
+  display: block;
+}
+.status-hp {
+  position: relative;
+  display: inline;
+  
+  }
+.bar {
+  width: 250px;
+  height: 15px;
+  background-color: #e4e4e4;
+  align-content: center;
+  margin: 22px;
+  }
+.currentBar {
+  height: 100%;
+  background-color: #1bdc75;
+  }
+.locate{
+  text-align: right;
+  display: block;
+  margin: 20px;
+  /* background-color: aquamarine; */
+}
+.square{
+  display: block;
+  text-align: center;
+  margin: 20px;
+}
+.profil{
+  display: block;
+}
+.she{
+  display: inline-block;
+}
+.text{
+  display: inline-flex;
+}
+.set{
+  display: inline-flex;
+}
+@font-face {
+  font-family: 'NanumSquareNeo-Variable';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+.get{
+  display: block;
+}
