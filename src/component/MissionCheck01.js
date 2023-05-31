@@ -9,7 +9,7 @@ const MissionCheck = () => {
               <div className="checkBox">
                 <div className="checkWrap">
                   <input type="checkbox" id="btn1" />
-                  <label htmlFor="btn1"> 아침에 스트레칭하기 </label> <br/><br/>
+                  <label htmlFor="btn1"> 아침 스트레칭하기 </label> <br/><br/>
                 </div>  
 
                 <div className="checkWrap">
