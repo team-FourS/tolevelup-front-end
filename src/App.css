@@ -1,11 +1,18 @@
+.App{
+  display: inline-block;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+}
+
 .Home {
   text-align: center;
   display: flex;
   width: 100%;
   justify-content: center;
   align-items: center;
-  min-height: 100%;
-  
+  min-height: 75%;
 }
 
 .layout{
@@ -14,21 +21,23 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-  min-height: 75vh;
-} 
+  min-height: 70vh;
+  background-color: white;
+}
+
 .footer01{
   position: relative;
   bottom:0;
   text-align: center;
   min-width: 100%;
-
 }
+
 .icon{
     margin-left: 20px;
     margin-right: 20px;
     color : gray;
-    
   }
+
 .icon:active{
   color: #65C28E;
 }

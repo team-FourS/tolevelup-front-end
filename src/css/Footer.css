@@ -2,11 +2,12 @@
     position: fixed;
     width:100%;
     bottom: 0;
-    height: 80px;
+    height: 85px;
     margin-top: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
 
 }
 .icon{
