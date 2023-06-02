@@ -4,10 +4,13 @@ import seer from '../img/seer.png'
 import magicwand from '../img/magicwand.png'
 import doll from '../img/doll.png'
 import "../css/Character.css"
+import Header from "../component/Header";
+import Footer from "../component/Footer";
 
 const Character = () => {
     return (
       <div className="layout">
+        <Header />
       <main className="main">
         <span id ="health" style ={{display:'block'}}>
             <img className ="home" src={cauldron} alt='집'></img>
@@ -31,6 +34,7 @@ const Character = () => {
           <h2 className="h2">문화생활</h2>
       </span>
   </main>
+  <Footer/>
 </div>
     );
   }

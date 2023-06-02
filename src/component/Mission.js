@@ -9,10 +9,13 @@ import MissionCheck01 from "./MissionCheck01";
 import MissionCheck02 from "./MissionCheck02";
 import MissionCheck03 from "./MissionCheck03";
 import MissionCheck04 from "./MissionCheck04";
+import Header from "../component/Header";
+import Footer from "../component/Footer";
 
 const Mission = () => {
     return(
     <main className="layout">
+    <Header />
     <Routes>
         <Route path="/MissionCheck01" element={<MissionCheck01 />} />
         <Route path="/MissionCheck02" element={<MissionCheck02 />} />
@@ -53,7 +56,8 @@ const Mission = () => {
                 <img className="mainImg" src={hobby} alt="취미" />
             </div>
         </div>
-    </div>    
+    </div>
+    <Footer/>    
     </main>
     )
     }

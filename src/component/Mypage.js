@@ -4,11 +4,13 @@ import setting from '../img/setting.png'
 import {Routes, Route, Link} from "react-router-dom";
 import Modify from "./Modify"
 import "../css/Mypage.css"
+import Header from "../component/Header";
+import Footer from "../component/Footer";
 
 const Mypage = () => {
-
     return (
         <main className="layout">
+            <Header />
             <Routes className="layout">
                 <Route path="/modify" element={<Modify />} />
             </Routes>
@@ -95,6 +97,7 @@ const Mypage = () => {
                         }}>친구목록</h6>
             </div>
             </div>
+            <Footer/> 
         </main>
     )
 }
