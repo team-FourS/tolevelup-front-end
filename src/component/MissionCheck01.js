@@ -1,11 +1,15 @@
 import React from 'react';
 import '../css/MissionCheck.css';
+import Header from "../component/Header";
+import Footer from "../component/Footer";
+
 
 const MissionCheck = () => {
     return (
         <div className='layout'>
+          <Header/>
           <div className="checkList">
-            <button className="btnMission">운동ㅇ</button>
+            <button className="btnMission">운동</button>
               <div className="checkBox">
                 <div className="checkWrap">
                   <input type="checkbox" id="btn1" />
@@ -23,6 +27,7 @@ const MissionCheck = () => {
                 </div>
               </div>  
           </div>
+          <Footer/>
         </div>  
     )
 }

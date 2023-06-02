@@ -14,7 +14,6 @@ import Mypage from "./component/Mypage"
 import Modify from "./component/Modify";
 import Header from "./component/Header";
 
-
 import "./Home.css"
 
 import { AiTwotoneShop } from "react-icons/ai";
@@ -31,8 +30,7 @@ function Home() {
         <Header />
           <Routes className="layout">
           {/* 어떤 컴퍼넌트를 매핑해 줄 것인가 */}
-              <Route path="/" element={<Mission />} />
-              
+              <Route path="/" element={<Mission />} />             
                 <Route path="/MissionCheck01" element={<MissionCheck01 />} />
                 <Route path="/MissionCheck02" element={<MissionCheck02 />} />
                 <Route path="/MissionCheck03" element={<MissionCheck03 />} />
