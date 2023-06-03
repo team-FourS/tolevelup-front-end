@@ -1,19 +1,19 @@
 //import { render } from '@testing-library/react'
 import '../css/Header.css'
 import {Routes, Route, Link} from "react-router-dom";
-import Login from "../component/login";
+import Logout from "../component/Logout";
 
 function Header () {
     return (
         <header className="header">          
             <div>
                 <Routes>     
-                    <Route path="/login" element={<Login />} />
+                    <Route path="/Logout" element={<Logout />} />
                 </Routes>
                 
                 <div>
                     <h3 style={{textAlign:'right', margin:'30px', marginRight:'20px'}}> __님, 어서오세요   
-                    <Link to="/login">               
+                    <Link to="/Logout">               
                         <button className='btnlogout' style={{marginLeft:'20px'}}>로그아웃</button>
                     </Link>    
                     </h3>                       
