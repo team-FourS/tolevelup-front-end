@@ -13,6 +13,7 @@ import Char from "./component/Character"
 import Mypage from "./component/Mypage"
 import Modify from "./component/Modify";
 import Login from "./component/login";
+import Logout from "./component/Logout"
 
 import "./App.css"
 
@@ -23,6 +24,7 @@ function App() {
           <Routes className="layout">
           {/* 어떤 컴퍼넌트를 매핑해 줄 것인가 */}
               <Route path="/" element={<Login />} />
+              <Route path="/Logout" element={<Logout />} />
               <Route path="/Mission" element={<Mission />} />
                 <Route path="/MissionCheck01" element={<MissionCheck01 />} />
                 <Route path="/MissionCheck02" element={<MissionCheck02 />} />

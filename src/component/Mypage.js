@@ -38,7 +38,7 @@ const Mypage = () => {
                         }}>한줄소개</h6>
                             <h6 style={{
                                 width:'150px',
-                                height:'190px',
+                                height:'172px',
                                 backgroundColor:'lightgray'
                             }}>방문자 코멘트</h6>
             </div>
@@ -91,7 +91,7 @@ const Mypage = () => {
                    {/* <button>저장</button><button>취소</button> */}
                     <h6 style={{
                             width:'180px',
-                            height:'330px',
+                            height:'336px',
                             backgroundColor:'lightgray',
                             margin: '20px'
                         }}>친구목록</h6>

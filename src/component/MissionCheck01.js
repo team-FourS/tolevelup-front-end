@@ -3,7 +3,6 @@ import '../css/MissionCheck.css';
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 
-
 const MissionCheck = () => {
     return (
         <div className='layout'>
