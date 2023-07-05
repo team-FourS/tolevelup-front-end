@@ -1,13 +1,13 @@
-.LoginLayout{
-  background-image: '../img/back_gradient.PNG';
+body{
+  background: url('../img/back_gradient.PNG');
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.signUpForm{
+.loginForm{
   margin: auto;
   text-align: center;
-  width:300px; height: 450px;
+  width:300px; height: 380px;
   background-color:#ffffff;
   border-radius:5px;
 
@@ -15,23 +15,23 @@
   place-items: center;
 }
 
-.signUpID{
+.loginID{
   padding-bottom: 20px;
 }
 
-.signUpTitle{
+.loginTitle{
   font-size: 30px;
   font-weight: 600;
   color: #65C28E;
 }
 
-.signUpBox{
+.FindIDBox{
   background-color: rgba(255, 255, 255, 0.884);
-  width: 320px; border-radius: 5px;
+  width: 270px; border-radius: 5px;
 }
 
-.btnsignUp{
-  width: 230px; height: 45px;
+.btnFindID{
+  width: 270px; height: 45px;
   border: none; border-radius: 5px;
   font-size: 15px;
   color:white; background-color: #65C28E;

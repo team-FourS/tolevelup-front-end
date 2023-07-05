@@ -8,7 +8,7 @@ const MissionCheck = () => {
         <div className='layout'>
           <Header/>
           <div className="checkList">
-            <button className="btnMission">문화생활</button>
+            <button className="btnMissionCheck">문화생활</button>
               <div className="checkBox">
                 <div className="checkWrap">
                   <input type="checkbox" id="btn1" />

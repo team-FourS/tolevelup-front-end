@@ -5,6 +5,7 @@ import { Button } from '@mui/base';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import {Routes, Route, Link} from "react-router-dom";
 import Mission from "./Mission"
+import Signup from "./signup"
 
 function Login() {
   
@@ -12,6 +13,7 @@ function Login() {
     <div>
       <Routes>     
         <Route path="/Mission" element={<Mission />} />
+        <Route path="/Signup" element={<Signup />} />
       </Routes>
       
       <div className="loginForm"> 
@@ -38,7 +40,9 @@ function Login() {
 
           <a href="#!">아이디 찾기  </a> |
           <a href="#!"> 비밀번호 찾기 </a> |
-          <a href="#!"> 회원가입 </a>
+          <Link to="/signup">
+              회원가입 
+          </Link>
         </div>
       </div>
   );

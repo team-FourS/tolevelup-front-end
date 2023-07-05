@@ -14,6 +14,8 @@ import Mypage from "./component/Mypage"
 import Modify from "./component/Modify";
 import Login from "./component/login";
 import Logout from "./component/Logout"
+import FindID from "./component/FindID"
+import Signup from "./component/signup"
 
 import "./App.css"
 
@@ -23,8 +25,11 @@ function App() {
         <div>        
           <Routes className="layout">
           {/* 어떤 컴퍼넌트를 매핑해 줄 것인가 */}
+            
               <Route path="/" element={<Login />} />
-              <Route path="/Logout" element={<Logout />} />
+                <Route path="/Signup" element={<Signup />} />
+                <Route path="/Logout" element={<Logout />} />
+                <Route path="/FindID" element={<FindID />} />
               <Route path="/Mission" element={<Mission />} />
                 <Route path="/MissionCheck01" element={<MissionCheck01 />} />
                 <Route path="/MissionCheck02" element={<MissionCheck02 />} />
