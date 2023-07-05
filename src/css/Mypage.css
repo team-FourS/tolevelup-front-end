@@ -3,7 +3,7 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 100%;
   font-family: 'NanumSquareNeo-Variable';
 }
 .main{
@@ -20,11 +20,28 @@
   background-color: #e4e4e4;
   align-content: center;
   margin: 22px;
+  border-radius: 10px;
   }
 .currentBar {
   height: 100%;
   background-color: #1bdc75;
+  border-radius: 10px;
   }
+  .currentBar1 {
+    height: 100%;
+    background-color: #22bab8;
+    border-radius: 10px;
+    }
+    .currentBar2 {
+      height: 100%;
+      background-color: #fd40ae;
+      border-radius: 10px;
+      }
+      .currentBar3 {
+        height: 100%;
+        background-color: rgb(189, 84, 189);
+        border-radius: 10px;
+        }
 .locate{
   text-align: right;
   display: block;
@@ -35,6 +52,7 @@
   display: block;
   text-align: center;
   margin: 20px;
+  align-items: center;
 }
 .profil{
   display: block;
@@ -54,6 +72,14 @@
   font-weight: normal;
   font-style: normal;
 }
-.get{
+.follow{
+  background-color: #1963ee;
   display: block;
+  width: 173px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  align-items: center;
+  margin-top: 10px;
+  padding: 5px;
 }
