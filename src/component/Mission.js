@@ -41,7 +41,7 @@ const Mission = () => {
         </div>
 
         <div className="missionBlock">
-            <p className="missionTitle">위클리d</p>
+            <p className="missionTitle">위클리</p>
             
             <Link to="/MissionCheck03">
             <button className="btnMission">문화생활</button>
