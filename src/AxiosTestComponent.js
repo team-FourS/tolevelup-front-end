@@ -15,7 +15,7 @@ function AxiosTestComponent() {
     await axios
     .get(baseUrl + "/data-test") // 해당 URL에 HTTP GET 요청 
     .then((res)=>{
-      	console.log(res);
+      console.log(res);
         setData(res.data); // GET 요청하여 응답받은 data
     })
     .catch((err)=>{

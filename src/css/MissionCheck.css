@@ -2,12 +2,17 @@
   margin-top: 150px;
 }
 
-.btnMission{
+.checkList{
+  width: 270px;
+}
+
+.btnMissionCheck{
   color:white; background-color:mediumseagreen; border:none;
   width: 110px; height: 45px; 
   border-radius: 12px;
   font-size: 17px;
-  
+  display: block ;
+  margin-left: 75px;
 }
 
 .checkBox{

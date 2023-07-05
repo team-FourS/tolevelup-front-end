@@ -1,5 +1,5 @@
-body{
-  background: url('../img/back_gradient.PNG');
+.body{
+  background-image: '../img/back_gradient.PNG';
   background-repeat: no-repeat;
   background-size: cover;
 }
