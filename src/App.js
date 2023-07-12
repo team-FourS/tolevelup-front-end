@@ -16,6 +16,9 @@ import Login from "./component/login";
 import Logout from "./component/Logout"
 import FindID from "./component/FindID"
 import Signup from "./component/signup"
+import Edit from "./component/Edit"
+import Profile from "./component/Profile"
+import Alarm from "./component/Alarm"
 
 import "./App.css"
 
@@ -40,6 +43,9 @@ function App() {
               <Route path="/char" element={<Char />} />
               <Route path="/mypage" element={<Mypage />} />
               <Route path="/Modify" element={<Modify />} />
+              <Route path="/edit" element={<Edit />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/alarm" element={<Alarm />} />
           </Routes>                  
       </div>
     </div>

@@ -1,0 +1,50 @@
+/* body{
+    background: url('../img/back_gradient.PNG');
+    background-repeat: no-repeat;
+    background-size: cover;
+  } */
+  
+  .loginForm1{
+    margin: auto;
+    text-align: center;
+    width:300px; height: 380px;
+    background-color:#ffffff;
+    border-radius:5px;
+  
+    /*로그인 폼 화면 가운데 배치*/
+    place-items: center;
+  }
+  
+  .loginID1{
+    padding-bottom: 20px;
+  }
+  
+  .loginTitle1{
+    font-size: 30px;
+    font-weight: 600;
+    color: #65C28E;
+  }
+  
+  .loginBox1{
+    background-color: rgba(255, 255, 255, 0.884);
+    width: 270px; border-radius: 5px;
+  }
+  
+  .btnLogin1{
+    width: 270px; height: 45px;
+    border: none; border-radius: 5px;
+    font-size: 15px;
+    color:white; background-color: #65C28E;
+    margin-top: 30px;
+  }
+  
+  .keepLogin1{
+    text-align: left;
+  }
+  
+  a {
+    font-size: 14px;
+    text-decoration: none;
+      color: inherit;
+  
+  }
