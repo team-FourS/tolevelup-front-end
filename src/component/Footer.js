@@ -8,7 +8,7 @@ import Char from "../component/Character"
 import Mypage from "../component/Mypage"
 import Modify from "../component/Modify";
 
-import { AiTwotoneShop } from "react-icons/ai";
+import { HiSquares2X2 } from "react-icons/hi2";
 import { BsClipboard2Check } from "react-icons/bs";
 import { BiTrophy } from "react-icons/bi";
 import { AiFillAliwangwang } from "react-icons/ai";
@@ -28,11 +28,11 @@ const Footer = () => {
             </Routes>
 
             <nav className="footer01">
-                <Link to="/mission"><AiTwotoneShop size={40} className="icon"/></Link>
-                <Link to="/feed"><BsClipboard2Check size={40} className="icon"/></Link>
-                <Link to="/rank"><BiTrophy size={40} className="icon"/></Link>
-                <Link to="/char"><AiFillAliwangwang size={40} className="icon"/></Link>
-                <Link to="/mypage"><AiOutlineUser size={40} className="icon"/></Link>
+                <Link to="/mission"><HiSquares2X2 size={30} className="icon"/></Link>
+                <Link to="/feed"><BsClipboard2Check size={30} className="icon"/></Link>
+                <Link to="/rank"><BiTrophy size={30} className="icon"/></Link>
+                <Link to="/char"><AiFillAliwangwang size={30} className="icon"/></Link>
+                <Link to="/mypage"><AiOutlineUser size={30} className="icon"/></Link>
             </nav>
         </div>
 

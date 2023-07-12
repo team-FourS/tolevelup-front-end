@@ -7,18 +7,19 @@ import "../css/Mypage.css"
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 
+
 const Mypage = () => {
 
     return (
-        <main className='layout'>
+        <main>
             <Header />
-            <Routes>
+            <Routes className='layout'>
                 <Route path="/modify" element={<Modify />} />
             </Routes>
+            
             <div className='set'>
-                <div className="square">
-                    
-                        
+            <div className='Mains-right'><div></div></div>
+                <div className="square">        
                 <div className='bold1'>
                     <div className='space'>
                         <img className ="profil" src={user} alt='프로필'></img>
@@ -31,24 +32,46 @@ const Mypage = () => {
                             </div>
 
                             <Link to="/modify">    
-                                <button className='follow'>프로필 편집</button>
+                                <button className='btnpro'>프로필 편집</button>
                             </Link>
                     </div>
                 </div>
 
-                            <h6 style={{
-                                width:'170px',
-                                height:'134px',
-                                lineHeight: '172px',
-                                border: 'solid 2px gray',
-                                borderRadius: '5px'
-                            }}>방문자 코멘트</h6>
+                        <div className="scroll_box">
+                            <div className="inner_content">
+                                <div className='comment_box'>
+                                    너 전교 몇등이야?
+                                    <p className='user_comment'>- 국연수</p>
+                                </div>
+                                <div className='comment_box'>
+                                    다시 찍자고, 다큐멘터리
+                                    <p className='user_comment'>- 김지웅</p>
+                                </div>
+                                {/* <div className='comment_box'>
+                                    내용3
+                                </div> */}
+                            </div>
+                        </div>
             </div>
             
             
                 <main className="she">
+                   <div className='main_counter'>
+                    <div className='count'>
+                        <div className='cntnum'><strong>0</strong></div>
+                        <div className='fallow'>팔로우</div>
+                    </div>
+                    <div className='count'>
+                        <div className='cntnum'><strong>0</strong></div>
+                        <div className='fallow'>팔로잉</div>
+                    </div>
+                    <div className='count'>
+                        <div className='cntnum'><strong>0</strong></div>
+                        <div className='fallow'>코멘트</div>
+                    </div>
+                    </div>
                     <div className="text">
-                        <div>
+                        <div className='hahaha'>
                             <strong className="locate">운동</strong>
                             <strong className="locate">취미</strong>
                             <strong className="locate">식습관</strong>
@@ -82,26 +105,20 @@ const Mypage = () => {
                             </div>
                         </div>
                         
-                        <h6 style={{
+                        <div style={{
                             width:'390px',
                             height:'190px',
                             lineHeight: '190px',
                             textAlign: 'center',
                             border: 'solid 2px gray',
                             borderRadius: '5px'
-                        }}>통계</h6>
+                        }}>통계에</div>
                     </main>
                    {/* <button>저장</button><button>취소</button> */}
-                    <h6 style={{
-                            width:'200px',
-                            height:'365px',
-                            margin: '20px',
-                            lineHeight: '365px',
-                            textAlign: 'center',
-                            border: 'solid 2px gray',
-                            borderRadius: '5px'
-                        }}>친구목록</h6>
+                    {/* <h6 className='list'>친구목록</h6>
+                    <div className='Mains-left'><div></div></div> */}
             </div>
+            
             <Footer/> 
         </main>
     )

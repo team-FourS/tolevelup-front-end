@@ -27,7 +27,7 @@ function App() {
       <div className="App">
         <div>        
           <Routes className="layout">
-          {/* 어떤 컴퍼넌트를 매핑해 줄 것인가 */}
+          {/* 어떤 컴퍼넌트를 매핑해 줄  */}
             
               <Route path="/" element={<Login />} />
                 <Route path="/Signup" element={<Signup />} />
@@ -46,7 +46,8 @@ function App() {
               <Route path="/edit" element={<Edit />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/alarm" element={<Alarm />} />
-          </Routes>                  
+          </Routes>
+                         
       </div>
     </div>
   )
