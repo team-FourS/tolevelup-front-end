@@ -15,15 +15,14 @@
   min-height: 75%;
 }
 
-.layout{
-  display: inline-flex;
+/* .layout{
+  display: inline;
   position: relative;
   width: 100%;
   justify-content: center;
   align-items: center;
-  min-height: 70vh;
-  background-color: white;
-}
+  min-height: 80%;
+} */
 
 .footer01{
   position: relative;

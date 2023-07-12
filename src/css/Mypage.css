@@ -3,8 +3,8 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-  min-height: 100%;
-  font-family: 'NanumSquareNeo-Variable';
+  min-height: 80%;
+  /* font-family: 'NanumSquareNeo-Variable'; */
 }
 .main{
   display: block;
@@ -66,12 +66,12 @@
 .set{
   display: inline-flex;
 }
-@font-face {
+/* @font-face {
   font-family: 'NanumSquareNeo-Variable';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
-}
+} */
 .follow{
   background-color: #1963ee;
   display: block;
@@ -82,4 +82,30 @@
   align-items: center;
   margin-top: 10px;
   padding: 5px;
+}
+.profil{
+  width: 45px;
+  height: 45px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 65px;
+}
+.nickname{
+  margin-top:20px;
+  margin-bottom:20px;
+}
+.userid{
+  margin: 0px;
+  color: gray;
+  font-weight: lighter;
+}
+.userint{
+  font-weight: 500;
+}
+.bold1{
+  border: solid 2px gray;
+  border-radius: 5px;
+}
+.space{
+  margin: 10px;
 }

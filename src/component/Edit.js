@@ -1,15 +1,12 @@
-import React from 'react';
-import user from '../img/user.png';
-import "../css/Modify.css";
+import React from "react";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 import Mypage from "../component/Mypage";
-import Edit from "../component/Edit";
+import Modify from "./Modify"
+// import user from '../img/user.png';
 import {Routes, Route, Link} from "react-router-dom";
-// import { confirmAlert } from 'react-confirm-alert'; // Import
 
-const Modify = () => {
-
+const Edit = () => {
     const useConfirm = (message = null, onConfirm, onCancel) => {
         if ((!onConfirm || typeof onConfirm !== "function") === true) {
             return;
@@ -36,27 +33,20 @@ const Modify = () => {
     const cancelConfirm = () => alert("취소되었습니다.");
     const confirmSave = useConfirm("저장하시겠습니까?", deleteConfirm, cancelConfirm
 );
-    const onClickNew = () => {
-    // 새창에서 열기 => 새로고침 필요X
-    let windowObj = window.open('/Profile', '_blank','width=500vh,height=700vh,left=900px,top=30px','flase');
-        // windowObj.document.images("../img/doll.png");
-        windowObj.document.close();
-  
-  };
-  //const onClickDownload = () => {};
   
   return (
         <div className="layout">
             <Routes>
                 <Route path="/mypage" element={<Mypage />} />
                 <Route path="/edit" element={<Edit />} />
+                <Route path="/modify" element={<Modify />} />
             </Routes>
             <Header />
             <div className='edit'>
                 <Link to="/edit">
                     <h1 className='fonsz'>개인정보 수정</h1>
                 </Link>
-                <Link to="">
+                <Link to="/modify">
                     <h1 className='fonsz'>프로필 수정</h1>
                 </Link>
             </div>
@@ -64,24 +54,17 @@ const Modify = () => {
                 
                 <div className='mama'>
                         <div className="square">
-                                <img className ="profils" src={user} alt='프로필' style={{width:"120px",
+                                {/* <img className ="profils" src={user} alt='프로필' 
+                                style={{width:"120px",
                                 height:"120px", 
                                 margin: "auto", 
-                                cursor:"pointer"}} onClick={onClickNew} />
-                    
-                            <div >
-                                <div>
-                                    <h4 style={{ display:'inline-block'}}>
-                                        <div style={{marginBottom:'20px', display:'block',alignItems:'center'}}>* 닉네임</div>
-                                        <div style={{display:'block'}}>* 소개</div>                              
+                                cursor:"pointer"}}/> */}
+        
+                                    <h4 style={{margin:'20px'}}>
+                                        <input type='text' className='rename' placeholder='비밀번호'/>                               
                                     </h4>
 
-                                    <div style={{display:'inline-block'}}>
-                                        <input style={{display:'block'}} type='text' className='rename' placeholder='닉네임'/>
-                                        <input style={{display:'block'}} type='text' className='intro' placeholder='한 줄 소개'/> 
-                                    </div>                              
-                                </div> 
-                            </div>   
+                            <input type='text' className='intro' placeholder='아이디'/>      
                     </div>
                 </div>
             <div >
@@ -92,8 +75,9 @@ const Modify = () => {
                 </Link>
             </div>
         </div>
-        <Footer/> 
-</div>
-    )
+            <Footer/> 
+            </div>
+  );
 }
-export default Modify;
+
+  export default Edit;
