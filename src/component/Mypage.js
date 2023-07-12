@@ -112,7 +112,7 @@ const Mypage = () => {
                             textAlign: 'center',
                             border: 'solid 2px gray',
                             borderRadius: '5px'
-                        }}>통계</div>
+                        }}>통계에</div>
                     </main>
                    {/* <button>저장</button><button>취소</button> */}
                     {/* <h6 className='list'>친구목록</h6>
