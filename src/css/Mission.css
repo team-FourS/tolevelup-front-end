@@ -4,7 +4,7 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-
+  
   min-height: 75vh;
 } 
 .pageTitle{
@@ -43,8 +43,11 @@
 .mainImg {
   width: 130px;
   height: 130px;
-  /* margin-bottom: 60px; */
   margin: 35px;
+}
+
+.MissionComponent{
+  margin-top: 30px;
 }
 
 @font-face {

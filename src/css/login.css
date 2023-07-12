@@ -1,4 +1,4 @@
-
+/*
 .loginForm{
   margin: auto;
   text-align: center;
@@ -6,18 +6,18 @@
   background-color:#ffffff;
   border-radius:5px;
   border: 3px solid #65C28E;
-  /*로그인 폼 화면 가운데 배치*/
-  place-items: center;
-*/
+  */
 
+.totalLogin{
+  margin-top: 30px;
+}
 
 .loginID{
   padding-bottom: 20px;
 }
 
 .loginTitle{
-  margin-top: -110px;
-  font-size: 28px;
+  font-size: 25px;
   font-weight: 600;
   color: #65C28E;
 }
@@ -52,9 +52,18 @@
   margin-bottom: 20px;
 }
 
-.naver{ width: 35px; padding-left: 5px;}
-.google { width: 35px; }
-.kakao { width: 35px; }
+.naver { 
+  width: 35px; padding-left: 5px;
+  border: 0px; padding-right: 20px;
+}
+.google { 
+  width: 35px; 
+  border: 0px; padding-right: 20px;
+}
+.kakao { 
+  width: 35px; 
+  border: 0px; padding-right: 20px;
+}
 
 a {
   font-size: 14px;

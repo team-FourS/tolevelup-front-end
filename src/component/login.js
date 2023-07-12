@@ -15,7 +15,7 @@ import kakao from '../img/kakao.png';
 function Login() {
   
   return (
-    <div className='loginback'>
+    <div className='totalLogin'>
       <Routes>     
         <Route path="/Mission" element={<Mission />} />
         <Route path="/Signup" element={<Signup />} />
@@ -40,13 +40,20 @@ function Login() {
           color="primary"/>} label="로그인 상태 유지"/> <br/>
         
         <div className="find">
-          <a href="#!">아이디 찾기  </a> |
-          <a href="#!"> 비밀번호 찾기 </a> <br/>
+          <Link to="/FindID" className="findID">
+            아이디 찾기  |
+          </Link>
+
+          <Link to="/FindPassword" className="findPassword">
+              비밀번호 찾기
+          </Link>
         </div>
 
-        <img className="naver" src={naver} alt="네이버" />
-        <img className="google" src={google} alt="구글" />
-        <img className="kakao" src={kakao} alt="카카오" />
+        <div>
+          <img className="naver" src={naver} alt="네이버" />
+          <img className="google" src={google} alt="구글" />
+          <img className="kakao" src={kakao} alt="카카오" />
+        </div>
 
         <Link to="/Mission">
           <Button type="submit" className="btnLogin">
@@ -55,7 +62,7 @@ function Login() {
         </Link>
 
           <Link to="/signup" className="signup">
-              ToLevelUp 회원가입 > 
+              ToLevelUp 회원가입 >
           </Link>
         </div>
       </div>
