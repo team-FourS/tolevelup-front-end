@@ -8,7 +8,7 @@ import Header from "../component/Header";
 import Footer from "../component/Footer";
 
 const Mypage = () => {
- 
+
     return (
         <main className='layout'>
             <Header />
