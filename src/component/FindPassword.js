@@ -1,12 +1,12 @@
 import React from 'react';
-import '../css/FindID.css'
+import '../css/FindPassword.css'
 import {Routes, Route} from "react-router-dom";
 import { TextField } from '@mui/material';
 import { Button } from '@mui/base';
 import Login from "./login";
 import logo from '../img/smallLogo.png';
 
-function FindID() {
+function FindPassword() {
   
   return (
     <div className="LoginLayout">
@@ -16,7 +16,7 @@ function FindID() {
 
       <div className="loginForm"> 
         <div className="loginID">
-          <p className="loginTitle">아이디 찾기</p>  
+          <p className="loginTitle">비밀번호 찾기</p>  
           <img className="loginLogo" src={logo} alt="로고" />
 
           <TextField className="loginBox"
@@ -32,11 +32,11 @@ function FindID() {
         </div>
 
         <Button type="submit" className="btnLogin" >
-          아이디 찾기
+          비밀번호 찾기
         </Button>
       </div>
     </div>
   );
 }
 
-export default FindID;
+export default FindPassword;

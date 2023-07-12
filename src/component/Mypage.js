@@ -9,7 +9,7 @@ import Footer from "../component/Footer";
 
 
 const Mypage = () => {
- 
+
     return (
         <main>
             <Header />
