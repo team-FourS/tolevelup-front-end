@@ -13,7 +13,7 @@ const Mypage = () => {
 
     function handleClick() {
         setButtonText('팔로잉');
-  }
+    }
     return (
         <main className="layout">
             <Header />
@@ -26,7 +26,7 @@ const Mypage = () => {
                         <img className ="profil" src={user} alt='프로필' style={{width:"95px",height:"95px", margin: "auto"}}></img>
                     
                     <div style={{verticalAlign:"middle", display:"inline-flex"}}>
-                      
+                    
                             <h4 className="lv" style={{margin:'2px'}}>Lv._</h4>
                             <h4 className="nickname" style={{margin:'2px'}}>__님 
                         
