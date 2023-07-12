@@ -46,7 +46,8 @@ function App() {
               <Route path="/edit" element={<Edit />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/alarm" element={<Alarm />} />
-          </Routes>                  
+          </Routes>
+                         
       </div>
     </div>
   )
