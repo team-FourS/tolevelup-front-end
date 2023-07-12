@@ -9,6 +9,8 @@ const Feed = () => {
       <main className="layout">
         <Header/>
         <div>
+          <p className="FeedPage">추천</p>
+          <p className="FeedPage">팔로우 중</p>
           <div className="userImg"> 
             <img className="userProfile" src={user} alt="프로필"/> </div>
           <div className="nickName">우주최강임</div>

@@ -1,29 +1,41 @@
-.body{
+/* .Login{
   background-image: '../img/back_gradient.PNG';
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+  display:flex;
+  position : relative;
+  width: 100%;
+  height : 100vh;
+  align-items: center;
+} */
 
+/*
 .loginForm{
   margin: auto;
   text-align: center;
-  width:300px; height: 380px;
+  width:300px; height: 400px;
   background-color:#ffffff;
   border-radius:5px;
-
+  border: 3px solid #65C28E;
   /*로그인 폼 화면 가운데 배치*/
   place-items: center;
-}
+*/
+
 
 .loginID{
   padding-bottom: 20px;
 }
 
 .loginTitle{
-  font-size: 30px;
+  margin-top: -110px;
+  font-size: 28px;
   font-weight: 600;
   color: #65C28E;
 }
+
+.loginLogo{
+  width: 220px;
+  margin-bottom: 40px;
+}
+
 
 .loginBox{
   background-color: rgba(255, 255, 255, 0.884);
@@ -40,11 +52,27 @@
 
 .keepLogin{
   text-align: left;
+  margin-top: 10px;
+  color: #65C28E;
+  font-weight: 900;
 }
+
+.find{
+  margin-bottom: 20px;
+}
+
+.naver{ width: 35px; padding-left: 5px;}
+.google { width: 35px; }
+.kakao { width: 35px; }
 
 a {
   font-size: 14px;
   text-decoration: none;
   color: inherit;
 
+}
+
+.signup{
+  font-size: 17px;
+  font-weight: 700;
 }
