@@ -56,7 +56,7 @@ const Mypage = () => {
             
             
                 <main className="she">
-                   <div className='main_counter'>
+                <div className='main_counter'>
                     <div className='count'>
                         <div className='cntnum'><strong>0</strong></div>
                         <div className='fallow'>팔로우</div>
