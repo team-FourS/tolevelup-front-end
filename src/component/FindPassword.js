@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/FindPassword.css'
+import '../css/FindID.css'
 import {Routes, Route} from "react-router-dom";
 import { TextField } from '@mui/material';
 import { Button } from '@mui/base';
@@ -16,7 +16,7 @@ function FindPassword() {
 
       <div className="loginForm"> 
         <div className="loginID">
-          <p className="loginTitle">비밀번호 찾기</p>  
+          <p className="loginTitle">아이디 찾기</p>  
           <img className="loginLogo" src={logo} alt="로고" />
 
           <TextField className="loginBox"
@@ -32,7 +32,7 @@ function FindPassword() {
         </div>
 
         <Button type="submit" className="btnLogin" >
-          비밀번호 찾기
+          아이디 찾기
         </Button>
       </div>
     </div>

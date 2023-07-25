@@ -2,7 +2,7 @@ import React from "react";
 import {Routes, Route, Link} from "react-router-dom";
 import '../css/Footer.css'
 import Mission from "../component/Mission"
-import Feed from "../component/Feed"
+import Feed from "../component/Feed/Feed"
 import Rank from "../component/Ranking"
 import Char from "../component/Character"
 import Mypage from "../component/Mypage"

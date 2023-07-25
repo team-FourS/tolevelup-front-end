@@ -1,45 +1,45 @@
-.layout{
-  display: inline-flex;
-  position: relative;
+.layout_feed{
   width: 100%;
-  justify-content: center;
-  align-items: center;
-  margin-top: 15vh;
-  min-height: 75vh;
-} 
+  margin-top: 65px; 
+  min-height: 80%;
+  position: relative;
+}
+.header_feed{
 
-.searchID{
-  float: right;
+} 
+.allFeed{
+  margin-left: 150px;
+  margin-right: 15px;
+  font-size: 17px;
+  display: inline-block;
+}
+.followFeed{
+  font-size: 17px;
+  display: inline-block;
 }
 .searching{
-  position: relative;
-}
-.searchIcon{
-  position: absolute;
-  left: 7px; top: 7px;
+  float: right;
+  margin-right: 20px;
 }
 .searchBox{
-  width: 180px; height: 30px;
+  width: 200px; height: 30px;
 }
+
+/*피드 박스*/
 .feedBox{
-  width: 600px; 
-  border: solid 2px gray;
+  width: 850px; 
+  border: solid 1px gray;
   border-radius: 5px;
-}
-.user_id{
-  font-size: 15px;
-  margin: 0px;
-  color: gray;
+  margin: auto;
+  margin-bottom: 10px;
 }
 .userint{
   font-weight: 500;
 }
 .user_profile{
-  width: 55px; height: 55px;
-  margin-top: 20px; margin-left: 20px;
-
+  width: 50px; height: 50px;
+  margin-top: 15px; margin-left: 15px;
 }
-
 .userInfo h4, .user_id{
   display: inline;
 }
@@ -48,16 +48,19 @@
   margin-left:90px;
 }
 .oneLine{
-  font-size: 15px;
+  font-size: 15px; color: gray;
+  margin-top: 2px;
 }
 .Comment{
   margin-top: 13px;
-  width: 565px;  height: 40px;
+  width: 770px;  height: 40px;
   padding: 0 15px;
+}
+.feedChecklist{
+  margin-bottom: 10px;
 }
 .commetBtn{
   background-color: white;
   color:mediumseagreen; font-weight: bolder;
   border: none;
-
 }
