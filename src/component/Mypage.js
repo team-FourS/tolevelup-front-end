@@ -60,7 +60,6 @@ const Mypage = () => {
                             </div>
                         </div>
             </div>
-            
             <main className='istp'>
                 <div className="she">
                    <div className='main_counter'>
@@ -89,6 +88,17 @@ const Mypage = () => {
                                 <CommentDa />
                             </Modal>
                             )}
+                <main className="she">
+                <div className='main_counter'>
+                    <div className='count'>
+                        <div className='cntnum'><strong>0</strong></div>
+                        <div className='fallow'>팔로우</div>
+                    </div>
+                    <div className='count'>
+                        <div className='cntnum'><strong>0</strong></div>
+                        <div className='fallow'>팔로잉</div>
+                    </div>
+                    <div className='count'>
                         <div className='cntnum'><strong>0</strong></div>
                         <div className='fallow'>코멘트</div>
                     </div>

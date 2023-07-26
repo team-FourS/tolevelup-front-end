@@ -15,19 +15,17 @@ const Modify = () => {
             return;
         }
     if (onCancel && typeof onCancel !== "function") {
-      return;
+        return;
     }
-  
     const confirmAction = () => {
-      if (window.confirm(message)) {
+        if (window.confirm(message)) {
         onConfirm();
-      } else {
+        } else {
         onCancel();
-      }
+        }
     };
-  
     return confirmAction;
-  };
+    };
 
     const deleteConfirm = () => {
         alert("저장되었습니다.");
@@ -41,11 +39,10 @@ const Modify = () => {
     let windowObj = window.open('/Profile', '_blank','width=500vh,height=700vh,left=900px,top=30px','flase');
         // windowObj.document.images("../img/doll.png");
         windowObj.document.close();
-  
-  };
+    };
   //const onClickDownload = () => {};
-  
-  return (
+    
+    return (
         <div className="layout">
             <Routes>
                 <Route path="/mypage" element={<Mypage />} />

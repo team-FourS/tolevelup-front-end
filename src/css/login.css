@@ -7,34 +7,30 @@
   border-radius:5px;
   border: 3px solid #65C28E;
   */
-
+.idField{
+  padding-bottom: 10px;
+}
 .totalLogin{
-  margin-top: 30px;
+  margin-top: 40px;
 }
-
-.loginID{
-  padding-bottom: 20px;
-}
-
 .loginTitle{
   font-size: 25px;
   font-weight: 600;
   color: #65C28E;
 }
-
 .loginLogo{
   width: 220px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
-
-
 .loginBox{
   background-color: rgba(255, 255, 255, 0.884);
-  width: 270px; border-radius: 5px;
+  width: 300px; height: 320;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 .btnLogin{
-  width: 270px; height: 45px;
+  width: 300px; height: 45px;
   border: none; border-radius: 5px;
   font-size: 15px;
   color:white; background-color: #65C28E;
@@ -49,30 +45,34 @@
 }
 
 .find{
+  margin-top: 20px;
   margin-bottom: 20px;
+}
+.findPassword{
+  padding-right: 10px;
+  font-size: 15px;
+}
+.signUp{
+  margin-left: 20px;
+  font-size: 15px;
 }
 
 .naver { 
-  width: 35px; padding-left: 5px;
+  width: 25px; padding-left: 5px;
   border: 0px; padding-right: 20px;
 }
 .google { 
-  width: 35px; 
+  width: 25px; 
   border: 0px; padding-right: 20px;
 }
 .kakao { 
-  width: 35px; 
+  width: 25px; 
   border: 0px; padding-right: 20px;
 }
 
 a {
-  font-size: 14px;
+  font-size: 12px;
   text-decoration: none;
   color: inherit;
 
-}
-
-.signup{
-  font-size: 17px;
-  font-weight: 700;
 }
