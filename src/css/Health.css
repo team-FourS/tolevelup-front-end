@@ -1,0 +1,74 @@
+.layout_health{
+    display: flex;
+    width: 100%;
+    /* justify-content: center; */
+    align-items: center;
+    min-height: 80%;
+    position: relative;
+    
+  }
+  .health_lay{
+    align-items: center;
+    margin: 30px;
+    border: solid 2px rgb(199, 198, 198);
+    border-radius: 10px;
+  }
+  .however{
+    margin: 20px;
+  }
+  .health_font1{
+    color: rgb(141, 139, 139);
+    text-align: center;
+  }
+  .health_font2{
+    color: rgb(141, 139, 139);
+    text-align: center;
+    font-weight: 800;
+  }
+  .health_font3{
+    text-align: center;
+  }
+  .Lv_health{
+    align-items: center;
+    width: 120px;
+    height: 120px;
+  }
+  .status-hpchar {
+    /* position: relative; */
+    display: inline;
+    
+    }
+  .bar_char {
+    width: 250px;
+    height: 20px;
+    background-color: #e4e4e4;
+    align-content: center;
+    margin: 24px;
+    border-radius: 5px;
+  
+    }
+  .currentBar_char {
+    height: 100%;
+    background-color: rgb(142, 68, 173);
+    border-radius: 5px;
+  
+  }
+  .health_font4{
+    margin-left: 200px;
+  }
+  .currentBar_char2 {
+    height: 100%;
+    background-color: rgb(235, 81, 173);
+    border-radius: 5px;
+  }
+  .currentBar_char3 {
+    height: 100%;
+    background-color: rgb(241, 196, 15);
+    border-radius: 5px;
+  }
+  .currentBar_char4 {
+    height: 100%;
+    background-color: rgb(41, 128, 185);
+    border-radius: 5px;
+  }
+  

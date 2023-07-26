@@ -1,17 +1,16 @@
-
 .layout{
   display: flex;
   width: 100%;
   justify-content: center;
-  /* align-items: center; */
+  align-items: center;
   min-height: 80%;
   position: relative;
 }
-.main{
+.main_bar{
   display: block;
 }
 .status-hp {
-  position: relative;
+  /* position: relative; */
   display: inline;
   
   }
@@ -20,7 +19,7 @@
   height: 10px;
   background-color: #e4e4e4;
   align-content: center;
-  margin: 26px;
+  margin: 24px;
   border-radius: 10px;
 
   }
@@ -46,11 +45,11 @@
         border-radius: 10px;
         }
 .locate{
-  text-align: right;
+  text-align: center;
   display: block;
-  margin: 20px;
+  margin: 18px;
   font-size: small;
-  /* background-color: aquamarine; */
+
 }
 .square{
   display: block;
@@ -75,12 +74,11 @@
   display: flex;
   margin-top: 10vh;
 }
-/* @font-face {
-  font-family: 'NanumSquareNeo-Variable';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-} */
+.istp{
+  align-items: center;
+  margin: 20px;
+}
+
 .btnpro{
   background-color: #1963ee;
   display: block;
@@ -120,14 +118,14 @@
   margin: 10px;
 }
 .Mains-right { 
-  width: 20%;
+  width: 30%;
   height: 100%;
-  color: antiquewhite;
+  color: blue;
 }
 .Mains-left { 
-  width: 20%;
+  width: 30%;
   height: 100%;
-  color: antiquewhite;
+  color: blue;
 }
 .list{
   width:200px;
@@ -202,4 +200,13 @@
 .main_counter{
   display: block;
   text-align: center;
+}
+.statistics{
+  width:390px;
+  height:190px;
+  line-Height: 190px;
+  text-Align: center;
+  border: solid 2px gray;
+  border-radius: 5px;
+  margin-top: 70px;
 }

@@ -7,7 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    /* background-color: white; */
 
 }
 .icon{
@@ -15,11 +15,14 @@
     margin-right: 20px;
     color: gray;
 }
-.my{
+nav:focus{
+    color:#65C28E;
+}
+/* .my{
     margin-left: 20px;
     margin-right: 20px;
     color:#65C28E;
-}
+} */
 .contents {
     display: flex;
 }

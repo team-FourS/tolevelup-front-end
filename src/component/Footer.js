@@ -15,7 +15,7 @@ import { AiFillAliwangwang } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
 
 const Footer = () => {
-    
+
     return (
         <div className="footer">
             <Routes className="layout">

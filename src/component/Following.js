@@ -1,17 +1,15 @@
 import React from "react";
-// import Header from "../component/Header";
-// import Footer from "../component/Footer";
-import "../css/Alarm.css"
+import "../css/Following.css"
 import user from '../img/user.png';
 
-const Alarm = () => {
+const Following = () => {
     return (
-      <main className="layout_alr">
+      <main className="layout_wing">
 
         {/* <Header/> */}
 
         <div className="alarm_lay">
-          <h4 className="alarm_font">알람</h4>
+          <h4 className="alarm_font">팔로잉</h4>
           <hr />
 
           <table>
@@ -26,30 +24,28 @@ const Alarm = () => {
                 <td className="td">
                   <div className="table_lay">
                     <img className ="profil2" src={user} alt='프로필'></img>
-                    <h5 className="id_alarm">_님이 팔로우 하셨습니다.</h5>
-                    <h6 className="id_alarm_time">지금</h6>
+                    <h5 className="id_alarm">_whoops</h5>
                   </div>
                 </td>
-                <td className="td">
-                  <div className="table_lay">
-                    <img className ="profil2" src={user} alt='프로필'></img>
-                    <h5 className="id_alarm">_님이 코멘트를 남기셨습니다.</h5>
-                    <h6 className="id_alarm_time">5분전</h6>
-                  </div>
-                </td>
-                <td className="td">
+                <td className="td1">
                   <div className="table_lay">
                     <img className ="profil2" src={user} alt='프로필'></img>
                     <h5 className="id_alarm">_whoops</h5>
                   </div>
                 </td>
-                <td className="td">
+                <td className="td1">
                   <div className="table_lay">
                     <img className ="profil2" src={user} alt='프로필'></img>
                     <h5 className="id_alarm">_whoops</h5>
                   </div>
                 </td>
-                <td className="td">
+                <td className="td1">
+                  <div className="table_lay">
+                    <img className ="profil2" src={user} alt='프로필'></img>
+                    <h5 className="id_alarm">_whoops</h5>
+                  </div>
+                </td>
+                <td className="td1">
                   <div className="table_lay">
                     <img className ="profil2" src={user} alt='프로필'></img>
                     <h5 className="id_alarm">_whoops</h5>
@@ -65,4 +61,4 @@ const Alarm = () => {
     );
   }
 
-  export default Alarm;
+  export default Following;

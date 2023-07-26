@@ -62,7 +62,7 @@ function Login() {
         </Link>
 
           <Link to="/signup" className="signup">
-              ToLevelUp 회원가입 >
+              ToLevelUp 회원가입
           </Link>
         </div>
       </div>

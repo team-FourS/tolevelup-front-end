@@ -4,16 +4,16 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  font-family: 'NanumSquareNeo-Variable';
+  /* font-family: 'NanumSquareNeo-Variable'; */
 }
 .main{
   display: block;
 }
-.status-hp {
+/* .status-hp2 {
   position: relative;
   display: inline;
   
-  }
+  } */
 .bar {
   width: 250px;
   height: 15px;
@@ -40,10 +40,10 @@
 .profils{
   display: block;
 }
-.profils:hover{
+/* .profils:hover{
   border: orange 4px solid;
   border-radius: 63px;
-}
+} */
 .she{
   display: inline-block;
 }
@@ -61,12 +61,12 @@
   margin: 5px;
   font-size: 15px;
 }
-@font-face {
+/* @font-face {
   font-family: 'NanumSquareNeo-Variable';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
-}
+} */
 .mama {
   display: inline-flex;
 }
@@ -74,7 +74,6 @@
   display: inline-flex;
 }
 .btnstyle{
-      font-family: 'NanumSquareNeo-Variable';
       color:white;
       background-color: #65C28E;
       width: 53px; height: 27px; 
@@ -83,3 +82,45 @@
       border-radius: 5px;
       margin: 5px;
 }
+.profils{
+  width: 120px;
+  height: 120px;
+  margin: auto;
+}
+.pro_box{
+  margin: 55px;
+}
+.profil_font{
+  color: rgb(100, 100, 100);
+}
+.profil_font:hover{
+  color: rgb(7, 132, 242);
+}
+.modify_bold{
+  border: solid 1px gray;
+  border-collapse: collapse;
+}
+.nickname_bold{
+  border: solid 1px gray;
+  border-collapse: collapse;
+  background-color: lightgray;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+.oneline_bold{
+  border: solid 1px gray;
+  border-collapse: collapse;
+  background-color: lightgray;
+  margin-left: 20px;
+  margin-right: 20px;
+  
+}
+.nickname_font{
+  color: rgb(107, 106, 106);
+}
+.oneline_font{
+  color: rgb(107, 106, 106);
+}
+/* th, td {
+  border: 1px solid #444444;
+} */
