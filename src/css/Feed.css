@@ -1,14 +1,14 @@
 .layout_feed{
-  width: 100%;
-  margin-top: 65px; 
+  margin-top: 65px;
+  justify-content: center; 
   min-height: 80%;
   position: relative;
+  
 }
-.header_feed{
 
-} 
+/*상단 메뉴바*/
 .allFeed{
-  margin-left: 150px;
+  margin-left: 210px;
   margin-right: 15px;
   font-size: 17px;
   display: inline-block;
@@ -17,17 +17,19 @@
   font-size: 17px;
   display: inline-block;
 }
+
+/*닉네임 검색창*/
 .searching{
   float: right;
-  margin-right: 20px;
+  margin-right: 120px;
 }
 .searchBox{
   width: 200px; height: 30px;
 }
 
 /*피드 박스*/
-.feedBox{
-  width: 850px; 
+.feedBox01, .feedBox02, .feedBox03{
+  width: 800px; 
   border: solid 1px gray;
   border-radius: 5px;
   margin: auto;
@@ -51,10 +53,12 @@
   font-size: 15px; color: gray;
   margin-top: 2px;
 }
+
 .Comment{
   margin-top: 13px;
-  width: 770px;  height: 40px;
-  padding: 0 15px;
+  width: 720px;  height: 40px;
+  padding: 0 15px; 
+  
 }
 .feedChecklist{
   margin-bottom: 10px;
