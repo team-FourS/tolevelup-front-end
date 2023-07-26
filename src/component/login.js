@@ -1,13 +1,13 @@
 import React from 'react';
 import '../css/login.css'
-import { Checkbox, TextField } from '@mui/material';
+import { TextField } from '@mui/material';
 import { Button } from '@mui/base';
-import FormControlLabel from '@mui/material/FormControlLabel';
+// import FormControlLabel from '@mui/material/FormControlLabel';
 import {Routes, Route, Link} from "react-router-dom";
-import Mission from "./Mission"
-import Signup from "./signup"
-import logo from '../img/smallLogo.png';
+import Mission from "./Mission";
+import Signup from "./signup";
 
+import logo from '../img/smallLogo.png';
 import naver from '../img/naver.png';
 import google from '../img/google.png';
 import kakao from '../img/kakao.png';
@@ -22,11 +22,11 @@ function Login() {
       </Routes>
       
       <div className="loginForm"> 
-        <div className="loginID">
           <p className="loginTitle">로그인</p>  
           <img className="loginLogo" src={logo} alt="로고" />
-
-          <TextField className="loginBox"
+        
+        <div className="idField">
+        <TextField className="loginBox"
             label="ID" name="ID"
             autoComplete="ID"
             autoFocus/> <br/>
@@ -35,17 +35,21 @@ function Login() {
           type="password" name="password"
           autoComplete="password"/> <br/>  
 
-        <FormControlLabel className="keepLogin"
+        {/* <FormControlLabel className="keepLogin"
           control={<Checkbox value="remember" 
-          color="primary"/>} label="로그인 상태 유지"/> <br/>
+          color="primary"/>} label="로그인 상태 유지"/> <br/> */}
         
         <div className="find">
-          <Link to="/FindID" className="findID">
+          {/* <Link to="/FindID" className="findID">
             아이디 찾기  |
-          </Link>
+        </Link> */}
 
           <Link to="/FindPassword" className="findPassword">
-              비밀번호 찾기
+            비밀번호 찾기
+          </Link>
+        
+          <Link to="/signup" className="signUp">
+            회원가입
           </Link>
         </div>
 
@@ -61,9 +65,6 @@ function Login() {
           </Button> <br/><br/>
         </Link>
 
-          <Link to="/signup" className="signup">
-              ToLevelUp 회원가입 >
-          </Link>
         </div>
       </div>
   );

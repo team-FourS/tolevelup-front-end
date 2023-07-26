@@ -5,7 +5,7 @@ import Footer from "../component/Footer";
 
 const MissionCheck = () => {
     return (
-        <div className='layout'>
+        <div className='layout_mission'>
           <Header/>
           <div className="checkList">
             <button className="btnMissionCheck">문화생활</button>

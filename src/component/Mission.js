@@ -14,7 +14,7 @@ import Footer from "../component/Footer";
 
 const Mission = () => {
     return(
-    <main className="layout">
+    <main className="layout_mission">
     <Header />
     <Routes>
         <Route path="/MissionCheck01" element={<MissionCheck01 />} />
