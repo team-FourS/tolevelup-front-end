@@ -9,7 +9,7 @@
     background-position: left top 10px;
     background-size: 300px;
     background-color: white;
-    font-family: 'NanumSquareNeo-Variable';
+
 }
 .footer2 {
     position: fixed;
@@ -23,7 +23,7 @@
     background-color: white;
 }
 .probtn1{
-    font-family: 'NanumSquareNeo-Variable';
+
     color:white;
     background-color: #65C28E;
     font-size: 16px;
@@ -33,7 +33,7 @@
     margin-left: 130px;
 }
 .probtn2{
-    font-family: 'NanumSquareNeo-Variable';
+
     color:white;
     background-color: #65C28E;
     font-size: 16px;

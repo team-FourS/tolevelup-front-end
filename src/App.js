@@ -24,6 +24,7 @@ import Edit from "./component/Edit"
 
 import Profile from "./component/Profile"
 import Alarm from "./component/Alarm"
+import Modal from "./component/Modal"
 
 import "./App.css"
 
@@ -53,6 +54,8 @@ function App() {
               <Route path="/edit" element={<Edit />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/alarm" element={<Alarm />} />
+              <Route path="/modal" element={<Modal />} />
+          </Routes>
           </Routes>                        
       </div>
     </div>

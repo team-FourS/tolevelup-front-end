@@ -1,14 +1,21 @@
 import React from 'react';
 import user from '../img/user.png'
-// import setting from '../img/setting.png'
 import {Routes, Route, Link} from "react-router-dom";
 import Modify from "./Modify"
 import "../css/Mypage.css"
 import Header from "../component/Header";
 import Footer from "../component/Footer";
+import { useState } from "react";
+import Modal from "./Modal";
+import Follower from "./Follower";
+import Following from './Following';
+import CommentDa from "./CommentDa";
 
 
 const Mypage = () => {
+    const [fallower, setWer] = useState(false);
+    const [fallowing, setWing] = useState(false);
+    const [comment, setCommen] = useState(false);
 
     return (
         <main>
@@ -18,7 +25,7 @@ const Mypage = () => {
             </Routes>
             
             <div className='set'>
-            <div className='Mains-right'><div></div></div>
+            <div className='Mains-right'></div>
                 <div className="square">        
                 <div className='bold1'>
                     <div className='space'>
@@ -53,8 +60,34 @@ const Mypage = () => {
                             </div>
                         </div>
             </div>
-            
-            
+            <main className='istp'>
+                <div className="she">
+                   <div className='main_counter'>
+                        <div className='count' onClick={() => setWer(!fallower)}>
+                            {fallower && (
+                            <Modal closeModal={() => setWer(!fallower)}>
+                                <Follower />
+                            </Modal>
+                            )}
+                            <div className='cntnum'><strong>0</strong></div>
+                            <div className='fallow'>팔로워</div>
+                        </div>
+
+                        <div className='count' onClick={() => setWing(!fallowing)}>
+                        {fallowing && (
+                            <Modal closeModal={() => setWing(!fallowing)}>
+                                <Following />
+                            </Modal>
+                            )}
+                            <div className='cntnum'><strong>0</strong></div>
+                            <div className='fallow'>팔로잉</div>
+                        </div>
+                    <div className='count' onClick={() => setCommen(!comment)}>
+                        {comment && (
+                            <Modal closeModal={() => setCommen(!comment)}>
+                                <CommentDa />
+                            </Modal>
+                            )}
                 <main className="she">
                 <div className='main_counter'>
                     <div className='count'>
@@ -77,7 +110,8 @@ const Mypage = () => {
                             <strong className="locate">식습관</strong>
                             <strong className="locate">문화생활</strong>
                         </div>
-                            <div className="main">
+                        <div>
+                            <div className="main_bar">
                                 <div className="status-hp">
                                     <div className="bar">
                                         <div className="currentBar" style={{width:'48px'}}></div>    
@@ -104,19 +138,13 @@ const Mypage = () => {
 
                             </div>
                         </div>
-                        
-                        <div style={{
-                            width:'390px',
-                            height:'190px',
-                            lineHeight: '190px',
-                            textAlign: 'center',
-                            border: 'solid 2px gray',
-                            borderRadius: '5px'
-                        }}>통계에</div>
+                        </div>
+                        <div className='statistics'>통계</div>
+                    </div>
                     </main>
                    {/* <button>저장</button><button>취소</button> */}
-                    {/* <h6 className='list'>친구목록</h6>
-                    <div className='Mains-left'><div></div></div> */}
+                    {/* <h6 className='list'>친구목록</h6> */}
+                    <div className='Mains-left'></div>
             </div>
             
             <Footer/> 

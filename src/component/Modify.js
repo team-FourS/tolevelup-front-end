@@ -61,24 +61,27 @@ const Modify = () => {
                 
                 <div className='mama'>
                         <div className="square">
-                                <img className ="profils" src={user} alt='프로필' style={{width:"120px",
-                                height:"120px", 
-                                margin: "auto", 
-                                cursor:"pointer"}} onClick={onClickNew} />
-                    
-                            <div >
-                                <div>
-                                    <h4 style={{ display:'inline-block'}}>
-                                        <div style={{marginBottom:'20px', display:'block',alignItems:'center'}}>* 닉네임</div>
-                                        <div style={{display:'block'}}>* 소개</div>                              
-                                    </h4>
-
-                                    <div style={{display:'inline-block'}}>
-                                        <input style={{display:'block'}} type='text' className='rename' placeholder='닉네임'/>
-                                        <input style={{display:'block'}} type='text' className='intro' placeholder='한 줄 소개'/> 
-                                    </div>                              
-                                </div> 
-                            </div>   
+                            <div className="pro_box">
+                                <img className ="profils" src={user} alt='프로필' />
+                                <h4 className='profil_font' onClick={onClickNew}>프로필 이미지 편집</h4>
+                            </div>
+                            <table className='modify_bold'>
+                                <thead></thead>
+                                <tbody>
+                                    <tr className='modify_bold'>
+                                        <td className='nickname_bold'><h4 className='nickname_font'>닉네임</h4></td>
+                                        <td>
+                                            <input type='text' className='intro' placeholder='닉네임 수정'></input>
+                                        </td>
+                                    </tr>
+                                    <tr className='modify_bold'>
+                                        <td className='oneline_bold'><h4 className='oneline_font'>한줄소개</h4></td>
+                                        <td>
+                                            <input type='text' className='intro' placeholder='한줄소개를 입력하세요.'></input>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                     </div>
                 </div>
             <div >

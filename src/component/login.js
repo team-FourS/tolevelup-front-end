@@ -64,7 +64,9 @@ function Login() {
             로그인
           </Button> <br/><br/>
         </Link>
-
+          <Link to="/signup" className="signup">
+              ToLevelUp 회원가입
+          </Link>
         </div>
       </div>
   );

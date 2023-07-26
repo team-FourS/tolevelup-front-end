@@ -1,0 +1,39 @@
+.layout_wer{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    min-height: 80%;
+    position: relative;
+  }
+  .alarm_wer{
+    /* margin-top: 10vh; */
+    align-items: left;
+    text-align: left;
+  }
+  .profil3{
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+  .table_wer{
+    display: inline-flex;
+    align-items: center;
+  }
+  .table{
+    border-spacing: 0;
+    width: 100%;
+  }
+.id_wer{
+    margin-left: 20px;
+    font-weight: 500;
+}
+.td1{
+    display: block;
+    margin-right: 100px;
+}
+.wer_font{
+    font-size: 15px;
+    font-weight: 800;
+    text-align: left;
+}

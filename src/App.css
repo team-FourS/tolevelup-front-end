@@ -14,29 +14,3 @@
   align-items: center;
   min-height: 75%;
 }
-
-/* .layout{
-  display: inline;
-  position: relative;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  min-height: 80%;
-} */
-
-.footer01{
-  position: relative;
-  bottom:0;
-  text-align: center;
-  min-width: 100%;
-}
-
-.icon{
-    margin-left: 20px;
-    margin-right: 20px;
-    color : gray;
-  }
-
-.icon:active{
-  color: #65C28E;
-}

@@ -1,0 +1,38 @@
+.layout_wing{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    min-height: 80%;
+    position: relative;
+  }
+  .alarm_lay{
+    /* margin-top: 10vh; */
+    align-items: left;
+    text-align: left;
+  }
+  .profil2{
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+  .table_lay{
+    display: inline-flex;
+    align-items: center;
+  }
+  .table{
+    border-spacing: 0;
+    width: 100%;
+  }
+.id_alarm{
+    margin-left: 20px;
+    font-weight: 500;
+}
+.td1{
+    display: block;
+    margin-right: 100px;
+}
+.alarm_font{
+    font-size: 15px;
+    font-weight: 800;
+}
