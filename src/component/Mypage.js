@@ -25,15 +25,15 @@ const Mypage = () => {
             </Routes>
             
             <div className='set'>
-            <div className='Mains-right'></div>
-                <div className="square">        
-                <div className='bold1'>
-                    <div className='space'>
-                        <img className ="profil" src={user} alt='프로필'></img>
-                            <div className="nickname">
-                                <h4> 최우식
-                                    <h6 className='userid'>_whoops</h6>
-                                </h4>
+                <div className='Mains-right'></div>
+                    <div className="square1">        
+                        <div className='bold1'>
+                            <div className='space'>
+                                <img className ="mypage_profile" src={user} alt='프로필'></img>
+                                    <div className="nickname">
+                                        <h4> 최우식
+                                            <h6 className='userid'>_whoops</h6>
+                                            </h4>
                                 
                                 <h5 className='userint'>싫어하는거요? 국연수요.</h5>
                             </div>
@@ -60,8 +60,10 @@ const Mypage = () => {
                             </div>
                         </div>
             </div>
-            <main className='istp'>
-                <div className="she">
+            
+            
+            <main className='square2'>
+                <div className="square3">
                    <div className='main_counter'>
                         <div className='count' onClick={() => setWer(!fallower)}>
                             {fallower && (
@@ -70,7 +72,7 @@ const Mypage = () => {
                             </Modal>
                             )}
                             <div className='cntnum'><strong>0</strong></div>
-                            <div className='fallow'>팔로워</div>
+                            <div className='follower_following_comment'>팔로워</div>
                         </div>
 
                         <div className='count' onClick={() => setWing(!fallowing)}>
@@ -80,7 +82,7 @@ const Mypage = () => {
                             </Modal>
                             )}
                             <div className='cntnum'><strong>0</strong></div>
-                            <div className='fallow'>팔로잉</div>
+                            <div className='follower_following_comment'>팔로잉</div>
                         </div>
                     <div className='count' onClick={() => setCommen(!comment)}>
                         {comment && (
@@ -88,23 +90,15 @@ const Mypage = () => {
                                 <CommentDa />
                             </Modal>
                             )}
-                <main className="she">
-                <div className='main_counter'>
-                    <div className='count'>
-                        <div className='cntnum'><strong>0</strong></div>
-                        <div className='fallow'>팔로우</div>
+                            <div className='cntnum'><strong>0</strong></div>
+                            <div className='follower_following_comment'>코멘트</div>
                     </div>
-                    <div className='count'>
-                        <div className='cntnum'><strong>0</strong></div>
-                        <div className='fallow'>팔로잉</div>
-                    </div>
-                    <div className='count'>
-                        <div className='cntnum'><strong>0</strong></div>
-                        <div className='fallow'>코멘트</div>
-                    </div>
-                    </div>
+                       
+                
+                
                     <div className="text">
-                        <div className='hahaha'>
+                    <div className="mission_bar">
+                        <div className='bar_title'>
                             <strong className="locate">운동</strong>
                             <strong className="locate">취미</strong>
                             <strong className="locate">식습관</strong>
@@ -112,7 +106,7 @@ const Mypage = () => {
                         </div>
                         <div>
                             <div className="main_bar">
-                                <div className="status-hp">
+                            <div className="status-hp">
                                     <div className="bar">
                                         <div className="currentBar" style={{width:'48px'}}></div>    
                                     </div>
@@ -139,16 +133,19 @@ const Mypage = () => {
                             </div>
                         </div>
                         </div>
+                        </div>
                         <div className='statistics'>통계</div>
+                        
                     </div>
-                    </main>
-                   {/* <button>저장</button><button>취소</button> */}
-                    {/* <h6 className='list'>친구목록</h6> */}
-                    <div className='Mains-left'></div>
+
+                </div>
+                
+            </main>
+            <div className='Mains-left'></div>
             </div>
             
             <Footer/> 
-        </main>
+</main>        
     )
 }
 export default Mypage;

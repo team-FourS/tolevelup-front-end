@@ -55,8 +55,7 @@ function App() {
               <Route path="/profile" element={<Profile />} />
               <Route path="/alarm" element={<Alarm />} />
               <Route path="/modal" element={<Modal />} />
-          </Routes>
-          </Routes>                        
+          </Routes>                       
       </div>
     </div>
   )
