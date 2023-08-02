@@ -61,7 +61,7 @@ border-bottom: ${props => (props.title === 'SUV' ? '4px solid #222' : '')};
         window.location.href = '/mypage';
     };
     const cancelConfirm = () => alert("취소되었습니다.");
-    const confirmSave = useConfirm("저장하시겠습니까??", deleteConfirm, cancelConfirm
+    const confirmSave = useConfirm("저장하시겠습니까?", deleteConfirm, cancelConfirm
 );
   
   return (
