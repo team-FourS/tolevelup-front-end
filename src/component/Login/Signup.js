@@ -16,7 +16,7 @@ function Signup() {
 
       <div className="signUpForm"> 
         <div className="signUpID">
-          <p className="loginTitle">회원가입</p>  
+          <p className="loginTitle">회원가입d</p>  
           <img className="loginLogo" src={logo} alt="로고" />
 
           <TextField className="loginBox"
