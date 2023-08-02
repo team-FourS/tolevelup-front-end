@@ -1,11 +1,11 @@
 import React from "react";
 import {Routes, Route} from "react-router-dom";
 
-import Mission from "./component/Mission"
-import MissionCheck01 from "./component/MissionCheck01";
-import MissionCheck02 from "./component/MissionCheck02";
-import MissionCheck03 from "./component/MissionCheck03";
-import MissionCheck04 from "./component/MissionCheck04";
+import Mission from "./component/Mission/Mission"
+import MissionCheck01 from "./component/Mission/MissionCheck01";
+import MissionCheck02 from "./component/Mission/MissionCheck02";
+import MissionCheck03 from "./component/Mission/MissionCheck03";
+import MissionCheck04 from "./component/Mission/MissionCheck04";
 
 //import Feed from "./component/Feed/Feed"
 import AllFeed from "./component/Feed/AllFeed"
@@ -15,13 +15,14 @@ import Rank from "./component/Ranking"
 import Char from "./component/Character"
 import Mypage from "./component/Mypage"
 import Modify from "./component/Modify";
-import Login from "./component/login";
-import Logout from "./component/Logout"
-import FindID from "./component/FindID"
-import FindPassword from "./component/FindPassword"
-import Signup from "./component/signup"
-import Edit from "./component/Edit"
 
+import Login from "./component/Login/Login";
+import Logout from "./component/Login/Logout"
+import FindID from "./component/Login/FindID"
+import FindPassword from "./component/Login/FindPassword"
+import Signup from "./component/Login/Signup"
+
+import Edit from "./component/Edit"
 import Profile from "./component/Profile"
 import Alarm from "./component/Alarm"
 import Modal from "./component/Modal"

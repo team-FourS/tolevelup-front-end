@@ -1,10 +1,10 @@
 import React from 'react';
-import '../css/signup.css'
+import '../../css/signup.css'
 import {Routes, Route, Link} from "react-router-dom";
 import { TextField } from '@mui/material';
 import { Button } from '@mui/base';
-import Login from "./login";
-import logo from '../img/smallLogo.png';
+import Login from "../Login/Login";
+import logo from '../../img/smallLogo.png';
 
 function Signup() {
   

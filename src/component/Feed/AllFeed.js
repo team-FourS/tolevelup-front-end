@@ -2,8 +2,8 @@ import React from "react";
 import Header from "../../component/Header";
 import Footer from "../../component/Footer";
 import FollowFeed from "./FollowFeed";
-import {Routes, Route, Link} from "react-router-dom";
 import "../../css/Feed.css";
+import {Routes, Route, Link} from "react-router-dom";
 import user from '../../img/user.png';
 import {BiSearchAlt2} from "react-icons/bi";
 
@@ -20,7 +20,7 @@ const AllFeed = () => {
         <Link to ="/AllFeed">
           <h4 className="allFeed">전체 </h4>
         </Link>
-        <Link to ="FollowFeed">
+        <Link to ="/FollowFeed">
           <h4 className="followFeed">팔로우 중</h4>
         </Link>
 
@@ -32,87 +32,88 @@ const AllFeed = () => {
         </label>
       </div>
 
-      <div className="feedBox01">
-        <img className ="user_profile" src={user} alt='프로필' /> 
-        <div className="feedContent">  
-          <div className="userInfo">
-            <h4> Lv3. 나세계최강 </h4> 
-              <p className="oneLine">하루하루 성실하게!!</p>
-          </div>     
-          <div className="feedChecklist">          
-            <input type="checkbox" id="btn1" />
-            <label htmlFor="btn3"> 운동 | 줄넘기 100회 하기 </label> <br/>
-            <input type="checkbox" id="btn2" />
-            <label htmlFor="btn3"> 취미 | 캠핑 여행 다녀오기 </label>
+      <div className="feed_scrollbox">
+        <div className="feedBox01">
+          <img className ="user_profile" src={user} alt='프로필' /> 
+          <div className="feedContent">  
+            <div className="userInfo">
+              <h4> Lv2. 여기는 전체 </h4> 
+                <p className="oneLine">매일을 성실하게!!</p>
+            </div>     
+            <div className="feedChecklist">          
+              <input type="checkbox" id="btn1" />
+              <label htmlFor="btn3"> 운동 | 줄넘기 100회 하기 </label> <br/>
+              <input type="checkbox" id="btn2" />
+              <label htmlFor="btn3"> 취미 | 캠핑 여행 다녀오기 </label>
+            </div>
           </div>
+
+            <div className="commentContainer">
+              <form className="commentWrap">
+                <label>
+                <input className="Comment"
+                  type="text"
+                  placeholder="코멘트 달기..." />
+                  <button className="commetBtn">게시</button>
+                </label>
+              </form>
+            </div>
         </div>
+        
+        <div className="feedBox02">
+          <img className ="user_profile" src={user} alt='프로필' /> 
+          <div className="feedContent">  
+            <div className="userInfo">
+              <h4> Lv1. 짱구와흰둥이 </h4> 
+                <p className="oneLine">하루하루 성실하게!!</p>
+            </div>     
+            <div className="feedChecklist">          
+              <input type="checkbox" id="btn1" />
+              <label htmlFor="btn3"> 운동 | 줄넘기 100회 하기 </label> <br/>
+              <input type="checkbox" id="btn2" />
+              <label htmlFor="btn3"> 취미 | 캠핑 여행 다녀오기 </label>
+            </div>
+          </div>
 
-          <div className="commentContainer">
-            <form className="commentWrap">
-              <label>
-              <input className="Comment"
-                type="text"
-                placeholder="코멘트 달기..." />
-                <button className="commetBtn">게시</button>
-              </label>
-            </form>
-          </div>
-      </div>
-      
-      <div className="feedBox02">
-        <img className ="user_profile" src={user} alt='프로필' /> 
-        <div className="feedContent">  
-          <div className="userInfo">
-            <h4> Lv3. 나세계최강 </h4> 
-              <p className="oneLine">하루하루 성실하게!!</p>
-          </div>     
-          <div className="feedChecklist">          
-            <input type="checkbox" id="btn1" />
-            <label htmlFor="btn3"> 운동 | 줄넘기 100회 하기 </label> <br/>
-            <input type="checkbox" id="btn2" />
-            <label htmlFor="btn3"> 취미 | 캠핑 여행 다녀오기 </label>
-          </div>
+            <div className="commentContainer">
+              <form className="commentWrap">
+                <label>
+                <input className="Comment"
+                  type="text"
+                  placeholder="코멘트 달기..." />
+                  <button className="commetBtn">게시</button>
+                </label>
+              </form>
+            </div>
         </div>
+        
+        <div className="feedBox03">
+          <img className ="user_profile" src={user} alt='프로필' /> 
+          <div className="feedContent">  
+            <div className="userInfo">
+              <h4> Lv4. 올라프짱 </h4> 
+                <p className="oneLine">하루하루 성실하게!!</p>
+            </div>     
+            <div className="feedChecklist">          
+              <input type="checkbox" id="btn1" />
+              <label htmlFor="btn3"> 운동 | 줄넘기 100회 하기 </label> <br/>
+              <input type="checkbox" id="btn2" />
+              <label htmlFor="btn3"> 취미 | 캠핑 여행 다녀오기 </label>
+            </div>
+          </div>
 
-          <div className="commentContainer">
-            <form className="commentWrap">
-              <label>
-              <input className="Comment"
-                type="text"
-                placeholder="코멘트 달기..." />
-                <button className="commetBtn">게시</button>
-              </label>
-            </form>
-          </div>
-      </div>
-      
-      <div className="feedBox03">
-        <img className ="user_profile" src={user} alt='프로필' /> 
-        <div className="feedContent">  
-          <div className="userInfo">
-            <h4> Lv3. 나세계최강 </h4> 
-              <p className="oneLine">하루하루 성실하게!!</p>
-          </div>     
-          <div className="feedChecklist">          
-            <input type="checkbox" id="btn1" />
-            <label htmlFor="btn3"> 운동 | 줄넘기 100회 하기 </label> <br/>
-            <input type="checkbox" id="btn2" />
-            <label htmlFor="btn3"> 취미 | 캠핑 여행 다녀오기 </label>
-          </div>
+            <div className="commentContainer">
+              <form className="commentWrap">
+                <label>
+                <input className="Comment"
+                  type="text"
+                  placeholder="코멘트 달기..." />
+                  <button className="commetBtn">게시</button>
+                </label>
+              </form>
+            </div>
         </div>
-
-          <div className="commentContainer">
-            <form className="commentWrap">
-              <label>
-              <input className="Comment"
-                type="text"
-                placeholder="코멘트 달기..." />
-                <button className="commetBtn">게시</button>
-              </label>
-            </form>
-          </div>
       </div>
-
       <Footer/>
     </div>  
   );

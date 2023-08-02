@@ -23,7 +23,7 @@ const Character = () => {
     <div className="layout_char">
       <Header />
         <main className="main">
-          <span id ="health" onClick={() => setHealth(!health)}>
+        <span id ="health" onClick={() => setHealth(!health)}>
           {health && (
             <CModal closeModal={() => setHealth(!health)}>
               <Health />
@@ -31,7 +31,7 @@ const Character = () => {
           )}
             <img className ="home" src={cauldron} alt='집'></img>
             <h2 className="h2">운동</h2>
-      </span>
+        </span>
 
         <span id ="eat" style ={{display:'block'}} onClick={() => setEat(!eat)}>
           {eat && (

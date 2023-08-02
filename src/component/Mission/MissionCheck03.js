@@ -1,32 +1,28 @@
 import React from 'react';
-import '../css/MissionCheck.css';
-import Header from "../component/Header";
-import Footer from "../component/Footer";
+import '../../css/MissionCheck.css';
 
 const MissionCheck = () => {
     return (
         <div className='layout_mission'>
-          <Header/>
           <div className="checkList">
-            <button className="btnMissionCheck">운동</button>
+            <button className="btnMissionCheck">문화생활</button>
               <div className="checkBox">
                 <div className="checkWrap">
                   <input type="checkbox" id="btn1" />
-                  <label htmlFor="btn1"> 아침 스트레칭하기 </label> <br/><br/>
+                  <label htmlFor="btn1"> 영화 1편 보기 </label> <br/><br/>
                 </div>  
 
                 <div className="checkWrap">
                   <input type="checkbox" id="btn2" />
-                  <label htmlFor="btn2"> 30분 이상 산책하기 </label> <br/><br/>
+                  <label htmlFor="btn2"> 독서 200페이지 이상 하기 </label> <br/><br/>
                 </div>  
 
                 <div className="checkWrap">
                   <input type="checkbox" id="btn3" />
-                  <label htmlFor="btn3"> 줄넘기 100회 하기 </label>
+                  <label htmlFor="btn3"> 전시회 다녀오기 </label>
                 </div>
               </div>  
           </div>
-          <Footer/>
         </div>  
     )
 }

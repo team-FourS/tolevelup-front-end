@@ -15,6 +15,9 @@
 }
 
 /*상단 메뉴바*/
+.header_feed{
+  margin-top: -20px;
+}
 .allFeed{
   margin-left: 210px;
   margin-right: 15px;
@@ -35,6 +38,19 @@
   width: 200px; height: 30px;
 }
 
+/*피드 박스 스크롤*/
+.feed_scrollbox::-webkit-scrollbar {
+  width: 6px;
+}
+.feed_scrollbox::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+.feed_scrollbox{
+  width: auto;
+  height: 410px;
+  overflow-y: scroll;
+}
 /*피드 박스*/
 .feedBox01, .feedBox02, .feedBox03{
   width: 800px; 

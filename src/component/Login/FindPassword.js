@@ -1,12 +1,12 @@
 import React from 'react';
-import '../css/FindID.css'
+import '../../css/FindID.css'
 import {Routes, Route} from "react-router-dom";
 import { TextField } from '@mui/material';
 import { Button } from '@mui/base';
-import Login from "./login";
-import logo from '../img/smallLogo.png';
+import Login from "./Login";
+import logo from '../../img/smallLogo.png';
 
-function FindID() {
+function FindPassword() {
   
   return (
     <div className="LoginLayout">
@@ -39,4 +39,4 @@ function FindID() {
   );
 }
 
-export default FindID;
+export default FindPassword;

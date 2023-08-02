@@ -7,16 +7,17 @@
 }
 .logoimg{
     width: 120px; height: 30px;
+    margin-top: 10px;
     margin-right: 60%;
     margin-left: 12%;
 
 }
-.fontlo {
+.header_logout {
     color:gray;
     display: inline;
+    
 }
 .bell{
     display: inline;
     align-items: center;
-    
 }

@@ -1,8 +1,9 @@
 import React from "react";
 import {Routes, Route, Link} from "react-router-dom";
 import '../css/Footer.css'
-import Mission from "../component/Mission"
+import Mission from "././Mission/Mission"
 import AllFeed from "../component/Feed/AllFeed"
+import FollowFeed from "../component/Feed/FollowFeed"
 import Rank from "../component/Ranking"
 import Char from "../component/Character"
 import Mypage from "../component/Mypage"
@@ -21,6 +22,7 @@ const Footer = () => {
             <Routes className="layout">
                 <Route path="/Mission" element={<Mission />} />
                 <Route path="/AllFeed" element={<AllFeed />} />
+                <Route path="/FollowFeed" element={<FollowFeed />} />
                 <Route path="/rank" element={<Rank />} />
                 <Route path="/char" element={<Char />} />
                 <Route path="/mypage" element={<Mypage />} />

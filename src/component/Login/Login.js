@@ -1,18 +1,18 @@
 import React from 'react';
-import '../css/login.css'
+import '../../css/login.css'
 import { TextField } from '@mui/material';
 import { Button } from '@mui/base';
 // import FormControlLabel from '@mui/material/FormControlLabel';
 import {Routes, Route, Link} from "react-router-dom";
-import Mission from "./Mission";
-import Signup from "./signup";
+import Mission from "../Mission/Mission";
+import Signup from "../Login/Signup";
 
-import logo from '../img/smallLogo.png';
-import naver from '../img/naver.png';
-import google from '../img/google.png';
-import kakao from '../img/kakao.png';
+import logo from '../../img/smallLogo.png';
+import naver from '../../img/naver.png';
+import google from '../../img/google.png';
+import kakao from '../../img/kakao.png';
 
-function Logout() {
+function Login() {
   
   return (
     <div className='totalLogin'>
@@ -64,10 +64,12 @@ function Logout() {
             로그인
           </Button> <br/><br/>
         </Link>
-
+          <Link to="/signup" className="signup">
+              ToLevelUp 회원가입
+          </Link>
         </div>
       </div>
   );
 }
 
-export default Logout;
+export default Login;

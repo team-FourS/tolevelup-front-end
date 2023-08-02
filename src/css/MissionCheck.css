@@ -1,7 +1,7 @@
 .checkList{
   width: 270px;
+  margin-top: -210px;
 }
-
 .btnMissionCheck{
   color:white; background-color:mediumseagreen; border:none;
   width: 110px; height: 45px; 
@@ -10,7 +10,6 @@
   display: block ;
   margin-left: 75px;
 }
-
 .checkBox{
   font-size: 17px;
   background-color: rgb(174, 228, 170);

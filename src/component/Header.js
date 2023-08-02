@@ -1,7 +1,7 @@
 //import { render } from '@testing-library/react'
 import React from 'react';
 import '../css/Header.css'
-import Logout from './Logout'
+import Logout from './Login/Logout'
 import {Routes, Route, Link} from "react-router-dom";
 import Logo from '../img/ToLevelUp_logo.png'
 import {BiBell} from "react-icons/bi"
@@ -30,10 +30,10 @@ const Header = () => {
                             <Modal closeModal={() => setAlarm(!alarm)}>
                                 <Alarm />
                             </Modal>
-      )}
+                            )}
                         {/* </Link> */}
                         <Link to='/Logout'>               
-                            <div className='fontlo' > | 로그아웃</div>
+                            <div className='header_logout' > | 로그아웃</div>
                         </Link>   
     
                     
