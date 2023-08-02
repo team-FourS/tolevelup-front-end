@@ -62,7 +62,7 @@ const Character = () => {
             </CModal>
           )}
           <img className ="home" src={doll} alt='집'></img>
-          <h2 className="h2">문화생활</h2>
+          <h2 className="h2">문화생활o</h2>
       </span>
   </main>
   <Footer/>
