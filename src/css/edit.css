@@ -1,5 +1,44 @@
+.layout1{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
 .edit{
-    color: gray;
-    font-weight: lighter;
-    position: fixed;
+    display: inline-flex;
+}
+.edit_title_box{
+    display: block;
+}
+.edit_box1{
+    display: inline-flex;
+}
+.edit_box2{
+    display: inline-flex;
+}
+.click_link{
+    display: inline;
+}
+.square_edit{
+    display: block;
+    text-align: center;
+    margin: 20px;
+    align-items: center;
+    border: solid 2px gray;
+    border-radius: 10px;
+    height: 530px;
+    width: 600px;
+}
+.square_in_edit{
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.intro_edit{
+    width:190px; height: 30px;
+    margin: 5px;
+    font-size: 15px;
+    border-width: 0 0 1px;
 }

@@ -1,15 +1,15 @@
 import React from 'react';
-import user from '../img/user.png'
+import user from '../../img/user.png'
 import {Routes, Route, Link} from "react-router-dom";
 import Modify from "./Modify"
-import "../css/Mypage.css"
-import Header from "../component/Header";
-import Footer from "../component/Footer";
+import "../../css/Mypage.css"
+import Header from "../Header";
+import Footer from "../Footer";
 import { useState } from "react";
-import Modal from "./Modal";
+import Modal from "../Modal";
 import Follower from "./Follower";
 import Following from './Following';
-import CommentDa from "./CommentDa";
+import CommentDa from "../CommentDa";
 
 
 const Mypage = () => {

@@ -1,6 +1,6 @@
 import React from "react";
-import "../css/Following.css"
-import user from '../img/user.png';
+import "../../css/Following.css"
+import user from '../../img/user.png';
 
 const Following = () => {
     return (

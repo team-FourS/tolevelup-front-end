@@ -1,19 +1,14 @@
-.layout{
+.layout_modify{
   display: flex;
   width: 100%;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  /* font-family: 'NanumSquareNeo-Variable'; */
+  min-height: 80%;
+  margin-top: 10vh;
 }
 .main{
   display: block;
 }
-/* .status-hp2 {
-  position: relative;
-  display: inline;
-  
-  } */
 .bar {
   width: 250px;
   height: 15px;
@@ -29,21 +24,24 @@
   text-align: right;
   display: block;
   margin: 20px;
-  /* background-color: aquamarine; */
 }
 .square{
   display: block;
   text-align: center;
   margin: 20px;
   align-items: center;
+  border: solid 2px gray;
+  border-radius: 10px;
+}
+.square_in{
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .profils{
   display: block;
 }
-/* .profils:hover{
-  border: orange 4px solid;
-  border-radius: 63px;
-} */
 .she{
   display: inline-block;
 }
@@ -60,18 +58,12 @@
   width:190px; height: 30px;
   margin: 5px;
   font-size: 15px;
+  border-width: 0 0 1px;
 }
-/* @font-face {
-  font-family: 'NanumSquareNeo-Variable';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-} */
-.mama {
-  display: inline-flex;
-}
-.momo{
-  display: inline-flex;
+.modify_allbox{
+  display: block;
+  align-items: center;
+  text-align: center;
 }
 .btnstyle{
       color:white;
@@ -81,6 +73,10 @@
       border: none;
       border-radius: 5px;
       margin: 5px;
+      
+}
+.btn_modi{
+  align-items: center;
 }
 .profils{
   width: 120px;
@@ -121,6 +117,25 @@
 .oneline_font{
   color: rgb(107, 106, 106);
 }
-/* th, td {
-  border: 1px solid #444444;
-} */
+.block{
+  display: inline-flex;
+}
+.private_locate{
+  margin-right: 20px;
+}
+.profile_locate{
+  margin-left: 20px;
+}
+
+.signup-profileImg-label {
+  margin: 5px 0 20px 0;
+  font-weight: bold;
+  font-size: 13px;
+  color: #0095f6;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.form-signup input[type="file"] {
+  display: none;
+}

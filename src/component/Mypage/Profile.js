@@ -1,20 +1,20 @@
 import React from "react";
-import alka1 from '../img/alka1.png';
-import alka2 from '../img/alka2.png';
-import alka3 from '../img/alka3.png';
-import alka4 from '../img/alka4.png';
-import uyung1 from '../img/uyung1.png';
-import uyung2 from '../img/uyung2.png';
-import uyung3 from '../img/uyung3.png';
-import uyung4 from '../img/uyung4.png';
-import dalcool1 from '../img/dalcool1.jpg';
-import dalcool2 from '../img/dalcool2.jpg';
-import dalcool3 from '../img/dalcool3.jpg';
-import dalcool4 from '../img/dalcool4.jpg';
-import '../css/Profile.css'
+import alka1 from '../../img/alka1.png';
+import alka2 from '../../img/alka2.png';
+import alka3 from '../../img/alka3.png';
+import alka4 from '../../img/alka4.png';
+import uyung1 from '../../img/uyung1.png';
+import uyung2 from '../../img/uyung2.png';
+import uyung3 from '../../img/uyung3.png';
+import uyung4 from '../../img/uyung4.png';
+import dalcool1 from '../../img/dalcool1.jpg';
+import dalcool2 from '../../img/dalcool2.jpg';
+import dalcool3 from '../../img/dalcool3.jpg';
+import dalcool4 from '../../img/dalcool4.jpg';
+import '../../css/Profile.css';
 
 const Profile = () => {
-    return (
+return (
       <div>
       <header className="header2" style={{backgroundColor:'white'}} >
                   <div className="" style={{margin:'15px'}}>

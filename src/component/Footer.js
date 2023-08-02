@@ -6,8 +6,8 @@ import AllFeed from "../component/Feed/AllFeed"
 import FollowFeed from "../component/Feed/FollowFeed"
 import Rank from "../component/Ranking"
 import Char from "../component/Character/Character"
-import Mypage from "../component/Mypage"
-import Modify from "../component/Modify";
+import Mypage from "../component/Mypage/Mypage"
+import Modify from "./Mypage/Modify";
 
 import { HiSquares2X2 } from "react-icons/hi2";
 import { BsClipboard2Check } from "react-icons/bs";

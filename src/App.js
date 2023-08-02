@@ -13,8 +13,8 @@ import FollowFeed from "./component/Feed/FollowFeed"
 
 import Rank from "./component/Ranking"
 import Char from "./component/Character/Character"
-import Mypage from "./component/Mypage"
-import Modify from "./component/Modify";
+import Mypage from "./component/Mypage/Mypage"
+import Modify from "./component/Mypage/Modify";
 
 import Login from "./component/Login/Login";
 import Logout from "./component/Login/Logout"
@@ -22,8 +22,8 @@ import FindID from "./component/Login/FindID"
 import FindPassword from "./component/Login/FindPassword"
 import Signup from "./component/Login/Signup"
 
-import Edit from "./component/Edit"
-import Profile from "./component/Profile"
+import Edit from "./component/Mypage/Edit"
+import Profile from "./component/Mypage/Profile"
 import Alarm from "./component/Alarm"
 import Modal from "./component/Modal"
 
