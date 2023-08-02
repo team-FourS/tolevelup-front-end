@@ -5,7 +5,7 @@ import Mission from "././Mission/Mission"
 import AllFeed from "../component/Feed/AllFeed"
 import FollowFeed from "../component/Feed/FollowFeed"
 import Rank from "../component/Ranking"
-import Char from "../component/Character"
+import Char from "../component/Character/Character"
 import Mypage from "../component/Mypage"
 import Modify from "../component/Modify";
 

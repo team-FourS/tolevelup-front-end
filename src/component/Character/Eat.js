@@ -1,6 +1,6 @@
 import React from "react";
-import "../css/Health.css"
-import user from '../img/user.png'
+import "../../css/Health.css"
+import user from '../../img/user.png'
 
 const Eat = () => {
     return (

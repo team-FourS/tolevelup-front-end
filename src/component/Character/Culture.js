@@ -1,8 +1,8 @@
 import React from "react";
-import "../css/Health.css"
-import user from '../img/user.png'
+import "../../css/Health.css"
+import user from '../../img/user.png'
 
-const Play = () => {
+const Culture = () => {
     return (
       <main className="layout_health">
         <div className="health_lay">
@@ -35,8 +35,8 @@ const Play = () => {
               </div>
 </div>
       </main> 
- 
+
     );
   }
 
-  export default Play;
+  export default Culture;

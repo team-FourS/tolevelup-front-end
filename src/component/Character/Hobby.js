@@ -1,19 +1,19 @@
 import React from "react";
-import "../css/Health.css"
-import user from '../img/user.png'
+import "../../css/Health.css"
+import user from '../../img/user.png'
 
-const Health = () => {
+const Hobby = () => {
     return (
       <main className="layout_health">
         <div className="health_lay">
-          <div className="however">
-          <h2 className="health_font1"><strong>운동</strong></h2>
+        <div className="however">
+          <h2 className="health_font1"><strong>취미</strong></h2>
             <img className ="Lv_health" src={user} alt='운동레벨'></img>
               <h4 className="health_font2">당신의 레벨은 현재</h4>
                 <h2 className="health_font3"><strong>Lv. _</strong></h2>
                   <div className="status-hpchar">
                       <div className="bar_char">
-                          <div className="currentBar_char" style={{width:'70px'}}></div>    
+                          <div className="currentBar_char3" style={{width:'70px'}}></div>    
                       </div>
                     </div>
                   <hr />
@@ -33,10 +33,10 @@ const Health = () => {
                     </tbody>
                   </table>
               </div>
-              </div>
+</div>
       </main> 
  
     );
   }
 
-  export default Health;
+  export default Hobby;
