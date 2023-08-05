@@ -18,6 +18,8 @@ const Follower = () => {
                 </tr> */}
             </thead>
             <tbody>
+            <div className="follower_scrollbox">
+            <div className="followerbox">
               <tr>
                 <td className="td1">
                   <div className="table_wer">
@@ -49,7 +51,51 @@ const Follower = () => {
                     <h5 className="id_wer">_whoops</h5>
                   </div>
                 </td>
+                <td className="td1">
+                <div className="table_wer">
+                    <img className ="profil3" src={user} alt='프로필'></img>
+                    <h5 className="id_wer">_whoops</h5>
+                  </div>
+                </td>
+                <td className="td1">
+                <div className="table_wer">
+                    <img className ="profil3" src={user} alt='프로필'></img>
+                    <h5 className="id_wer">_whoops</h5>
+                  </div>
+                </td>
+                <td className="td1">
+                <div className="table_wer">
+                    <img className ="profil3" src={user} alt='프로필'></img>
+                    <h5 className="id_wer">_whoops</h5>
+                  </div>
+                </td>
+                <td className="td1">
+                <div className="table_wer">
+                    <img className ="profil3" src={user} alt='프로필'></img>
+                    <h5 className="id_wer">_whoops</h5>
+                  </div>
+                </td>
+                <td className="td1">
+                <div className="table_wer">
+                    <img className ="profil3" src={user} alt='프로필'></img>
+                    <h5 className="id_wer">_whoops</h5>
+                  </div>
+                </td>
+                <td className="td1">
+                <div className="table_wer">
+                    <img className ="profil3" src={user} alt='프로필'></img>
+                    <h5 className="id_wer">_whoops</h5>
+                  </div>
+                </td>
+                <td className="td1">
+                <div className="table_wer">
+                    <img className ="profil3" src={user} alt='프로필'></img>
+                    <h5 className="id_wer">_whoops</h5>
+                  </div>
+                </td>
               </tr>
+              </div>
+              </div>
             </tbody>
           </table>
         </div>

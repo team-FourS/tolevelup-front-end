@@ -37,3 +37,18 @@
     font-weight: 800;
     text-align: left;
 }
+.follower_scrollbox{
+  width: auto;
+  height: 300px;
+  overflow-y: scroll;
+}
+.follower_scrollbox::-webkit-scrollbar {
+  width: 6px;
+}
+.follower_scrollbox::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+.followerbox{
+  margin: auto;
+}

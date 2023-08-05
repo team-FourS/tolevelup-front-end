@@ -1,11 +1,11 @@
-.layout_alr{
+/* .layout_alr{
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
     min-height: 80%;
     position: relative;
-  }
+  } */
   .alarm_lay{
     /* margin-top: 10vh; */
     align-items: left;

@@ -36,3 +36,18 @@
     font-size: 15px;
     font-weight: 800;
 }
+.following_scrollbox{
+  width: auto;
+  height: 300px;
+  overflow-y: scroll;
+}
+.following_scrollbox::-webkit-scrollbar {
+  width: 6px;
+}
+.following_scrollbox::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+.followingbox{
+  margin: auto;
+}
