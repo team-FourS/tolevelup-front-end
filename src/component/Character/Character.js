@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import cauldron from '../../img/cauldron.png'
-import magicwand from '../../img/magicwand.png'
 import "../../css/Character.css"
 import Header from "../Header";
 import Footer from "../Footer";
@@ -11,6 +10,7 @@ import Culture from "./Culture";
 import Hobby from "./Hobby";
 import EatCharacter from '../../img/Eat-character.png'
 import culturecharacter from '../../img/Cul-chaeacter.png'
+import CultureLv01 from '../../img/Culture-Lv01.png'
 
 const Character = () => {
 
@@ -58,8 +58,8 @@ const Character = () => {
               <Culture />
             </CModal>
           )}
-          <img className ="home" src={magicwand} alt='문화생활'></img>
-          <h2 className="h2">문화</h2>
+          <img className ="home" src={CultureLv01} alt='문화생활'></img>
+          <h2 className="h2">문화생활</h2>
       </span>
       </button>
       </main>
