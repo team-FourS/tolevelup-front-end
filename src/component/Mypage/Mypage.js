@@ -93,9 +93,7 @@ const Mypage = () => {
                             <div className='cntnum'><strong>0</strong></div>
                             <div className='follower_following_comment'>코멘트</div>
                     </div>
-                       
-                
-                
+                        
                     <div className="text">
                     <div className="mission_bar">
                         <div className='bar_title'>

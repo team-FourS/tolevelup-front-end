@@ -16,7 +16,7 @@ function FindPassword() {
 
       <div className="loginForm"> 
         <div className="loginID">
-          <p className="loginTitle">아이디 찾기</p>  
+          <p className="loginTitle">비밀번호 찾기</p>  
           <img className="loginLogo" src={logo} alt="로고" />
 
           <TextField className="loginBox"
