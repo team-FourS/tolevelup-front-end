@@ -25,7 +25,7 @@ import Signup from "./component/Login/Signup"
 import Edit from "./component/Mypage/Edit"
 import Profile from "./component/Mypage/Profile"
 import Alarm from "./component/Alarm"
-import Modal from "./component/Modal"
+// import Modal from "./component/Modal"
 
 import "./App.css"
 
@@ -55,7 +55,7 @@ function App() {
               <Route path="/edit" element={<Edit />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/alarm" element={<Alarm />} />
-              <Route path="/modal" element={<Modal />} />
+              {/* <Route path="/modal" element={<Modal />} /> */}
           </Routes>                       
       </div>
     </div>

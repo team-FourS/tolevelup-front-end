@@ -20,6 +20,8 @@ const Following = () => {
                 </tr> */}
             </thead>
             <tbody>
+            <div className="following_scrollbox">
+            <div className="followingbox">
               <tr>
                 <td className="td">
                   <div className="table_lay">
@@ -51,7 +53,27 @@ const Following = () => {
                     <h5 className="id_alarm">_whoops</h5>
                   </div>
                 </td>
+                <td className="td1">
+                  <div className="table_lay">
+                    <img className ="profil2" src={user} alt='프로필'></img>
+                    <h5 className="id_alarm">_whoops</h5>
+                  </div>
+                </td>
+                <td className="td1">
+                  <div className="table_lay">
+                    <img className ="profil2" src={user} alt='프로필'></img>
+                    <h5 className="id_alarm">_whoops</h5>
+                  </div>
+                </td>
+                <td className="td1">
+                  <div className="table_lay">
+                    <img className ="profil2" src={user} alt='프로필'></img>
+                    <h5 className="id_alarm">_whoops</h5>
+                  </div>
+                </td>
               </tr>
+              </div>
+              </div>
             </tbody>
           </table>
         </div>
