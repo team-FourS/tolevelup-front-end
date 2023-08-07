@@ -30,8 +30,8 @@
   }
   .Lv_health{
     align-items: center;
-    width: 180px;
-    height: 180px;
+    width: 140px;
+    height: 150px;
   }
   .status-hpchar {
     /* position: relative; */

@@ -6,7 +6,7 @@
     min-height: 100vh;
 }
 .home {
-    width: 150px;
+    width: 140px;
     height: 150px;
     margin: 30px;
 }
@@ -16,7 +16,6 @@
 .health{
     display: block;
 }
-
 .btn_character{
     margin: 20px;
     border-radius: 20px;
@@ -47,9 +46,9 @@
     transition: top .01s linear;
     background-color: #f79dd2;
     box-shadow: 0 0 0 1px #ea80be inset,
-          0 8px 0 0 #ec89c2,
-          0 8px 0 1px #a8a6a6,
-          0 8px 8px 1px #a8a6a6;
+          0 6px 0 0 #ec89c2,
+          0 6px 0 1px #a8a6a6,
+          0 6px 6px 1px #a8a6a6;
   }
   .btn_exercise_character:active {
     box-shadow: 0 0 0 1px rgba(255,255,255,0.15) inset,
@@ -80,8 +79,8 @@
     margin: 20px;
     transition: top .01s linear;
     background-color: #f1ef78;
-    box-shadow: 0 0 0 1px #bfbf4a inset,
-          0 6px 0 0 #bfbf4a,
+    box-shadow: 0 0 0 1px #dcdc75 inset,
+          0 6px 0 0 #dcdc75,
           0 6px 0 1px #a8a6a6,
           0 6px 6px 1px #a8a6a6;
   }

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import cauldron from '../../img/cauldron.png'
 import "../../css/Character.css"
 import Header from "../Header";
 import Footer from "../Footer";
@@ -9,8 +8,9 @@ import Eat from "./Eat";
 import Culture from "./Culture";
 import Hobby from "./Hobby";
 import EatCharacter from '../../img/Eat-character.png'
-import culturecharacter from '../../img/Cul-chaeacter.png'
+import Hobby1 from '../../img/Hobby1.png'
 import CultureLv01 from '../../img/Culture-Lv01.png'
+import healthcharacter from '../../img/health-character.png'
 
 const Character = () => {
 
@@ -30,7 +30,7 @@ const Character = () => {
               <Health />
             </CModal>
           )}
-            <img className ="home" src={cauldron} alt='운동'></img>
+            <img className ="home" src={healthcharacter} alt='운동'></img>
             <h2 className="h2">운동</h2>
       </span>
 </button>
@@ -71,7 +71,7 @@ const Character = () => {
               <Hobby />
             </CModal>
           )}
-          <img className ="home" src={culturecharacter} alt='취미'></img>
+          <img className ="home" src={Hobby1} alt='취미'></img>
           <h2 className="h2">취미</h2>
       </span>
       </button>
