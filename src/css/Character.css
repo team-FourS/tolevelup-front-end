@@ -41,14 +41,64 @@
           0 8px 8px 1px rgba(0,0,0,0.5);
     z-index: 0;
   }
- /* .btn_character:hover {
+
+  .btn_exercise_character{
+    border-radius: 20px;
+    border: none;
+    margin: 20px;
+    transition: top .01s linear;
+    background-color: #f79dd2;
+    box-shadow: 0 0 0 1px #ea80be inset,
+          0 6px 0 0 #ec89c2,
+          0 6px 0 1px #ec89c2,
+          0 6px 6px 1px #ec89c2;
+          z-index: 0;
+  }
+  .btn_eat_character{
+    border-radius: 20px;
+    border: none;
+    margin: 20px;
+    transition: top .01s linear;
+    background-color: #71cffa;
+    box-shadow: 0 0 0 1px #4bb2ea inset,
+          0 6px 0 0 #4bb2ea,
+          0 6px 0 1px #4bb2ea,
+          0 6px 6px 1px #4bb2ea;
+          z-index: 0;
+  }
+  .btn_culture_character{
+    border-radius: 20px;
+    border: none;
+    margin: 20px;
+    transition: top .01s linear;
+    background-color: #f1ef78;
+    box-shadow: 0 0 0 1px #bfbf4a inset,
+          0 6px 0 0 #dcdc75,
+          0 6px 0 1px #dcdc75,
+          0 6px 6px 1px #dcdc75;
+          z-index: 0;
+  }
+  .btn_hobby_character{
+    border-radius: 20px;
+    border: none;
+    margin: 20px;
+    transition: top .01s linear;
+    background-color: #85d870;
+    box-shadow: 0 0 0 1px #6dc657 inset,
+          0 6px 0 0 #72ca85,
+          0 6px 0 1px #72ca85,
+          0 6px 6px 1px #72ca85;
+          z-index: 0;
+        }
+
+  /* .btn_character:hover {
     background: #82c8a0;
     box-sizing: border-box;
-     box-shadow: 0 0 0 1px #82c8a0 inset,
-           0 0 0 2px rgba(255,255,255,0.15) inset,
-           0 8px 0 0 rgba(126, 194, 155, .7),
-           0 8px 0 1px rgba(0,0,0,.4),
-           0 8px 8px 1px rgba(0,0,0,0.5);
+    box-shadow: 0 0 0 1px #82c8a0 inset,
+          0 0 2px rgba(255,255,255,0.15) inset,
+          0 8px 0 0 rgba(126, 194, 155, .7),
+          0 8px 0 1px rgba(0,0,0,.4),
+          0 8px 8px 1px rgba(0,0,0,0.5);
   } */
 .btn_character:active{
   box-shadow: 0 0 0 1px #82c8a0 inset,
@@ -85,9 +135,9 @@
         border-radius: 6px;
         text-align: center;
         transition: top .01s linear;
-        text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+        text-shadow: 0 1px 0 rgba(0,0,0,0.15); 
+} 
 
-}
 .main_character3:active {
     top: 9px;
   }
@@ -106,4 +156,4 @@
 }
 .main_character4:active {
     top: 9px;
-  }
+  } 

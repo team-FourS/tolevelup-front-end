@@ -23,7 +23,7 @@ const Character = () => {
     <div className="layout_char">
       <Header />
         <main className="main_character">
-        <button className="btn_character">
+        <button className="btn_exercise_character">
           <span id ="health" onClick={() => setHealth(!health)}>
           {health && (
             <CModal closeModal={() => setHealth(!health)}>
@@ -36,7 +36,7 @@ const Character = () => {
 </button>
 </main>
 <main className="main_character">
-      <button className="btn_character">
+      <button className="btn_eat_character">
       <span id ="eat" style ={{display:'block'}} onClick={() => setEat(!eat)}>
           {eat && (
             <CModal closeModal={() => setEat(!eat)}>
@@ -51,7 +51,7 @@ const Character = () => {
     
 
   <main className="main_character">
-    <button className="btn_character">
+    <button className="btn_culture_character">
       <span id ="play" style ={{display:'block'}} onClick={() => setPlay(!culture)}>
           {culture && (
             <CModal closeModal={() => setPlay(!culture)}>
@@ -64,7 +64,7 @@ const Character = () => {
       </button>
       </main>
       <main className="main_character">
-      <button className="btn_character">
+      <button className="btn_hobby_character">
       <span id ="hobby" style ={{display:'block'}} onClick={() => setHobby(!hobby)}>
           {hobby && (
             <CModal closeModal={() => setHobby(!hobby)}>

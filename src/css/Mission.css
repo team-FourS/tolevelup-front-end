@@ -24,21 +24,22 @@
   font-size: 30px; font-weight: 700;
   margin-bottom: 30px;
   background-color: beige;
+  box-shadow: 0px 3px 0px rgb(234, 234, 186);
 }
 
 .btnMission{
-  color:white; background-color:mediumseagreen; border:none;
+  color:white; 
+  background-color:mediumseagreen; 
+  box-shadow: 2px 4px 2px rgb(66, 152, 105);
+  border:none; border-radius: 10px;
   width: 110px; height: 45px; 
-  border-radius: 10px;
   font-size: 17px;
   margin: 15px 45px 0px 45px;
-
 }
 
 .missionImg {
   display: block;
 }
-
 .mainImg {
   width: 130px;
   height: 130px;
