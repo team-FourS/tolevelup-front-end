@@ -1,12 +1,22 @@
 import React from "react";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
+import "../css/Ranking.css";
 
 const Rank = () => {
     return (
-      <main className="layout">
+      <main className="layout_ranking">
         <Header/>
-          <h1>랭킹 화면입니다.</h1>
+          <div className="header_ranking">
+            <button className="ranking_button">전체</button>
+            <button className="ranking_button">운동</button>
+            <button className="ranking_button">식습관</button>
+            <button className="ranking_button">문화생활</button>
+            <button className="ranking_button">취미</button>
+            
+          </div>
+
+          
         <Footer/>
       </main>  
     );

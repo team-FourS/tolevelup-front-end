@@ -2,10 +2,11 @@ import React from "react";
 import Header from "../../component/Header";
 import Footer from "../../component/Footer";
 import FollowFeed from "./FollowFeed";
-import "../../css/Feed.css";
+import "../../css/AllFeed.css";
 import {Routes, Route, Link} from "react-router-dom";
 import user from '../../img/user.png';
 import {BiSearchAlt2} from "react-icons/bi";
+//import { LiaCommentSolid } from "react-icons/lia";
 
 const AllFeed = () => {
   return (
@@ -44,20 +45,10 @@ const AllFeed = () => {
               <input type="checkbox" id="btn1" />
               <label htmlFor="btn3"> 운동 | 줄넘기 100회 하기 </label> <br/>
               <input type="checkbox" id="btn2" />
-              <label htmlFor="btn3"> 취미 | 캠핑 여행 다녀오기 </label>
+              <label htmlFor="btn3"> 취미 | 캠핑 여행 다녀오기 </label> 
             </div>
+            {/* <LiaCommentSolid/> */}
           </div>
-
-            <div className="commentContainer">
-              <form className="commentWrap">
-                <label>
-                <input className="Comment"
-                  type="text"
-                  placeholder="코멘트 달기..." />
-                  <button className="commetBtn">게시</button>
-                </label>
-              </form>
-            </div>
         </div>
         
         <div className="feedBox02">
@@ -74,17 +65,6 @@ const AllFeed = () => {
               <label htmlFor="btn3"> 취미 | 캠핑 여행 다녀오기 </label>
             </div>
           </div>
-
-            <div className="commentContainer">
-              <form className="commentWrap">
-                <label>
-                <input className="Comment"
-                  type="text"
-                  placeholder="코멘트 달기..." />
-                  <button className="commetBtn">게시</button>
-                </label>
-              </form>
-            </div>
         </div>
         
         <div className="feedBox03">
@@ -101,18 +81,25 @@ const AllFeed = () => {
               <label htmlFor="btn3"> 취미 | 캠핑 여행 다녀오기 </label>
             </div>
           </div>
-
-            <div className="commentContainer">
-              <form className="commentWrap">
-                <label>
-                <input className="Comment"
-                  type="text"
-                  placeholder="코멘트 달기..." />
-                  <button className="commetBtn">게시</button>
-                </label>
-              </form>
-            </div>
         </div>
+
+
+        <div className="feedBox04">
+          <img className ="user_profile" src={user} alt='프로필' /> 
+          <div className="feedContent">  
+            <div className="userInfo">
+              <h4> Lv1. 군옥수수맛 </h4> 
+                <p className="oneLine">아몬드 존맛탱구리</p>
+            </div>     
+            <div className="feedChecklist">          
+              <input type="checkbox" id="btn1" />
+              <label htmlFor="btn3"> 식습관 | 물 6잔 이상 마시기 </label> <br/>
+              <input type="checkbox" id="btn2" />
+              <label htmlFor="btn3"> 취미 | 오늘 하루 이상 일기에 담기 </label>
+            </div>
+          </div>
+        </div>
+
       </div>
       <Footer/>
     </div>  
