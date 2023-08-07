@@ -16,7 +16,8 @@
 .health{
     display: block;
 }
-/* .btn_character{
+
+.btn_character{
     margin: 20px;
     border-radius: 20px;
     border: lightgray;
@@ -24,44 +25,20 @@
     box-shadow: 0 0 40px 40px rgb(248, 248, 248) inset, 0 0 0 0 rgb(203, 248, 239);
     transition: all 150ms ease-in-out;
 }
-.btn_character:hover{
-    box-shadow: 0 0 10px 0 rgb(203, 219, 248) inset,0 0 10px 10px rgb(203, 219, 248);
-} */
-.btn_character {
-    border-radius: 20px;
-    border-color: lightgray; 
-    border: 5px;
-    margin: 20px;
-    transition: top .01s linear;
-    background-image: linear-gradient(to right, #82c8a0 0%, #d2eebc 51%,#84fab0 100%);
-    box-shadow: 0 0 0 1px #82c8a0 inset,
-          0 0 0 2px rgba(255,255,255,0.15) inset,
-          0 8px 0 0 rgba(126, 194, 155, .7),
-          0 8px 0 1px rgba(0,0,0,.4),
-          0 8px 8px 1px rgba(0,0,0,0.5);
-    z-index: 0;
 
-    /* 임시 색깔 분류 */
-    /* background-image: linear-gradient(to right, #d1d3d3 0%, #dddedc 51%,#d1d3d3 100%);
-    box-shadow: 0 0 0 1px #d1d3d3 inset,
-          0 0 0 2px rgba(255,255,255,0.15) inset,
-          0 8px 0 0 rgba(83, 83, 83, 0.7),
-          0 8px 0 1px rgba(0,0,0,.4),
-          0 8px 8px 1px rgba(0,0,0,0.5);
-    z-index: 0; */
-  }
- .btn_character:hover {
-  /* 
-  사진확대
-  transform: scale(1.2);
-  -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  -o-transform: scale(1.2); */
-  
-  background-position: right center;
-  }
-
+.main_character{
+  display: inline-block;
+  font-size: 22px;
+  color: white;
+  border-radius: 6px;
+  text-align: center;
+  transition: top .01s linear;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+}
+.main_character:active {
+  position: relative;
+  top: 9px;
+}
 
   .btn_exercise_character{
     border-radius: 20px;
@@ -70,11 +47,16 @@
     transition: top .01s linear;
     background-color: #f79dd2;
     box-shadow: 0 0 0 1px #ea80be inset,
-          0 6px 0 0 #ec89c2,
-          0 6px 0 1px #ec89c2,
-          0 6px 6px 1px #ec89c2;
-          z-index: 0;
+          0 8px 0 0 #ec89c2,
+          0 8px 0 1px #a8a6a6,
+          0 8px 8px 1px #a8a6a6;
   }
+  .btn_exercise_character:active {
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.15) inset,
+          0 0 0 2px rgba(255,255,255,0.15) inset,
+          0 0 0 1px rgba(0,0,0,0.4);
+  }
+
   .btn_eat_character{
     border-radius: 20px;
     border: none;
@@ -83,10 +65,15 @@
     background-color: #71cffa;
     box-shadow: 0 0 0 1px #4bb2ea inset,
           0 6px 0 0 #4bb2ea,
-          0 6px 0 1px #4bb2ea,
-          0 6px 6px 1px #4bb2ea;
-          z-index: 0;
+          0 6px 0 1px #a8a6a6,
+          0 6px 6px 1px #a8a6a6;
   }
+  .btn_eat_character:active {
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.15) inset,
+          0 0 0 2px rgba(255,255,255,0.15) inset,
+          0 0 0 1px rgba(0,0,0,0.4);
+  }
+
   .btn_culture_character{
     border-radius: 20px;
     border: none;
@@ -94,11 +81,16 @@
     transition: top .01s linear;
     background-color: #f1ef78;
     box-shadow: 0 0 0 1px #bfbf4a inset,
-          0 6px 0 0 #dcdc75,
-          0 6px 0 1px #dcdc75,
-          0 6px 6px 1px #dcdc75;
-          z-index: 0;
+          0 6px 0 0 #bfbf4a,
+          0 6px 0 1px #a8a6a6,
+          0 6px 6px 1px #a8a6a6;
   }
+  .btn_culture_character:active {
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.15) inset,
+          0 0 0 2px rgba(255,255,255,0.15) inset,
+          0 0 0 1px rgba(0,0,0,0.4);
+  }
+
   .btn_hobby_character{
     border-radius: 20px;
     border: none;
@@ -107,75 +99,11 @@
     background-color: #85d870;
     box-shadow: 0 0 0 1px #6dc657 inset,
           0 6px 0 0 #72ca85,
-          0 6px 0 1px #72ca85,
-          0 6px 6px 1px #72ca85;
-          z-index: 0;
+          0 6px 0 1px #a8a6a6,
+          0 6px 6px 1px #a8a6a6;
         }
-
-  /* .btn_character:hover {
-    background: #82c8a0;
-    box-sizing: border-box;
-    box-shadow: 0 0 0 1px #82c8a0 inset,
-          0 0 2px rgba(255,255,255,0.15) inset,
-          0 8px 0 0 rgba(126, 194, 155, .7),
-          0 8px 0 1px rgba(0,0,0,.4),
-          0 8px 8px 1px rgba(0,0,0,0.5);
-  } */
-
-.btn_character:active{
-  box-shadow: 0 0 0 1px #82c8a0 inset,
-        0 0 0 2px rgba(255,255,255,0.15) inset,
-        0 0 0 1px rgba(0,0,0,0.4);
+  .btn_hobby_character:active {
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.15) inset,
+                0 0 0 2px rgba(255,255,255,0.15) inset,
+                0 0 0 1px rgba(0,0,0,0.4);
 }
-.main_character:active {
-    position: relative;
-    top: 9px;
-  }
-.main_character2{
-        position: relative;
-        display: inline-block;
-        font-size: 22px;
-        /* padding: 20px 60px; */
-        color: white;
-        /* margin: 20px 10px 10px; */
-        border-radius: 6px;
-        text-align: center;
-        transition: top .01s linear;
-        text-shadow: 0 1px 0 rgba(0,0,0,0.15);
-
-}
-.main_character2:active {
-    top: 9px;
-  }
-.main_character3{
-        position: relative;
-        display: inline-block;
-        font-size: 22px;
-        /* padding: 20px 60px; */
-        color: white;
-        /* margin: 20px 10px 10px; */
-        border-radius: 6px;
-        text-align: center;
-        transition: top .01s linear;
-        text-shadow: 0 1px 0 rgba(0,0,0,0.15); 
-} 
-
-.main_character3:active {
-    top: 9px;
-  }
-.main_character4{
-        position: relative;
-        display: inline-block;
-        font-size: 22px;
-        /* padding: 20px 60px; */
-        color: white;
-        /* margin: 20px 10px 10px; */
-        border-radius: 6px;
-        text-align: center;
-        transition: top .01s linear;
-        text-shadow: 0 1px 0 rgba(0,0,0,0.15);
-
-}
-.main_character4:active {
-    top: 9px;
-  } 
