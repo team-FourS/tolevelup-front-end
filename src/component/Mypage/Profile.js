@@ -3,10 +3,6 @@ import alka1 from '../../img/alka1.png';
 import alka2 from '../../img/alka2.png';
 import alka3 from '../../img/alka3.png';
 import alka4 from '../../img/alka4.png';
-import uyung1 from '../../img/uyung1.png';
-import uyung2 from '../../img/uyung2.png';
-import uyung3 from '../../img/uyung3.png';
-import uyung4 from '../../img/uyung4.png';
 import dalcool1 from '../../img/dalcool1.jpg';
 import dalcool2 from '../../img/dalcool2.jpg';
 import dalcool3 from '../../img/dalcool3.jpg';
@@ -33,10 +29,10 @@ return (
                               <hr />
 
                         <div>우융</div>
-                              <img className ="size" src={uyung1} alt='우융1' style={{width:"100px",height:"100px",margin:'10px'}}></img>
-                              <img className ="size" src={uyung2} alt='우융2' style={{width:"100px",height:"100px",margin:'10px'}}></img>
-                              <img className ="size" src={uyung3} alt='우융3' style={{width:"100px",height:"100px",margin:'10px'}}></img>
-                              <img className ="size" src={uyung4} alt='우융4' style={{width:"100px",height:"100px",margin:'10px'}}></img>
+                              <img className ="size" src={alka1} alt='우융1' style={{width:"100px",height:"100px",margin:'10px'}}></img>
+                              <img className ="size" src={alka2} alt='우융2' style={{width:"100px",height:"100px",margin:'10px'}}></img>
+                              <img className ="size" src={alka3} alt='우융3' style={{width:"100px",height:"100px",margin:'10px'}}></img>
+                              <img className ="size" src={alka4} alt='우융4' style={{width:"100px",height:"100px",margin:'10px'}}></img>
                               <hr />
 
                         <div>달쿨</div>
