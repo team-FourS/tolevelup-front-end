@@ -1,4 +1,4 @@
-.back{
+/* .back{
     background-color: white;
     height: auto;
 }
@@ -41,4 +41,44 @@
     border: none;
     border-radius: 5px;
     margin-left: 130px;
-}
+} */
+
+.profile-change-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .profile-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .profile-item {
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .profile-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /* .profile-item span {
+    display: block;
+    margin-top: 10px;
+  } */
+  
+  .profile-item:hover {
+    border-color: #e50914;
+  }
+  
+  .profile-item.selected {
+    border-color: #e50914;
+  }
