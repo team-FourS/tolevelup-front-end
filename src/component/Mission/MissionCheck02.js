@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../css/MissionCheck.css';
 
-const MissionCheck = () => {
+const MissionCheck02 = () => {
     return (
         <div className='layout_mission'>
           <div className="checkList">
@@ -27,4 +27,4 @@ const MissionCheck = () => {
     )
 }
 
-export default MissionCheck;
+export default MissionCheck02;
