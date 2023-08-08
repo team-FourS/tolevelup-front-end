@@ -70,7 +70,7 @@ const Profile = () => {
     {
       id: 2,
       name: 'Jane',
-      image: require('../../img/Cul-chaeacter.png')
+      image: require('../../img/Hobby1.png')
     },
     {
       id: 3,

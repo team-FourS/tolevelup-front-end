@@ -1,13 +1,6 @@
-import React from "react";
-import {Routes, Route, Link} from "react-router-dom";
-import '../css/Footer.css'
-import Mission from "././Mission/Mission"
-import AllFeed from "../component/Feed/AllFeed"
-import FollowFeed from "../component/Feed/FollowFeed"
-import Rank from "../component/Ranking"
-import Char from "../component/Character/Character"
-import Mypage from "../component/Mypage/Mypage"
-import Modify from "./Mypage/Modify";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import "../css/Footer.css";
 
 import { HiSquares2X2 } from "react-icons/hi2";
 import { BsClipboard2Check } from "react-icons/bs";
@@ -16,28 +9,60 @@ import { AiFillAliwangwang } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
 
 const Footer = () => {
+  const [activeTab, setActiveTab] = useState("mission");
 
-    return (
-        <div className="footer">
-            <Routes className="layout">
-                <Route path="/Mission" element={<Mission />} />
-                <Route path="/AllFeed" element={<AllFeed />} />
-                <Route path="/FollowFeed" element={<FollowFeed />} />
-                <Route path="/rank" element={<Rank />} />
-                <Route path="/char" element={<Char />} />
-                <Route path="/mypage" element={<Mypage />} />
-                <Route path="/Modify" element={<Modify />} />
-            </Routes>
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+  };
 
-            <nav className="footer01">
-                <Link to="/mission"><HiSquares2X2 size={30} className="icon"/></Link>
-                <Link to="/Allfeed"><BsClipboard2Check size={30} className="icon"/></Link>
-                <Link to="/rank"><BiTrophy size={30} className="icon"/></Link>
-                <Link to="/char"><AiFillAliwangwang size={30} className="icon"/></Link>
-                <Link to="/mypage"><AiOutlineUser size={30} className="icon"/></Link>
-            </nav>
+  return (
+    <div className="footer">
+      {/* <nav className="footer01"> */}
+        <NavLink className={'icon'}
+          to="/mission"
+          ClassName="active"
+          isActive={() => activeTab === "mission"}
+          onClick={() => handleTabClick("mission")}
+        >
+          <HiSquares2X2 size={30} className="icon" style={{marginLeft:'20px',marginRight:'20px'}}/>
+        </NavLink>
+        <NavLink
+          to="/Allfeed"
+          ClassName="active"
+          isActive={() => activeTab === "allfeed"}
+          onClick={() => handleTabClick("allfeed")}
+        >
+          <BsClipboard2Check size={30} className="icon" style={{marginLeft:'20px',marginRight:'20px'}}/>
+        </NavLink>
+        <NavLink
+          to="/rank"
+          ClassName="active"
+          isActive={() => activeTab === "rank"}
+          onClick={() => handleTabClick("rank")}
+        >
+          <BiTrophy size={30} className="icon" style={{marginLeft:'20px',marginRight:'20px'}}/>
+        </NavLink>
+        <NavLink
+          to="/char"
+          ClassName="active"
+          isActive={() => activeTab === "char"}
+          onClick={() => handleTabClick("char")}
+        >
+          <AiFillAliwangwang size={30} className="icon" style={{marginLeft:'20px',marginRight:'20px'}}/>
+        </NavLink>
+       
+        <NavLink
+          to="/mypage"
+          ClassName="active"
+          isActive={() => activeTab === "mypage"}
+          onClick={() => handleTabClick("mypage")}
+        >
+             <div className="icon-wrapper">
+          <AiOutlineUser size={30} className="icon" style={{marginLeft:'20px',marginRight:'20px'}}/></div>
+        </NavLink>
         </div>
 
-    )
-}
+  );
+};
+
 export default Footer;
