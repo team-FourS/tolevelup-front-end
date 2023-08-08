@@ -1,20 +1,19 @@
 import React from "react";
-import Header from "../component/Header";
-import Footer from "../component/Footer";
-import "../css/Ranking.css";
+// import Header from "../component/Header";
+// import Footer from "../component/Footer";
+import "../css/Fifth.css";
 
 const Fifth = () => {
     return (
-      <main className="layout_ranking">
-        <Header/>
-          <div >
+<main className="layout_fifth">
+<div>
            음
             
           </div>
+    </main>
+          
 
           
-        <Footer/>
-      </main>  
     );
   }
 
