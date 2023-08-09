@@ -7,10 +7,10 @@ import Health from "./Health";
 import Eat from "./Eat";
 import Culture from "./Culture";
 import Hobby from "./Hobby";
-import EatCharacter from '../../img/Eat-character.png'
+import EatCharacter from '../../img/Eat-Lv01.png'
 import Hobby1 from '../../img/Hobby1.png'
 import CultureLv01 from '../../img/Culture-Lv01.png'
-import healthcharacter from '../../img/health-character.png'
+import ExerciseLv01 from '../../img/Exercise-Lv01.png'
 
 const Character = () => {
 
@@ -30,7 +30,7 @@ const Character = () => {
               <Health />
             </CModal>
           )}
-            <img className ="home" src={healthcharacter} alt='운동'></img>
+            <img className ="home" src={ExerciseLv01} alt='운동'></img>
             <h2 className="h2">운동</h2>
       </span>
 </button>
