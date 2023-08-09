@@ -3,12 +3,14 @@ import "../../css/Character.css"
 import Header from "../Header";
 import Footer from "../Footer";
 import CModal from "../CModal";
+
 import Exercise from "./Exercise";
 import Eat from "./Eat";
 import Culture from "./Culture";
 import Hobby from "./Hobby";
+
 import EatCharacter from '../../img/Eat-Lv01.png'
-import Hobby1 from '../../img/Hobby-Lv01.png'
+import HobbyLv01 from '../../img/Hobby-Lv01.png'
 import CultureLv01 from '../../img/Culture-Lv01.png'
 import ExerciseLv01 from '../../img/Exercise-Lv01.png'
 
@@ -71,7 +73,7 @@ const Character = () => {
               <Hobby />
             </CModal>
           )}
-          <img className ="home" src={Hobby1} alt='취미'></img>
+          <img className ="home" src={HobbyLv01} alt='취미'></img>
           <h2 className="h2">취미</h2>
       </span>
       </button>

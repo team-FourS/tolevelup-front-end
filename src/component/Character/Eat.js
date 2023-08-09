@@ -10,6 +10,7 @@ const Eat = () => {
           <h2 className="health_font1"><strong>식습관</strong></h2>
             <img className ="Lv_health" src={EatLv01} alt='운동레벨'></img>
               <h4 className="health_font2">당신의 레벨은 현재</h4>
+
                 <h2 className="health_font3"><strong>Lv. _</strong></h2>
                   <div className="status-hpchar">
                       <div className="bar_char">
