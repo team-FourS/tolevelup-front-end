@@ -3,13 +3,12 @@ import React from "react";
 // import Footer from "../component/Footer";
 import "../../css/Fifth.css";
 
-const Fifth = () => {
+const RankAll = () => {
     return (
 <main className="layout_fifth">
-<div>
-          오 됐다
-            
-          </div>
+  <div>
+        첫번째      
+  </div>
     </main>
           
 
@@ -17,4 +16,4 @@ const Fifth = () => {
     );
   }
 
-  export default Fifth;
+  export default RankAll;
