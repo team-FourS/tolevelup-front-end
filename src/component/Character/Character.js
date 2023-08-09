@@ -7,10 +7,10 @@ import CModal from "../CModal";
 import Exercise from "./Exercise";
 import Eat from "./Eat";
 import Culture from "./Culture";
-import Hobby from "./Hobby
+import Hobby from "./Hobby";
 
-import EatCharacter from '../../img/Eat-Lv01.png
-import HobbyLv01 from '../../img/Hobby-Lv01.png
+import EatCharacter from '../../img/Eat-Lv01.png'
+import HobbyLv01 from '../../img/Hobby-Lv01.png'
 import CultureLv01 from '../../img/Culture-Lv01.png'
 import ExerciseLv01 from '../../img/Exercise-Lv01.png'
 
