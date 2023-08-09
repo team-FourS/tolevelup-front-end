@@ -6,7 +6,9 @@ import "../../css/AllFeed.css";
 import {Routes, Route, Link} from "react-router-dom";
 import user from '../../img/user.png';
 import {BiSearchAlt2} from "react-icons/bi";
-//import { LiaCommentSolid } from "react-icons/lia";
+
+
+import { BiCommentDetail } from "react-icons/bi";
 
 const AllFeed = () => {
   return (
@@ -47,7 +49,7 @@ const AllFeed = () => {
               <input type="checkbox" id="btn2" />
               <label htmlFor="btn3"> 취미 | 캠핑 여행 다녀오기 </label> 
             </div>
-            {/* <LiaCommentSolid/> */}
+            <BiCommentDetail className="comment_icon"/>
           </div>
         </div>
         
@@ -64,6 +66,7 @@ const AllFeed = () => {
               <input type="checkbox" id="btn2" />
               <label htmlFor="btn3"> 취미 | 캠핑 여행 다녀오기 </label>
             </div>
+            <BiCommentDetail className="comment_icon"/>
           </div>
         </div>
         
@@ -80,6 +83,7 @@ const AllFeed = () => {
               <input type="checkbox" id="btn2" />
               <label htmlFor="btn3"> 취미 | 캠핑 여행 다녀오기 </label>
             </div>
+            <BiCommentDetail className="comment_icon"/>
           </div>
         </div>
 

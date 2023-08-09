@@ -98,33 +98,33 @@ const Mypage = () => {
                     <div className="mission_bar">
                         <div className='bar_title'>
                             <strong className="locate">운동</strong>
-                            <strong className="locate">취미</strong>
                             <strong className="locate">식습관</strong>
                             <strong className="locate">문화생활</strong>
+                            <strong className="locate">취미</strong>
                         </div>
                         <div>
                             <div className="main_bar">
                             <div className="status-hp">
                                     <div className="bar">
-                                        <div className="currentBar" style={{width:'48px'}}></div>    
+                                        <div className="exercise_currentBar" style={{width:'48px'}}></div>    
                                     </div>
                                 </div>
                 
                                 <div className="status-hp">
                                     <div className="bar">
-                                        <div className="currentBar1" style={{width:'120px'}}></div>    
+                                        <div className="eat_currentBar" style={{width:'120px'}}></div>    
                                     </div>
                                 </div>
 
                                 <div className="status-hp">
                                     <div className="bar">
-                                        <div className="currentBar2" style={{width:'80px'}}></div>    
+                                        <div className="culture_currentBar" style={{width:'80px'}}></div>    
                                     </div>
                                 </div>
 
                                 <div className="status-hp">
                                     <div className="bar">
-                                        <div className="currentBar3" style={{width:'180px'}}></div>    
+                                        <div className="hobby_currentBar" style={{width:'180px'}}></div>    
                                     </div>
                                 </div>
 

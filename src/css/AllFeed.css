@@ -83,3 +83,10 @@
 .feedChecklist{
   margin-bottom: 10px;
 }
+
+/*피드 아이콘*/
+.comment_icon{
+  font-size: 25px;
+  color: rgb(107, 107, 107);
+  margin-left: 670px;
+}

@@ -1,25 +1,25 @@
 import React from 'react';
-import '../../css/MissionCheck.css';
+import '../../css/testMissionCheck.css';
 
-const MissionCheck = () => {
+const MissionCheck01 = () => {
     return (
         <div className='layout_mission'>
           <div className="checkList">
             <button className="btnMissionCheck">운동</button>
-              <div className="checkBox">
+              <div className="checkBox1">
                 <div className="checkWrap">
                   <input type="checkbox" id="btn1" />
-                  <label htmlFor="btn1"> 아침 스트레칭하기 </label> <br/><br/>
+                  <label for="btn01"> 계단 오르락 내리락 </label> <br/><br/>
                 </div>  
 
                 <div className="checkWrap">
                   <input type="checkbox" id="btn2" />
-                  <label htmlFor="btn2"> 30분 이상 산책하기 </label> <br/><br/>
+                  <label for="btn2"> 런닝하기 </label> <br/><br/>
                 </div>  
 
                 <div className="checkWrap">
                   <input type="checkbox" id="btn3" />
-                  <label htmlFor="btn3"> 줄넘기 100회 하기 </label>
+                  <label for="btn3"> 줄넘기 100회 하기 </label>
                 </div>
               </div>  
           </div>
@@ -27,4 +27,4 @@ const MissionCheck = () => {
     )
 }
 
-export default MissionCheck;
+export default MissionCheck01;
