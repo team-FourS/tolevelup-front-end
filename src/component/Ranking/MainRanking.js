@@ -4,7 +4,11 @@ import Footer from "../Footer";
 import "../../css/Ranking.css";
 import styled from 'styled-components';
 import { MAIN_DATA } from './MainData';
-import Fifth from './Fifth';
+import RankHobby from './RankHobby';
+import RankExercise from './RankExercise';
+import RankAll from './RankAll';
+import RankEat from './RankEat';
+import RankCulture from './RankCulture';
 
 const Rank = () => {
   const [content, setContent] = useState();
@@ -15,7 +19,11 @@ const Rank = () => {
   };
 
   const selectComponent = {
-    fifth: <Fifth />,
+    first: <RankAll />,
+    second: <RankExercise />,
+    third: <RankEat />,
+    fourth: <RankCulture />,
+    fifth: <RankHobby />,
   };
 
   console.log(content);
@@ -50,7 +58,7 @@ const Rank = () => {
       <Header />
       <div>
         <Container>
-          {MAIN_DATA.map(data => {
+          {MAIN_DATA.map((data) => {
             return (
               <CustomButton
                 onClick={handleClickButton}
