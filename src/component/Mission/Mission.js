@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import '../../css/Mission.css'
 
-import culture from '../../img/culture.png';
-import exercise from '../../img/exercise.png';
-import food from '../../img/food.png';
-import hobby from '../../img/hobby.png';
+import culture from '../../img/main-culture.png';
+import exercise from '../../img/yoga-pose.png';
+import eat from '../../img/main-eat.png';
+import hobby from '../../img/main-hobby.png';
 
 import MissionModal from "./MissionModal";
 import MissionCheck01 from "./MissionCheck01";
@@ -47,7 +47,7 @@ const Mission = () => {
 
             <div className="missionImg">
                 <img className="mainImg" src={exercise} alt="운동"/>
-                <img className="mainImg" src={food} alt="식습관" /> 
+                <img className="mainImg" src={eat} alt="식습관" /> 
             </div>
         </div>
 
