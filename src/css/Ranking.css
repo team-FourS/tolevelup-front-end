@@ -6,36 +6,5 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-  /* margin-top: 15vh; */
-  /* min-height: 75vh; */
 } 
-.header_ranking{
-  margin-left: 50px;
-}
-.ranking_button{
-  background-color: #a9d28c;
-  box-shadow: 1px 4px 1px #8eb373;
-  font-size: 15px;
-  padding: 3px 12px;  
-  border-radius: 20px;
-  border: none;
-  margin-right: 15px;
-}
-.ranking_button:active{
-  box-shadow: 0 0 #87a86f; 
-  background-color: #87a86f;
-}
-.Mains-right2 { 
-  display: inline-flex;
-  width: 30%;
-  height: 100%;
-  background-color: blue;
-  align-items: right;
-}
-.Mains-left2 { 
-  display: inline-flex;
-  width: 30%;
-  height: 100%;
-  background-color: blue;
-  align-items: left;
-}
+

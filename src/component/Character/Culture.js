@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/Health.css"
+import "../../css/Exercise.css"
 import CultureLv01 from '../../img/Culture-Lv01.png'
 
 const Culture = () => {

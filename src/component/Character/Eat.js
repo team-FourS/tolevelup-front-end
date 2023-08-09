@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/Health.css"
+import "../../css/Exercise.css"
 import EatCharacter from '../../img/Eat-Lv01.png'
 
 const Eat = () => {
