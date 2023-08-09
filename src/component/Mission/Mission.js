@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import '../../css/Mission.css'
 
-import culture from '../../img/culture.png';
-import exercise from '../../img/exercise.png';
-import food from '../../img/food.png';
-import hobby from '../../img/hobby.png';
+import culture from '../../img/main-culture.png';
+import exercise from '../../img/main-exercise.png';
+import food from '../../img/main-eat.png';
+import hobby from '../../img/main-hobby.png';
 
 import MissionModal from "./MissionModal";
 import MissionCheck01 from "./MissionCheck01";

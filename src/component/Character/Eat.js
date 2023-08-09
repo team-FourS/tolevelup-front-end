@@ -1,6 +1,6 @@
 import React from "react";
-import "../../css/Health.css"
-import EatCharacter from '../../img/Eat-character.png'
+import "../../css/Exercise.css"
+import EatLv01 from '../../img/Eat-Lv01.png'
 
 const Eat = () => {
     return (
@@ -8,7 +8,7 @@ const Eat = () => {
         <div className="health_lay">
         <div className="however">
           <h2 className="health_font1"><strong>식습관</strong></h2>
-            <img className ="Lv_health" src={EatCharacter} alt='운동레벨'></img>
+            <img className ="Lv_health" src={EatLv01} alt='운동레벨'></img>
               <h4 className="health_font2">당신의 레벨은 현재</h4>
                 <h2 className="health_font3"><strong>Lv. _</strong></h2>
                   <div className="status-hpchar">

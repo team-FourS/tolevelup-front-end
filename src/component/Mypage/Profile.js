@@ -65,12 +65,12 @@ const Profile = () => {
     {
       id: 1,
       name: 'John',
-      image: require('../../img/Eat-character.png')
+      image: require('../../img/Eat-Lv01.png')
     },
     {
       id: 2,
       name: 'Jane',
-      image: require('../../img/Hobby1.png')
+      image: require('../../img/Hobby-Lv01.png')
     },
     {
       id: 3,
