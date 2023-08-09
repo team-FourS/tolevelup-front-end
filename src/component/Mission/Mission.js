@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import '../../css/Mission.css'
 
 import culture from '../../img/main-culture.png';
-import exercise from '../../img/yoga-pose.png';
+// import exercise from '../../img/yoga-pose.png';
+import exercise from '../../img/main-exercise.png';
 import eat from '../../img/main-eat.png';
 import hobby from '../../img/main-hobby.png';
 
