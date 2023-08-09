@@ -3,7 +3,7 @@ import "../../css/Character.css"
 import Header from "../Header";
 import Footer from "../Footer";
 import CModal from "../CModal";
-import Health from "./Exercise";
+import Exercise from "./Exercise";
 import Eat from "./Eat";
 import Culture from "./Culture";
 import Hobby from "./Hobby";
@@ -27,7 +27,7 @@ const Character = () => {
           <span id ="health" onClick={() => setHealth(!health)}>
           {health && (
             <CModal closeModal={() => setHealth(!health)}>
-              <Health />
+              <Exercise />
             </CModal>
           )}
             <img className ="home" src={ExerciseLv01} alt='운동'></img>

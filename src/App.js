@@ -12,6 +12,7 @@ import AllFeed from "./component/Feed/AllFeed"
 import FollowFeed from "./component/Feed/FollowFeed"
 
 import Rank from "./component/Ranking"
+
 import Char from "./component/Character/Character"
 import Mypage from "./component/Mypage/Mypage"
 import Modify from "./component/Mypage/Modify";

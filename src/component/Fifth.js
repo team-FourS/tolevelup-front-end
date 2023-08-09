@@ -7,7 +7,7 @@ const Fifth = () => {
     return (
 <main className="layout_fifth">
 <div>
-           오 됐다
+          오 됐다
             
           </div>
     </main>
