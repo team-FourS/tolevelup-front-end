@@ -40,7 +40,7 @@ const Rank = () => {
     padding: 10px 20px;
     // margin-right: 1rem;
     margin: 10px;
-    color: ${props => (props.active ? 'white' : '#a9d28c')}; /* 버튼 활성화 시 색 변경 */
+    color: ${props => (props.active ? 'white' : '#237A24')}; /* 버튼 활성화 시 색 변경 */
     background-color: ${props => (props.active ? '#a9d28c' : '#fff')}; /* 버튼 활성화 시 색 변경 */
     border-radius: 2rem;
     border-style: solid;

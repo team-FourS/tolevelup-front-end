@@ -7,17 +7,11 @@
   justify-content: center;
   align-items: center;
   margin-top: 15vh;
-  min-height: 75vh;
+  min-height: 83vh;
   background-color: rgb(234, 244, 237);
 } 
-
 .userProfile{
   width: 55px; height: 55px; 
-}
-
-/*상단 메뉴바*/
-.header_feed{
-  margin-top: -20px;
 }
 .allFeed{
   margin-left: 210px;
@@ -33,6 +27,7 @@
 /*닉네임 검색창*/
 .searching{
   float: right;
+  margin-top: 20px;
   margin-right: 120px;
 }
 .searchBox{
@@ -49,7 +44,7 @@
 }
 .feed_scrollbox{
   width: auto;
-  height: 410px;
+  height: 450px;
   overflow-y: scroll;
 }
 /*피드 박스*/

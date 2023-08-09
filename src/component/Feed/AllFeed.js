@@ -101,6 +101,7 @@ const AllFeed = () => {
               <input type="checkbox" id="btn2" />
               <label htmlFor="btn3"> 취미 | 오늘 하루 이상 일기에 담기 </label>
             </div>
+            <BiCommentDetail className="comment_icon"/>
           </div>
         </div>
 
