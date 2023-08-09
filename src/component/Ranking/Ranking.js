@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import "../css/Ranking.css";
+import Header from "../Header";
+import Footer from "../Footer";
+import "../../css/Ranking.css";
 import styled from 'styled-components';
-import { MAIN_DATA } from './MainData';
+import { MAIN_DATA } from '../MainData';
 import Fifth from './Fifth';
 
 const Rank = () => {
