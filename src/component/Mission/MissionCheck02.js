@@ -1,30 +1,56 @@
-import React from 'react';
-import '../../css/MissionCheck.css';
+import React, { useState } from 'react';
+import '../../css/MissionCheck02.css';
 
-const MissionCheck02 = () => {
-    return (
-        <div className='layout_mission'>
-          <div className="checkList">
-            <button className="btnMissionCheck">식습관</button>
-              <div className="checkBox">
-                <div className="checkWrap">
-                  <input type="checkbox" id="btn1" />
-                  <label htmlFor="btn1"> 물 6잔 이상 마시기 </label> <br/><br/>
-                </div>  
+function TodoItem({ todo, index, toggleComplete }) {
+  const textStyle = {
+    color: todo.completed ? 'rgb(204, 204, 204)' : 'black',
+  };
 
-                <div className="checkWrap">
-                  <input type="checkbox" id="btn2" />
-                  <label htmlFor="btn2"> 탄수화물 적게 먹기 </label> <br/><br/>
-                </div>  
+  return (
+    <label className="checkbox-container">
+      <input
+        type="checkbox"
+        className="checkbox"
+        checked={todo.completed}
+        onChange={() => toggleComplete(index)}
+      />
+      <span className="custom-checkbox"></span>
+      <span className="todo-text" style={textStyle}> {todo.text} </span>
+    </label>
+  );
+}
 
-                <div className="checkWrap">
-                  <input type="checkbox" id="btn3" />
-                  <label htmlFor="btn3"> 줄넘기 100회 하기 </label>
-                </div>
-              </div>  
-          </div>
-        </div>  
-    )
+function MissionCheck02() {
+  const [todos, setTodos] = useState([
+    { text: '물 6잔 이상 마시기', completed: false },
+    { text: '오늘 하루 밀가루 먹지 않기', completed: true },
+    { text: '아침 식사 챙겨 먹기', completed: false },
+  ]);
+
+  const toggleComplete = (index) => {
+    const updatedTodos = todos.map((todo, i) =>
+      i === index ? { ...todo, completed: !todo.completed } : todo
+    );
+    setTodos(updatedTodos);
+  };
+
+  return (
+    <div>
+      <button className="btnMissionCheck">식습관</button>
+      <ul>
+        {todos.map((todo, index) => (
+          <TodoItem
+            key={index}
+            todo={todo}
+            index={index}
+            toggleComplete={toggleComplete}
+          />
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 export default MissionCheck02;
+
+
