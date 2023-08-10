@@ -3,20 +3,13 @@ import "../../css/Follower.css"
 import user from '../../img/user.png';
 
 const Follower = () => {
-    return (
-      <main className="layout_wer">
-
-        <div className="wer_lay">
-          <h4 className="wer_font">팔로워</h4>
+  return (
+    <main className="layout_wer">
+      <div className="wer_lay">
+        <h4 className="wer_font">팔로워</h4>
           <hr />
-
           <table>
-            <thead>
-                {/* <tr>
-                  <th>이미지</th>
-                  <th>아이디</th>
-                </tr> */}
-            </thead>
+            <thead />
             <tbody>
             <div className="follower_scrollbox">
             <div className="followerbox">

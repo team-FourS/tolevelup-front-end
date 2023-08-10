@@ -30,7 +30,7 @@ const Rank = () => {
 
   const Container = styled.div`
     {props => props.theme.flex('center', 'center')}
-    height: 30vh;
+    height: 10vh;
     margin-left:20vh;
     
   `;
