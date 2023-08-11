@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../css/Character.css"
+import "../../css/character/Character.css"
 import Header from "../Header";
 import Footer from "../Footer";
 import CModal from "../CModal";
