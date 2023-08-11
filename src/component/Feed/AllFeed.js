@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../../component/Header";
 import Footer from "../../component/Footer";
 import FollowFeed from "./FollowFeed";
-import "../../css/AllFeed.css";
+import "../../css/feed/AllFeed.css";
 import {Routes, Route, Link} from "react-router-dom";
 import user from '../../img/user.png';
 import {BiSearchAlt2} from "react-icons/bi";
