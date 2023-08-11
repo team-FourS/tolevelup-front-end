@@ -3,7 +3,7 @@ import Header from "../Header";
 import Footer from "../Footer";
 import Mypage from "./Mypage";
 import Modify from "./Modify"
-import "../../css/edit.css"
+import "../../css/mypage/edit.css"
 import {Routes, Route, Link} from "react-router-dom";
 import styled from 'styled-components';
 

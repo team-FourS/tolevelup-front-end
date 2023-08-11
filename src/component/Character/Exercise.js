@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/Exercise.css"
+import "../../css/character/Exercise.css"
 import ExerciseLv01 from '../../img/Exercise-Lv01.png'
 
 const Health = () => {

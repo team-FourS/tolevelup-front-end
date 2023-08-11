@@ -4,7 +4,7 @@ import RankingNum1 from '../../img/medal1.png';
 import RankingNum2 from '../../img/medal2.png';
 import RankingNum3 from '../../img/medal3.png';
 
-import "../../css/Fifth.css";
+import "../../css/ranking/Fifth.css";
 
 const RankEat = () => {
   return (
