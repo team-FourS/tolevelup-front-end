@@ -35,7 +35,6 @@ const Rank = () => {
     
   `;
 
-  // Styled-components 변수명 변경
   const CustomButton = styled.button`
     padding: 10px 20px;
     // margin-right: 1rem;
@@ -64,8 +63,7 @@ const Rank = () => {
                 onClick={handleClickButton}
                 name={data.name}
                 key={data.id}
-                active={content === data.name} // 버튼 활성화 여부에 따라 스타일 변경
-              >
+                active={content === data.name} >
                 {data.text}
               </CustomButton>
             );

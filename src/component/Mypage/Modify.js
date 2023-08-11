@@ -1,6 +1,6 @@
 import React, {useRef ,useState} from 'react';
 // import user2 from '../../img/user.png';
-import "../../css/Modify.css";
+import "../../css/mypage/Modify.css";
 import Header from "../Header";
 import Footer from "../Footer";
 import Mypage from "../Mypage/Mypage";

@@ -1,25 +1,15 @@
 import React from "react";
-// import Header from "../component/Header";
-// import Footer from "../component/Footer";
 import "../css/Alarm.css"
 import user from '../img/user.png';
 
 const Alarm = () => {
     return (
       <main className="layout_alr">
-
-        {/* <Header/> */}
-
         <div className="alarm_lay">
           <h4 className="alarm_font">알람</h4>
           <hr />
-
           <table>
             <thead>
-                {/* <tr>
-                  <th>이미지</th>
-                  <th>아이디</th>
-                </tr> */}
             </thead>
             <tbody>
             <div className="Alarm_scrollbox">
@@ -75,7 +65,6 @@ const Alarm = () => {
                     <h5 className="id_alarm">_whoops</h5>
                   </div>
                 </td>
-                
               </tr>
               </div>
               </div>
@@ -83,8 +72,6 @@ const Alarm = () => {
             </tbody>
           </table>
         </div>
-
-        {/* <Footer/> */}
       </main>  
     );
   }

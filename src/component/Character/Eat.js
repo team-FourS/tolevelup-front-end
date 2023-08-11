@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/Exercise.css"
+import "../../css/character/Exercise.css"
 import EatLv01 from '../../img/Eat-Lv01.png'
 
 const Eat = () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/Exercise.css"
+import "../../css/character/Exercise.css"
 import HobbyLv01 from '../../img/Hobby-Lv01.png'
 
 const Hobby = () => {

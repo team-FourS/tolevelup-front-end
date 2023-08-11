@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/Following.css"
+import "../../css/mypage/Following.css"
 import user from '../../img/user.png';
 
 const Following = () => {
