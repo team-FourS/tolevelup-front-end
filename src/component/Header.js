@@ -7,10 +7,10 @@ import {BiBell} from "react-icons/bi"
 
 import { useState } from "react";
 import Modal from "./Modal";
-import Alarm from "./Alarm";
+import Alarm from "./Modal/Alarm";
 
 const Header = () => {
-        const [alarm, setAlarm] = useState(false);
+    const [alarm, setAlarm] = useState(false);
     
     return (
         <main className="header">

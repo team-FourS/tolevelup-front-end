@@ -137,7 +137,7 @@ const Mypage = () => {
                                 <li class="item">3<span class="blind">시간</span></li>
                                 <li class="item">6<span class="blind">시간</span></li>
                                 <li class="item">9<span class="blind">시간</span></li>
-                                <li class="item">12<span class="blind">방문</span></li>
+                                <li class="item">12<span class="blind">시간</span></li>
                             </ul>
                             <ul class="axis_x">
                                 <li class="time">0<span class="blind">시간</span></li>
