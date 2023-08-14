@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/MissionModal.css";
+import "../../css/mission/MissionModal.css";
 
 function MissionModal(props) {
 function closeModal() {
@@ -9,7 +9,7 @@ function closeModal() {
     <div className="outside_modal" onClick={closeModal}>
       <div className="missionModal" onClick={(e) => e.stopPropagation()}>
         <button id="modalCheckButton" onClick={closeModal}>
-        <h2 className="h2_checkButton">✔</h2>
+        ✖
         </button>
         {props.children}
       </div>

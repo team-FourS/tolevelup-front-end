@@ -1,12 +1,12 @@
 import React from "react";
 import "../css/CModal.css"
- 
+
 function CModal(props) {
- 
+
 function closeModal() {
     props.closeModal();
   }
- 
+
   return (
     
     <div className="Modal2" onClick={closeModal}>
@@ -20,5 +20,5 @@ function closeModal() {
 
   );
 }
- 
+
 export default CModal;

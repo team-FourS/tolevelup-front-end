@@ -15,18 +15,19 @@ const Header = () => {
     return (
         <main className="header">
             <div style={{alignItems:'center',display:'inline-flex'}}>
-                    <img className ="logoimg" src={Logo} alt='로고'></img>
-                            <BiBell onClick={() => setAlarm(!alarm)} size={20} className='bell'/>
-                                {alarm && (
-                                    <Modal closeModal={() => setAlarm(!alarm)}>
-                                        <Alarm />
-                                    </Modal>
-                                )}
-                        <Link to='/Logout'>               
-                            <div className='header_logout' > | 로그아웃</div>
-                        </Link>
-                        </div>
-                {/* <hr/> */}
+                <img className ="logoimg" src={Logo} alt='로고'></img>
+                    <BiBell onClick={() => setAlarm(!alarm)} size={20} className='bell'/>
+                    {alarm && (
+                        <Modal closeModal={() => setAlarm(!alarm)}>
+                            <Alarm />
+                        </Modal>
+                    )}
+                <Link to='/Logout'>               
+                    <div className='header_logout' > | 로그아웃</div>
+                </Link>
+            </div>
+            {/* <hr/> */}
+            <div className="header_line"></div>
         </main>
         
     )

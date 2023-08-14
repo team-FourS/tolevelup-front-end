@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../css/MissionCheck02.css';
+import '../../css/mission/MissionCheck02.css';
 
 function TodoItem({ todo, index, toggleComplete }) {
   const textStyle = {
@@ -9,23 +9,24 @@ function TodoItem({ todo, index, toggleComplete }) {
   return (
     <label className="checkbox-container">
       <input
-        type="checkbox"
-        className="checkbox"
+      type="checkbox"
+      className="checkbox"
         checked={todo.completed}
         onChange={() => toggleComplete(index)}
-      />
-      <span className="custom-checkbox"></span>
-      <span className="todo-text" style={textStyle}> {todo.text} </span>
+        />
+        <span className="custom-checkbox"></span>
+        <span className="todo-text" style={textStyle}> {todo.text} </span>
     </label>
+
   );
 }
 
-function MissionCheck02() {
-  const [todos, setTodos] = useState([
-    { text: '물 6잔 이상 마시기', completed: false },
-    { text: '오늘 하루 밀가루 먹지 않기', completed: true },
-    { text: '아침 식사 챙겨 먹기', completed: false },
-  ]);
+  function MissionCheck02() {
+    const [todos, setTodos] = useState([
+      { text: '물 6잔 이상 마시기', completed: false },
+      { text: '오늘 하루 밀가루 먹지 않기', completed: true },
+      { text: '아침 식사 챙겨 먹기', completed: false },
+    ]);
 
   const toggleComplete = (index) => {
     const updatedTodos = todos.map((todo, i) =>
@@ -37,16 +38,18 @@ function MissionCheck02() {
   return (
     <div>
       <button className="btnMissionCheck">식습관</button>
-      <ul>
-        {todos.map((todo, index) => (
-          <TodoItem
-            key={index}
-            todo={todo}
-            index={index}
-            toggleComplete={toggleComplete}
-          />
-        ))}
-      </ul>
+      <div className="missionList">
+        <ul>
+          {todos.map((todo, index) => (
+            <TodoItem
+              key={index}
+              todo={todo}
+              index={index}
+              toggleComplete={toggleComplete}
+            />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
