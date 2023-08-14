@@ -1,6 +1,6 @@
 import React from "react";
-import "../css/Alarm.css"
-import user from '../img/user.png';
+import "../../css/modal/Alarm.css"
+import user from '../../img/user.png';
 
 const Alarm = () => {
     return (
