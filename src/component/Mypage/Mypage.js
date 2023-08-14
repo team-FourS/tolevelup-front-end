@@ -19,7 +19,7 @@ const Mypage = () => {
     return (
         <main>
             <Header />
-            <Routes className='layout'>
+            <Routes>
                 <Route path="/modify" element={<Modify />} />
             </Routes>
             
@@ -131,12 +131,24 @@ const Mypage = () => {
                         </div>
                         </div>
                         </div>
-                        <div className='statistics'>통계</div>
-                        
+                        <div className='statistics'>    
+                            <ul class="axis_y">
+                                <li class="item">0<span class="blind">시간</span></li>
+                                <li class="item">3<span class="blind">시간</span></li>
+                                <li class="item">6<span class="blind">시간</span></li>
+                                <li class="item">9<span class="blind">시간</span></li>
+                                <li class="item">12<span class="blind">시간</span></li>
+                            </ul>
+                            <ul class="axis_x">
+                                <li class="time">0<span class="blind">시간</span></li>
+                                <li class="time">3<span class="blind">시간</span></li>
+                                <li class="time">6<span class="blind">시간</span></li>
+                                <li class="time">9<span class="blind">시간</span></li>
+                                <li class="time">12<span class="blind">시간</span></li>
+                            </ul>
+                        </div>    
                     </div>
-
                 </div>
-                
             </main>
             <div className='Mains-left'></div>
             </div>
