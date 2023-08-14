@@ -24,7 +24,7 @@ const Footer = () => {
           isActive={() => activeTab === "mission"}
           onClick={() => handleTabClick("mission")}
         >
-          <HiSquares2X2 size={30} className="icon" style={{marginLeft:'20px',marginRight:'20px'}}/>
+          <HiSquares2X2 size={30} className="icon" style={{marginLeft:'30px',marginRight:'30px'}}/>
         </NavLink>
         <NavLink
           to="/Allfeed"
@@ -32,7 +32,7 @@ const Footer = () => {
           isActive={() => activeTab === "allfeed"}
           onClick={() => handleTabClick("allfeed")}
         >
-          <BsClipboard2Check size={30} className="icon" style={{marginLeft:'20px',marginRight:'20px'}}/>
+          <BsClipboard2Check size={30} className="icon" style={{marginLeft:'30px',marginRight:'30px'}}/>
         </NavLink>
         <NavLink
           to="/rank"
@@ -40,7 +40,7 @@ const Footer = () => {
           isActive={() => activeTab === "rank"}
           onClick={() => handleTabClick("rank")}
         >
-          <BiTrophy size={30} className="icon" style={{marginLeft:'20px',marginRight:'20px'}}/>
+          <BiTrophy size={30} className="icon" style={{marginLeft:'30px',marginRight:'30px'}}/>
         </NavLink>
         <NavLink
           to="/char"
@@ -48,7 +48,7 @@ const Footer = () => {
           isActive={() => activeTab === "char"}
           onClick={() => handleTabClick("char")}
         >
-          <AiFillAliwangwang size={30} className="icon" style={{marginLeft:'20px',marginRight:'20px'}}/>
+          <AiFillAliwangwang size={30} className="icon" style={{marginLeft:'30px',marginRight:'30px'}}/>
         </NavLink>
        
         <NavLink
@@ -58,7 +58,7 @@ const Footer = () => {
           onClick={() => handleTabClick("mypage")}
         >
              <div className="icon-wrapper">
-          <AiOutlineUser size={30} className="icon" style={{marginLeft:'20px',marginRight:'20px'}}/></div>
+          <AiOutlineUser size={30} className="icon" style={{marginLeft:'30px',marginRight:'30px'}}/></div>
         </NavLink>
         </div>
 
