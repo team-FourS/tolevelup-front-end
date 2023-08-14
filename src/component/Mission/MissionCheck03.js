@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../css/MissionCheck.css';
+import '../../css/mission/MissionCheck.css';
 
 const MissionCheck = () => {
     return (
