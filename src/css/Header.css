@@ -9,7 +9,7 @@
 }
 .header_line{
     border-top: 1px solid #b1daca;
-    margin: 5px 0px;
+    /* margin: 5px 0px; */
 }
 .Header_main{
     align-items: center;
