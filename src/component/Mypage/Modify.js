@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import user2 from '../../img/user.png';
 import "../../css/mypage/Modify.css";
-import Header from "../Header";
+import Header from "../Header/Header";
 import Footer from "../Footer";
 import Mypage from "../Mypage/Mypage";
 // import Edit from "./Edit";
@@ -12,11 +12,11 @@ import Modal from "../Modal";
 import styled from 'styled-components';
 
 export const ModalContainer = styled.div`
-  // Modal을 구현하는데 전체적으로 필요한 CSS를 구현
-  display : flex;
-  justify-content : center;
-  align-items : center;
-  height : 100%;
+// Modal을 구현하는데 전체적으로 필요한 CSS를 구현
+display : flex;
+justify-content : center;
+align-items : center;
+height : 100%;
 `;
 
 export const ModalBackdrop = styled.div`

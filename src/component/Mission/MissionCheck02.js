@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../css/mission/MissionCheck02.css';
+import '../../css/mission/MissionCheck.css';
 
 function TodoItem({ todo, index, toggleComplete }) {
   const textStyle = {
@@ -12,8 +12,7 @@ function TodoItem({ todo, index, toggleComplete }) {
       type="checkbox"
       className="checkbox"
         checked={todo.completed}
-        onChange={() => toggleComplete(index)}
-        />
+        onChange={() => toggleComplete(index)}/>
         <span className="custom-checkbox"></span>
         <span className="todo-text" style={textStyle}> {todo.text} </span>
     </label>

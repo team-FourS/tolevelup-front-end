@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import Header from "../Header";
+import Header from "../Header/Header";
 import Footer from "../Footer";
 import Mypage from "./Mypage";
 import Modify from "./Modify"

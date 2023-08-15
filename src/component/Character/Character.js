@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../css/character/Character.css"
-import Header from "../Header";
+import Header from "../Header/Header";
 import Footer from "../Footer";
 import CModal from "../CModal";
 

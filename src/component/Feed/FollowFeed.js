@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../../component/Header";
+import Header from "../../component/Header/Header";
 import Footer from "../../component/Footer";
 import AllFeed from "./AllFeed";
 import "../../css/feed/Feed.css";
