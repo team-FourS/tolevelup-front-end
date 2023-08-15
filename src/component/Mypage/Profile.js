@@ -5,20 +5,24 @@ const Profile = () => {
   const [profiles] = useState([
     {
       id: 1,
-      name: 'John',
-      image: require('../../img/Eat-Lv01.png')
+      name: 'exercise',
+      image: require('../../img/Exercise-Lv01.png')
     },
     {
       id: 2,
-      name: 'Jane',
-      image: require('../../img/Hobby-Lv01.png')
+      name: 'eat',
+      image: require('../../img/Eat-Lv01.png')
     },
     {
       id: 3,
-      name: 'Jane',
+      name: 'culture',
       image: require('../../img/Culture-Lv01.png')
     },
-    // Add more profiles here...
+    {
+      id: 4,
+      name: 'hobby',
+      image: require('../../img/Hobby-Lv01.png')
+    }
   ]);
 
   const [selectedProfile, setSelectedProfile] = useState(profiles[0]);
@@ -30,7 +34,7 @@ const Profile = () => {
  
   return (
     <div className="profile-change-container">
-      <h1>프로필 변경</h1>
+      <h1 className='Profile_name'>프로필 변경</h1>
       <div className="profile-list">
         {profiles.map((profiles) => (
           <div
@@ -43,7 +47,7 @@ const Profile = () => {
         ))}
       </div>
     </div>
-  );
+  )
 };
 
 export default Profile;

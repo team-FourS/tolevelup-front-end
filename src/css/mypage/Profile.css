@@ -1,84 +1,34 @@
-/* .back{
-    background-color: white;
-    height: auto;
+.Profile_name{
+  color:rgb(77, 77, 77)
 }
-.header2 {
-    position: fixed;
-    top: 0;
-    width: 100%; height: 100%;
-    background-position: left top 10px;
-    background-size: 300px;
-    background-color: white;
-
-}
-.footer2 {
-    position: fixed;
-    width:100%;
-    bottom: 0;
-    height: 10%;
-    margin-top: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-}
-.probtn1{
-
-    color:white;
-    background-color: #65C28E;
-    font-size: 16px;
-    width: 75px; height: 27px; 
-    border: none;
-    border-radius: 5px;
-    margin-left: 130px;
-}
-.probtn2{
-
-    color:white;
-    background-color: #65C28E;
-    font-size: 16px;
-    width: 75px; height: 27px; 
-    border: none;
-    border-radius: 5px;
-    margin-left: 130px;
-} */
-
 .profile-change-container {
   text-align: center;
   padding: 20px;
+  position: relative;
 }
-
 .profile-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
 }
-
 .profile-item {
   cursor: pointer;
   border: 2px solid transparent;
-  border-radius: 8px;
+  border-radius: 50%;
   padding: 10px;
   transition: all 0.3s ease;
 }
-
 .profile-item img {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
 }
-
-/* .profile-item span {
-  display: block;
-  margin-top: 10px;
-} */
-
 .profile-item:hover {
-  border-color: #e50914;
+  border-color: #65c28e;
 }
 
 .profile-item.selected {
-  border-color: #e50914;
+  border-color: #61ad82;
 }

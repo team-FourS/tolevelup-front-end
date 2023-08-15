@@ -39,9 +39,6 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.profils{
-  display: block;
-}
 .she{
   display: inline-block;
 }
@@ -51,7 +48,7 @@
 .rename{
   width:190px; height: 30px;
   margin: 5px;
-  font-size: 15px;
+  font-size: 10px;
 }
 
 .intro{
@@ -79,12 +76,13 @@
   align-items: center;
 }
 .profils{
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   margin: auto;
+  display: block;
 }
 .pro_box{
-  margin: 55px;
+  margin: 40px;
 }
 .profil_font{
   color: rgb(100, 100, 100);
