@@ -15,7 +15,7 @@
     align-items: center;
 }
 .logoimg{
-    width: 160px;
+    width: 170px;
     height: 43px;
     margin-top: 6px;
     margin-right: 960px;
@@ -24,7 +24,13 @@
     color:gray;
     display: inline;    
 }
-.bell{
+.manual_icon{
+    margin-right: 20px;
+    font-size: 25px;
+}
+.bell_icon{
     display: inline;
-    margin-right: 10px;
+    margin-right: 20px;
+    font-size: 25px;
+    color: rgb(76, 152, 233);
 }

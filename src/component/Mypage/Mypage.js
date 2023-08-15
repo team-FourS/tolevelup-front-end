@@ -3,7 +3,7 @@ import user from '../../img/user.png'
 import {Routes, Route, Link} from "react-router-dom";
 import Modify from "./Modify"
 import "../../css/mypage/Mypage.css"
-import Header from "../Header";
+import Header from "../Header/Header";
 import Footer from "../Footer";
 import { useState } from "react";
 import Modal from "../Modal";

@@ -1,22 +1,32 @@
 import React from 'react';
-import '../css/Header.css'
+import '../../css/header/Header.css'
 // import Logout from './Login/Logout'
 import {Link} from "react-router-dom";
-import Logo from '../img/ToLevelUp_logo.png'
+import Logo from '../../img/ToLevelUp_logo.png'
 import {BiBell} from "react-icons/bi"
+import { FcInfo } from "react-icons/fc";
 
 import { useState } from "react";
-import Modal from "./Modal";
-import Alarm from "./Modal/Alarm";
+import Modal from "../Modal";
+import Alarm from "./Alarm";
+import Manual from "./Manual";
 
 const Header = () => {
     const [alarm, setAlarm] = useState(false);
+    const [manual, setManual] = useState(false);
     
     return (
         <main className="header">
             <div style={{alignItems:'center',display:'inline-flex'}}>
                 <img className ="logoimg" src={Logo} alt='로고'></img>
-                    <BiBell onClick={() => setAlarm(!alarm)} size={20} className='bell'/>
+                    <FcInfo onClick={() => setManual(!manual)} className='manual_icon'/>
+                    {manual && (
+                        <Modal closeModal={() => setManual(!manual)}>
+                            <Manual />
+                        </Modal>
+                    )}
+                    
+                    <BiBell onClick={() => setAlarm(!alarm)} className='bell_icon'/>
                     {alarm && (
                         <Modal closeModal={() => setAlarm(!alarm)}>
                             <Alarm />

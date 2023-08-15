@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/modal/Alarm.css"
+import "../../css/header/Alarm.css"
 import user from '../../img/user.png';
 
 const Alarm = () => {

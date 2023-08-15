@@ -13,7 +13,7 @@ import MissionCheck02 from "./MissionCheck02";
 import MissionCheck03 from "./MissionCheck03";
 import MissionCheck04 from "./MissionCheck04";
 
-import Header from "../Header";
+import Header from "../Header/Header";
 import Footer from "../Footer";
 
 const Mission = () => {
