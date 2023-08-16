@@ -79,9 +79,16 @@
   margin-bottom: 10px;
 }
 
-/*피드 아이콘*/
+/*아이콘*/
+.heart_icon{
+  font-size: 22px;
+  color: rgb(155, 154, 154);
+  margin-left: 670px;
+  float: left;
+}
 .comment_icon{
   font-size: 25px;
-  color: rgb(107, 107, 107);
+  color: rgb(155, 154, 154);
   margin-left: 670px;
+  
 }
