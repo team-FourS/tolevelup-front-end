@@ -6,6 +6,7 @@ import "../../css/feed/AllFeed.css";
 import {Routes, Route, Link} from "react-router-dom";
 import user from '../../img/user.png';
 import {BiSearchAlt2} from "react-icons/bi";
+import {FaHeart} from "react-icons/fa";
 
 
 import { BiCommentDetail } from "react-icons/bi";
@@ -49,6 +50,7 @@ const AllFeed = () => {
               <input type="checkbox" id="btn2" />
               <label htmlFor="btn3"> 취미 | 캠핑 여행 다녀오기 </label> 
             </div>
+            <FaHeart className="heart_icon"/>
             <BiCommentDetail className="comment_icon"/>
           </div>
         </div>
