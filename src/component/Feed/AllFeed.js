@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useState }  from "react";
 import Header from "../../component/Header/Header";
 import Footer from "../../component/Footer";
 import FollowFeed from "./FollowFeed";
 import "../../css/feed/AllFeed.css";
 import {Routes, Route, Link} from "react-router-dom";
 import user from '../../img/user.png';
+
 import {BiSearchAlt2} from "react-icons/bi";
-import {FaHeart} from "react-icons/fa";
-
-
-import { BiCommentDetail } from "react-icons/bi";
+import {HiHeart} from "react-icons/hi";
+import {LiaCommentSolid} from "react-icons/lia";
 
 const AllFeed = () => {
+  const [isActive, setIsActive] = useState(false);
+
+  const FeedClick = () => {
+    setIsActive(!isActive);
+  };
+
   return (
     <div className="layout_feed">
       <Header/>     
@@ -20,12 +25,17 @@ const AllFeed = () => {
         <Route path="/FollowFeed" element={<FollowFeed />} />
       </Routes>
       
-      <div className="header_feed">
         <Link to ="/AllFeed">
-          <h4 className="allFeed">전체 </h4>
+          <button
+          className={`allFeed ${isActive ? 'allfeed_active' : ''}`}
+          onClick={FeedClick}> 전체 </button>
         </Link>
+
+
         <Link to ="/FollowFeed">
-          <h4 className="followFeed">팔로우 중</h4>
+        <button
+          className={`followFeed ${isActive ? 'followfeed_active' : ''}`}
+          onClick={FeedClick}> 팔로우 중 </button>
         </Link>
 
         <label className="searching">
@@ -34,7 +44,6 @@ const AllFeed = () => {
           required />
             <BiSearchAlt2 />
         </label>
-      </div>
 
       <div className="feed_scrollbox">
         <div className="feedBox01">
@@ -50,8 +59,8 @@ const AllFeed = () => {
               <input type="checkbox" id="btn2" />
               <label htmlFor="btn3"> 취미 | 캠핑 여행 다녀오기 </label> 
             </div>
-            <FaHeart className="heart_icon"/>
-            <BiCommentDetail className="comment_icon"/>
+            <HiHeart className="heart_icon"/>
+            <LiaCommentSolid className="comment_icon"/>
           </div>
         </div>
         
@@ -68,7 +77,8 @@ const AllFeed = () => {
               <input type="checkbox" id="btn2" />
               <label htmlFor="btn3"> 취미 | 캠핑 여행 다녀오기 </label>
             </div>
-            <BiCommentDetail className="comment_icon"/>
+            <HiHeart className="heart_icon"/>
+            <LiaCommentSolid className="comment_icon"/>
           </div>
         </div>
         
@@ -85,7 +95,8 @@ const AllFeed = () => {
               <input type="checkbox" id="btn2" />
               <label htmlFor="btn3"> 취미 | 캠핑 여행 다녀오기 </label>
             </div>
-            <BiCommentDetail className="comment_icon"/>
+            <HiHeart className="heart_icon"/>
+            <LiaCommentSolid className="comment_icon"/>
           </div>
         </div>
 
@@ -103,7 +114,8 @@ const AllFeed = () => {
               <input type="checkbox" id="btn2" />
               <label htmlFor="btn3"> 취미 | 오늘 하루 이상 일기에 담기 </label>
             </div>
-            <BiCommentDetail className="comment_icon"/>
+            <HiHeart className="heart_icon"/>
+            <LiaCommentSolid className="comment_icon"/>
           </div>
         </div>
 

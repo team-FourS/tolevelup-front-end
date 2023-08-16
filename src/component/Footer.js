@@ -18,7 +18,7 @@ const Footer = () => {
   return (
     <div className="footer">
       {/* <nav className="footer01"> */}
-        <NavLink className={'icon'}
+        <NavLink className={'icon'} 
           to="/mission"
           ClassName="active"
           isActive={() => activeTab === "mission"}
