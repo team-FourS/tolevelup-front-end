@@ -82,7 +82,8 @@
   display: block;
 }
 .pro_box{
-  margin: 40px;
+  margin-bottom: 20px;
+  margin-top: 40px;
 }
 .profil_font{
   color: rgb(100, 100, 100);
@@ -101,17 +102,14 @@
   padding-left: 70px;
   padding-right: 70px;
 }
-.oneline_bold{
+/* .oneline_bold{
   border: solid 1px gray;
   border-collapse: collapse;
   background-color: lightgray;
   margin-left: 15px;
   margin-right: 15px;
   
-}
-.nickname_font{
-  color: rgb(107, 106, 106);
-}
+} */
 .oneline_font{
   color: rgb(107, 106, 106);
 }
