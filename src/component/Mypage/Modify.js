@@ -7,7 +7,7 @@ import Mypage from "../Mypage/Mypage";
 // import Edit from "./Edit";
 import {Routes, Route, Link} from "react-router-dom";
 import Profile from './Profile';
-import Modal from "../Modal";
+// import Modal from "../Modal";
 // import { useState } from 'react';
 import styled from 'styled-components';
 
@@ -85,7 +85,7 @@ const Modify = () => {
     // !false -> !true -> !false
     setIsOpen(!isOpen) 
   };
-    const [editprofile, setprofile] = useState(false);
+    // const [editprofile, setprofile] = useState(false);
 
     const useConfirm = (message = null, onConfirm, onCancel) => {
         if ((!onConfirm || typeof onConfirm !== "function") === true) {
@@ -145,7 +145,7 @@ const Modify = () => {
       <ModalContainer>
         <ModalBtn onClick={openModalHandler}
         // 클릭하면 Modal이 열린 상태(isOpen)를 boolean 타입으로 변경하는 메소드가 실행되어야 합니다. 
-        > Open Modal
+        ><h4 className='profil_font'>프로필 이미지 편집</h4>
           {/* 조건부 렌더링을 활용해서 Modal이 열린 상태(isOpen이 true인 상태)일 때는 ModalBtn의 내부 텍스트가 'Opened!' 로 Modal이 닫힌 상태(isOpen이 false인 상태)일 때는 ModalBtn 의 내부 텍스트가 'Open Modal'이 되도록 구현 */}
         </ModalBtn>
         {/* 조건부 렌더링을 활용해서 Modal이 열린 상태(isOpen이 true인 상태)일 때만 모달창과 배경이 뜰 수 있게 구현 */}
@@ -165,12 +165,12 @@ const Modify = () => {
                                 <form>
                                     <img className ="profils" src={user2} alt='프로필'></img>
                                 </form>
-                                <h4 className='profil_font' onClick={() => setprofile(!editprofile)}>
+                                {/* <h4 className='profil_font' onClick={() => setprofile(!editprofile)}>
                                     {editprofile && (
                                         <Modal closeModal={() => setprofile(!editprofile)} >
                                             <Profile />
                                         </Modal>
-                                )}프로필 이미지 편집</h4>
+                                )}프로필 이미지 편집</h4> */}
                             </div>
                             <table className='modify_bold'>
                                 <thead></thead>
