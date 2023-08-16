@@ -26,7 +26,7 @@ const Following = () => {
                 <td className="td">
                   <div className="table_lay">
                     <img className ="profil2" src={user} alt='프로필'></img>
-                    <h5 className="id_alarm">_whoops</h5>
+                    <h5 className="id_alarm">_.whoops</h5>
                   </div>
                 </td>
                 <td className="td1">
