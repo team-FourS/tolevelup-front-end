@@ -13,10 +13,10 @@ import styled from 'styled-components';
 
 export const ModalContainer = styled.div`
 // Modal을 구현하는데 전체적으로 필요한 CSS를 구현
-display : flex;
-justify-content : center;
-align-items : center;
-height : 100%;
+// display : flex;
+// justify-content : center;
+// align-items : center;
+height : 50%;
 `;
 
 export const ModalBackdrop = styled.div`
@@ -53,8 +53,8 @@ padding: 5px 10px;
 width: 40px;
 height: 40px;
 display : flex;
-justify-content : center;
-align-items : center;
+// float:right;
+margin-right: .25rem;
 `;
 
 export const ModalView = styled.div.attrs((props) => ({
@@ -62,6 +62,16 @@ export const ModalView = styled.div.attrs((props) => ({
   role: 'dialog',
 }))`
   // Modal창 CSS를 구현합니다.
+
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  width: 650px;
+  heigth: 200px;
+  background-color: #ffffff;
+    >div.desc {
+      margin: 20px;
+
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -141,7 +151,11 @@ const Modify = () => {
             {/* <hr /> */}
             <div className="square">
                 <div className='square_in'>
-                <>
+            <div className="pro_box">
+                                <form>
+                                    <img className ="profils" src={user2} alt='프로필'></img>
+                                </form>
+                                <>
       <ModalContainer>
         <ModalBtn onClick={openModalHandler}
         // 클릭하면 Modal이 열린 상태(isOpen)를 boolean 타입으로 변경하는 메소드가 실행되어야 합니다. 
@@ -161,10 +175,6 @@ const Modify = () => {
         }
       </ModalContainer>
     </>
-            <div className="pro_box">
-                                <form>
-                                    <img className ="profils" src={user2} alt='프로필'></img>
-                                </form>
                                 {/* <h4 className='profil_font' onClick={() => setprofile(!editprofile)}>
                                     {editprofile && (
                                         <Modal closeModal={() => setprofile(!editprofile)} >
@@ -176,31 +186,31 @@ const Modify = () => {
                                 <thead></thead>
                                 <tbody>
                                     <tr className='modify_bold'>
-                                        <td className='nickname_bold'><p className='nickname_font'>닉네임</p></td>
+                                        <td className='nickname_bold'><p className='oneline_font'>닉네임</p></td>
                                         <td>
                                             <input type='text' className='intro' placeholder='닉네임 수정'></input>
                                         </td>
                                     </tr>
                                     <tr className='modify_bold'>
-                                        <td className='oneline_bold'><p className='oneline_font'>한줄소개</p></td>
+                                        <td className='nickname_bold'><p className='oneline_font'>한줄소개</p></td>
                                         <td>
                                             <input type='text' className='intro' placeholder='한줄소개를 입력하세요.'></input>
                                         </td>
                                     </tr>
                                     <tr className='modify_bold'>
-                                        <td className='nickname_bold'><p className='nickname_font'>이름</p></td>
+                                        <td className='nickname_bold'><p className='oneline_font'>이름</p></td>
                                         <td>
                                             <input type='text' className='intro' placeholder='이름 수정'></input>
                                         </td>
                                     </tr>
                                     <tr className='modify_bold'>
-                                        <td className='oneline_bold'><p className='oneline_font'>비밀번호</p></td>
+                                        <td className='nickname_bold'><p className='oneline_font'>비밀번호</p></td>
                                         <td>
                                             <input type='text' className='intro_edit' placeholder='비밀번호 수정'></input>
                                         </td>
                                     </tr>
                                     <tr className='modify_bold'>
-                                        <td className='oneline_bold'><p className='oneline_font'>이메일</p></td>
+                                        <td className='nickname_bold'><p className='oneline_font'>이메일</p></td>
                                         <td>
                                             <input type='text' className='intro_edit' placeholder='이메일 수정'></input>
                                         </td>

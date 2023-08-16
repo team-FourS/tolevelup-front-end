@@ -1,5 +1,6 @@
 .Profile_name{
-  color:rgb(77, 77, 77)
+  color:rgb(120, 119, 119);
+  text-align: left;
 }
 .profile-change-container {
   text-align: center;
@@ -15,14 +16,14 @@
 .profile-item {
   cursor: pointer;
   border: 2px solid transparent;
-  border-radius: 50%;
+  border-radius: 40%;
   padding: 10px;
   transition: all 0.3s ease;
 }
 .profile-item img {
   width: 80px;
   height: 80px;
-  border-radius: 50%;
+  border-radius: 10%;
   object-fit: cover;
 }
 .profile-item:hover {
@@ -31,4 +32,9 @@
 
 .profile-item.selected {
   border-color: #61ad82;
+}
+.eat_size{
+  width: 30px;
+  height: 30px;
+
 }
