@@ -13,6 +13,10 @@ import CultureLv01 from '../../img/Culture-Lv01.png';
 import CultureLv02 from '../../img/Culture-Lv02.png';
 import CultureLv03 from '../../img/Culture-Lv03.png';
 import CultureLv04 from '../../img/Culture-Lv04.png';
+import HobbyLv01 from '../../img/Hobby-Lv01.png';
+import HobbyLv02 from '../../img/Hobby-Lv02.png';
+import HobbyLv03 from '../../img/Hobby-Lv03.png';
+import HobbyLv04 from '../../img/Hobby-Lv04.png';
 
 const Profile = () => {
 
@@ -134,6 +138,25 @@ const Profile = () => {
         </div>
         </div>
         <hr />
+
+        <h5 className='Profile_name'>취미</h5>
+      <div className="profile-list" >
+        <div className='profile-item'>
+          <img src={HobbyLv01} alt='1' className='eat_size'/>
+        </div>
+
+        <div className='profile-item'>
+          <img src={HobbyLv02} alt='2' className='eat_size'/>
+        </div>
+
+        <div className='profile-item'>
+          <img src={HobbyLv03} alt='3' className='eat_size'/>
+        </div>
+
+        <div className='profile-item'>
+          <img src={HobbyLv04} alt='4' className='eat_size'/>
+        </div>
+        </div>
         
       </div>
       //  <p src={profiles.text} alt='//' />

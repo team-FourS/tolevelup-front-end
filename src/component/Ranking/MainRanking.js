@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Header from "../Header/Header";
+// import Header from "../Header/Header";
 import Footer from "../Footer";
 import "../../css/ranking/Ranking.css";
 import styled from 'styled-components';
@@ -31,7 +31,7 @@ const Rank = () => {
   const Container = styled.div`
     {props => props.theme.flex('center', 'center')}
     height: 10vh;
-    margin-left:20vh;
+    margin-left:55vh;
     
   `;
 
@@ -54,7 +54,7 @@ const Rank = () => {
 
   return (
     <main className="layout_ranking">
-      <Header />
+      {/* <Header /> */}
       <div>
         <Container>
           {MAIN_DATA.map((data) => {

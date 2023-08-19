@@ -30,7 +30,7 @@
   text-align: center;
   margin: 20px;
   align-items: center;
-  border: solid 2px gray;
+  /* border: solid 2px gray; */
   border-radius: 10px;
 }
 .square_in{
@@ -74,6 +74,7 @@
 }
 .btn_modi{
   align-items: center;
+  margin-top: 5vh;
 }
 .profils{
   width: 100px;
@@ -92,13 +93,13 @@
   color: rgb(7, 132, 242);
 }
 .modify_bold{
-  border: solid 1px gray;
+  border-bottom: solid 1px gray;
   border-collapse: collapse;
 }
 .nickname_bold{
-  border: solid 1px gray;
+  border-bottom: 1px gray;
   border-collapse: collapse;
-  background-color: lightgray;
+  /* background-color: lightgray; */
   padding-left: 70px;
   padding-right: 70px;
 }

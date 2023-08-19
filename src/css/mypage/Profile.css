@@ -17,7 +17,7 @@
   cursor: pointer;
   border: 2px solid transparent;
   border-radius: 40%;
-  padding: 10px;
+  /* padding: 10px; */
   transition: all 0.3s ease;
 }
 .profile-item img {
@@ -34,7 +34,7 @@
   border-color: #61ad82;
 }
 .eat_size{
-  width: 30px;
-  height: 30px;
+  width: 10px;
+  height: 10px;
 
 }
