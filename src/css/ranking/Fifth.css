@@ -54,7 +54,7 @@
   }
   .rank_scrollbox{
     width: 900px;
-    height: 590px;
+    height: 530px;
     overflow-y: scroll;
     border: solid 1px gray;
     /* border-radius: 5px; */
