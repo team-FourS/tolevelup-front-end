@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../css/mission/MissionCheck.css';
+import '../../css/mission/MissionCheck03.css';
 
 function TodoItem({ todo, index, toggleComplete }) {
   const textStyle = {
@@ -7,14 +7,16 @@ function TodoItem({ todo, index, toggleComplete }) {
   };
 
   return (
-    <label className="checkbox-container">
+    <label className="checkbox-container3">
       <input
       type="checkbox"
-      className="checkbox"
+      className="checkbox3"
         checked={todo.completed}
         onChange={() => toggleComplete(index)}/>
-        <span className="custom-checkbox"></span>
-        <span className="todo-text" style={textStyle}> {todo.text} </span>
+        <span className="custom-checkbox3"></span>
+        <p className="text-underline">
+        <span className="todo-text3" style={textStyle}> {todo.text} </span>
+        </p>
     </label>
 
   );
@@ -22,7 +24,7 @@ function TodoItem({ todo, index, toggleComplete }) {
 
   function MissionCheck03() {
     const [todos, setTodos] = useState([
-      { text: '전시회 다녀오기', completed: false },
+      { text: '전시회 다녀오기', completed: false } , 
       { text: '영화 한 편 감상하기', completed: true },
       { text: '독서 200페이지 이상하기', completed: false },
     ]);
@@ -36,17 +38,17 @@ function TodoItem({ todo, index, toggleComplete }) {
 
   return (
     <div>
-      <button className="btnMissionCheck">문화생활</button>
-      <div className="missionList">
+      <button className="btnMissionCheck3">문화생활</button>
+      <div className="missionList3">
         <ul>
           {todos.map((todo, index) => (
             <TodoItem
               key={index}
               todo={todo}
               index={index}
-              toggleComplete={toggleComplete}
-            />
-          ))}
+              toggleComplete={toggleComplete} 
+            /> 
+          ))} 
         </ul>
       </div>
     </div>

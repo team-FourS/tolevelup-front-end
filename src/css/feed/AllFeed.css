@@ -19,11 +19,11 @@
 
 /* 버튼 */
 .allFeed{
-  margin: 30px 15px 0px 180px;
+  margin: 25px 15px 0px 180px;
   font-size: 16px; font-weight: 500;
   display: inline-block;
   background: rgb(232, 232, 232);
-  width: 80px; height: 32px;
+  width: 65px; height: 32px;
   border: none; border-radius: 25px;
 }
 .followFeed{
@@ -52,6 +52,15 @@
   border-radius: 10px;
   border-width: 1px;
   border-color: rgb(173, 173, 173);
+}
+.input-container {
+  display: flex;
+  align-items: center;
+  /* border: 1px solid #ccc; */
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
 }
 
 /*피드 박스 스크롤*/

@@ -1,0 +1,52 @@
+.btnMissionCheck3{
+  color:white; 
+  background-color:mediumseagreen; 
+  border:none;
+  width: 110px; height: 45px; 
+  border-radius: 12px;
+  font-size: 17px;
+  display: block ;
+  margin: 50px 0px 40px 120px;
+}
+
+.missionList3{
+  display: inline-block;
+}
+.checkbox-container3 {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 270px; height: 70px;
+}
+.checkbox3 {
+  display: none; /* 체크박스를 숨김 */
+}
+.custom-checkbox3 {
+  width: 22px; height: 22px;
+  margin-right: 15px; 
+  border: 2px solid rgb(34, 173, 120);
+  background-color: #fff;
+  margin-right: 8px;
+}
+
+.checkbox3:checked + .custom-checkbox3::after {
+  content: '\2713'; /* 유니코드 체크 마크 아이콘 */
+  display: block;
+  text-align: center;
+  line-height: 17px; /* 아이콘의 높이에 맞게 조정 */
+  font-size: 35px; /* 아이콘 크기를 더 크게 조정 */
+  color: #4caf50;
+}
+
+.todo-text3 {
+  color: black;
+  margin-left: 10px; 
+  font-size: 18px;
+  font-weight: 520;
+}
+.text-underline{
+  text-decoration: underline;
+  text-underline-position: under;
+  
+  color: rgb(34, 173, 120);
+}
