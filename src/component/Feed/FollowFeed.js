@@ -39,10 +39,12 @@ const FollowFeed = () => {
         </Link>
 
         <label className="searching">
+        <div className="input-container">  
           <input className="searchBox"
             type="text" placeholder="닉네임을 입력해주세요.."             
           required />
             <BiSearchAlt2 />
+        </div>    
         </label>
 
       <div className="feed_scrollbox">
