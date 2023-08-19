@@ -36,7 +36,7 @@
 .rank_Info{
     margin-left: 20px;
     text-align: left;
-    margin-right: -300px;
+    margin-right: -500px;
 }
 .rank_user_name{
     margin:0;
@@ -53,8 +53,8 @@
     margin-right: 100vh;
   }
   .rank_scrollbox{
-    width: 1100px;
-    height: 530px;
+    width: 900px;
+    height: 590px;
     overflow-y: scroll;
     border: solid 1px gray;
     /* border-radius: 5px; */
