@@ -1,15 +1,11 @@
 import React, {useState} from 'react';
 import user2 from '../../img/user.png';
 import "../../css/mypage/Modify.css";
-// import Header from "../Header/Header";
-// import Footer from "../Footer";
 import Mypage from "../Mypage/Mypage";
-// import Edit from "./Edit";
-import {Routes, Route, Link} from "react-router-dom";
+import {Routes, Route, Link,useNavigate} from "react-router-dom";
 import Profile from './Profile';
-// import Modal from "../Modal";
-// import { useState } from 'react';
 import styled from 'styled-components';
+import back from '../../img/back.png';
 
 export const ModalContainer = styled.div`
 // Modal을 구현하는데 전체적으로 필요한 CSS를 구현
@@ -89,6 +85,13 @@ export const ModalView = styled.div.attrs((props) => ({
 
 const Modify = () => {
 
+    const navigate = useNavigate();
+    // 이전 페이지로 이동
+
+    const handleBack = () => {
+        navigate(-1); //뒤로가기
+      };
+
     const [isOpen, setIsOpen] = useState(false);
 
   const openModalHandler = () => {
@@ -124,11 +127,12 @@ const Modify = () => {
 );
   
     return (
+        <body className='modify_body'>
+            <img src={back} className='backbutton' onClick={handleBack} alt='뒤로가기' title='뒤로'/>
         <div className="layout_modify">
             <Routes>
                 <Route path="/mypage" element={<Mypage />} />
             </Routes>
-            {/* <Header /> */}
             <div className='modify_allbox'>            
             {/* <div className='edit1'>
                 <div className='block'>
@@ -160,7 +164,7 @@ const Modify = () => {
       <ModalContainer>
         <ModalBtn onClick={openModalHandler}
         // 클릭하면 Modal이 열린 상태(isOpen)를 boolean 타입으로 변경하는 메소드가 실행되어야 합니다. 
-        ><h4 className='profil_font'>프로필 편집</h4>
+        ><h4 className='profil_font'>프로필 이미지 편집</h4>
           {/* 조건부 렌더링을 활용해서 Modal이 열린 상태(isOpen이 true인 상태)일 때는 ModalBtn의 내부 텍스트가 'Opened!' 로 Modal이 닫힌 상태(isOpen이 false인 상태)일 때는 ModalBtn 의 내부 텍스트가 'Open Modal'이 되도록 구현 */}
         </ModalBtn>
         {/* 조건부 렌더링을 활용해서 Modal이 열린 상태(isOpen이 true인 상태)일 때만 모달창과 배경이 뜰 수 있게 구현 */}
@@ -176,15 +180,9 @@ const Modify = () => {
         }
       </ModalContainer>
     </>
-                                {/* <h4 className='profil_font' onClick={() => setprofile(!editprofile)}>
-                                    {editprofile && (
-                                        <Modal closeModal={() => setprofile(!editprofile)} >
-                                            <Profile />
-                                        </Modal>
-                                )}프로필 이미지 편집</h4> */}
                             </div>
                             <table className='modify_bold'>
-                                <thead></thead>
+                                {/* <thead/> */}
                                 <tbody>
                                     <tr className='modify_bold'>
                                         <td className='nickname_bold'><p className='oneline_font'>닉네임</p></td>
@@ -195,7 +193,7 @@ const Modify = () => {
                                     <tr className='modify_bold'>
                                         <td className='nickname_bold'><p className='oneline_font'>한줄소개</p></td>
                                         <td>
-                                            <input type='text' className='intro' placeholder='한줄소개를 입력하세요.'></input>
+                                            <input type='text' className='intro' placeholder='한줄소개'></input>
                                         </td>
                                     </tr>
                                     <tr className='modify_bold'>
@@ -207,13 +205,13 @@ const Modify = () => {
                                     <tr className='modify_bold'>
                                         <td className='nickname_bold'><p className='oneline_font'>비밀번호</p></td>
                                         <td>
-                                            <input type='text' className='intro_edit' placeholder='비밀번호 수정'></input>
+                                            <input type='text' className='intro' placeholder='비밀번호 수정'></input>
                                         </td>
                                     </tr>
                                     <tr className='modify_bold'>
                                         <td className='nickname_bold'><p className='oneline_font'>이메일</p></td>
                                         <td>
-                                            <input type='text' className='intro_edit' placeholder='이메일 수정'></input>
+                                            <input type='text' className='intro' placeholder='이메일 수정'></input>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -232,6 +230,7 @@ const Modify = () => {
         </div>
         {/* <Footer/>  */}
 </div>
+</body>
     )
 }
 export default Modify;
