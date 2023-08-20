@@ -3,8 +3,11 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-  min-height: 80%;
-  margin-top: 10vh;
+  /* min-height: 80%; */
+  /* margin-top: 10px; */
+}
+.modify_body{
+  background-color: rgb(243, 247, 244);
 }
 .main{
   display: block;
@@ -36,7 +39,7 @@
 .square_in{
   margin-left: 100px;
   margin-right: 100px;
-  margin-top: 20px;
+  margin-top: 95px;
   margin-bottom: 20px;
 }
 .she{
@@ -52,10 +55,13 @@
 }
 
 .intro{
-  width:190px; height: 30px;
+  width:250px;
+  height: 30px;
   margin: 5px;
   font-size: 15px;
   border-width: 0 0 1px;
+  background: transparent;
+  text-align: right;
 }
 .modify_allbox{
   display: block;
@@ -93,15 +99,15 @@
   color: rgb(7, 132, 242);
 }
 .modify_bold{
-  border-bottom: solid 1px gray;
+  border-bottom: solid 1px #d9cfcf;
   border-collapse: collapse;
 }
 .nickname_bold{
   border-bottom: 1px gray;
   border-collapse: collapse;
   /* background-color: lightgray; */
-  padding-left: 70px;
-  padding-right: 70px;
+  /* padding-left: 70px; */
+  padding-right: 400px;
 }
 /* .oneline_bold{
   border: solid 1px gray;
@@ -113,14 +119,13 @@
 } */
 .oneline_font{
   color: rgb(107, 106, 106);
+  font-size: 14px;
 }
 .block{
   display: inline-flex;
 }
 .private_locate{
   margin-right: 20px;
-}
-.profile_locate{
   margin-left: 20px;
 }
 
@@ -135,4 +140,12 @@
 
 .form-signup input[type="file"] {
   display: none;
+}
+.backbutton{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 25%;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
 }
