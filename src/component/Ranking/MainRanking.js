@@ -11,7 +11,7 @@ import RankEat from './RankEat';
 import RankCulture from './RankCulture';
 
 const Rank = () => {
-  const [content, setContent] = useState();
+  const [content, setContent] = useState('first');
 
   const handleClickButton = e => {
     const { name } = e.target;
