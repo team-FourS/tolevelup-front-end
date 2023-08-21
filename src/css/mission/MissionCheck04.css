@@ -1,35 +1,33 @@
-.checklist-border{
+.checklist-border4{
   width: 310px; height: 390px;
   margin-top:55px;
   margin-left: 35px;
   border: 2px solid rgb(35, 160, 91);
 }
-.btnMissionCheck3{
+.btnMissionCheck4{
   color:rgb(35, 160, 91); 
   background-color: white;
   width: 140px; height: 50px; 
-  border-radius: 130px 130px 130px 130px;
-  border-style: solid;
-  border-color: rgb(35, 160, 91);
-  font-size: 18px; font-weight: bold;
-  display: block ;
+  border:none;
+  font-size: 25px; font-weight: bold;
+  display: block;
   margin: auto;
-  margin-top: 40px; margin-bottom: 10px;
+  margin-top: 20px;  margin-bottom: 10px;
 }
-.missionList3{
+.missionList4{
   display: inline-block;
   margin-left: -15px;
 }
-.checkbox-container3 {
+.checkbox-container4 {
   display: flex;
   align-items: center;
   cursor: pointer;
   width: 270px; height: 70px;
 }
-.checkbox3 {
+.checkbox4 {
   display: none; /* 체크박스를 숨김 */
 }
-.custom-checkbox3 {
+.custom-checkbox4 {
   width: 22px; height: 22px;
   margin-right: 15px; 
   border: 2px solid rgb(34, 173, 120);
@@ -37,7 +35,7 @@
   margin-right: 8px;
 }
 
-.checkbox3:checked + .custom-checkbox3::after {
+.checkbox4:checked + .custom-checkbox4::after {
   content: '\2713'; /* 유니코드 체크 마크 아이콘 */
   display: block;
   text-align: center;
@@ -46,25 +44,19 @@
   color: #4caf50;
 }
 
-.todo-text3 {
+.todo-text4 {
   color: black;
   margin-left: 10px; 
   font-size: 18px;
   font-weight: 520;
 }
-/* .text-underline{
-  text-decoration: underline;
-  text-underline-position: under;
-  color: rgb(34, 173, 120);
-  
-} */
-.text-underline {
+.text-underline4 {
   position: relative;
   display: inline-block;
   color: rgb(34, 173, 120);
 }
 
-.text-underline span::after {
+.text-underline4 span::after {
   content: "";
   position: absolute;
   left: 10px;

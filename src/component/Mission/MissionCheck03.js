@@ -38,18 +38,20 @@ function TodoItem({ todo, index, toggleComplete }) {
 
   return (
     <div>
-      <button className="btnMissionCheck3">문화생활</button>
-      <div className="missionList3">
-        <ul>
-          {todos.map((todo, index) => (
-            <TodoItem
-              key={index}
-              todo={todo}
-              index={index}
-              toggleComplete={toggleComplete} 
-            /> 
-          ))} 
-        </ul>
+      <div className="checklist-border">
+        <button className="btnMissionCheck3">문화생활</button>
+        <div className="missionList3">
+          <ul>
+            {todos.map((todo, index) => (
+              <TodoItem
+                key={index}
+                todo={todo}
+                index={index}
+                toggleComplete={toggleComplete} 
+              /> 
+            ))} 
+          </ul>
+        </div>
       </div>
     </div>
   );

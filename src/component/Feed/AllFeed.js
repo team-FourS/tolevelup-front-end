@@ -39,10 +39,12 @@ const AllFeed = () => {
         </Link>
 
         <label className="searching">
-          <input className="searchBox"
-            type="text" placeholder="닉네임을 입력해주세요.."             
-          required />
-            <BiSearchAlt2 />
+          <div className="input-container">
+            <input className="searchBox"
+              type="text" placeholder="닉네임을 입력해주세요"             
+            required />
+              <BiSearchAlt2 className="search-icon"/>
+          </div>    
         </label>
 
       <div className="feed_scrollbox">
