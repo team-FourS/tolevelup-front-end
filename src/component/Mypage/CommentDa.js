@@ -3,7 +3,7 @@ import "../../css/mypage/CommentDa.css"
 
 const CommentDa = () => {
     return (
-      <main className="layout_alr">
+      <main className="layout_alr" onClick={(e) => e.stopPropagation()}>
         <div className="alarm_lay">
           <h4 className="alarm_font">코멘트</h4>
             <hr />

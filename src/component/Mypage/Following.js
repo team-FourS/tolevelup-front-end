@@ -4,7 +4,7 @@ import user from '../../img/user.png';
 
 const Following = () => {
     return (
-      <main className="layout_wing">
+      <main className="layout_wing" onClick={(e) => e.stopPropagation()}>
 
         {/* <Header/> */}
 

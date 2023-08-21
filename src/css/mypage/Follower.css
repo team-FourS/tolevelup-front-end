@@ -1,13 +1,10 @@
 .layout_wer{
-    display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
     min-height: 80%;
-    position: relative;
   }
   .alarm_wer{
-    /* margin-top: 10vh; */
     align-items: left;
     text-align: left;
   }
