@@ -4,7 +4,7 @@ import user from '../../img/user.png';
 
 const Follower = () => {
   return (
-    <main className="layout_wer">
+    <main className="layout_wer" onClick={(e) => e.stopPropagation()}>
       <div className="wer_lay">
         <h4 className="wer_font">팔로워</h4>
           <hr />

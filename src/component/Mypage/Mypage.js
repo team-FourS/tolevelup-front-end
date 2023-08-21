@@ -12,7 +12,7 @@ import Following from './Following';
 import CommentDa from "./CommentDa";
 
 const Mypage = () => {
-    const [fallower, setWer] = useState(false);
+    const [follower, setWer] = useState(false);
     const [fallowing, setWing] = useState(false);
     const [comment, setCommen] = useState(false);
 
@@ -64,12 +64,13 @@ const Mypage = () => {
             <main className='square2'>
                 <div className="square3">
                    <div className='main_counter'>
-                        <div className='count' onClick={() => setWer(!fallower)}>
-                            {fallower && (
-                            <Modal closeModal={() => setWer(!fallower)}>
+                        <div className='count' onClick={() => setWer(!follower)}>
+                            {follower && (
+                            <Modal closeModal={() => setWer(!follower)}>
                                 <Follower />
                             </Modal>
                             )}
+
                             <div className='cntnum'><strong>0</strong></div>
                             <div className='follower_following_comment'>팔로워</div>
                         </div>
@@ -80,15 +81,18 @@ const Mypage = () => {
                                 <Following />
                             </Modal>
                             )}
+
                             <div className='cntnum'><strong>0</strong></div>
                             <div className='follower_following_comment'>팔로잉</div>
                         </div>
+
                     <div className='count' onClick={() => setCommen(!comment)}>
                         {comment && (
                             <Modal closeModal={() => setCommen(!comment)}>
                                 <CommentDa />
                             </Modal>
                             )}
+
                             <div className='cntnum'><strong>0</strong></div>
                             <div className='follower_following_comment'>코멘트</div>
                     </div>

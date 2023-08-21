@@ -82,6 +82,7 @@
   align-items: center;
   margin-top: 30px;
   padding: 5px;
+  cursor: pointer;
 }
 .mypage_profile{
   width: 45px;
