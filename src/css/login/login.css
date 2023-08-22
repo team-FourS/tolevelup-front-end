@@ -1,17 +1,8 @@
-/*
-.loginForm{
-  margin: auto;
-  text-align: center;
-  width:300px; height: 400px;
-  background-color:#ffffff;
-  border-radius:5px;
-  border: 3px solid #65C28E;
-  */
 .idField{
   padding-bottom: 10px;
 }
 .totalLogin{
-  margin-top: 40px;
+  padding-top: 5%;
  
 }
 
@@ -26,7 +17,8 @@
 }
 .loginBox{
   background-color: rgba(255, 255, 255, 0.884);
-  width: 300px; height: 320;
+  width: 300px;
+  height: 320;
   border-radius: 5px;
   margin-bottom: 20px;
 }
@@ -37,6 +29,7 @@
   font-size: 15px;
   color:white; background-color: #65C28E;
   margin-top: 30px;
+  cursor: pointer;
 }
 
 .keepLogin{
@@ -54,30 +47,39 @@
   padding-right: 10px;
   font-size: 15px;
 }
+.findPassword:hover{
+  font-weight: 600;
+  text-decoration: underline;
+}
 .signUp{
   margin-left: 20px;
   font-size: 15px;
 }
+.signUp:hover{
+  font-weight: 600;
+  text-decoration: underline;
+}
 
 .naver { 
   width: 25px; padding-left: 5px;
-  border: 0px; padding-right: 20px;
+  border: 0px;
+  margin-right: 20px;
+  cursor: pointer;
 }
 .google { 
   width: 25px; 
-  border: 0px; padding-right: 20px;
+  border: 0px;
+  margin-right: 20px;
+  cursor: pointer;
 }
 .kakao { 
   width: 25px; 
-  border: 0px; padding-right: 20px;
+  border: 0px;
+  margin-right: 20px;
+  cursor: pointer;
 }
-
-/* a {
-  font-size: 12px;
-  text-decoration: none;
-  color: inherit;
-
-} */
-/* .login_body{
-  color: #65C28E;
-} */
+.login_body{
+  background: #c2e59c;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #64b3f4, #c2e59c);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #64b3f4, #c2e59c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}

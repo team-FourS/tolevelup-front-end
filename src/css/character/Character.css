@@ -41,6 +41,7 @@
 
   .btn_exercise_character{
     border-radius: 20px;
+    cursor: pointer;
     border: none;
     margin: 20px;
     transition: top .01s linear;
@@ -49,6 +50,7 @@
           0 6px 0 0 #ec89c2,
           0 6px 0 1px #a8a6a6,
           0 6px 6px 1px #a8a6a6;
+          
   }
   .btn_exercise_character:active {
     box-shadow: 0 0 0 1px rgba(255,255,255,0.15) inset,
@@ -58,6 +60,7 @@
 
   .btn_eat_character{
     border-radius: 20px;
+    cursor: pointer;
     border: none;
     margin: 20px;
     transition: top .01s linear;
@@ -75,6 +78,7 @@
 
   .btn_culture_character{
     border-radius: 20px;
+    cursor: pointer;
     border: none;
     margin: 20px;
     transition: top .01s linear;
@@ -93,6 +97,7 @@
   .btn_hobby_character{
     border-radius: 20px;
     border: none;
+    cursor: pointer;
     margin: 20px;
     transition: top .01s linear;
     background-color: #85d870;

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../css/login/login.css'
+import '../../css/login/Logout.css'
 import { TextField } from '@mui/material';
 import { Button } from '@mui/base';
 // import FormControlLabel from '@mui/material/FormControlLabel';
@@ -15,6 +15,7 @@ import kakao from '../../img/kakao.png';
 function Logout() {
   
   return (
+    <body className='logout_body'>
     <div className='totalLogin'>
       <Routes>     
         <Route path="/Mission" element={<Mission />} />
@@ -67,6 +68,7 @@ function Logout() {
 
         </div>
       </div>
+      </body>
   );
 }
 

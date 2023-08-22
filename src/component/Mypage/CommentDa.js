@@ -25,6 +25,13 @@ const CommentDa = () => {
                             <p className='user_comment'>- 김지웅</p>
                           </div>
                         </div>
+
+                        <div className="table_lay">
+                          <div className='comment_box'>
+                            같이 먹자고, 떡볶이
+                            <p className='user_comment'>- 박세연</p>
+                          </div>
+                        </div>
                       </td>
                     </tr>
                   </tbody>

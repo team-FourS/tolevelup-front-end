@@ -45,6 +45,7 @@ const Rank = () => {
     border-style: solid;
     border-color: #a9d28c;
     box-shadow: 1px 4px 1px #8eb373;
+    cursor: pointer;
   `;
 
   const Content = styled.div`

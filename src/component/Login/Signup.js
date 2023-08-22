@@ -9,6 +9,7 @@ import logo from '../../img/smallLogo.png';
 function Signup() {
   
   return (
+    <body className='signup_body'>
     <div className="LoginLayout">
       <Routes>
         <Route path="/Login" element={<Login />} />
@@ -16,7 +17,7 @@ function Signup() {
 
       <div className="signUpForm"> 
         <div className="signUpID">
-          <p className="loginTitle">회원가입d</p>  
+          <p className="loginTitle">회원가입</p>  
           <img className="loginLogo" src={logo} alt="로고" />
 
           <TextField className="loginBox"
@@ -48,7 +49,8 @@ function Signup() {
         </Link>
 
         </div>
-      </div>  
+      </div>
+      </body>  
   );
 }
 

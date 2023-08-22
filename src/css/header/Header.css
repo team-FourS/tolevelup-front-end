@@ -27,10 +27,12 @@
 .manual_icon{
     margin-right: 20px;
     font-size: 25px;
+    cursor: pointer;
 }
 .bell_icon{
     display: inline;
     margin-right: 20px;
     font-size: 25px;
     color: rgb(76, 152, 233);
+    cursor: pointer;
 }

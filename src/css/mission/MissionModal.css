@@ -9,6 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 /* modal창 */
 .missionModal {
@@ -27,6 +28,7 @@
   color: rgba(0, 0, 0, 0.7);
   background-color: transparent;
   font-size: 20px;
+  cursor: pointer;
 }
 #modalCloseBtn:hover {
   cursor: pointer;

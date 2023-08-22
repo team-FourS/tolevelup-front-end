@@ -9,6 +9,7 @@ import logo from '../../img/smallLogo.png';
 function FindID() {
   
   return (
+    <body className='FindID_body'>
     <div className="LoginLayout">
       <Routes>
         <Route path="/Login" element={<Login />} />
@@ -36,6 +37,7 @@ function FindID() {
         </Button>
       </div>
     </div>
+    </body>
   );
 }
 
