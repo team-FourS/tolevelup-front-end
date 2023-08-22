@@ -38,7 +38,7 @@
   color: inherit;
 } */
 .signup_body{
-  background: #c2e59c;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #64b3f4, #c2e59c); 
-  background: linear-gradient(to right, #64b3f4, #c2e59c);
+  background: #c2e59c;
+  background: -webkit-linear-gradient(to right, #81bff1, #a8e59c); 
+  background: linear-gradient(to right, #81bff1, #a8e59c); 
 }
