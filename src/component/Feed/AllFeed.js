@@ -10,11 +10,26 @@ import {BiSearchAlt2} from "react-icons/bi";
 import {HiHeart} from "react-icons/hi";
 import {LiaCommentSolid} from "react-icons/lia";
 
+import CommentModal from "./CommentModal";
+
 const AllFeed = () => {
   const [isActive, setIsActive] = useState(false);
 
   const FeedClick = () => {
     setIsActive(!isActive);
+  };
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleCommentIconClick = () => {
+    setIsModalOpen(!isModalOpen); // 댓글 창 열고 닫기
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCommentSubmit = (comment) => { //댓글 창 닫기
+    handleCloseModal();
   };
 
   return (
@@ -62,7 +77,14 @@ const AllFeed = () => {
               <label htmlFor="btn3"> 취미 | 캠핑 여행 다녀오기 </label> 
             </div>
             <HiHeart className="heart_icon"/>
-            <LiaCommentSolid className="comment_icon"/>
+            <LiaCommentSolid className="comment_icon"
+            onClick={handleCommentIconClick}/>
+            {isModalOpen && (
+            <CommentModal
+              onClose={handleCloseModal}
+              onSubmit={handleCommentSubmit}
+            />
+          )}
           </div>
         </div>
         
@@ -80,7 +102,14 @@ const AllFeed = () => {
               <label htmlFor="btn3"> 취미 | 캠핑 여행 다녀오기 </label>
             </div>
             <HiHeart className="heart_icon"/>
-            <LiaCommentSolid className="comment_icon"/>
+            <LiaCommentSolid className="comment_icon"
+            onClick={handleCommentIconClick}/>
+            {isModalOpen && (
+            <CommentModal
+              onClose={handleCloseModal}
+              onSubmit={handleCommentSubmit}
+            />
+          )}
           </div>
         </div>
         
@@ -98,7 +127,14 @@ const AllFeed = () => {
               <label htmlFor="btn3"> 취미 | 캠핑 여행 다녀오기 </label>
             </div>
             <HiHeart className="heart_icon"/>
-            <LiaCommentSolid className="comment_icon"/>
+            <LiaCommentSolid className="comment_icon"
+            onClick={handleCommentIconClick}/>
+            {isModalOpen && (
+            <CommentModal
+              onClose={handleCloseModal}
+              onSubmit={handleCommentSubmit}
+            />
+          )}
           </div>
         </div>
 
@@ -117,7 +153,14 @@ const AllFeed = () => {
               <label htmlFor="btn3"> 취미 | 오늘 하루 이상 일기에 담기 </label>
             </div>
             <HiHeart className="heart_icon"/>
-            <LiaCommentSolid className="comment_icon"/>
+            <LiaCommentSolid className="comment_icon"
+            onClick={handleCommentIconClick}/>
+            {isModalOpen && (
+            <CommentModal
+              onClose={handleCloseModal}
+              onSubmit={handleCommentSubmit}
+            />
+          )}
           </div>
         </div>
 

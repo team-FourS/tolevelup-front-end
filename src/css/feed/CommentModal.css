@@ -1,0 +1,29 @@
+.comment-modal{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  
+}
+.comment-box{
+  width: 810px; max-height: 100px;
+  outline: none;
+  resize: none; /* 크기 조절 비활성화 */ 
+  overflow-y: auto; 
+  font-size: 16px;
+  flex: 1;
+}
+.comment-container {
+  display: flex;
+  flex-direction: row; /* 컨테이너의 아이템들을 가로로 정렬 */
+  align-items: center;
+  gap: 10px;
+}
+
+.btnSubmit{
+  color:black;
+  background-color: #e8e8e8;
+  width: 53px; height: 27px; 
+  font-size: 15px;
+  border: none;  border-radius: 5px;
+  margin-right: 10px;
+}
