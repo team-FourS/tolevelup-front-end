@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../../css/character/Character.css"
 import Header from "../Header/Header";
 import Footer from "../Footer";
-import CModal from "../CModal";
+import CModal from "../Modal/CModal";
 
 import Exercise from "./Exercise";
 import Eat from "./Eat";

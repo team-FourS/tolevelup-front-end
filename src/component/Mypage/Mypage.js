@@ -6,7 +6,7 @@ import "../../css/mypage/Mypage.css"
 import Header from "../Header/Header";
 import Footer from "../Footer";
 import { useState } from "react";
-import Modal from "../Modal";
+import Modal from "../Modal/Modal";
 import Follower from "./Follower";
 import Following from './Following';
 import CommentDa from "./CommentDa";

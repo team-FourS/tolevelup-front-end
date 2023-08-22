@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../css/login/FindID.css'
+import '../../css/login/FindPassword.css'
 import {Routes, Route} from "react-router-dom";
 import { TextField } from '@mui/material';
 import { Button } from '@mui/base';
@@ -9,6 +9,7 @@ import logo from '../../img/smallLogo.png';
 function FindPassword() {
   
   return (
+    <body className='Findpassword_body'>
     <div className="LoginLayout">
       <Routes>
         <Route path="/Login" element={<Login />} />
@@ -36,6 +37,7 @@ function FindPassword() {
         </Button>
       </div>
     </div>
+    </body>
   );
 }
 

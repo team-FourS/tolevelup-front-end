@@ -190,6 +190,7 @@
 .count{
   display: inline-block;
   margin: 20px;
+  cursor: pointer;
 }
 .main_counter{
   display: block;

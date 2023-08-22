@@ -15,7 +15,7 @@ import kakao from '../../img/kakao.png';
 function Login() {
   
   return (
-    // <body className='login_body'>
+    <body className='login_body'>
     <div className='totalLogin'>
       <Routes>     
         <Route path="/Mission" element={<Mission />} />
@@ -65,12 +65,12 @@ function Login() {
             로그인
           </Button> <br/><br/>
         </Link>
-          <Link to="/signup" className="signup">
+          <Link to="/signup" className="signUp">
               ToLevelUp 회원가입
           </Link>
         </div>
       </div>
-      // </body>
+      </body>
   );
 }
 
