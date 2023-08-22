@@ -15,7 +15,7 @@ function FindPassword() {
         <Route path="/Login" element={<Login />} />
       </Routes>
 
-      <div className="loginForm"> 
+      <div className="findPassword-Form"> 
         <div className="loginID">
           <p className="loginTitle">비밀번호 찾기</p>  
           <img className="loginLogo" src={logo} alt="로고" />

@@ -3,9 +3,15 @@
 }
 .totalLogin{
   padding-top: 5%;
- 
 }
-
+.loginForm{
+  margin: auto;
+  text-align: center;
+  width:300px;
+  border-radius: 20px;
+  padding: 30px;
+  background-color:#ffffff;
+}
 .loginTitle{
   font-size: 25px;
   font-weight: 600;
@@ -17,12 +23,10 @@
 }
 .loginBox{
   background-color: rgba(255, 255, 255, 0.884);
-  width: 300px;
-  height: 320;
-  border-radius: 5px;
+  width: 300px;  height: 320;
+  border-radius: 15px;
   margin-bottom: 20px;
 }
-
 .btnLogin{
   width: 300px; height: 45px;
   border: none; border-radius: 5px;
@@ -31,7 +35,6 @@
   margin-top: 30px;
   cursor: pointer;
 }
-
 .keepLogin{
   text-align: left;
   margin-top: 10px;
@@ -80,6 +83,6 @@
 }
 .login_body{
   background: #c2e59c;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #64b3f4, #c2e59c);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #64b3f4, #c2e59c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to right, #81bff1, #a8e59c);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #81bff1, #a8e59c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }

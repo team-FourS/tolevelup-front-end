@@ -1,32 +1,27 @@
 .signUpForm{
   margin: auto;
   text-align: center;
-  width:300px; 
-  /* height: 450px; */
-  background-color:#ffffff;
-  border-radius:5px;
+  width:300px;
+  border-radius: 20px; border:none;
   padding: 30px;
+  background-color:#ffffff;
 
   /*로그인 폼 화면 가운데 배치*/
   place-items: center;
 }
-
 .signUpID{
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
-
 .signUpTitle{
   font-size: 30px;
   font-weight: 600;
   color: #65C28E;
 }
-
 .signUpBox{
   background-color: rgba(255, 255, 255, 0.884);
   width: 320px; 
   border-radius: 5px;
 }
-
 .btnsignUp{
   width: 230px; height: 45px;
   border: none; border-radius: 5px;
@@ -34,7 +29,6 @@
   color:white; background-color: #65C28E;
   margin-top: 10px;
 }
-
 .keepLogin{
   text-align: left;
 }
@@ -46,6 +40,6 @@
 } */
 .signup_body{
   background: #c2e59c;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #64b3f4, #c2e59c);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #64b3f4, #c2e59c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to right, #64b3f4, #c2e59c); 
+  background: linear-gradient(to right, #64b3f4, #c2e59c);
 }

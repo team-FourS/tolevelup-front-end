@@ -15,7 +15,7 @@ function FindID() {
         <Route path="/Login" element={<Login />} />
       </Routes>
 
-      <div className="loginForm"> 
+      <div className="findID-Form"> 
         <div className="loginID">
           <p className="loginTitle">아이디 찾기</p>  
           <img className="loginLogo" src={logo} alt="로고" />
