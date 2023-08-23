@@ -3,8 +3,6 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-  /* min-height: 80%; */
-  /* margin-top: 10px; */
 }
 .modify_body{
   background-color: rgb(243, 247, 244);
@@ -33,7 +31,6 @@
   text-align: center;
   margin: 20px;
   align-items: center;
-  /* border: solid 2px gray; */
   border-radius: 10px;
 }
 .square_in{
@@ -45,9 +42,7 @@
 .she{
   display: inline-block;
 }
-/* .text{
-  display: inline-flex;
-} */
+
 .rename{
   width:190px; height: 30px;
   margin: 5px;
@@ -63,6 +58,7 @@
   border-color: lightgray;
   background: transparent;
   text-align: right;
+  outline: none;
 }
 .modify_allbox{
   display: block;
@@ -79,9 +75,20 @@
       margin: 5px;
       
 }
+.btnstyle:hover{
+      color:white;
+      background-color: #65C28E;
+      width: 53px; height: 27px; 
+      font-size: 15px;
+      border: none;
+      border-radius: 5px;
+      margin: 5px;
+      
+}
 .btn_modi{
   align-items: center;
   margin-top: 5vh;
+  display: inline-flex;
 }
 .profils{
   width: 100px;
@@ -106,18 +113,10 @@
 .nickname_bold{
   border-bottom: 1px gray;
   border-collapse: collapse;
-  /* background-color: lightgray; */
-  /* padding-left: 70px; */
-  padding-right: 400px;
+
+  padding-right: 300px;
 }
-/* .oneline_bold{
-  border: solid 1px gray;
-  border-collapse: collapse;
-  background-color: lightgray;
-  margin-left: 15px;
-  margin-right: 15px;
-  
-} */
+
 .oneline_font{
   color: rgb(107, 106, 106);
   font-size: 14px;
@@ -145,7 +144,7 @@
 .backbutton{
   margin-top: 10px;
   margin-bottom: 10px;
-  margin-left: 25%;
+  margin-left: 15%;
   width: 15px;
   height: 15px;
   cursor: pointer;

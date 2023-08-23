@@ -25,21 +25,21 @@ const Character = () => {
     <div className="layout_char">
       <Header />
         <main className="main_character">
-        <button className="btn_exercise_character">
-          <span id ="health" onClick={() => setHealth(!health)}>
-          {health && (
-            <CModal closeModal={() => setHealth(!health)}>
-              <Exercise />
-            </CModal>
-          )}
+          <button className="btn_exercise_character">
+            <span id ="health" onClick={() => setHealth(!health)}>
+              {health && (
+                <CModal closeModal={() => setHealth(!health)}>
+                  <Exercise />
+                </CModal>
+            )}
             <img className ="home" src={ExerciseLv01} alt='운동'></img>
             <h2 className="h2">운동</h2>
       </span>
 </button>
 </main>
 <main className="main_character">
-      <button className="btn_eat_character">
-      <span id ="eat" style ={{display:'block'}} onClick={() => setEat(!eat)}>
+      <button className="btn_eat_character" onClick={() => setEat(!eat)}>
+        <span className ="eat" style ={{display:'block'}} onClick={() => setEat(!eat)}>
           {eat && (
             <CModal closeModal={() => setEat(!eat)}>
               <Eat />
@@ -48,6 +48,7 @@ const Character = () => {
             <img className ="home" src={EatCharacter} alt='식습관'></img>
             <h2 className="h2">식습관</h2>
         </span>
+        
         </button>
         </main>
     

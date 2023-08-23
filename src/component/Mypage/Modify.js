@@ -31,9 +31,6 @@ export const ModalBtn = styled.button`
   background-color: var(--coz-purple-600);
   text-decoration: none;
   border: none;
-//   padding: 20px;
-//   color: white;
-//   border-radius: 30px;
   cursor: pointer;
 `;
 
@@ -55,22 +52,18 @@ export const ModalView = styled.div.attrs((props) => ({
   // attrs 메소드를 이용해서 아래와 같이 div 엘리먼트에 속성을 추가할 수 있다.
   role: 'dialog',
 }))`
-  // Modal창 CSS를 구현합니다.
+  // Modal CSS 구현
 
   align-items: center;
   flex-direction: column;
   border-radius: 20px;
-//   width: 650px;
   heigth: 200px;
   background-color: #ffffff;
     >div.desc {
-    //   margin: 20px;
-
   display: flex;
   align-items: center;
   flex-direction: column;
   border-radius: 20px;
-//   width: 500px;
   heigth: 300px;
   background-color: #ffffff;
     >div.desc {

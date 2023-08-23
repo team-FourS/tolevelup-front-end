@@ -10,7 +10,11 @@ const RankCulture = () => {
     return (
 <main className="layout_fifth">
   <table className="rank_table">
-    <thead />
+  <thead>
+          <tr>
+            <th></th>
+          </tr>
+        </thead>
     <tbody >
     <div className="rank_scrollbox">
     <div className="rankingbox">

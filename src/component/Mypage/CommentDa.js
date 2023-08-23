@@ -8,9 +8,15 @@ const CommentDa = () => {
           <h4 className="alarm_font">코멘트</h4>
             <hr />
               <table>
-                <thead />
+                <thead>
+                  <tr>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                  </tr>
+                </thead>
                   <tbody>
-                    <tr>
+                    <tr className="comment_data">
                       <td className="td">
                         <div className="table_lay">
                           <div className='comment_box'>
@@ -18,14 +24,42 @@ const CommentDa = () => {
                             <p className='user_comment'>- 국연수</p>
                           </div>
                         </div>
+                        </td>
 
+                        <td className="td">
                         <div className="table_lay">
                           <div className='comment_box'>
                             다시 찍자고, 다큐멘터리
                             <p className='user_comment'>- 김지웅</p>
                           </div>
                         </div>
+                      </td>
+                        <td className="td">
+                        <div className="table_lay">
+                          <div className='comment_box'>
+                            다시 찍자고, 다큐멘터리
+                            <p className='user_comment'>- 김지웅</p>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  {/* </tbody> */}
 
+                  {/* <tbody> */}
+                  <tr>
+                  <td className="td">
+                        <div className="table_lay">
+                          <div className='comment_box'>
+                            다시 찍자고, 다큐멘터리
+                            <p className='user_comment'>- 김지웅</p>
+                          </div>
+                        </div>
+                        </td>
+                        {/* </tr> */}
+                    {/* </tbody> */}
+                    {/* <tbody> */}
+                    {/* <tr> */}
+                    <td className="td">
                         <div className="table_lay">
                           <div className='comment_box'>
                             같이 먹자고, 떡볶이
