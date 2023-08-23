@@ -3,7 +3,7 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 95vh;
 }
 .home {
     width: 140px;
@@ -33,24 +33,28 @@
   text-align: center;
   transition: top .01s linear;
   text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+  margin-right: 15px;
+  margin-left: 15px;
 }
 .main_character:active {
   position: relative;
   top: 9px;
 }
 
+/* 운동 버튼 */
   .btn_exercise_character{
     border-radius: 20px;
     cursor: pointer;
     border: none;
-    margin: 20px;
-    transition: top .01s linear;
+    /* margin: 20px; */
+    transition: top .01s linear;       
+  }
+  .btn_exercise_character:hover{
     background-color: #f79dd2;
     box-shadow: 0 0 0 1px #ea80be inset,
           0 6px 0 0 #ec89c2,
           0 6px 0 1px #a8a6a6,
-          0 6px 6px 1px #a8a6a6;
-          
+          0 6px 6px 1px #a8a6a6;      
   }
   .btn_exercise_character:active {
     box-shadow: 0 0 0 1px rgba(255,255,255,0.15) inset,
@@ -58,12 +62,15 @@
           0 0 0 1px rgba(0,0,0,0.4);
   }
 
+/* 식습관 버튼 */
   .btn_eat_character{
     border-radius: 20px;
     cursor: pointer;
     border: none;
-    margin: 20px;
+    /* margin: 20px; */
     transition: top .01s linear;
+  }
+  .btn_eat_character:hover{
     background-color: #71cffa;
     box-shadow: 0 0 0 1px #4bb2ea inset,
           0 6px 0 0 #4bb2ea,
@@ -76,12 +83,15 @@
           0 0 0 1px rgba(0,0,0,0.4);
   }
 
+/* 문화생활 버튼 */
   .btn_culture_character{
     border-radius: 20px;
     cursor: pointer;
     border: none;
-    margin: 20px;
+    /* margin: 20px; */
     transition: top .01s linear;
+  }
+  .btn_culture_character:hover{
     background-color: #f1ef78;
     box-shadow: 0 0 0 1px #dcdc75 inset,
           0 6px 0 0 #dcdc75,
@@ -94,12 +104,15 @@
           0 0 0 1px rgba(0,0,0,0.4);
   }
 
+/* 취미 버튼 */
   .btn_hobby_character{
     border-radius: 20px;
     border: none;
     cursor: pointer;
-    margin: 20px;
+    /* margin: 20px; */
     transition: top .01s linear;
+        }
+  .btn_hobby_character:hover{
     background-color: #85d870;
     box-shadow: 0 0 0 1px #6dc657 inset,
           0 6px 0 0 #72ca85,

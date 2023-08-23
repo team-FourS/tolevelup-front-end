@@ -53,13 +53,9 @@ const Mypage = () => {
                                     다시 찍자고, 다큐멘터리
                                     <p className='user_comment'>- 김지웅</p>
                                 </div>
-                                {/* <div className='comment_box'>
-                                    내용3
-                                </div> */}
                             </div>
                         </div>
             </div>
-            
             
             <main className='square2'>
                 <div className="square3">
@@ -156,7 +152,6 @@ const Mypage = () => {
             </main>
             <div className='Mains-left'></div>
             </div>
-            
             <Footer/> 
 </main>        
     )
