@@ -14,7 +14,9 @@ function TodoItem({ todo, index, toggleComplete }) {
         checked={todo.completed}
         onChange={() => toggleComplete(index)}/>
         <span className="custom-checkbox"></span>
+        <p className="text-underline">
         <span className="todo-text" style={textStyle}> {todo.text} </span>
+        </p>
     </label>
 
   );
@@ -22,7 +24,7 @@ function TodoItem({ todo, index, toggleComplete }) {
 
   function MissionCheck02() {
     const [todos, setTodos] = useState([
-      { text: '물 6잔 이상 마시기', completed: false },
+      { text: '물 6잔 이상 마시기', completed: false } , 
       { text: '오늘 하루 밀가루 먹지 않기', completed: true },
       { text: '아침 식사 챙겨 먹기', completed: false },
     ]);
@@ -36,18 +38,20 @@ function TodoItem({ todo, index, toggleComplete }) {
 
   return (
     <div>
-      <button className="btnMissionCheck">식습관</button>
-      <div className="missionList">
-        <ul>
-          {todos.map((todo, index) => (
-            <TodoItem
-              key={index}
-              todo={todo}
-              index={index}
-              toggleComplete={toggleComplete}
-            />
-          ))}
-        </ul>
+      <div className="checklist-border">
+        <button className="btnMissionCheck">식습관</button>
+        <div className="missionList">
+          <ul>
+            {todos.map((todo, index) => (
+              <TodoItem
+                key={index}
+                todo={todo}
+                index={index}
+                toggleComplete={toggleComplete} 
+              /> 
+            ))} 
+          </ul>
+        </div>
       </div>
     </div>
   );
