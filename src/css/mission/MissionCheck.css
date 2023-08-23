@@ -1,59 +1,78 @@
-.btnMissionCheck{
-  color:white; 
-  background-color:mediumseagreen; 
-  border:none;
-  width: 110px; height: 45px; 
-  border-radius: 12px;
-  font-size: 17px;
-  display: block ;
-  margin: 50px 0px 40px 120px;
+.checklist-border{
+  width: 310px; height: 390px;
+  margin-top:55px;
+  margin-left: 35px;
+  border: 2px solid rgb(35, 160, 91);
 }
-/* .mission_checkbox{
-  font-size: 17px;
-  background-color: rgb(174, 228, 170,0.7);
-  width: 270px; height: 190px;
-  margin-top: 20px;
-  display: inline-block;
-} */
+.btnMissionCheck{
+  color:rgb(35, 160, 91); 
+  background-color: rgb(233, 241, 222);
+  width: 140px; height: 50px; 
+  border-radius: 130px 130px 130px 130px;
+  border-style: solid;
+  border-color: rgb(35, 160, 91);
+  font-size: 18px; font-weight: bold;
+  display: block ;
+  margin: auto;
+  margin-top: 30px; margin-bottom: 20px;
+}
 .missionList{
-  background-color: rgba(190, 233, 199, 0.7);
   display: inline-block;
+  margin-left: -15px;
 }
 .checkbox-container {
   display: flex;
   align-items: center;
-  width: 270px; height: 75px;
+  cursor: pointer;
+  width: 270px; height: 70px;
 }
 .checkbox {
-  display: none; 
+  display: none; /* 체크박스를 숨김 */
 }
+
 .custom-checkbox {
-  width: 25px; height: 25px;
-  border-radius: 50%;
-  margin-right: 15px;
-  margin-bottom: 10px;
-  border: 2px solid rgb(18, 167, 18);
-  position: relative;
-  cursor: pointer; /*커서 모양 추가*/
+  width: 22px; height: 22px;
+  margin-right: 15px; 
+  border: 2px solid rgb(34, 173, 120);
+  background-color: rgb(233, 241, 222);
+  margin-right: 8px;
 }
-.todo-text{
-  margin-bottom: 17px;
+
+.checkbox:checked + .custom-checkbox::after {
+  content: '\2713'; /* 유니코드 체크 마크 아이콘 */
+  display: block;
+  text-align: center;
+  line-height: 17px; /* 아이콘의 높이에 맞게 조정 */
+  font-size: 35px; /* 아이콘 크기를 더 크게 조정 */
+  color: #4caf50;
+}
+
+.todo-text {
+  color: black;
+  margin-left: 10px; 
   font-size: 18px;
   font-weight: 520;
 }
-/*체크박스 체크 표시*/
-.custom-checkbox::after {
-  content: '\2713'; /* 체크 모양 */
-  color: rgb(18, 167, 18); 
-  font-size: 16px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
+/* .text-underline{
+  text-decoration: underline;
+  text-underline-position: under;
+  color: rgb(34, 173, 120);
+  
+} */
+.text-underline {
+  position: relative;
+  display: inline-block;
+  color: rgb(34, 173, 120);
 }
 
-/* 체크됐을 때 */
-.checkbox:checked + .custom-checkbox::after {
-  opacity: 2; /* 체크됐을 때 체크 모양 */
+.text-underline span::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  bottom: -3px;  width: 220px;
+  border-bottom: 2px solid rgb(34, 173, 120); 
 }
+
+
+
+

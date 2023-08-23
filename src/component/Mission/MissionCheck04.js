@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../css/mission/MissionCheck04.css';
+import '../../css/mission/MissionCheck.css';
 
 function TodoItem({ todo, index, toggleComplete }) {
   const textStyle = {
@@ -7,15 +7,15 @@ function TodoItem({ todo, index, toggleComplete }) {
   };
 
   return (
-    <label className="checkbox-container4">
+    <label className="checkbox-container">
       <input
       type="checkbox"
-      className="checkbox4"
+      className="checkbox"
         checked={todo.completed}
         onChange={() => toggleComplete(index)}/>
-        <span className="custom-checkbox4"></span>
-        <p className="text-underline4">
-        <span className="todo-text4" style={textStyle}> {todo.text} </span>
+        <span className="custom-checkbox"></span>
+        <p className="text-underline">
+        <span className="todo-text" style={textStyle}> {todo.text} </span>
         </p>
     </label>
 
@@ -24,8 +24,8 @@ function TodoItem({ todo, index, toggleComplete }) {
 
   function MissionCheck04() {
     const [todos, setTodos] = useState([
-      { text: '다이어리 일기 쓰기', completed: false } , 
-      { text: '오늘 하루를 그림 그려보기', completed: true },
+      { text: '보석 십자수 해보기', completed: false } , 
+      { text: '다이어리 일기 쓰기', completed: true },
       { text: '뜨개질 배우기', completed: false },
     ]);
 
@@ -38,9 +38,9 @@ function TodoItem({ todo, index, toggleComplete }) {
 
   return (
     <div>
-      <div className="checklist-border4">
-        <button className="btnMissionCheck4">취미</button>
-        <div className="missionList4">
+      <div className="checklist-border">
+        <button className="btnMissionCheck">취미</button>
+        <div className="missionList">
           <ul>
             {todos.map((todo, index) => (
               <TodoItem
