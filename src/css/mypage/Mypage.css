@@ -151,10 +151,6 @@
   overflow-y: scroll;
 }
 
-.inner_content {
-  height: 15px;
-}
-
 .scroll_box::-webkit-scrollbar {
   width: 6px;
 }
@@ -201,7 +197,7 @@
   height:190px;
   /* line-Height: 190px; */
   text-Align: center;
-  border: solid 2px gray;
+  /* border: solid 2px gray; */
   border-radius: 5px;
   margin-top: 70px;
 }

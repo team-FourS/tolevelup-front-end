@@ -9,7 +9,7 @@
     height: 40px;
   }
 .table_lay{
-    display: inline-flex;
+    /* display: inline-flex; */
     align-items: center;
   }
 .table{
@@ -20,10 +20,31 @@
     margin-left: 20px;
     font-weight: 500;
 }
-.td{
+.td_comment{
     display: block;
 }
 .alarm_font{
     font-size: 15px;
     font-weight: 800;
+}
+.comment_box_click{
+  border: solid 2px gray;
+  border-radius: 5px;
+  margin: 5px;
+  font-size: small;
+  text-align: left;
+  width: 145px;
+}
+.scroll_box_comment{
+  width: auto;
+  height: 300px;
+  overflow-y: scroll;
+
+}
+.scroll_box_comment::-webkit-scrollbar {
+  width: 6px;
+}
+.scroll_box_comment::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
 }
