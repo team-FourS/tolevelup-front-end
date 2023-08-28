@@ -92,8 +92,6 @@ const Follower = () => {
             </tbody>
           </table>
         </div>
-
-        {/* <Footer/> */}
       </main>  
     );
   }

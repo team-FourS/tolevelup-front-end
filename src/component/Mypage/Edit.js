@@ -101,8 +101,6 @@ border-bottom: ${props => (props.title === 'SUV' ? '4px solid #222' : '')};
             <div className="square_edit">
                 <div className='square_in_edit'>
             <div className="pro_box">
-                                {/* <img className ="profils" src={user} alt='프로필' /> */}
-                                {/* <h4 className='profil_font' onClick={onClickNew}>프로필 이미지 편집</h4> */}
                             </div>
                             <table className='modify_bold'>
                                 <thead></thead>
