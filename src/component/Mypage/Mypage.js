@@ -80,7 +80,7 @@ const Mypage = () => {
                                 <img className ="mypage_profile" src={user} alt='프로필'></img>
                                     <div className="nickname">
                                         <h4> 최우식
-                                            <h6 className='userid'>_whoops</h6>
+                                            <p className='userid'>_whoops</p>
                                         </h4>
                                         <h5 className='userint'>싫어하는거요? 국연수요.</h5>
                                     </div>

@@ -77,8 +77,6 @@ const Following = () => {
             </tbody>
           </table>
         </div>
-
-        {/* <Footer/> */}
       </main>  
     );
   }
