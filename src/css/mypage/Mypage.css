@@ -266,3 +266,6 @@ ul,li{
     font-size:12px;
     margin-left: 20px;
   }
+  .mission_complete{
+    text-align: left;
+  }
