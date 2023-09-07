@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../css/header/Header.css'
-// import Logout from './Login/Logout'
 import {Link} from "react-router-dom";
 import Logo from '../../img/ToLevelUp_logo.png'
 import {BiBell} from "react-icons/bi"
@@ -10,15 +9,28 @@ import { useState } from "react";
 import Modal from "../Modal/Modal";
 import Alarm from "./Alarm";
 import Manual from "./Manual";
+import { useNavigate } from "react-router-dom";
+
 
 const Header = () => {
     const [alarm, setAlarm] = useState(false);
     const [manual, setManual] = useState(false);
+
+    //이미지 클릭시 페이지 이동
+    const movePage = useNavigate();
+
+    function gohome(){
+        movePage('../Mission');
+   }
     
     return (
         <main className="header">
             <div style={{alignItems:'center',display:'inline-flex'}}>
-                <img className ="logoimg" src={Logo} alt='로고'></img>
+                <div>
+                    <div>
+                        <img onClick={gohome} className ="logoimg" src={Logo} alt='로고' />
+                    </div>
+                </div>
                     <FcInfo onClick={() => setManual(!manual)} className='manual_icon'/>
                     {manual && (
                         <Modal closeModal={() => setManual(!manual)}>

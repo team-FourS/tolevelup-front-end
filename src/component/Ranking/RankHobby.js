@@ -31,8 +31,8 @@ const RankHobby = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 라라의 난중일기 읽어요</h4> 
-                  <h4 className="rank_user_id">raras_style</h4>
+                  <h4 className="rank_user_name"> Lv_. 라라의 스타일기 읽어요</h4> 
+                  <h4 className="rank_user_id">star_diary</h4>
                 </div>
               </td>     
             </div>
@@ -51,7 +51,7 @@ const RankHobby = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 나어딨게ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ </h4> 
+                  <h4 className="rank_user_name"> Lv_. 나어딨게 </h4> 
                   <h4 className="rank_user_id">here_iam</h4>
                 </div>
                 </td>     
