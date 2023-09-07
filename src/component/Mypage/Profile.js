@@ -77,7 +77,7 @@ const Profile = ({ onSelectImage }) => {
       <hr />
 
 
-      <h5 className='Profile_name'>식습관</h5>
+      <h5 className='Profile_name'>식습관 </h5>
       <div className="profile-list">
         <div
           className={`profile-item ${selectedImage === 'EatLv01' ? 'selected' : ''}`}
