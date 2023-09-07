@@ -19,6 +19,7 @@
     height: 43px;
     margin-top: 6px;
     margin-right: 960px;
+    cursor: pointer;
 }
 .header_logout {
     color:gray;
@@ -35,4 +36,9 @@
     font-size: 25px;
     color: rgb(76, 152, 233);
     cursor: pointer;
+}
+.header_link{
+    line-height: 0px;
+    width: 0px;
+    height: 0px;
 }
