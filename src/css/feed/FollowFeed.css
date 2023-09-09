@@ -121,7 +121,12 @@
 .feedChecklist{
   margin-bottom: 10px;
 }
-
+.feed-checkbox{
+  margin-right: 10px; 
+  width: 20px; height: 20px;
+  border: 2px solid rgb(34, 173, 120);
+  background-color: white;
+}
 /*아이콘*/
 .heart_icon{
   font-size: 27px;
@@ -136,4 +141,55 @@
   display: inline-block;
 }
 
-/*코멘트 댓글 */
+/* AllFeed.css에 복사하여 적용할 스타일 */
+.feed_checkbox-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 270px;
+  height: 70px;
+}
+
+.feed_checkbox {
+  display: none; /* 체크박스를 숨김 */
+}
+
+.feed_custom-checkbox {
+  width: 22px;
+  height: 22px;
+  margin-right: 15px;
+  border: 2px solid rgb(34, 173, 120);
+  background-color: rgb(233, 241, 222);
+  margin-right: 8px;
+}
+
+.feed_checkbox:checked + .feed_custom-checkbox::after {
+  content: '\2713';
+  display: block;
+  text-align: center;
+  line-height: 17px;
+  font-size: 35px;
+  color: #4caf50;
+}
+
+.feed_todo-text {
+  color: black;
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: 520;
+}
+
+.feed_text-underline {
+  position: relative;
+  display: inline-block;
+  color: rgb(34, 173, 120);
+}
+
+.feed_text-underline span::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  bottom: -3px;
+  width: 220px;
+  border-bottom: 2px solid rgb(34, 173, 120);
+}

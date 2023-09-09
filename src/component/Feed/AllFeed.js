@@ -12,14 +12,16 @@ import { LiaCommentSolid } from "react-icons/lia";
 
 import CommentModal from "./CommentModal";
 
-
 const AllFeed = () => {
   const [isActive, setIsActive] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // 각 체크박스의 상태를 useState를 사용하여 관리 / ***오류 수정 예졍***
+  const [checkbox1, setCheckbox1] = useState(true);
 
   const FeedClick = () => {
     setIsActive(!isActive);
   };
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleCommentIconClick = () => {
     setIsModalOpen(!isModalOpen); // 댓글 창 열고 닫기
@@ -72,12 +74,66 @@ const AllFeed = () => {
               <h4> Lv2. 여기는 전체 </h4>
               <p className="oneLine">매일을 성실하게!!</p>
             </div>
+            <div className="feedChecklist">          
+            <input type="checkbox" id="btn1"  checked={checkbox1} />
+              <label htmlFor="btn3"> 식습관 | 물 6잔 이상 마시기 </label> <br/>
+            </div>
+          <HiHeart className="heart_icon" />
+          <LiaCommentSolid
+            className="comment_icon"
+            onClick={handleCommentIconClick}
+          />
+          {isModalOpen && (
+            <CommentModal
+              onClose={handleCloseModal}
+              onSubmit={handleCommentSubmit}
+            />
+          )}
+        </div>
+      </div>
 
-          <div className="feed_checkbox-container">
-              <input type="checkbox" id="btn1" className="feed_checkbox" />
-              <label htmlFor="btn1" className="feed_todo-text">
-                식습관 | 밀가루 음식 먹지 않기
-              </label> <br />
+      <div className="feedBox01">
+          <img className="user_profile" src={user} alt="프로필" />
+          <div className="feedContent">
+            <div className="userInfo">
+              <h4> Lv4. 하치와레 </h4>
+              <p className="oneLine">레벨업!!</p>
+            </div>
+
+            <div className="feedChecklist">          
+            <input type="checkbox" id="btn1"  checked={checkbox1} />
+              <label htmlFor="btn3"> 운동 | 줄넘기 100회 하기 </label> <br/>
+            <input type="checkbox" id="btn1"  checked={checkbox1} />
+              <label htmlFor="btn3"> 취미 | 캠핑 여행 다녀오기 </label> <br/>
+            <input type="checkbox" id="btn1"  checked={checkbox1} />
+              <label htmlFor="btn3"> 취미 | 오늘 하루 이상 일기에 담기 </label>
+            </div>
+          <HiHeart className="heart_icon" />
+          <LiaCommentSolid
+            className="comment_icon"
+            onClick={handleCommentIconClick}
+          />
+          {isModalOpen && (
+            <CommentModal
+              onClose={handleCloseModal}
+              onSubmit={handleCommentSubmit}
+            />
+          )}
+        </div>
+      </div>
+
+      <div className="feedBox01">
+          <img className="user_profile" src={user} alt="프로필" />
+          <div className="feedContent">
+            <div className="userInfo">
+              <h4> Lv2. 짱구와 흰둥이 </h4>
+              <p className="oneLine">화이팅~ 해야지!</p>
+            </div>
+            <div className="feedChecklist">          
+            <input type="checkbox" id="btn1"  checked={checkbox1} />
+              <label htmlFor="btn3"> 문화생활 | 로맨스 영화 1편 보기 </label> <br/>
+            <input type="checkbox" id="btn1"  checked={checkbox1} />
+              <label htmlFor="btn3"> 취미 | 뜨개질 하기 </label>
             </div>
 
           <HiHeart className="heart_icon" />
