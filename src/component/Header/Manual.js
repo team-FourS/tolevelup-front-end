@@ -6,7 +6,7 @@ const Manual = () => {
 
     return (
     <div className="modalContent">
-      여기에 이제 메뉴얼 내용을 적을거다
+      웹 서비스 소개와 사용법을 작성할 예정
     </div>
 
     );
