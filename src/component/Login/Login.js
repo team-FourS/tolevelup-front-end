@@ -11,8 +11,6 @@ import logo from '../../img/smallLogo.png';
 import naver from '../../img/naver.png';
 import google from '../../img/google.png';
 import kakao from '../../img/kakao.png';
-import { motion } from "framer-motion";
-
 
 function Login() {
 
@@ -116,17 +114,12 @@ function Login() {
           <img className="google" src={google} alt="구글" />
           <img className="kakao" src={kakao} alt="카카오" />
         </div>
-        <motion.div
-      className="box"
-      initial={{ scale: 0 }}
-      animate={{ scale: 1, rotateZ: 360 }}
-    >
-        <Link to="/Mission">
+      
+        {/* <Link to="/Mission"> */}
           <Button type="submit" className="btnLogin" onClick={onClickLogin}>
             로그인
           </Button> <br/><br/>
-        </Link>
-        </motion.div>
+        {/* </Link> */}
 
           <Link to="/signup" className="signUp">
               ToLevelUp 회원가입
