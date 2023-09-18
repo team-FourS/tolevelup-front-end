@@ -1,6 +1,5 @@
 import React from "react";
 import {Routes, Route} from "react-router-dom";
-import axios from 'axios';
 
 import Mission from "./component/Mission/Mission"
 import MissionCheck01 from "./component/Mission/MissionCheck01";
@@ -25,20 +24,10 @@ import Signup from "./component/Login/Signup"
 
 import Edit from "./component/Mypage/Edit"
 import Profile from "./component/Mypage/Profile"
-import "./App.css"
+// import Alarm from "./component/Alarm"
+// import Modal from "./component/Modal"
 
-// GET 요청 보내기
-axios.get('http://ec2-44-198-225-181.compute-1.amazonaws.com:8080/api/data')
-  .then(response => {
-    // 성공적으로 요청을 보내고 응답을 받았을 때 실행되는 코드
-    const data = response.data;
-    document.getElementById('result').textContent = data;
-    console.log(response.data); // 응답 데이터 출력
-  })
-  .catch(error => {
-    // 요청이 실패하거나 오류가 발생했을 때 실행되는 코드
-    console.error("오류발생", error);
-  });
+import "./App.css"
 
 function App() {
   return (
