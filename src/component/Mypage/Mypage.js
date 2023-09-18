@@ -68,7 +68,7 @@ const Mypage = () => {
 
     return (
         
-        <main>
+        <main className='mypage_main'>
             
             <Header />
             <motion.div

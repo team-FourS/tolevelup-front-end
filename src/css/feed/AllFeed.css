@@ -9,6 +9,7 @@
   margin-top: 52px;
   min-height: 83vh;
   background-color: rgb(237, 245, 238);
+  overflow: hidden;
 } 
 .userProfile{
   width: 55px; height: 55px; 
