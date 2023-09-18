@@ -1,23 +1,74 @@
-import React from 'react';
+import React,{useState} from 'react';
 import '../../css/login/login.css'
 import { TextField } from '@mui/material';
 import { Button } from '@mui/base';
 // import FormControlLabel from '@mui/material/FormControlLabel';
-import {Routes, Route, Link} from "react-router-dom";
+import {Routes, Route, Link, useLocation} from "react-router-dom";
 import Mission from "../Mission/Mission";
 import Signup from "../Login/Signup";
-
+import axios from 'axios';
 import logo from '../../img/smallLogo.png';
 import naver from '../../img/naver.png';
 import google from '../../img/google.png';
 import kakao from '../../img/kakao.png';
+import { motion } from "framer-motion";
+
 
 function Login() {
+
+  const location = useLocation();
   
+  const [inputId, setInputId] = useState("");
+  const [inputPw, setInputPw] = useState("");
+  
+    const handleInputId = (e) => {
+    setInputId(e.target.value);
+  };
+
+  const handleInputPw = (e) => {
+    setInputPw(e.target.value);
+  };
+
+  const onClickLogin = () => {
+    console.log("click login");
+    console.log("ID : ", inputId);
+    console.log("PW : ", inputPw);
+    axios
+      .post("http://ec2-44-198-225-181.compute-1.amazonaws.com:8080/", {
+        email: inputId,
+        passwd: inputPw,
+      })
+      .then((res) => {
+        console.log(res);
+        console.log("res.data.userId :: ", res.data.userId);
+        console.log("res.data.msg :: ", res.data.msg);
+        if (res.data.email === undefined) {
+          // id 일치하지 않는 경우 userId = undefined, msg = '입력하신 id 가 일치하지 않습니다.'
+          console.log("======================", res.data.msg);
+          alert("입력하신 id 가 일치하지 않습니다.");
+        } else if (res.data.email === null) {
+          // id는 있지만, pw 는 다른 경우 userId = null , msg = undefined
+          console.log(
+            "======================",
+            "입력하신 비밀번호 가 일치하지 않습니다."
+          );
+          alert("입력하신 비밀번호 가 일치하지 않습니다.");
+        } else if (res.data.email === inputId) {
+          // id, pw 모두 일치 userId = userId1, msg = undefined
+          console.log("======================", "로그인 성공");
+          sessionStorage.setItem("user_id", inputId); // sessionStorage에 id를 user_id라는 key 값으로 저장
+          sessionStorage.setItem("name", res.data.name); // sessionStorage에 id를 user_id라는 key 값으로 저장
+        }
+        // 작업 완료 되면 페이지 이동(새로고침)
+        document.location.href = "/";
+      })
+      .catch();
+  };
+
   return (
     <body className='login_body'>
     <div className='totalLogin'>
-      <Routes>     
+      <Routes location={location} key={location.pathname}>     
         <Route path="/Mission" element={<Mission />} />
         <Route path="/Signup" element={<Signup />} />
       </Routes>
@@ -28,12 +79,18 @@ function Login() {
         
         <div className="idField">
         <TextField className="loginBox"
-            label="ID" name="ID"
+            label="ID"
+            value={inputId}
+            onChange={handleInputId}
+            name="ID"
             autoComplete="ID"
             autoFocus/> <br/>
         </div>
         <TextField className="loginBox" label="Password"
-          type="password" name="password"
+          type="password"
+          value={inputPw}
+          onChange={handleInputPw}
+          name="password"
           autoComplete="password"/> <br/>  
 
         {/* <FormControlLabel className="keepLogin"
@@ -59,12 +116,18 @@ function Login() {
           <img className="google" src={google} alt="구글" />
           <img className="kakao" src={kakao} alt="카카오" />
         </div>
-
+        <motion.div
+      className="box"
+      initial={{ scale: 0 }}
+      animate={{ scale: 1, rotateZ: 360 }}
+    >
         <Link to="/Mission">
-          <Button type="submit" className="btnLogin">
+          <Button type="submit" className="btnLogin" onClick={onClickLogin}>
             로그인
           </Button> <br/><br/>
         </Link>
+        </motion.div>
+
           <Link to="/signup" className="signUp">
               ToLevelUp 회원가입
           </Link>
@@ -75,3 +138,49 @@ function Login() {
 }
 
 export default Login;
+// import React, { useState } from 'react';
+// import axios from 'axios';
+// import { TextField, Button } from '@mui/material';
+
+// function Login() {
+//   const [userName, setUsername] = useState('');
+//   const [password, setPassword] = useState('');
+
+//   const handleLogin = async () => {
+    
+//     try {
+//       const response = axios.post('/api/v1/users/login')
+//       .then(response => response.data);
+//       return{
+//         userName:userName,
+//         password:password,
+//       };
+      
+//       // 로그인 성공 시 서버에서 반환한 응답을 확인하고 필요한 작업 수행
+//       // eslint-disable-next-line
+//       console.log('서버 응답:', response.data);
+//     } catch (e) {
+//       // 로그인 실패 시 오류 처리
+//       console.e('로그인 실패:', e);
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <TextField
+//         label="ID"
+//         value={userName}
+//         onChange={(e) => setUsername(e.target.value)}
+//       />
+//       <TextField
+//         label="Password"
+//         type="password"
+//         value={password}
+//         onChange={(e) => setPassword(e.target.value)}
+//       />
+//       <Button onClick={handleLogin}>로그인</Button>
+//     </div>
+//   );
+// }
+
+// export default Login;

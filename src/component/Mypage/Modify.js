@@ -35,17 +35,13 @@ export const ModalBtn = styled.button`
 `;
 
 export const ExitBtn = styled(ModalBtn) `
-background-color : lightblue;
+background-color : #afb2b0;
+color : white;
 border-radius: 10px;
 text-decoration: none;
 margin: 10px;
 padding: 5px 10px;
-// height: 40px;
 margin-left: 60vh;
-// width: 40px;
-// display : flex;
-// float:right;
-// margin-right: .25rem;
 `;
 
 export const ModalView = styled.div.attrs((props) => ({
@@ -144,7 +140,7 @@ const Modify = () => {
                                         </ModalBtn>
                                             {/* 조건부 렌더링을 활용해서 Modal이 열린 상태(isOpen이 true인 상태)일 때만 모달창과 배경이 뜰 수 있게 구현 */}
                                             {isOpen ? 
-                                                <ModalBackdrop onClick={openModalHandler}>
+                                                <ModalBackdrop onClick={(e) => e.stopPropagation()}>
                                                      {/* //event 버블링을 막는 메소드  */}
                                                     <ModalView onClick={(e) => e.stopPropagation()}>
                                                         <ExitBtn onClick={openModalHandler}>완료</ExitBtn>
