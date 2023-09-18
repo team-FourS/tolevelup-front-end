@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import Header from "../Header/Header";
 import Footer from "../Footer";
 import "../../css/ranking/Ranking.css";
@@ -56,6 +57,11 @@ const Rank = () => {
   return (
     <main className="layout_ranking">
       <Header />
+      <motion.div
+      className="box_anima"
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+    >
       <div>
         <Container>
           {MAIN_DATA.map((data) => {
@@ -72,6 +78,7 @@ const Rank = () => {
         </Container>
         {content && <Content>{selectComponent[content]}</Content>}
       </div>
+      </motion.div>
       <Footer />
     </main>
   );

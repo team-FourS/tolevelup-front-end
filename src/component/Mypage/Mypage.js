@@ -1,6 +1,7 @@
 import React from 'react';
 import user from '../../img/user.png'
 import {Routes, Route, Link} from "react-router-dom";
+import { motion } from "framer-motion";
 import Modify from "./Modify"
 import "../../css/mypage/Mypage.css"
 import Header from "../Header/Header";
@@ -70,6 +71,11 @@ const Mypage = () => {
         <main>
             
             <Header />
+            <motion.div
+      className="box_anima"
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+    >  
             <Routes>
                 <Route path="/modify" element={<Modify />} />
             </Routes>
@@ -199,6 +205,7 @@ const Mypage = () => {
                         </main>
                     <div className='Mains-left'></div>
                 </div>
+                </motion.div>
             <Footer/>
         </main>
         )

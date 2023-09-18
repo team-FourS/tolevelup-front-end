@@ -58,5 +58,3 @@ function TodoItem({ todo, index, toggleComplete }) {
 }
 
 export default MissionCheck01;
-
-

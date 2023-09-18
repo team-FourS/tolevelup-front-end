@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import '../../css/mission/Mission.css'
 
 import culture from '../../img/main-culture.png';
@@ -24,7 +25,11 @@ const Mission = () => {
     return(
     <main className="layout_mission">
     <Header/>
-
+    <motion.div
+      className="box_anima"
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+    >
     <div className="MissionComponent">
         <div className="missionBlock">
             <p className="missionTitle">데일리 미션</p>
@@ -78,6 +83,7 @@ const Mission = () => {
             </div>
         </div>
     </div>
+    </motion.div>
     <Footer/>    
     </main>
     )
