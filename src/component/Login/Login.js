@@ -31,12 +31,12 @@ function Login() {
     console.log("ID : ", inputId);
     console.log("PW : ", inputPw);
     axios({
-        url: 'api/v1/users/login',
-        method: 'POST',
-        data: {
-          id: inputId,
-          password: inputPw
-        },
+      url:'api/v1/users/login',
+      method: 'POST',
+      data: {
+        id: inputId,
+        password: inputPw,
+      },
       })
       .then((res) => {
         localStorage.setItem('token',res.data.result.token);
