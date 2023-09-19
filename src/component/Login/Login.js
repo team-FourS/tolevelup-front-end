@@ -15,11 +15,10 @@ import kakao from '../../img/kakao.png';
 function Login() {
 
   const location = useLocation();
-  const URL = "/api/v1/users/login"
   const [inputId, setInputId] = useState("");
   const [inputPw, setInputPw] = useState("");
   
-    const handleInputId = (e) => {
+  const handleInputId = (e) => {
     setInputId(e.target.value);
   };
 
@@ -31,36 +30,22 @@ function Login() {
     console.log("click login");
     console.log("ID : ", inputId);
     console.log("PW : ", inputPw);
-    axios
-      .post(URL, {
-        id: inputId,
-        password: inputPw,
+    axios({
+        url: 'api/v1/users/login',
+        method: 'POST',
+        data: {
+          id: inputId,
+          password: inputPw
+        },
       })
       .then((res) => {
-        console.log(res);
-        console.log("res.data.userId :: ", res.data.userId);
-        console.log("res.data.msg :: ", res.data.msg);
-        if (res.data.id === undefined) {
-          // id 일치하지 않는 경우 userId = undefined, msg = '입력하신 id 가 일치하지 않습니다.'
-          console.log("======================", res.data.msg);
-          alert("입력하신 id 가 일치하지 않습니다.");
-        } else if (res.data.id === null) {
-          // id는 있지만, pw 는 다른 경우 userId = null , msg = undefined
-          console.log(
-            "======================",
-            "입력하신 비밀번호 가 일치하지 않습니다."
-          );
-          alert("입력하신 비밀번호 가 일치하지 않습니다.");
-        } else if (res.data.id === inputId) {
-          // id, pw 모두 일치 userId = userId1, msg = undefined
-          console.log("======================", "로그인 성공");
-          sessionStorage.setItem("user_id", inputId); // sessionStorage에 id를 user_id라는 key 값으로 저장
-          sessionStorage.setItem("name", res.data.name); // sessionStorage에 id를 user_id라는 key 값으로 저장
-        }
-        // 작업 완료 되면 페이지 이동(새로고침)
+        localStorage.setItem('token',res.data.result.token);
+        console.log(res.data.result.token);
         document.location.href = "/Mission";
       })
-      .catch();
+      .catch((error)=>{
+        console.log(error);
+      });
   };
 
   return (
@@ -131,49 +116,3 @@ function Login() {
 }
 
 export default Login;
-// import React, { useState } from 'react';
-// import axios from 'axios';
-// import { TextField, Button } from '@mui/material';
-
-// function Login() {
-//   const [userName, setUsername] = useState('');
-//   const [password, setPassword] = useState('');
-
-//   const handleLogin = async () => {
-    
-//     try {
-//       const response = axios.post('/api/v1/user/login')
-//       .then(response => response.data);
-//       return{
-//         userName:userName,
-//         password:password,
-//       };
-      
-//       // 로그인 성공 시 서버에서 반환한 응답을 확인하고 필요한 작업 수행
-//       // eslint-disable-next-line
-//       console.log('서버 응답:', response.data);
-//     } catch (e) {
-//       // 로그인 실패 시 오류 처리
-//       console.e('로그인 실패:', e);
-//     }
-//   };
-
-//   return (
-//     <div>
-//       <TextField
-//         label="ID"
-//         value={userName}
-//         onChange={(e) => setUsername(e.target.value)}
-//       />
-//       <TextField
-//         label="Password"
-//         type="password"
-//         value={password}
-//         onChange={(e) => setPassword(e.target.value)}
-//       />
-//       <Button onClick={handleLogin}>로그인</Button>
-//     </div>
-//   );
-// }
-
-// export default Login;
