@@ -57,7 +57,7 @@ function Login() {
       </Routes>
       
       <div className="loginForm"> 
-          <p className="loginTitle">로그인 </p>  
+          <p className="loginTitle">로그인</p>  
           <img className="loginLogo" src={logo} alt="로고" />
         
         <div className="idField">
