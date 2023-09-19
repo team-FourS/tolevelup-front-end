@@ -49,7 +49,7 @@ function Login() {
   };
 
   return (
-    <body className='login_body'>
+  <body className='login_body'>
     <div className='totalLogin'>
       <Routes location={location} key={location.pathname}>     
         <Route path="/Mission" element={<Mission />} />
@@ -61,20 +61,20 @@ function Login() {
           <img className="loginLogo" src={logo} alt="로고" />
         
         <div className="idField">
-        <TextField className="loginBox"
+          <TextField className="loginBox"
             label="ID"
             value={inputId}
             onChange={handleInputId}
             name="ID"
             autoComplete="ID"
-            autoFocus/> <br/>
+            autoFocus /> <br />
         </div>
-        <TextField className="loginBox" label="Password"
-          type="password"
-          value={inputPw}
-          onChange={handleInputPw}
-          name="password"
-          autoComplete="password"/> <br/>  
+          <TextField className="loginBox" label="Password"
+            type="password"
+            value={inputPw}
+            onChange={handleInputPw}
+            name="password"
+            autoComplete="password" /> <br  />  
 
         {/* <FormControlLabel className="keepLogin"
           control={<Checkbox value="remember" 
@@ -111,7 +111,7 @@ function Login() {
           </Link>
         </div>
       </div>
-      </body>
+    </body>
   );
 }
 
