@@ -33,38 +33,38 @@ function Login() {
     console.log("PW : ", inputPw);
     axios
       .post(URL, {
-        userName: inputId,
+        id: inputId,
         password: inputPw,
       })
       .then((res) => {
         console.log(res);
         console.log("res.data.userId :: ", res.data.userId);
         console.log("res.data.msg :: ", res.data.msg);
-        if (res.data.userName === undefined) {
+        if (res.data.id === undefined) {
           // id 일치하지 않는 경우 userId = undefined, msg = '입력하신 id 가 일치하지 않습니다.'
           console.log("======================", res.data.msg);
           alert("입력하신 id 가 일치하지 않습니다.");
-        } else if (res.data.userName === null) {
+        } else if (res.data.id === null) {
           // id는 있지만, pw 는 다른 경우 userId = null , msg = undefined
           console.log(
             "======================",
             "입력하신 비밀번호 가 일치하지 않습니다."
           );
           alert("입력하신 비밀번호 가 일치하지 않습니다.");
-        } else if (res.data.userName === inputId) {
+        } else if (res.data.id === inputId) {
           // id, pw 모두 일치 userId = userId1, msg = undefined
           console.log("======================", "로그인 성공");
           sessionStorage.setItem("user_id", inputId); // sessionStorage에 id를 user_id라는 key 값으로 저장
           sessionStorage.setItem("name", res.data.name); // sessionStorage에 id를 user_id라는 key 값으로 저장
         }
         // 작업 완료 되면 페이지 이동(새로고침)
-        document.location.href = "/";
+        document.location.href = "/Mission";
       })
       .catch();
   };
 
   return (
-    <body className='login_body'>
+  <body className='login_body'>
     <div className='totalLogin'>
       <Routes location={location} key={location.pathname}>     
         <Route path="/Mission" element={<Mission />} />
@@ -76,20 +76,20 @@ function Login() {
           <img className="loginLogo" src={logo} alt="로고" />
         
         <div className="idField">
-        <TextField className="loginBox"
+          <TextField className="loginBox"
             label="ID"
             value={inputId}
             onChange={handleInputId}
             name="ID"
             autoComplete="ID"
-            autoFocus/> <br/>
+            autoFocus /> <br />
         </div>
-        <TextField className="loginBox" label="Password"
-          type="password"
-          value={inputPw}
-          onChange={handleInputPw}
-          name="password"
-          autoComplete="password"/> <br/>  
+          <TextField className="loginBox" label="Password"
+            type="password"
+            value={inputPw}
+            onChange={handleInputPw}
+            name="password"
+            autoComplete="password" /> <br  />  
 
         {/* <FormControlLabel className="keepLogin"
           control={<Checkbox value="remember" 
@@ -126,7 +126,7 @@ function Login() {
           </Link>
         </div>
       </div>
-      </body>
+    </body>
   );
 }
 
