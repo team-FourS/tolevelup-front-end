@@ -15,7 +15,7 @@ import kakao from '../../img/kakao.png';
 function Login() {
 
   const location = useLocation();
-  
+  const URL = "/api/v1/users/login"
   const [inputId, setInputId] = useState("");
   const [inputPw, setInputPw] = useState("");
   
@@ -32,26 +32,26 @@ function Login() {
     console.log("ID : ", inputId);
     console.log("PW : ", inputPw);
     axios
-      .post("http://ec2-44-198-225-181.compute-1.amazonaws.com:8080/", {
-        email: inputId,
-        passwd: inputPw,
+      .post(URL, {
+        userName: inputId,
+        password: inputPw,
       })
       .then((res) => {
         console.log(res);
         console.log("res.data.userId :: ", res.data.userId);
         console.log("res.data.msg :: ", res.data.msg);
-        if (res.data.email === undefined) {
+        if (res.data.userName === undefined) {
           // id 일치하지 않는 경우 userId = undefined, msg = '입력하신 id 가 일치하지 않습니다.'
           console.log("======================", res.data.msg);
           alert("입력하신 id 가 일치하지 않습니다.");
-        } else if (res.data.email === null) {
+        } else if (res.data.userName === null) {
           // id는 있지만, pw 는 다른 경우 userId = null , msg = undefined
           console.log(
             "======================",
             "입력하신 비밀번호 가 일치하지 않습니다."
           );
           alert("입력하신 비밀번호 가 일치하지 않습니다.");
-        } else if (res.data.email === inputId) {
+        } else if (res.data.userName === inputId) {
           // id, pw 모두 일치 userId = userId1, msg = undefined
           console.log("======================", "로그인 성공");
           sessionStorage.setItem("user_id", inputId); // sessionStorage에 id를 user_id라는 key 값으로 저장
@@ -142,7 +142,7 @@ export default Login;
 //   const handleLogin = async () => {
     
 //     try {
-//       const response = axios.post('/api/v1/users/login')
+//       const response = axios.post('/api/v1/user/login')
 //       .then(response => response.data);
 //       return{
 //         userName:userName,
