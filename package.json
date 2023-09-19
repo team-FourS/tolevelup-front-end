@@ -2,7 +2,7 @@
   "name": "blog",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://ec2-44-198-225-181.compute-1.amazonaws.com:8080/",
+
   "dependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
@@ -27,7 +27,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "GENERATE_SOURCEMAP=false npx react-scripts build",
+    "build": "GENERATE_SOURCEMAP=false npm react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -48,5 +48,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+    "proxy": "http://ec2-44-198-225-181.compute-1.amazonaws.com:8080/"
 }
