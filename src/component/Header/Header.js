@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../css/header/Header.css'
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 import Logo from '../../img/ToLevelUp_logo.png'
 import {BiBell} from "react-icons/bi"
 import { FcInfo } from "react-icons/fc";
@@ -13,6 +13,12 @@ import { useNavigate } from "react-router-dom";
 
 
 const Header = () => {
+
+    const handlelogOut = () => {
+        localStorage.removeItem("Token");// localstorage에 저장되어 있던 토큰을 지운다. 
+        document.location.href = "/";
+      }
+
     const [alarm, setAlarm] = useState(false);
     const [manual, setManual] = useState(false);
 
@@ -44,9 +50,9 @@ const Header = () => {
                             <Alarm />
                         </Modal>
                     )}
-                <Link to='/Logout'>               
-                    <div className='header_logout' > | 로그아웃</div>
-                </Link>
+              
+                    <div className='header_logout' onClick={handlelogOut}> | 로그아웃</div>
+                
             </div>
             {/* <hr/> */}
             <div className="header_line"></div>
