@@ -41,11 +41,20 @@ function Login() {
       .then((res) => {
         localStorage.setItem('token',res.data.result.token);
         console.log(res.data.result.token);
+        // 사용자 아이디를 세션에 저장
+        sessionStorage.setItem('userId', inputId);
         document.location.href = "/Mission";
       })
       .catch((error)=>{
         console.log(error);
       });
+  };
+
+  // Enter 키로 로그인 넘기기
+  const handleOnKeyPress = e => {
+    if (e.key === 'Enter') {
+      onClickLogin(); 
+    }
   };
 
   return (
@@ -69,21 +78,16 @@ function Login() {
             autoComplete="ID"
             autoFocus /> <br />
         </div>
+
+        <div className="pwField">
           <TextField className="loginBox" label="Password"
             type="password"
             value={inputPw}
             onChange={handleInputPw}
+            onKeyPress={handleOnKeyPress}
             name="password"
             autoComplete="password" /> <br  />  
-
-        {/* <FormControlLabel className="keepLogin"
-          control={<Checkbox value="remember" 
-          color="primary"/>} label="로그인 상태 유지"/> <br/> */}
-        
-        <div className="find">
-          {/* <Link to="/FindID" className="findID">
-            아이디 찾기  |
-        </Link> */}
+        </div>
 
           <Link to="/FindPassword" className="findPassword">
             비밀번호 찾기
@@ -92,7 +96,6 @@ function Login() {
           <Link to="/signup" className="signUp">
             회원가입
           </Link>
-        </div>
 
         <div>
           <img className="naver" src={naver} alt="네이버" />
@@ -101,10 +104,12 @@ function Login() {
         </div>
       
         {/* <Link to="/Mission"> */}
+
+        
           <Button type="submit" className="btnLogin" onClick={onClickLogin}>
             로그인
           </Button> <br/><br/>
-        {/* </Link> */}
+        
 
           <Link to="/signup" className="signUp">
               ToLevelUp 회원가입
