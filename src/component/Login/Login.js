@@ -39,9 +39,11 @@ function Login() {
       },
       })
       .then((res) => {
-
-        localStorage.setItem('token',res.data.result.token);
-        console.log(res.data.result.token);
+        axios.defaults.headers.common[
+          "Authorization"
+        ] = `Bearer ${res.data.access_token}`;
+        // localStorage.setItem('token',res.data.result.token);
+        console.log(res.data.access_token);
         // 사용자 아이디를 세션에 저장
         sessionStorage.setItem('userId', inputId);
 

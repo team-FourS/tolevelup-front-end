@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import Header from "../../component/Header/Header";
 import Footer from "../../component/Footer";
 import FollowFeed from "./FollowFeed";
@@ -44,11 +44,11 @@ const AllFeed = () => {
         <Route path="/AllFeed" element={<AllFeed />} />
         <Route path="/FollowFeed" element={<FollowFeed />} />
       </Routes>
-      <motion.div
+      {/* <motion.div
           className="box_anima"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
-        >    
+        >     */}
         <Link to ="/AllFeed">
           <button
           className={`allFeed ${isActive ? 'allfeed_active' : ''}`}
@@ -157,7 +157,7 @@ const AllFeed = () => {
       </div>
 
       </div>
-      </motion.div> 
+      {/* </motion.div>  */}
       <Footer/>
     </div>  
   );
