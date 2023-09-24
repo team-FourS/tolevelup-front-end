@@ -1,4 +1,3 @@
-import React from 'react';
 import user from '../../img/user.png'
 import {Routes, Route, Link} from "react-router-dom";
 import { motion } from "framer-motion";
@@ -6,7 +5,9 @@ import Modify from "./Modify"
 import "../../css/mypage/Mypage.css"
 import Header from "../Header/Header";
 import Footer from "../Footer";
+
 import { useState,useEffect } from "react";
+
 import Modal from "../Modal/Modal";
 import Follower from "./Follower";
 import Following from './Following';
@@ -15,53 +16,35 @@ import axios from 'axios';
 // import { PureComponent } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
 const Mypage = () => {
 
     const [users, setUsers] = useState([]);
     const data2 = [
         {
-            name: '3월',
-            uv: 4000,
-            pv: 2,
-            amt: 2400,
-          },
-          {
-            name: '4월',
-            uv: 3000,
-            pv: 18,
-            amt: 2210,
-          },
-          {
-            name: '5월',
-            uv: 2000,
-            pv: 28,
-            amt: 2290,
-          },
-          {
-            name: '6월',
-            uv: 2780,
-            pv: 21,
-            amt: 2000,
-          },
-          {
-            name: '7월',
-            uv: 1890,
-            pv: 18,
-            amt: 2181,
-          },
-          {
-            name: '8월',
-            uv: 2390,
-            pv: 3,
-            amt: 2500,
-          },
-          {
-            name: '9월',
-            uv: 3490,
-            pv: 10,
-            amt: 2100,
-          },
-      ];
+            name: '3월', uv: 4000, pv: 2, amt: 2400,
+        },
+        {
+            name: '4월', uv: 3000, pv: 18, amt: 2210,
+        },
+        {
+            name: '5월', uv: 2000, pv: 28, amt: 2290,
+        },
+        {
+            name: '6월', uv: 2780, pv: 21, amt: 2000,
+        },
+        {
+            name: '7월', uv: 1890, pv: 18, amt: 2181,
+        },
+        {
+            name: '8월', uv: 2390, pv: 3, amt: 2500,
+        },
+        {
+            name: '9월', uv: 3490, pv: 10, amt: 2100,
+        },
+    ];
 
     // const demoUrl = 'https://codesandbox.io/s/simple-line-chart-kec3v';
 
@@ -77,15 +60,30 @@ const Mypage = () => {
             });
     }, []);
 
+    // 회원 정보 불러오기
+    const [userInfo, setUserInfo] = useState({});
+    const userId = sessionStorage.getItem('userId');
+
+    useEffect(() => {
+        // API 호출
+        axios
+            .get(`api/v1/users/my/${userId}`)
+            .then((response) => {
+            setUserInfo(response.data);
+            })
+            .catch((error) => {
+            console.error('회원 정보를 불러오는 중 오류 발생: ', error);
+            });
+        }, [userId]);
+
     return (
-        
         <main className='mypage_main'>
             
             <Header />
             <motion.div
-      className="box_anima"
-      initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
+        className="box_anima"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
     >  
             <Routes>
                 <Route path="/modify" element={<Modify />} />
@@ -100,8 +98,10 @@ const Mypage = () => {
                                     <div className="nickname">
                                         <h4>{users && <textarea value={JSON.stringify(users)} readOnly={true}/>}
                                             <p className='userid'>_whoops</p>
+                                        <h4> {userInfo.name}
+                                            <p className='userid'> {userInfo.id} </p>
                                         </h4>
-                                        <h5 className='userint'>싫어하는거요? 국연수요.</h5>
+                                        <h5 className='userint'> {userInfo.intro} </h5>
                                     </div>
                             <Link to="/modify">    
                                 <button className='btnpro'>프로필 편집</button>
@@ -133,7 +133,7 @@ const Mypage = () => {
                                     )}
                                     <div className='cntnum'><strong>0</strong></div>
                                     <div className='follower_following_comment'>팔로워</div>
-                                 </div>
+                                </div>
                         <div className='count' onClick={() => setWing(!fallowing)}>
                         {fallowing && (
                             <Modal closeModal={() => setWing(!fallowing)}>
