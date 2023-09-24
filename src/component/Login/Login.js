@@ -39,10 +39,12 @@ function Login() {
       },
       })
       .then((res) => {
+
         localStorage.setItem('token',res.data.result.token);
         console.log(res.data.result.token);
         // 사용자 아이디를 세션에 저장
         sessionStorage.setItem('userId', inputId);
+
         document.location.href = "/Mission";
       })
       .catch((error)=>{
