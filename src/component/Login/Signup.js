@@ -33,13 +33,14 @@ function Signup() {
       },
     })
       .then((response) => {
-        let accessToken = response.headers['authorization']; // 응답헤더에서 토큰 받기
-        let refreshToken = response.headers['refresh'];
-        console.log('access 토큰 :', accessToken);
-        console.log('refresh 토큰 :', refreshToken);
-        localStorage.setItem('token',response.data.result.token);
-      // token이 필요한 API 요청 시 header Authorization에 token 담아서 보내기
-        axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`
+      //   let accessToken = response.headers['authorization']; // 응답헤더에서 토큰 받기
+      //   let refreshToken = response.headers['refresh'];
+      //   console.log('access 토큰 :', accessToken);
+      //   console.log('refresh 토큰 :', refreshToken);
+      //   localStorage.setItem('token',response.data.result.token);
+      // // token이 필요한 API 요청 시 header Authorization에 token 담아서 보내기
+      //   axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`
+      
         console.log(response.data.result.token);
         // console.log(response);
         alert("회원가입성공");

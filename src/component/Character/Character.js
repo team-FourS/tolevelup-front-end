@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import "../../css/character/Character.css"
 import Header from "../Header/Header";
 import Footer from "../Footer";
@@ -25,11 +25,11 @@ const Character = () => {
   return (
     <div className="layout_char">
       <Header />
-      <motion.div
+      {/* <motion.div
       className="box_anima"
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
-    >    
+    >     */}
         <main className="main_character">
           <button className="btn_exercise_character">
             <span id ="health" onClick={() => setHealth(!health)}>
@@ -86,7 +86,7 @@ const Character = () => {
       </button>
 
   </main>
-  </motion.div>
+  {/* </motion.div> */}
   <Footer/>
 </div>
     );
