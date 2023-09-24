@@ -39,8 +39,8 @@ function Login() {
       },
       })
       .then((res) => {
-        localStorage.setItem('token',res.data.result.token);
-        console.log(res.data.result.token);
+        localStorage.setItem('token',res.data.result.accessToken);
+        console.log(res.data.result.accessToken);
         document.location.href = "/Mission";
       })
       .catch((error)=>{

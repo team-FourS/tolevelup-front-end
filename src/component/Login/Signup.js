@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import '../../css/login/signup.css'
-import {Routes, Route, useNavigate} from "react-router-dom";
 import { TextField } from '@mui/material';
 import { Button } from '@mui/base';
-import Login from "../Login/Login";
 import logo from '../../img/smallLogo.png';
 import axios from 'axios';
 
 function Signup() {
-  const navigate = useNavigate();
-
+  
+  // const navigate = useNavigate();
+  axios.defaults.withCredentials = true;
   const [inputname, setUsernameinput] = useState("");
   const [inputemail, setEmailinput] = useState("");
   const [inputpassword, setPasswordinput] = useState("");
@@ -17,6 +16,7 @@ function Signup() {
 
 
   const registeraxios = () => {
+    
     console.log("click login");
     console.log("ID : ", inputid);
     console.log("PW : ", inputpassword);
@@ -33,10 +33,18 @@ function Signup() {
       },
     })
       .then((response) => {
-        console.log(response);
+        let accessToken = response.headers['authorization']; // 응답헤더에서 토큰 받기
+        let refreshToken = response.headers['refresh'];
+        console.log('access 토큰 :', accessToken);
+        console.log('refresh 토큰 :', refreshToken);
+        localStorage.setItem('token',response.data.result.token);
+      // token이 필요한 API 요청 시 header Authorization에 token 담아서 보내기
+        axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`
+        console.log(response.data.result.token);
+        // console.log(response);
         alert("회원가입성공");
         if ((response.status = 200)) {
-          return navigate("/Mission");
+          return document.location.href ="/";
         }
       }).catch((err)=>{
         console.log(err);
@@ -47,10 +55,6 @@ function Signup() {
   return (
     <body className='signup_body'>
     <div className="LoginLayout">
-      <Routes>
-        <Route path="/Login" element={<Login />} />
-      </Routes>
-
       <div className="signUpForm"> 
         <div className="signUpID">
           <p className="loginTitle">회원가입</p>  
@@ -70,7 +74,7 @@ function Signup() {
             type="Email" name="Email"
             autoComplete="Email"
             onChange={(e) => {
-              setId(e.target.value);
+              setEmailinput(e.target.value);
             }} /> <br/>  
         </div>
 
@@ -79,7 +83,7 @@ function Signup() {
             type="ID" name="ID"
             autoComplete="ID"
             onChange={(e) => {
-              setEmailinput(e.target.value);
+              setId(e.target.value);
             }}/> <br/> 
         </div>
 
@@ -90,11 +94,9 @@ function Signup() {
             setPasswordinput(e.target.value);
           }} /> <br/>   
 
-        {/* <Link to="/Mission"> */}
           <Button type="submit" className="btnLogin" onClick={registeraxios}>
             회원가입
           </Button> <br/><br/>
-        {/* </Link> */}
 
         </div>
       </div>

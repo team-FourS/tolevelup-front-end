@@ -6,16 +6,19 @@ import Modify from "./Modify"
 import "../../css/mypage/Mypage.css"
 import Header from "../Header/Header";
 import Footer from "../Footer";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Modal from "../Modal/Modal";
 import Follower from "./Follower";
 import Following from './Following';
 import CommentDa from "./CommentDa";
+import axios from 'axios';
 // import { PureComponent } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const Mypage = () => {
-    const data = [
+
+    const [users, setUsers] = useState([]);
+    const data2 = [
         {
             name: '3월',
             uv: 4000,
@@ -65,6 +68,14 @@ const Mypage = () => {
     const [follower, setWer] = useState(false);
     const [fallowing, setWing] = useState(false);
     const [comment, setCommen] = useState(false);
+    // const [fdata, setData] = useState(null);
+
+    useEffect(() => {
+        axios.get('api/v1/users/Login')
+            .then(response => {
+                setUsers(response.data);
+            });
+    }, []);
 
     return (
         
@@ -87,7 +98,7 @@ const Mypage = () => {
                             <div className='space'>
                                 <img className ="mypage_profile" src={user} alt='프로필'></img>
                                     <div className="nickname">
-                                        <h4> 최우식
+                                        <h4>{users && <textarea value={JSON.stringify(users)} readOnly={true}/>}
                                             <p className='userid'>_whoops</p>
                                         </h4>
                                         <h5 className='userint'>싫어하는거요? 국연수요.</h5>
@@ -188,7 +199,7 @@ const Mypage = () => {
                                 <BarChart
                                 width={500}
                                 height={300}
-                                data={data}
+                                data={data2}
                                 margin={{top: 5,right: 30,left: 20,bottom: 5,}}
                                 barSize={20}>
                                     <XAxis dataKey="name" scale="point" padding={{ left: 10, right: 10 }} style={{position:'absolute'}}/>
