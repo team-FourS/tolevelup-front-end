@@ -5,9 +5,6 @@ import Modify from "./Modify"
 import "../../css/mypage/Mypage.css"
 import Header from "../Header/Header";
 import Footer from "../Footer";
-
-import { useState,useEffect } from "react";
-
 import Modal from "../Modal/Modal";
 import Follower from "./Follower";
 import Following from './Following';
@@ -15,9 +12,7 @@ import CommentDa from "./CommentDa";
 import axios from 'axios';
 // import { PureComponent } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 
 const Mypage = () => {
 
@@ -98,6 +93,7 @@ const Mypage = () => {
                                     <div className="nickname">
                                         <h4>{users && <textarea value={JSON.stringify(users)} readOnly={true}/>}
                                             <p className='userid'>_whoops</p>
+                                            </h4>
                                         <h4> {userInfo.name}
                                             <p className='userid'> {userInfo.id} </p>
                                         </h4>
