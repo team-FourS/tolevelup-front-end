@@ -17,8 +17,8 @@ const AllFeed = () => {
   const [isActive, setIsActive] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // 각 체크박스의 상태를 useState를 사용하여 관리 / ***오류 수정 예졍***
-  const [checkbox1, setCheckbox1] = useState(true);
+  // 각 체크박스의 상태를 useState를 사용하여 관리 
+  const [checkbox1, ] = useState(true);
 
   const FeedClick = () => {
     setIsActive(!isActive);
