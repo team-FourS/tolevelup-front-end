@@ -2,6 +2,7 @@ import React from 'react';
 import '../../css/header/Header.css'
 // import {Link} from "react-router-dom";
 import Logo from '../../img/ToLevelUp_logo.png'
+
 import {BiBell} from "react-icons/bi"
 import { FcInfo } from "react-icons/fc";
 
