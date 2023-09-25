@@ -55,7 +55,7 @@ const Mypage = () => {
             });
     }, []);
 
-    // 회원 정보 불러오기
+    // 회원 정보 불러오기 (이름, 아이디, 한줄소개)
     const [userInfo, setUserInfo] = useState({});
     const userId = sessionStorage.getItem('userId');
 
