@@ -93,14 +93,6 @@ function Login() {
             autoComplete="password" /> <br  />  
         </div>
 
-          <Link to="/FindPassword" className="findPassword">
-            비밀번호 찾기
-          </Link>
-        
-          <Link to="/signup" className="signUp">
-            회원가입
-          </Link>
-
         <div>
           <img className="naver" src={naver} alt="네이버" />
           <img className="google" src={google} alt="구글" />
