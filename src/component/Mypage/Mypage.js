@@ -16,7 +16,7 @@ import React, { useState, useEffect } from 'react';
 
 const Mypage = () => {
 
-    const [users, setUsers] = useState([]);
+    // const [users, setUsers] = useState([]);
     const data2 = [
         {
             name: '3월', uv: 4000, pv: 2, amt: 2400,
@@ -48,23 +48,23 @@ const Mypage = () => {
     const [comment, setCommen] = useState(false);
     // const [fdata, setData] = useState(null);
 
-    useEffect(() => {
-        axios.get('api/v1/users/login')
-            .then(response => {
-                setUsers(response.data);
-            });
-    }, []);
+    // useEffect(() => {
+    //     axios.get('api/v1/users/login')
+    //         .then(response => {
+    //             setUsers(response.data);
+    //         });
+    // }, []);
 
     // 회원 정보 불러오기 (이름, 아이디, 한줄소개)
-    const [userInfo, setUserInfo] = useState({});
-    const userId = sessionStorage.getItem('userId');
+    // const [userInfo, setUserInfo] = useState({});
+    const userId = localStorage.getItem('token');
 
     useEffect(() => {
         // API 호출
         axios
             .get(`api/v1/users/my/${userId}`)
             .then((response) => {
-            setUserInfo(response.data);
+            // setUserInfo(response.data);
             })
             .catch((error) => {
             console.error('회원 정보를 불러오는 중 오류 발생: ', error);
@@ -91,13 +91,13 @@ const Mypage = () => {
                             <div className='space'>
                                 <img className ="mypage_profile" src={user} alt='프로필'></img>
                                     <div className="nickname">
-                                        <h4>{users && <textarea value={JSON.stringify(users)} readOnly={true}/>}
+                                        {/* <h4>{users && <textarea value={JSON.stringify(users)} readOnly={true}/>} */}
                                             <p className='userid'>_whoops</p>
-                                            </h4>
-                                        <h4> {userInfo.name}
-                                            <p className='userid'> {userInfo.id} </p>
+                                            {/* </h4> */}
+                                        <h4> {userId.name}
+                                            <p className='userid'> {userId.id} </p>
                                         </h4>
-                                        <h5 className='userint'> {userInfo.intro} </h5>
+                                        <h5 className='userint'> {userId.intro} </h5>
                                     </div>
                             <Link to="/modify">    
                                 <button className='btnpro'>프로필 편집</button>

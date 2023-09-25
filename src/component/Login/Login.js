@@ -39,15 +39,37 @@ function Login() {
       },
       })
       .then((res) => {
-        axios.defaults.headers.common[
-          "Authorization"
-        ] = `Bearer ${res.data.access_token}`;
-        // localStorage.setItem('token',res.data.result.token);
-        console.log(res.data.access_token);
-        // 사용자 아이디를 세션에 저장
-        sessionStorage.setItem('userId', inputId);
+        const { Token } = res.data.result.token;
+        
+        // 임시 토큰 삭제금지
+        // const { TokenId } = res.data.result.id;
+        // const { TokenName } = res.data.result.name;
+        // const { TokenEmail } = res.data.result.email;
+        // const { TokenLevel } = res.data.result.level;
+        // const { TokenIntro } = res.data.result.inro;
 
-        document.location.href = "/Mission";
+        //Token 설정 삭제금지
+        axios.defaults.headers.common['Authorization'] = `Bearer ${Token}`;
+        // axios.defaults.headers.common['Authorization'] = `Bearer ${TokenId}`;
+        // axios.defaults.headers.common['Authorization'] = `Bearer ${TokenName}`;
+        // axios.defaults.headers.common['Authorization'] = `Bearer ${TokenEmail}`;
+        // axios.defaults.headers.common['Authorization'] = `Bearer ${TokenLevel}`;
+        // axios.defaults.headers.common['Authorization'] = `Bearer ${TokenIntro}`;
+
+        localStorage.setItem('token',Token);
+
+        // 스토리지 저장 임시 토큰 삭제금지
+        // localStorage.setItem('id',TokenId);
+        // localStorage.setItem('name',TokenName);
+        // localStorage.setItem('email',TokenEmail);
+        // localStorage.setItem('level',TokenLevel);
+        // localStorage.setItem('inro',TokenIntro);
+      
+        console.log(res.data.result.token);
+        // 사용자 아이디를 세션에 저장
+        // sessionStorage.setItem('userId', inputId);
+        // document.location.href = "/Mission";
+        // return Token;
       })
       .catch((error)=>{
         console.log(error);
@@ -92,6 +114,14 @@ function Login() {
             name="password"
             autoComplete="password" /> <br  />  
         </div>
+
+          <Link to="/FindPassword" className="findPassword">
+            비밀번호 찾기
+          </Link>
+        
+          <Link to="/signup" className="signUp">
+            회원가입
+          </Link>
 
         <div>
           <img className="naver" src={naver} alt="네이버" />

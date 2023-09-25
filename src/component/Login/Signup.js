@@ -17,7 +17,7 @@ function Signup() {
 
   const registeraxios = () => {
     
-    console.log("click login");
+    console.log("click Signup");
     console.log("ID : ", inputid);
     console.log("PW : ", inputpassword);
     console.log("Email : ", inputemail);
