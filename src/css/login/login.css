@@ -59,18 +59,18 @@
 }
 
 .naver { 
-  width: 26px; border: 0px;
+  width: 28px; border: 0px;
   padding-left: 5px;
   margin-right: 20px;  margin-top: 10px;
   cursor: pointer;
 }
 .google { 
-  width: 26px; border: 0px;
+  width: 28px; border: 0px;
   margin-right: 20px;  margin-top: 10px;
   cursor: pointer;
 }
 .kakao { 
-  width: 26px; border: 0px;
+  width: 28px; border: 0px;
   margin-right: 20px;  margin-top: 10px;
   cursor: pointer;
 
