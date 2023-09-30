@@ -7,7 +7,8 @@ import {Routes, Route, Link, useLocation} from "react-router-dom";
 import Mission from "../Mission/Mission";
 import Signup from "../Login/Signup";
 import axios from 'axios';
-import logo from '../../img/smallLogo.png';
+import fullnameLogo from '../../img/logo/fullname-logo.png';
+
 import naver from '../../img/naver.png';
 import google from '../../img/google.png';
 import kakao from '../../img/kakao.png';
@@ -72,7 +73,7 @@ function Login() {
       
       <div className="loginForm"> 
           <p className="loginTitle">로그인</p>  
-          <img className="loginLogo" src={logo} alt="로고" />
+          <img className="loginLogo" src={fullnameLogo} alt="로고" />
         
         <div className="idField">
           <TextField className="loginBox"

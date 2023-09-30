@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import '../../css/login/signup.css'
 import { TextField } from '@mui/material';
 import { Button } from '@mui/base';
-import logo from '../../img/smallLogo.png';
 import axios from 'axios';
+import fullnameLogo from '../../img/logo/fullname-logo.png';
 
 function Signup() {
   
@@ -59,7 +59,7 @@ function Signup() {
       <div className="signUpForm"> 
         <div className="signUpID">
           <p className="loginTitle">회원가입</p>  
-          <img className="loginLogo" src={logo} alt="로고" />
+          <img className="loginLogo" src={fullnameLogo} alt="로고" />
 
           <TextField className="loginBox"
             label="Name" name="Name"
