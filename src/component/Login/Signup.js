@@ -16,6 +16,12 @@ function Signup() {
 
 
   const registeraxios = () => {
+
+    if (!inputname || !inputemail || !inputpassword || !inputid) {
+      alert('모든 정보를 입력하세요.'); // Display an alert
+      return; // Return early if any field is missing
+    }
+  
     
     console.log("click Signup");
     console.log("ID : ", inputid);
@@ -31,7 +37,9 @@ function Signup() {
         password: inputpassword,
         id: inputid,
       },
+      
     })
+   
       .then((response) => {
       //   let accessToken = response.headers['authorization']; // 응답헤더에서 토큰 받기
       //   let refreshToken = response.headers['refresh'];
@@ -62,16 +70,15 @@ function Signup() {
             <img className="loginLogo" src={fullnameLogo} alt="로고" />
 
             <div className="signUpID">
-          <TextField className="loginBox" label="ID"
+          <TextField className="loginBox" label="ID" id="id"
             type="ID" name="ID"
             autoComplete="ID"
             onChange={(e) => {
               setId(e.target.value);
             }}/> <br/> 
         </div>
-
         
-        <TextField className="loginBox" label="Password"
+        <TextField className="loginBox" label="Password" id="pass"
           type="Password" name="Password"
           autoComplete="Password"
           onChange={(e) => {
