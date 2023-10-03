@@ -12,6 +12,9 @@
 .signUpID{
   padding-bottom: 10px;
 }
+.signUpPassword{
+  padding-top: 10px;
+}
 .signUpTitle{
   font-size: 30px;
   font-weight: 600;
