@@ -56,25 +56,25 @@
   border-style: solid;
   border-color: rgb(173, 173, 173);
   outline: none;
+  padding-right: 30px;
 }
 .input-container {
-  display: flex;
+  display: flex;  position: relative;
   align-items: center;
-  /* border: 1px solid #ccc; */
   padding: 5px;
-  border-radius: 5px;
-  border: none;
+  border-radius: 5px;  border: none;
   outline: none;
 }
 .input-container {
-  
   display: inline-block;
 }
 .search-icon {
-  position: absolute;
-  top: 50%;  right: 10px;
-  transform: translateY(-50%);
   font-size: 23px; color: rgb(88, 88, 88);
+  position: absolute; 
+  top: 22px; left: 210px;
+  transform: translateY(-50%);
+  pointer-events: none;
+
 }
 
 /*피드 박스 스크롤*/
@@ -129,17 +129,24 @@
   background-color: white;
 }
 /*아이콘*/
+.comment_icon{
+  font-size: 28px;
+  color: rgb(155, 154, 154);
+  margin-left: 9px;
+  display: inline-block;
+}
+
 .heart_icon{
   font-size: 27px;
   color: rgb(155, 154, 154);
   margin-left: 750px;
   display: inline-block;
 }
-.comment_icon{
-  font-size: 28px;
-  color: rgb(155, 154, 154);
-  margin-left: 9px;
-  display: inline-block;
+.heart_icon.green {
+  color: rgb(0, 172, 55); 
+}
+.heart_icon.gray {
+  color: gray; 
 }
 
 /* AllFeed.css에 복사하여 적용할 스타일 */

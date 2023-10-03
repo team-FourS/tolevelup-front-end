@@ -16,6 +16,7 @@ import CommentModal from "./CommentModal";
 const AllFeed = () => {
   const [isActive, setIsActive] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isHeartActive, setIsHeartActive] = useState(false);
 
   // 각 체크박스의 상태를 useState를 사용하여 관리 
   const [checkbox1, ] = useState(true);
@@ -34,6 +35,10 @@ const AllFeed = () => {
 
   const handleCommentSubmit = (comment) => { //댓글 창 닫기
     handleCloseModal();
+  };
+
+  const handleHeartIconClick = () => {
+    setIsHeartActive(!isHeartActive);
   };
 
   return (
@@ -64,10 +69,13 @@ const AllFeed = () => {
 
         <label className="searching">
           <div className="input-container">
-            <input className="searchBox"
-              type="text" placeholder="닉네임을 입력해주세요"             
-            required />
-              <BiSearchAlt2 className="search-icon"/>
+          <BiSearchAlt2 className="search-icon" />
+            <input 
+              className="searchBox"
+              type="text" 
+              placeholder="닉네임을 입력해주세요"             
+              required 
+            />
           </div>    
         </label>
 
@@ -84,7 +92,10 @@ const AllFeed = () => {
             <input type="checkbox" id="btn1"  checked={checkbox1} />
               <label htmlFor="btn3"> 식습관 | 물 6잔 이상 마시기 </label> <br/>
             </div>
-          <HiHeart className="heart_icon" />
+            <HiHeart
+            className={`heart_icon ${isHeartActive ? 'green' : 'gray'}`}
+            onClick={handleHeartIconClick}
+            />
           <LiaCommentSolid
             className="comment_icon"
             onClick={handleCommentIconClick}
