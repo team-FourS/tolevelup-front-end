@@ -12,7 +12,7 @@ import CommentDa from "./CommentDa";
 import axios from 'axios';
 // import { PureComponent } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 const Mypage = () => {
 
@@ -57,19 +57,41 @@ const Mypage = () => {
 
     // 회원 정보 불러오기 (이름, 아이디, 한줄소개)
     // const [userInfo, setUserInfo] = useState({});
-    const userId = localStorage.getItem('token');
+    // const userId = localStorage.getItem('token');
 
-    useEffect(() => {
-        // API 호출
-        axios
-            .get(`api/v1/users/my/${userId}`)
-            .then((response) => {
-            // setUserInfo(response.data);
-            })
-            .catch((error) => {
-            console.error('회원 정보를 불러오는 중 오류 발생: ', error);
-            });
-        }, [userId]);
+    // useEffect(() => {
+    //     // API 호출
+    //     axios
+    //         .get(`api/v1/users/my/${userId}`)
+    //         .then((response) => {
+    //         // setUserInfo(response.data);
+    //         })
+    //         .catch((error) => {
+    //         console.error('회원 정보를 불러오는 중 오류 발생: ', error);
+    //         });
+    //     }, [userId]);
+    const [inputId, setInputId] = useState({}); // 사용자 정보를 저장할 상태
+
+    const {Token} = localStorage.getItem('token');
+    const axiosInstance = axios.create({
+        headers: {
+          Authorization: `Bearer ${Token}`, // 헤더에 토큰을 포함
+        },
+      });
+      
+      
+
+                 axiosInstance
+                 .get('api/v1/users/my')
+                 .then((res) => {
+                   // 요청 성공 시 처리
+                   setInputId({ id: res.data.result.id, // 데이터를 상태에 저장
+                 name: res.data.result.name, });
+                 })
+                 .catch((error) => {
+                //    console.error('API 호출 중 오류 발생:', error);
+                console.log('API 아오진짜', inputId);
+                 });
 
     return (
         <main className='mypage_main'>
@@ -94,10 +116,10 @@ const Mypage = () => {
                                         {/* <h4>{users && <textarea value={JSON.stringify(users)} readOnly={true}/>} */}
                                             <p className='userid'>_whoops</p>
                                             {/* </h4> */}
-                                        <h4> {userId.name}
-                                            <p className='userid'> {userId.id} </p>
+                                        <h4> {inputId.id}
+                                            {/* <p className='userid'> {userId.id} </p> */}
                                         </h4>
-                                        <h5 className='userint'> {userId.intro} </h5>
+                                        {/* <h5 className='userint'> {userId.intro} </h5> */}
                                     </div>
                             <Link to="/modify">    
                                 <button className='btnpro'>프로필 편집</button>

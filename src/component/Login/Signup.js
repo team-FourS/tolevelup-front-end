@@ -59,15 +59,33 @@ function Signup() {
       <div className="signUpForm"> 
         <div className="signUpID">
           <p className="loginTitle">회원가입</p>  
-          <img className="loginLogo" src={fullnameLogo} alt="로고" />
+            <img className="loginLogo" src={fullnameLogo} alt="로고" />
 
+            <div className="signUpID">
+          <TextField className="loginBox" label="ID"
+            type="ID" name="ID"
+            autoComplete="ID"
+            onChange={(e) => {
+              setId(e.target.value);
+            }}/> <br/> 
+        </div>
+
+        
+        <TextField className="loginBox" label="Password"
+          type="Password" name="Password"
+          autoComplete="Password"
+          onChange={(e) => {
+            setPasswordinput(e.target.value);
+          }} /> <br/>
+
+<div className="signUpPassword">
           <TextField className="loginBox"
             label="Name" name="Name"
             autoComplete="Name"
             autoFocus
             onChange={(e) => {
               setUsernameinput(e.target.value);
-            }}/> <br/>
+            }}/> <br/></div>
         </div>
 
         <div className="signUpID">
@@ -79,21 +97,7 @@ function Signup() {
             }} /> <br/>  
         </div>
 
-        <div className="signUpID">
-          <TextField className="loginBox" label="ID"
-            type="ID" name="ID"
-            autoComplete="ID"
-            onChange={(e) => {
-              setId(e.target.value);
-            }}/> <br/> 
-        </div>
-
-        <TextField className="loginBox" label="Password"
-          type="Password" name="Password"
-          autoComplete="Password"
-          onChange={(e) => {
-            setPasswordinput(e.target.value);
-          }} /> <br/>   
+           
 
           <Button type="submit" className="btnLogin" onClick={registeraxios}>
             회원가입
