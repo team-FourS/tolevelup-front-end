@@ -28,6 +28,7 @@ import Profile from "./component/Mypage/Profile"
 // import Modal from "./component/Modal"
 
 import "./App.css"
+import Check from "./component/Mypage/Check";
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
               <Route path="/Modify" element={<Modify />} />
               <Route path="/edit" element={<Edit />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/check" element={<Check />} />
               {/* <Route path="/alarm" element={<Alarm />} /> */}
               {/* <Route path="/modal" element={<Modal />} /> */}
           </Routes>                       

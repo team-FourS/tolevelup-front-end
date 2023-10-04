@@ -1,7 +1,6 @@
 import user from '../../img/user.png'
 import {Routes, Route, Link} from "react-router-dom";
-// import { motion } from "framer-motion";
-import Modify from "./Modify"
+import Check from "./Check"
 import "../../css/mypage/Mypage.css"
 import Header from "../Header/Header";
 import Footer from "../Footer";
@@ -49,9 +48,6 @@ const Mypage = () => {
           Authorization: `Bearer ${Token}`, // 헤더에 토큰을 포함
         },
       });
-      
-      
-
                  axiosInstance
                  .get('api/v1/users/my')
                  .then((res) => {
@@ -69,7 +65,7 @@ const Mypage = () => {
             
             <Header />
             <Routes>
-                <Route path="/modify" element={<Modify />} />
+                <Route path="/check" element={<Check />} />
             </Routes>
             
             <div className='set'>
@@ -87,14 +83,14 @@ const Mypage = () => {
                                         </h4>
                                         {/* <h5 className='userint'> {userId.intro} </h5> */}
                                     </div>
-                            <Link to="/modify">    
+                            <Link to="/check">    
                                 <button className='btnpro'>프로필 편집</button>
                             </Link>
                             </div>
                         </div>
 
-                        <div className="scroll_box">
-                            <div className="inner_content">
+                        <div className="advice">
+                            {/* <div className="inner_content">
                                 <div className='comment_box'>
                                     너 전교 몇등이야?
                                     <p className='user_comment'>- 국연수</p>
@@ -103,7 +99,7 @@ const Mypage = () => {
                                     다시 찍자고, 다큐멘터리
                                     <p className='user_comment'>- 김지웅</p>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     <main className='square2'>
@@ -178,9 +174,25 @@ const Mypage = () => {
                         </div>
                         </div>
                         <div className='statistics'>
-                            
-                        </div>
+                        
+                            <div className="scroll_box">
+                                <div className="inner_content">
+                                    <div className='comment_box'>
+                                    너 전교 몇등이야?
+                                    <p className='user_comment'>- 국연수</p>
                                 </div>
+                                <div className='comment_box'>
+                                    다시 찍자고, 다큐멘터리
+                                    <p className='user_comment'>- 김지웅</p>
+                                </div>
+                                <div className='comment_box'>
+                                    다시 찍자고, 다큐멘터리
+                                    <p className='user_comment'>- 김지웅</p>
+                                </div>
+                            </div>
+                        </div>                          
+                    </div>
+                         </div>
                             </div>
                         </main>
                     <div className='Mains-left'></div>
