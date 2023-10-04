@@ -1,4 +1,5 @@
 import user from '../../img/user.png'
+import Advice1 from '../../img/Advice1.png'
 import {Routes, Route, Link} from "react-router-dom";
 import Check from "./Check"
 import "../../css/mypage/Mypage.css"
@@ -74,13 +75,15 @@ const Mypage = () => {
                         <div className='bold1'>
                             <div className='space'>
                                 <img className ="mypage_profile" src={user} alt='프로필'></img>
+                               
                                     <div className="nickname">
                                         {/* <h4>{users && <textarea value={JSON.stringify(users)} readOnly={true}/>} */}
+                                        <h4>최우식</h4>
                                             <p className='userid'>_whoops</p>
-                                            {/* </h4> */}
-                                        <h4> {inputId.id}
+                                            
+                                        {/* <h4> {inputId.id} */}
                                             {/* <p className='userid'> {userId.id} </p> */}
-                                        </h4>
+                                        {/* </h4> */}
                                         {/* <h5 className='userint'> {userId.intro} </h5> */}
                                     </div>
                             <Link to="/check">    
@@ -90,6 +93,7 @@ const Mypage = () => {
                         </div>
 
                         <div className="advice">
+                        <img className ="mypage_advice" src={Advice1} alt='프로필'></img>
                             {/* <div className="inner_content">
                                 <div className='comment_box'>
                                     너 전교 몇등이야?
