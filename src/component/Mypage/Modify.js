@@ -80,7 +80,7 @@ const Modify = () => {
     // 이전 페이지로 이동
 
     const handleBack = () => {
-        navigate(-1); //뒤로가기
+        navigate(-2); //뒤로가기
       };
 
     const [isOpen, setIsOpen] = useState(false);
