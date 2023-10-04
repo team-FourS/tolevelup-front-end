@@ -1,6 +1,6 @@
 import user from '../../img/user.png'
 import {Routes, Route, Link} from "react-router-dom";
-import Check from "./Check"
+import PwCheck from "./PwCheck"
 import "../../css/mypage/Mypage.css"
 import Header from "../Header/Header";
 import Footer from "../Footer";
@@ -65,7 +65,7 @@ const Mypage = () => {
             
             <Header />
             <Routes>
-                <Route path="/check" element={<Check />} />
+                <Route path="/pwcheck" element={<PwCheck />} />
             </Routes>
             
             <div className='set'>
