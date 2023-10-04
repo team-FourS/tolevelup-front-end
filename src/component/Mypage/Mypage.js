@@ -11,43 +11,16 @@ import Following from './Following';
 import CommentDa from "./CommentDa";
 import axios from 'axios';
 // import { PureComponent } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import React, { useState } from 'react';
 
 const Mypage = () => {
 
     // const [users, setUsers] = useState([]);
-    const data2 = [
-        {
-            name: '3월', uv: 4000, pv: 2, amt: 2400,
-        },
-        {
-            name: '4월', uv: 3000, pv: 18, amt: 2210,
-        },
-        {
-            name: '5월', uv: 2000, pv: 28, amt: 2290,
-        },
-        {
-            name: '6월', uv: 2780, pv: 21, amt: 2000,
-        },
-        {
-            name: '7월', uv: 1890, pv: 18, amt: 2181,
-        },
-        {
-            name: '8월', uv: 2390, pv: 3, amt: 2500,
-        },
-        {
-            name: '9월', uv: 3490, pv: 10, amt: 2100,
-        },
-    ];
-
-    // const demoUrl = 'https://codesandbox.io/s/simple-line-chart-kec3v';
 
     const [follower, setWer] = useState(false);
     const [fallowing, setWing] = useState(false);
     const [comment, setCommen] = useState(false);
-    // const [fdata, setData] = useState(null);
-
+    
     // useEffect(() => {
     //     axios.get('api/v1/users/login')
     //         .then(response => {
@@ -55,9 +28,6 @@ const Mypage = () => {
     //         });
     // }, []);
 
-    // 회원 정보 불러오기 (이름, 아이디, 한줄소개)
-    // const [userInfo, setUserInfo] = useState({});
-    // const userId = localStorage.getItem('token');
 
     // useEffect(() => {
     //     // API 호출
@@ -70,6 +40,7 @@ const Mypage = () => {
     //         console.error('회원 정보를 불러오는 중 오류 발생: ', error);
     //         });
     //     }, [userId]);
+
     const [inputId, setInputId] = useState({}); // 사용자 정보를 저장할 상태
 
     const {Token} = localStorage.getItem('token');
@@ -97,11 +68,6 @@ const Mypage = () => {
         <main className='mypage_main'>
             
             <Header />
-            {/* <motion.div
-        className="box_anima"
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-    >   */}
             <Routes>
                 <Route path="/modify" element={<Modify />} />
             </Routes>
@@ -212,23 +178,8 @@ const Mypage = () => {
                         </div>
                         </div>
                         <div className='statistics'>
-                            {/* <p className='mission_complete'>완료미션</p>   */}
-                            <ResponsiveContainer width="100%" height="100%">
-                                <BarChart
-                                width={500}
-                                height={300}
-                                data={data2}
-                                margin={{top: 5,right: 30,left: 20,bottom: 5,}}
-                                barSize={20}>
-                                    <XAxis dataKey="name" scale="point" padding={{ left: 10, right: 10 }} style={{position:'absolute'}}/>
-                                        <YAxis />
-                                            <Tooltip />
-                                                <Legend />
-                                                    <CartesianGrid strokeDasharray="3 3" />
-                                                        <Bar dataKey="pv" fill="#8884d8" background={{ fill: '#eee' }} />
-                                </BarChart>
-                            </ResponsiveContainer>
-                                    </div>
+                            
+                        </div>
                                 </div>
                             </div>
                         </main>

@@ -166,9 +166,9 @@ const Modify = () => {
                                         </td>
                                     </tr>
                                     <tr className='modify_bold'>
-                                        <td className='nickname_bold'><p className='oneline_font'>이름</p></td>
+                                        <td className='nickname_bold'><p className='oneline_font'>아이디</p></td>
                                         <td>
-                                            <input type='text' className='intro' placeholder='이름 수정'></input>
+                                            <input type='text' className='intro' placeholder='아이디 수정'></input>
                                         </td>
                                     </tr>
                                     <tr className='modify_bold'>
