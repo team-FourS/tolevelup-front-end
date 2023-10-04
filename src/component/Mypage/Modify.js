@@ -154,37 +154,48 @@ const Modify = () => {
                     {/* <thead/> */}
                     <tbody>
                         <tr className='modify_bold'>
-                            <td className='nickname_bold'><p className='oneline_font'>닉네임</p></td>
+                            <td className='nickname_bold'>
+                                <p className='oneline_font'>닉네임</p>
+                            </td>
                             <td>
                                 <input type='text' className='intro' placeholder='닉네임 수정'></input>
                             </td>
-                                </tr>
-                                    <tr className='modify_bold'>
-                                        <td className='nickname_bold'><p className='oneline_font'>한줄소개</p></td>
-                                        <td>
-                                            <input type='text' className='intro' placeholder='한줄소개'></input>
-                                        </td>
-                                    </tr>
-                                    <tr className='modify_bold'>
-                                        <td className='nickname_bold'><p className='oneline_font'>아이디</p></td>
-                                        <td>
-                                            <input type='text' className='intro' placeholder='아이디 수정'></input>
-                                        </td>
-                                    </tr>
-                                    <tr className='modify_bold'>
-                                        <td className='nickname_bold'><p className='oneline_font'>비밀번호</p></td>
-                                        <td>
-                                            <input type='text' className='intro' placeholder='비밀번호 수정'></input>
-                                        </td>
-                                    </tr>
-                                    <tr className='modify_bold'>
-                                        <td className='nickname_bold'><p className='oneline_font'>이메일</p></td>
-                                        <td>
-                                            <input type='text' className='intro' placeholder='이메일 수정'></input>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        </tr>
+
+                        <tr className='modify_bold'>
+                            <td className='nickname_bold'>
+                                <p className='oneline_font'>한줄소개</p>
+                            </td>
+                            <td>
+                                <input type='text' className='intro' placeholder='한줄소개'></input>
+                            </td>
+                        </tr>
+
+                        <tr className='modify_bold'>
+                            <td className='nickname_bold'>
+                                <p className='oneline_font'>아이디</p></td>
+                            <td>
+                                <input type='text' className='intro' placeholder='아이디 수정'></input>
+                            </td>
+                        </tr>
+
+                        <tr className='modify_bold'>
+                            <td className='nickname_bold'>
+                                <p className='oneline_font'>비밀번호</p></td>
+                            <td>
+                                <input type='text' className='intro' placeholder='비밀번호 수정'></input>
+                            </td>
+                        </tr>
+
+                        <tr className='modify_bold'>
+                            <td className='nickname_bold'>
+                                <p className='oneline_font'>이메일</p></td>
+                            <td>
+                                <input type='text' className='intro' placeholder='이메일 수정'></input>
+                            </td>
+                        </tr>
+                    </tbody>
+            </table>
                     
 
             <div className='btn_modi'>
