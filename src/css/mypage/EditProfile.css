@@ -1,16 +1,10 @@
 .check_body{
   background-color: rgb(243, 247, 244);
 }
-.check_main{
-  margin: auto;
-  text-align: center;
-  justify-content: center;
-  padding-top: 10%;
-}
 .layout_check{
   margin: auto;
   text-align: center;
-  width: 300px; height: 220px;
+  width: 340px; height: 240px;
   border-radius: 20px;
   padding: 30px;
   background-color: #ffffff;
@@ -30,8 +24,15 @@
 }
 .user_check{
   margin-top: 20px;  margin-bottom: 20px;
-  font-size: 20px;
+  font-size: 25px; font-weight: 600;
   color: #65C28E;
+}
+.editFeild{
+  background-color: rgba(255, 255, 255, 0.884);
+  width: 300px;  height: 320;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
 }
 .check_button{
   color:white;

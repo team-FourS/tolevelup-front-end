@@ -7,9 +7,6 @@ import Profile from './Profile';
 import styled from 'styled-components';
 import back from '../../img/back.png';
 
-import ModifyModal from "../Modal//ModifyModal";
-import editEmail from "./editEmail";
-
 export const ModalContainer = styled.div`
 // Modal을 구현하는데 전체적으로 필요한 CSS를 구현
 height : 50%;
@@ -73,7 +70,6 @@ export const ModalView = styled.div.attrs((props) => ({
 `;
 
 const Modify = () => {
-    const [editEmail, setEmail] = useState(false);
     const [selectedImage, setSelectedImage] = useState(user2);
     const handleImageSelection = (imageName) => {
         setSelectedImage(imageName);
@@ -199,14 +195,9 @@ const Modify = () => {
                                 <p className='oneline_font'>이메일</p></td>
                             <td>
                                 <input type='text' className='intro' placeholder='이메일 수정'></input>
-                                <span id="missionHealth" onClick={() => setEmail(!editEmail)}>
-                                    {editEmail && (
-                                        <ModifyModal closeModal={() => setEmail(!editEmail)}>
-                                            <editEmail />
-                                        </ModifyModal>
-                                    )}
+                                <Link to="/editEmail">
                                     <button> 수정</button>
-                                </span>
+                                </Link>
                             </td>
                         </tr>
                     </tbody>
