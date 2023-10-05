@@ -126,11 +126,14 @@ const Modify = () => {
             <div className='modify_allbox'>            
             <div className="square">
                 <div className='square_in'>
-            <div className="pro_box">
-                <form>
-                    <img className ="profils" src={selectedImage} alt='프로필'></img>
-                </form>
-                <>
+            <table className='modify_bold'>
+                    {/* <thead/> */}
+                    <tbody>
+                        <tr>
+                            <td className="modify_img" rowspan="3">
+                                <img className ="profils" src={selectedImage} alt='프로필' rowspan="2"></img>
+
+                                <>
                 <ModalContainer>
                     <ModalBtn onClick={openModalHandler}
                     // 클릭하면 Modal이 열린 상태(isOpen)를 boolean 타입으로 변경하는 메소드가 실행되어야 합니다. 
@@ -152,54 +155,70 @@ const Modify = () => {
                             </ModalBackdrop> : null }
                 </ModalContainer>
                 </>
-            </div>
-            <table className='modify_bold'>
-                    {/* <thead/> */}
-                    <tbody>
+                            </td>
+                        </tr>
+                        
                         <tr className='modify_bold'>
                             <td className='nickname_bold'>
                                 <p className='oneline_font'>닉네임</p>
                             </td>
                             <td>
                                 <input type='text' className='intro' placeholder='닉네임 수정'></input>
+                                <Link to="">
+                                    <button className='nickname_edit_button'> 수정</button>
+                                </Link>
                             </td>
                         </tr>
 
-                        <tr className='modify_bold'>
+                        <tr className='modify_bold2'>
                             <td className='nickname_bold'>
                                 <p className='oneline_font'>한줄소개</p>
                             </td>
                             <td>
                                 <input type='text' className='intro' placeholder='한줄소개'></input>
-                            </td>
-                        </tr>
-
-                        <tr className='modify_bold'>
-                            <td className='nickname_bold'>
-                                <p className='oneline_font'>아이디</p></td>
-                            <td>
-                                <input type='text' className='intro' placeholder='아이디 수정'></input>
-                            </td>
-                        </tr>
-
-                        <tr className='modify_bold'>
-                            <td className='nickname_bold'>
-                                <p className='oneline_font'>비밀번호</p></td>
-                            <td>
-                                <input type='text' className='intro' placeholder='비밀번호 수정'></input>
-                            </td>
-                        </tr>
-
-                        <tr className='modify_bold'>
-                            <td className='nickname_bold'>
-                                <p className='oneline_font'>이메일</p></td>
-                            <td>
-                                <input type='text' className='intro' placeholder='이메일 수정'></input>
-                                <Link to="/editEmail">
-                                    <button> 수정</button>
+                                <Link to="">
+                                    <button className='intro_edit_button'> 수정</button>
                                 </Link>
                             </td>
                         </tr>
+                  
+
+                        <tr className='pass_bold'>
+                            <td className='id_bold' colspan="2">
+                                <p className='id_font'>아이디</p></td>
+                            <td>
+                                <input type='text' className='intro' placeholder='아이디 수정'></input>
+                                <Link to="">
+                                    <button className='id_edit_button'> 수정</button>
+                                </Link>
+                            </td>
+                        </tr>
+                        
+
+                        <tr className='pass_bold'>
+                            <td className='id_bold' colspan="2">
+                                <p className='password_font'>비밀번호</p></td>
+                            <td className='intro2'>
+                                <input type='text' className='intro' placeholder='비밀번호 수정'></input>
+                                <Link to="">
+                                    <button className='password_edit_button'> 수정</button>
+                                </Link>
+                            </td>
+                        </tr>
+
+                        <tr className='pass_bold'>
+                            <td className='id_bold' colspan="2">
+                                <p className='email_font'>이메일</p>
+                            </td>
+                                <td className='intro2'>
+                                    <input type='text' className='intro' placeholder='이메일 수정'></input>
+                                        <Link to="/editEmail">
+                                            <button> 수정</button>
+                                            {/* <button className='email_edit_button'> 수정</button> */}
+                                        </Link>
+                                </td>
+                        </tr>
+          
                     </tbody>
             </table>
                     
