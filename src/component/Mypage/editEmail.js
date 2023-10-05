@@ -1,5 +1,5 @@
 import React from 'react';
-import "../../css/mypage/editEmail.css"
+
 import { TextField } from '@mui/material';
 import {Link} from "react-router-dom";
 

@@ -84,7 +84,7 @@ const Mypage = () => {
                                         </h4>
                                         {/* <h5 className='userint'> {userId.intro} </h5> */}
                                     </div>
-                            <Link to="/check">    
+                            <Link to="/pwcheck">    
                                 <button className='btnpro'>프로필 편집</button>
                             </Link>
                             </div>
@@ -115,27 +115,27 @@ const Mypage = () => {
                                     <div className='cntnum'><strong>0</strong></div>
                                     <div className='follower_following_comment'>팔로워</div>
                                 </div>
-                        <div className='count' onClick={() => setWing(!fallowing)}>
-                        {fallowing && (
-                            <Modal closeModal={() => setWing(!fallowing)}>
-                                <Following />
-                            </Modal>
-                            )}
+                                <div className='count' onClick={() => setWing(!fallowing)}>
+                                {fallowing && (
+                                    <Modal closeModal={() => setWing(!fallowing)}>
+                                        <Following />
+                                    </Modal>
+                                    )}
 
-                            <div className='cntnum'><strong>0</strong></div>
-                            <div className='follower_following_comment'>팔로잉</div>
-                        </div>
+                                    <div className='cntnum'><strong>0</strong></div>
+                                    <div className='follower_following_comment'>팔로잉</div>
+                                </div>
 
-                    <div className='count' onClick={() => setCommen(!comment)}>
-                        {comment && (
-                            <Modal closeModal={() => setCommen(!comment)}>
-                                <CommentDa />
-                            </Modal>
-                            )}
+                                <div className='count' onClick={() => setCommen(!comment)}>
+                                    {comment && (
+                                        <Modal closeModal={() => setCommen(!comment)}>
+                                            <CommentDa />
+                                        </Modal>
+                                        )}
 
-                            <div className='cntnum'><strong>0</strong></div>
-                            <div className='follower_following_comment'>코멘트</div>
-                    </div>
+                                        <div className='cntnum'><strong>0</strong></div>
+                                        <div className='follower_following_comment'>코멘트</div>
+                                </div>
                         
                     <div className="mission_bar_group">
                     <div className="mission_bar">

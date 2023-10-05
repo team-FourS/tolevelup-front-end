@@ -15,7 +15,6 @@ import Rank from "./component/Ranking/MainRanking"
 import Char from "./component/Character/Character"
 import Mypage from "./component/Mypage/Mypage"
 import Modify from "./component/Mypage/Modify";
-import editEmail from "./component/Mypage/editEmail";
 
 import Login from "./component/Login/Login";
 import Logout from "./component/Login/Logout"
@@ -25,6 +24,7 @@ import Signup from "./component/Login/Signup"
 
 import Edit from "./component/Mypage/Edit"
 import Profile from "./component/Mypage/Profile"
+
 // import Alarm from "./component/Alarm"
 // import Modal from "./component/Modal"
 
@@ -58,6 +58,7 @@ function App() {
               <Route path="/edit" element={<Edit />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/pwcheck" element={<PwCheck />} />
+              <Route path="/editEmail" element={<editEmail />} />
               {/* <Route path="/alarm" element={<Alarm />} /> */}
               {/* <Route path="/modal" element={<Modal />} /> */}
           </Routes>                       

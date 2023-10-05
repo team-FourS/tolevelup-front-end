@@ -1,21 +1,18 @@
 import React from 'react';
-import "../../css/mypage/PwCheck.css"
+import "../../../css/mypage/EditProfile.css"
 import { TextField } from '@mui/material';
 import {Link} from "react-router-dom";
 
-const PwCheck = () => {
+const editEmail = () => {
 
 return (
     <body className='check_body'>
-    <main className="check_main">
         <div className="layout_check">
             <div className="checkForm">
                 <p className='user_check'>사용자 확인</p>
-                <p>* 사용자의 비밀번호를 입력해주세요</p>
-                    <TextField className="loginBox"
+                <p>* 변경할 이메일 주소를 입력해주세요</p>
+                    <TextField className="editField"
                         label="Secure"
-                        // value={inputId}
-                        // onChange={handleInputId}
                         name="Secure"
                         autoComplete="Secure"
                         autoFocus />
@@ -27,9 +24,8 @@ return (
                 </Link>
             </div>
         </div>
-    </main>
     </body>
 )
 }
 
-export default PwCheck;
+export default editEmail;
