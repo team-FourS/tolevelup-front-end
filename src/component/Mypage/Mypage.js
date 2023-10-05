@@ -9,6 +9,7 @@ import Modal from "../Modal/Modal";
 import Follower from "./Follower";
 import Following from './Following';
 import CommentDa from "./CommentDa";
+
 import axios from 'axios';
 // import { PureComponent } from 'react';
 import React, { useState } from 'react';
@@ -140,36 +141,36 @@ const Mypage = () => {
                             <div className='follower_following_comment'>코멘트</div>
                     </div>
                         
-                    <div className="text">
+                    <div className="mission_bar_group">
                     <div className="mission_bar">
                         <div className='bar_title'>
-                            <strong className="locate">운동</strong>
-                            <strong className="locate">식습관</strong>
-                            <strong className="locate">문화생활</strong>
-                            <strong className="locate">취미</strong>
+                            <strong className="barName">운동</strong>
+                            <strong className="barName">식습관</strong>
+                            <strong className="barName">문화생활</strong>
+                            <strong className="barName">취미</strong>
                         </div>
                         <div>
                             <div className="main_bar">
                             <div className="status-hp">
-                                    <div className="bar">
+                                    <div className="mypageBar">
                                         <div className="exercise_currentBar" style={{width:'48px'}}></div>    
                                     </div>
                                 </div>
                 
                                 <div className="status-hp">
-                                    <div className="bar">
+                                    <div className="mypageBar">
                                         <div className="eat_currentBar" style={{width:'120px'}}></div>    
                                     </div>
                                 </div>
 
                                 <div className="status-hp">
-                                    <div className="bar">
+                                    <div className="mypageBar">
                                         <div className="culture_currentBar" style={{width:'80px'}}></div>    
                                     </div>
                                 </div>
 
                                 <div className="status-hp">
-                                    <div className="bar">
+                                    <div className="mypageBar">
                                         <div className="hobby_currentBar" style={{width:'180px'}}></div>    
                                     </div>
                                 </div>
@@ -182,16 +183,16 @@ const Mypage = () => {
                             <div className="scroll_box">
                                 <div className="inner_content">
                                     <div className='comment_box'>
-                                    너 전교 몇등이야?
+                                    우와 오늘 운동 엄청 많이 했네~!!! 
                                     <p className='user_comment'>- 국연수</p>
                                 </div>
                                 <div className='comment_box'>
-                                    다시 찍자고, 다큐멘터리
+                                    오늘 미션 많이 완료했다 ㅋㅋ
                                     <p className='user_comment'>- 김지웅</p>
                                 </div>
                                 <div className='comment_box'>
-                                    다시 찍자고, 다큐멘터리
-                                    <p className='user_comment'>- 김지웅</p>
+                                    분발해~ 오늘 한 게 뭐야
+                                    <p className='user_comment'>- 이수현</p>
                                 </div>
                             </div>
                         </div>                          
