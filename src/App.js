@@ -30,6 +30,7 @@ import Profile from "./component/Mypage/Profile"
 
 import "./App.css"
 import PwCheck from "./component/Mypage/PwCheck";
+import EditEmail from "./component/Mypage/EditProfile/editEmail";
 
 function App() {
   return (
@@ -54,11 +55,10 @@ function App() {
               <Route path="/char" element={<Char />} />
               <Route path="/mypage" element={<Mypage />} />
               <Route path="/Modify" element={<Modify />} />
-              <Route path="/eidtEmail" element={<editEmail/> }/>
               <Route path="/edit" element={<Edit />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/pwcheck" element={<PwCheck />} />
-              <Route path="/editEmail" element={<editEmail />} />
+              <Route path="/editEmail" element={<EditEmail />} />
               {/* <Route path="/alarm" element={<Alarm />} /> */}
               {/* <Route path="/modal" element={<Modal />} /> */}
           </Routes>                       

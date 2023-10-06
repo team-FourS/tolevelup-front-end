@@ -191,7 +191,7 @@ const Mypage = () => {
                                     <p className='user_comment'>- 김지웅</p>
                                 </div>
                                 <div className='comment_box'>
-                                    분발해~ 오늘 한 게 뭐야
+                                    분발해~~ 오늘 한 게 뭐야
                                     <p className='user_comment'>- 이수현</p>
                                 </div>
                             </div>

@@ -1,17 +1,23 @@
-.check_body{
+.check_body1{
   background-color: rgb(243, 247, 244);
 }
-.layout_check{
+.check_main1{
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  padding-top: 10%;
+  
+}
+.layout_check1{
   margin: auto;
   text-align: center;
   width: 340px; height: 240px;
   border-radius: 20px;
   padding: 30px;
   background-color: #ffffff;
-  /* border: 1px solid gray; */
   border-radius: 8px;
 }
-.checkForm {
+.checkForm1 {
   display: flex;
   display: block;
   justify-content: center;
@@ -22,32 +28,33 @@
   width: auto;
   height: auto;
 }
-.user_check{
+.editExplain{
+  margin-bottom: 20px;
+}
+.user_check1{
   margin-top: 20px;  margin-bottom: 20px;
   font-size: 25px; font-weight: 600;
   color: #65C28E;
 }
-.editFeild{
+.editField1{
   background-color: rgba(255, 255, 255, 0.884);
-  width: 300px;  height: 320;
+  width: 320px;  height: 320;
   border-radius: 15px;
   margin-bottom: 20px;
-  padding-bottom: 10px;
+  
 }
-.check_button{
+.check_button1{
   color:white;
     background-color: #afb2b0;
     width: 53px; height: 30px; 
     font-size: 15px;
     border: none;
     border-radius: 5px;
-    margin-top: 20px;
-    margin-bottom: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-top: 35px;  margin-bottom: 5px;
+    margin-left: 5px;  margin-right: 5px;
     
 }
-.check_button:hover{
+.check_button1:hover{
     color:white;
     background-color: #65C28E;
     width: 53px; height: 30px; 
