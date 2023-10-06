@@ -164,7 +164,7 @@ const Modify = () => {
                             </td>
                             <td>
                                 <input type='text' className='intro' placeholder='닉네임 수정'></input>
-                                <Link to="">
+                                <Link to="/editNickname">
                                     <button className='nickname_edit_button'> 수정</button>
                                 </Link>
                             </td>
@@ -176,19 +176,18 @@ const Modify = () => {
                             </td>
                             <td>
                                 <input type='text' className='intro' placeholder='한줄소개'></input>
-                                <Link to="">
+                                <Link to="/editOneline">
                                     <button className='intro_edit_button'> 수정</button>
                                 </Link>
                             </td>
                         </tr>
-                  
 
                         <tr className='pass_bold'>
                             <td className='id_bold' colspan="2">
                                 <p className='id_font'>아이디</p></td>
                             <td>
                                 <input type='text' className='intro' placeholder='아이디 수정'></input>
-                                <Link to="">
+                                <Link to="/editID">
                                     <button className='id_edit_button'> 수정</button>
                                 </Link>
                             </td>
@@ -200,7 +199,7 @@ const Modify = () => {
                                 <p className='password_font'>비밀번호</p></td>
                             <td className='intro2'>
                                 <input type='text' className='intro' placeholder='비밀번호 수정'></input>
-                                <Link to="">
+                                <Link to="/editPW">
                                     <button className='password_edit_button'> 수정</button>
                                 </Link>
                             </td>

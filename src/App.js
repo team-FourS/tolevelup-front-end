@@ -30,7 +30,12 @@ import Profile from "./component/Mypage/Profile"
 
 import "./App.css"
 import PwCheck from "./component/Mypage/PwCheck";
+
 import EditEmail from "./component/Mypage/EditProfile/editEmail";
+import EditID from "./component/Mypage/EditProfile/editID";
+import EditNickname from "./component/Mypage/EditProfile/editNickname";
+import EditOneline from "./component/Mypage/EditProfile/editOneline";
+import EditPW from "./component/Mypage/EditProfile/editPW";
 
 function App() {
   return (
@@ -59,6 +64,10 @@ function App() {
               <Route path="/profile" element={<Profile />} />
               <Route path="/pwcheck" element={<PwCheck />} />
               <Route path="/editEmail" element={<EditEmail />} />
+              <Route path="/editID" element={<EditID />} />
+              <Route path="/editNickname" element={<EditNickname />} />
+              <Route path="/editOneline" element={<EditOneline />} />
+              <Route path="/editPW" element={<EditPW />} />
               {/* <Route path="/alarm" element={<Alarm />} /> */}
               {/* <Route path="/modal" element={<Modal />} /> */}
           </Routes>                       

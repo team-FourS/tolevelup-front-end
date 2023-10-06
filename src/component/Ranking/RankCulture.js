@@ -31,7 +31,7 @@ const RankCulture = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 책읽자 </h4> 
+                  <h4 className="rank_user_name"> Lv4. 책읽자 </h4> 
                   <h4 className="rank_user_id">chechkimja</h4>
                 </div>
               </td>     
@@ -51,8 +51,8 @@ const RankCulture = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 나어딨게 </h4> 
-                  <h4 className="rank_user_id">here_iam</h4>
+                  <h4 className="rank_user_name"> Lv2. 여기어떄 </h4> 
+                  <h4 className="rank_user_id">howabout</h4>
                 </div>
                 </td>     
             </div>
@@ -71,7 +71,7 @@ const RankCulture = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 최우식 </h4> 
+                  <h4 className="rank_user_name"> Lv2. 최우식 </h4> 
                   <h4 className="rank_user_id">_whoops</h4>
                 </div>
                 </td>     
@@ -91,7 +91,7 @@ const RankCulture = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 최우식 </h4> 
+                  <h4 className="rank_user_name"> Lv4. 최우식 </h4> 
                   <h4 className="rank_user_id">_whoops</h4>
                 </div>
                 </td>      
@@ -111,8 +111,8 @@ const RankCulture = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 최우식 </h4> 
-                  <h4 className="rank_user_id">_whoops</h4>
+                  <h4 className="rank_user_name"> Lv3. 제니지수 </h4> 
+                  <h4 className="rank_user_id">jjufaa</h4>
                 </div>
                 </td>     
             </div>
@@ -131,8 +131,8 @@ const RankCulture = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 최우식 </h4> 
-                  <h4 className="rank_user_id">_whoops</h4>
+                  <h4 className="rank_user_name"> Lv3. 최우식 </h4> 
+                  <h4 className="rank_user_id">chochoi</h4>
                 </div>
                 </td>     
             </div>
@@ -151,8 +151,8 @@ const RankCulture = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 최우식 </h4> 
-                  <h4 className="rank_user_id">_whoops</h4>
+                  <h4 className="rank_user_name"> Lv2. 뉴진스짱 </h4> 
+                  <h4 className="rank_user_id">omgoomg</h4>
                 </div>
                 </td>     
             </div>
@@ -171,7 +171,7 @@ const RankCulture = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 최우식 </h4> 
+                  <h4 className="rank_user_name"> Lv3. 최우식 </h4> 
                   <h4 className="rank_user_id">_whoops</h4>
                 </div>
                 </td>     
@@ -191,7 +191,7 @@ const RankCulture = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 최우식 </h4> 
+                  <h4 className="rank_user_name"> Lv1. 최우식 </h4> 
                   <h4 className="rank_user_id">_whoops</h4>
                 </div>
                 </td>     
@@ -211,7 +211,7 @@ const RankCulture = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 최우식 </h4> 
+                  <h4 className="rank_user_name"> Lv2. 최우식 </h4> 
                   <h4 className="rank_user_id">_whoops</h4>
                 </div>
                 </td>     

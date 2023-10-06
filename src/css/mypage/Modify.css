@@ -52,6 +52,7 @@
   text-align: right;
   outline: none;
 }
+
 .intro2{
   /* padding-left: 150px; */
 }
@@ -86,8 +87,8 @@
   display: inline-flex;
 }
 .profils{
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   margin: auto;
   display: block;
 }
