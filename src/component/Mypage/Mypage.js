@@ -1,5 +1,5 @@
 import user from '../../img/user.png'
-import Advice1 from '../../img/Advice1.png'
+import Advice1 from '../../img/advice2.png'
 import {Routes, Route, Link} from "react-router-dom";
 import PwCheck from "./PwCheck"
 import "../../css/mypage/Mypage.css"
@@ -183,11 +183,11 @@ const Mypage = () => {
                             <div className="scroll_box">
                                 <div className="inner_content">
                                     <div className='comment_box'>
-                                    우와 오늘 운동 엄청 많이 했네~!!! 
+                                    운동 안 해? 제일 적잖아. 운동좀 해. 
                                     <p className='user_comment'>- 국연수</p>
                                 </div>
                                 <div className='comment_box'>
-                                    오늘 미션 많이 완료했다 ㅋㅋ
+                                    나랑 뮤지컬 보러가자! 문화생활 해야지ㅋㅋㅋ
                                     <p className='user_comment'>- 김지웅</p>
                                 </div>
                                 <div className='comment_box'>
