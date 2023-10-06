@@ -1,4 +1,5 @@
 import user from '../../img/user.png'
+import Advice1 from '../../img/advice2.png'
 import {Routes, Route, Link} from "react-router-dom";
 import PwCheck from "./PwCheck"
 import "../../css/mypage/Mypage.css"
@@ -75,13 +76,15 @@ const Mypage = () => {
                         <div className='bold1'>
                             <div className='space'>
                                 <img className ="mypage_profile" src={user} alt='프로필'></img>
+                               
                                     <div className="nickname">
                                         {/* <h4>{users && <textarea value={JSON.stringify(users)} readOnly={true}/>} */}
+                                        <h4>최우식</h4>
                                             <p className='userid'>_whoops</p>
-                                            {/* </h4> */}
-                                        <h4> {inputId.id}
+                                            
+                                        {/* <h4> {inputId.id} */}
                                             {/* <p className='userid'> {userId.id} </p> */}
-                                        </h4>
+                                        {/* </h4> */}
                                         {/* <h5 className='userint'> {userId.intro} </h5> */}
                                     </div>
                             <Link to="/pwcheck">    
@@ -91,6 +94,7 @@ const Mypage = () => {
                         </div>
 
                         <div className="advice">
+                        <img className ="mypage_advice" src={Advice1} alt='프로필'></img>
                             {/* <div className="inner_content">
                                 <div className='comment_box'>
                                     너 전교 몇등이야?
@@ -179,11 +183,11 @@ const Mypage = () => {
                             <div className="scroll_box">
                                 <div className="inner_content">
                                     <div className='comment_box'>
-                                    우와 오늘 운동 엄청 많이 했네~!!! 
+                                    운동 안 해? 제일 적잖아. 운동좀 해. 
                                     <p className='user_comment'>- 국연수</p>
                                 </div>
                                 <div className='comment_box'>
-                                    오늘 미션 많이 완료했다 ㅋㅋ
+                                    나랑 뮤지컬 보러가자! 문화생활 해야지ㅋㅋㅋ
                                     <p className='user_comment'>- 김지웅</p>
                                 </div>
                                 <div className='comment_box'>

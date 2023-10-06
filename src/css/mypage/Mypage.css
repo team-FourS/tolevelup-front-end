@@ -14,7 +14,7 @@
 }
 
 .bold1{
-  border: solid 2px gray;
+  border: solid 2px rgb(202, 202, 202);
   border-radius: 5px;
   width: 230px;
 }
@@ -49,7 +49,7 @@
   height: 60px;
   margin-top: 40px;
   margin-bottom: 30px;
-  margin-left: 70px;
+  margin-left: 75px;
   display: block;
 }
 .nickname{
@@ -99,22 +99,31 @@
 }
 .scroll_box {
   line-Height: 40px;
-  border: solid 2px gray;
+  /* border: solid 2px rgb(202, 202, 202); */
   border-Radius: 5px;
   margin-top: 30px;
   width: auto;
-  height: 250px;
+  height: 230px;
   background-color: #ffffff99;
   overflow-y: scroll;
 }
 .advice {
-  line-Height: 40px;
-  border: solid 2px gray;
-  border-Radius: 5px;
+  /* line-Height: 40px; */
+  /* border: solid 2px gray; */
+  /* border-Radius: 5px; */
   margin-top: 30px;
   width: auto;
-  height: 200px;
+  /* height: 200px; */
   background-color: #ffffff99;
+}
+.mypage_advice{
+  /* border: solid 2px rgb(202, 202, 202); */
+  border-Radius: 5px;
+  width: 230px;
+  height: 230px;
+  display: block;
+  align-items: center;
+  margin: auto;
 }
 
 .scroll_box::-webkit-scrollbar {
