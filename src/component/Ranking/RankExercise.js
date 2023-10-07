@@ -31,7 +31,7 @@ const RankExercise = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 안나 </h4> 
+                  <h4 className="rank_user_name"> Lv1. 안나 </h4> 
                   <h4 className="rank_user_id">._.annajo</h4>
                 </div>
               </td>     
@@ -51,8 +51,8 @@ const RankExercise = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 나어딨게 </h4> 
-                  <h4 className="rank_user_id">here_iam</h4>
+                  <h4 className="rank_user_name"> Lv3. 근손실 </h4> 
+                  <h4 className="rank_user_id">musleking</h4>
                 </div>
                 </td>     
             </div>
@@ -71,8 +71,8 @@ const RankExercise = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 최우식 </h4> 
-                  <h4 className="rank_user_id">_whoops</h4>
+                  <h4 className="rank_user_name"> Lv4. 근육맨 </h4> 
+                  <h4 className="rank_user_id">strrrong_man</h4>
                 </div>
                 </td>     
             </div>
@@ -91,8 +91,8 @@ const RankExercise = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 최우식 </h4> 
-                  <h4 className="rank_user_id">_whoops</h4>
+                  <h4 className="rank_user_name"> Lv1. 런닝머신 </h4> 
+                  <h4 className="rank_user_id">running_man</h4>
                 </div>
                 </td>      
             </div>
@@ -111,8 +111,8 @@ const RankExercise = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 최우식 </h4> 
-                  <h4 className="rank_user_id">_whoops</h4>
+                  <h4 className="rank_user_name"> Lv2. 새우깡 </h4> 
+                  <h4 className="rank_user_id">kannngg</h4>
                 </div>
                 </td>     
             </div>
@@ -131,8 +131,8 @@ const RankExercise = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 최우식 </h4> 
-                  <h4 className="rank_user_id">_whoops</h4>
+                  <h4 className="rank_user_name"> Lv2. 최우수상 </h4> 
+                  <h4 className="rank_user_id">gogoB</h4>
                 </div>
                 </td>     
             </div>
@@ -151,8 +151,8 @@ const RankExercise = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 최우식 </h4> 
-                  <h4 className="rank_user_id">_whoops</h4>
+                  <h4 className="rank_user_name"> Lv3. 김우식 </h4> 
+                  <h4 className="rank_user_id">_kkhoops</h4>
                 </div>
                 </td>     
             </div>
@@ -171,8 +171,8 @@ const RankExercise = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 최우식 </h4> 
-                  <h4 className="rank_user_id">_whoops</h4>
+                  <h4 className="rank_user_name"> Lv1. 이우식 </h4> 
+                  <h4 className="rank_user_id">_leeops</h4>
                 </div>
                 </td>     
             </div>
@@ -191,8 +191,8 @@ const RankExercise = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 최우식 </h4> 
-                  <h4 className="rank_user_id">_whoops</h4>
+                  <h4 className="rank_user_name"> Lv4. 김말랭 </h4> 
+                  <h4 className="rank_user_id">mallLang</h4>
                 </div>
                 </td>     
             </div>
@@ -211,8 +211,8 @@ const RankExercise = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 최우식 </h4> 
-                  <h4 className="rank_user_id">_whoops</h4>
+                  <h4 className="rank_user_name"> Lv3. 고추장 </h4> 
+                  <h4 className="rank_user_id">spicyman</h4>
                 </div>
                 </td>     
             </div>

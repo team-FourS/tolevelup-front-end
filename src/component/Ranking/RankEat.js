@@ -31,7 +31,7 @@ const RankEat = () => {
                   </td>
                   <td>
                     <div className="rank_Info">
-                      <h4 className="rank_user_name"> Lv_. 더줘 </h4> 
+                      <h4 className="rank_user_name"> Lv1. 더줘 </h4> 
                       <h4 className="rank_user_id">jh__om</h4>
                     </div>
                   </td>     
@@ -51,8 +51,8 @@ const RankEat = () => {
                   </td>
                   <td>
                     <div className="rank_Info">
-                      <h4 className="rank_user_name"> Lv_. 나어딨게 </h4> 
-                      <h4 className="rank_user_id">here_iam</h4>
+                      <h4 className="rank_user_name"> Lv3. 벨런스왕 </h4> 
+                      <h4 className="rank_user_id">legolego</h4>
                     </div>
                     </td>     
                 </div>
@@ -71,8 +71,8 @@ const RankEat = () => {
                   </td>
                   <td>
                     <div className="rank_Info">
-                      <h4 className="rank_user_name"> Lv_. 최우식 </h4> 
-                      <h4 className="rank_user_id">_whoops</h4>
+                      <h4 className="rank_user_name"> Lv1. 야채싫어 </h4> 
+                      <h4 className="rank_user_id">_hateVege</h4>
                     </div>
                     </td>     
                 </div>
@@ -91,8 +91,8 @@ const RankEat = () => {
                   </td>
                   <td>
                     <div className="rank_Info">
-                      <h4 className="rank_user_name"> Lv_. 최우식 </h4> 
-                      <h4 className="rank_user_id">_whoops</h4>
+                      <h4 className="rank_user_name"> Lv3. 오점모 </h4> 
+                      <h4 className="rank_user_id">launchhh</h4>
                     </div>
                     </td>      
                 </div>

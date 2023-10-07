@@ -31,7 +31,7 @@ const RankHobby = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 라라의 스타일기 읽어요</h4> 
+                  <h4 className="rank_user_name"> Lv4. 라라의 스타일기 읽어요</h4> 
                   <h4 className="rank_user_id">star_diary</h4>
                 </div>
               </td>     
@@ -51,8 +51,8 @@ const RankHobby = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 나어딨게 </h4> 
-                  <h4 className="rank_user_id">here_iam</h4>
+                  <h4 className="rank_user_name"> Lv3. 다꾸여왕 </h4> 
+                  <h4 className="rank_user_id">diaryqueen</h4>
                 </div>
                 </td>     
             </div>
@@ -71,8 +71,8 @@ const RankHobby = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 최우식 </h4> 
-                  <h4 className="rank_user_id">_whoops</h4>
+                  <h4 className="rank_user_name"> Lv3. 뮤지컬맨 </h4> 
+                  <h4 className="rank_user_id">musicshow</h4>
                 </div>
                 </td>     
             </div>
@@ -91,8 +91,8 @@ const RankHobby = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 최우식 </h4> 
-                  <h4 className="rank_user_id">_whoops</h4>
+                  <h4 className="rank_user_name"> Lv3. 오잉 </h4> 
+                  <h4 className="rank_user_id">ooooing</h4>
                 </div>
                 </td>      
             </div>
@@ -111,8 +111,8 @@ const RankHobby = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 최우식 </h4> 
-                  <h4 className="rank_user_id">_whoops</h4>
+                  <h4 className="rank_user_name"> Lv2. 최우식 </h4> 
+                  <h4 className="rank_user_id">dddqqq</h4>
                 </div>
                 </td>     
             </div>
@@ -131,7 +131,7 @@ const RankHobby = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 최우식 </h4> 
+                  <h4 className="rank_user_name"> Lv3. 최우식 </h4> 
                   <h4 className="rank_user_id">_whoops</h4>
                 </div>
                 </td>     
@@ -151,7 +151,7 @@ const RankHobby = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 최우식 </h4> 
+                  <h4 className="rank_user_name"> Lv2. 안녕티비 </h4> 
                   <h4 className="rank_user_id">_whoops</h4>
                 </div>
                 </td>     
@@ -171,7 +171,7 @@ const RankHobby = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 최우식 </h4> 
+                  <h4 className="rank_user_name"> Lv3. 취미부자 </h4> 
                   <h4 className="rank_user_id">_whoops</h4>
                 </div>
                 </td>     
@@ -191,8 +191,8 @@ const RankHobby = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 최우식 </h4> 
-                  <h4 className="rank_user_id">_whoops</h4>
+                  <h4 className="rank_user_name"> Lv2. 일기쓰자 </h4> 
+                  <h4 className="rank_user_id">writeee</h4>
                 </div>
                 </td>     
             </div>
@@ -211,8 +211,8 @@ const RankHobby = () => {
               </td>
               <td>
                 <div className="rank_Info">
-                  <h4 className="rank_user_name"> Lv_. 최우식 </h4> 
-                  <h4 className="rank_user_id">_whoops</h4>
+                  <h4 className="rank_user_name"> Lv2. 밍밍밍 </h4> 
+                  <h4 className="rank_user_id">minggg</h4>
                 </div>
                 </td>     
             </div>

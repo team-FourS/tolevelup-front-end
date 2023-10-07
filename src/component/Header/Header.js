@@ -1,7 +1,8 @@
 import React from 'react';
 import '../../css/header/Header.css'
 // import {Link} from "react-router-dom";
-import Logo from '../../img/ToLevelUp_logo.png'
+// import Logo from '../../img/ToLevelUp_logo.png'
+import fullnameLogo from '../../img/logo/fullname-logo.png'
 
 import {BiBell} from "react-icons/bi"
 import { FcInfo } from "react-icons/fc";
@@ -35,7 +36,7 @@ const Header = () => {
             <div style={{alignItems:'center',display:'inline-flex'}}>
                 <div>
                     <div>
-                        <img onClick={gohome} className ="logoimg" src={Logo} alt='로고' />
+                        <img onClick={gohome} className ="logoimg" src={fullnameLogo} alt='로고' />
                     </div>
                 </div>
                     <FcInfo onClick={() => setManual(!manual)} className='manual_icon'/>
