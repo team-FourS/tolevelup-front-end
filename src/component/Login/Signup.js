@@ -50,6 +50,7 @@ function Signup() {
       //   axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`
       
         console.log(response.data.result.token);
+        sessionStorage.setItem('name', inputname);
         // console.log(response);
         alert("회원가입성공");
         if ((response.status = 200)) {
