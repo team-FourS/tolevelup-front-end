@@ -7,7 +7,6 @@ import MissionCheck02 from "./component/Mission/MissionCheck02";
 import MissionCheck03 from "./component/Mission/MissionCheck03";
 import MissionCheck04 from "./component/Mission/MissionCheck04";
 
-//import Feed from "./component/Feed/Feed"
 import AllFeed from "./component/Feed/AllFeed"
 import FollowFeed from "./component/Feed/FollowFeed"
 
