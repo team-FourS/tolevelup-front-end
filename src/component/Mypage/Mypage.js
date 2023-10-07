@@ -9,58 +9,29 @@ import Modal from "../Modal/Modal";
 import Follower from "./Follower";
 import Following from './Following';
 import CommentDa from "./CommentDa";
-
-import axios from 'axios';
 // import { PureComponent } from 'react';
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 
 const Mypage = () => {
 
-    // const [users, setUsers] = useState([]);
 
     const [follower, setWer] = useState(false);
     const [fallowing, setWing] = useState(false);
     const [comment, setCommen] = useState(false);
     
-    // useEffect(() => {
-    //     axios.get('api/v1/users/login')
-    //         .then(response => {
-    //             setUsers(response.data);
-    //         });
-    // }, []);
+    const [userId, setUserId] = useState('');
+    const [userName, setUserName] = useState('');
 
-
-    // useEffect(() => {
-    //     // API 호출
-    //     axios
-    //         .get(`api/v1/users/my/${userId}`)
-    //         .then((response) => {
-    //         // setUserInfo(response.data);
-    //         })
-    //         .catch((error) => {
-    //         console.error('회원 정보를 불러오는 중 오류 발생: ', error);
-    //         });
-    //     }, [userId]);
-
-    const [inputId, setInputId] = useState({}); // 사용자 정보를 저장할 상태
-
-    const {Token} = localStorage.getItem('token');
-    const axiosInstance = axios.create({
-        headers: {
-          Authorization: `Bearer ${Token}`, // 헤더에 토큰을 포함
-        },
-      });
-                 axiosInstance
-                 .get('api/v1/users/my')
-                 .then((res) => {
-                   // 요청 성공 시 처리
-                   setInputId({ id: res.data.result.id, // 데이터를 상태에 저장
-                 name: res.data.result.name, });
-                 })
-                 .catch((error) => {
-                //    console.error('API 호출 중 오류 발생:', error);
-                console.log('API 아오진짜', inputId);
-                 });
+  useEffect(() => {
+    // sessionStorage에서 사용자 아이디를 가져옵니다.
+    const storedUserId = sessionStorage.getItem('userId');
+    const storedUserName = sessionStorage.getItem('name');
+    
+    if (storedUserId) {
+      setUserId(storedUserId);
+      setUserName(storedUserName);
+    }
+  }, []);
 
     return (
         <main className='mypage_main'>
@@ -79,8 +50,16 @@ const Mypage = () => {
                                
                                     <div className="nickname">
                                         {/* <h4>{users && <textarea value={JSON.stringify(users)} readOnly={true}/>} */}
-                                        <h4>최우식</h4>
-                                            <p className='userid'>_whoops</p>
+                                        {user ? (
+                                        <h4>{userName}</h4>
+                                        ) : (
+                                            <p>사용자 정보를 불러오는 중입니다...</p>
+                                          )}
+                                        {user ? (
+                                            <p className='userid'>{userId}</p>
+                                            ) : (
+                                                <p>사용자 정보를 불러오는 중입니다...</p>
+                                              )}
                                             
                                         {/* <h4> {inputId.id} */}
                                             {/* <p className='userid'> {userId.id} </p> */}
