@@ -40,18 +40,19 @@ function Login() {
       },
       })
       .then((res) => {
-        const { Token } = res.data.result;
+        const { Token } = res.data.result.token;
         
         //Token 설정
         axios.defaults.headers.common['Authorization'] = `Bearer ${Token}`;
         sessionStorage.setItem('token',Token);
-        sessionStorage.setItem('userId', inputId);      
+
+        // 사용자 아이디를 세션에 저장
+        sessionStorage.setItem('userId', inputId);
+      
         console.log(res.data.result);
         console.log(sessionStorage);
-        // 사용자 아이디를 세션에 저장
 
         document.location.href = "/Mission";
-        // return Token;
 
       })
       .catch((error)=>{

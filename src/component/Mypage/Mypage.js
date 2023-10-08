@@ -1,4 +1,4 @@
-import user from '../../img/user.png'
+import userImg from '../../img/user.png'
 import Advice1 from '../../img/advice2.png'
 import {Routes, Route, Link} from "react-router-dom";
 import PwCheck from "./PwCheck"
@@ -9,6 +9,8 @@ import Modal from "../Modal/Modal";
 import Follower from "./Follower";
 import Following from './Following';
 import CommentDa from "./CommentDa";
+import axiosInstance from "../../axiosConfig"
+// import axios from 'axios';
 // import { PureComponent } from 'react';
 import React, { useState,useEffect } from 'react';
 
@@ -25,13 +27,23 @@ const Mypage = () => {
     useEffect(() => {
     // sessionStorage에서 사용자 아이디를 가져옵니다.
     const storedUserId = sessionStorage.getItem('userId');
-    const storedUserName = sessionStorage.getItem('username');
+    const storedUserName = sessionStorage.getItem('userName');
     
     if (storedUserId) {
         setUserId(storedUserId);
         setUserName(storedUserName);
     }
 }, []);
+        axiosInstance.get('api/v1/users/my') // axiosConfig에서 baseURL을 설정하였으므로 상대 경로 사용
+            .then((res) => {
+                const { userId, userName } = res.data;
+                setUserId(userId);
+                setUserName(userName);
+            })
+            .catch((error) => {
+                console.error('개인정보 가져오기 실패:', error);
+            });
+    }, []);
 
     return (
         <main className='mypage_main'>
@@ -46,22 +58,18 @@ const Mypage = () => {
                     <div className="square1">        
                         <div className='bold1'>
                             <div className='space'>
-                                <img className ="mypage_profile" src={user} alt='프로필'></img>
-                                
+                                <img className ="mypage_profile" src={userImg} alt='프로필'></img>
                                     <div className="nickname">
                                         {/* <h4>{users && <textarea value={JSON.stringify(users)} readOnly={true}/>} */}
-                                        {user ? (
                                         <h4>{userName}</h4>
-                                        ) : (
-                                            <p>사용자 정보를 불러오는 중입니다...</p>
-                                        )}
-                                        
                                         {user ? (
                                             <p className='userid'>{userId}</p>
                                             ) : (
                                                 <p>사용자 정보를 불러오는 중입니다...</p>
                                             )}
-                                            
+
+                                            <p className='userid'>{userId}</p>
+
                                         {/* <h4> {inputId.id} */}
                                             {/* <p className='userid'> {userId.id} </p> */}
                                         {/* </h4> */}
