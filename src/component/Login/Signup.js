@@ -38,10 +38,12 @@ function Signup() {
       },
       
     })
-   
+  
       .then((response) => {
       
         console.log(response.data.result.token);
+
+        // console.log(response);
         sessionStorage.setItem('userName', inputname);
 
         alert("회원가입성공");
@@ -97,7 +99,7 @@ function Signup() {
             }} /> <br/>  
         </div>
 
-           
+        
 
           <Button type="submit" className="btnLogin" onClick={registeraxios}>
             회원가입

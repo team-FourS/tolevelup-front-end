@@ -48,7 +48,7 @@ function Login() {
 
         // 사용자 아이디를 세션에 저장
         sessionStorage.setItem('userId', inputId);
-              
+      
         console.log(res.data.result);
         console.log(sessionStorage);
 

@@ -21,7 +21,7 @@ const Header = () => {
         sessionStorage.removeItem("name");// localstorage에 저장되어 있던 토큰을 지운다.
         sessionStorage.removeItem("id");// localstorage에 저장되어 있던 토큰을 지운다.
         document.location.href = "/";
-      }
+    }
 
     const [alarm, setAlarm] = useState(false);
     const [manual, setManual] = useState(false);
@@ -31,7 +31,7 @@ const Header = () => {
 
     function gohome(){
         movePage('../Mission');
-   }
+    }
     
     return (
         <main className="header">
@@ -54,7 +54,7 @@ const Header = () => {
                             <Alarm />
                         </Modal>
                     )}
-              
+            
                     <div className='header_logout' onClick={handlelogOut}> | 로그아웃</div>
                 
             </div>

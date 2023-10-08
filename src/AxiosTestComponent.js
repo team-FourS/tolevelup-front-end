@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function AxiosTestComponent() {
 
-  const baseUrl = "http://localhost:8080";
+  const baseUrl = "http://44.198.225.181:8080";
 
   const [ data, setData ] = useState('');
 
