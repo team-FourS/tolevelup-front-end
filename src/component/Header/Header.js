@@ -17,7 +17,9 @@ import { useNavigate } from "react-router-dom";
 const Header = () => {
 
     const handlelogOut = () => {
-        localStorage.removeItem("Token");// localstorage에 저장되어 있던 토큰을 지운다. 
+        localStorage.removeItem("Token");// localstorage에 저장되어 있던 토큰을 지운다.
+        sessionStorage.removeItem("name");// localstorage에 저장되어 있던 토큰을 지운다.
+        sessionStorage.removeItem("id");// localstorage에 저장되어 있던 토큰을 지운다.
         document.location.href = "/";
       }
 

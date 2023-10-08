@@ -7,7 +7,6 @@ import fullnameLogo from '../../img/logo/fullname-logo.png';
 
 function Signup() {
   
-  // const navigate = useNavigate();
   axios.defaults.withCredentials = true;
   const [inputname, setUsernameinput] = useState("");
   const [inputemail, setEmailinput] = useState("");
@@ -18,8 +17,8 @@ function Signup() {
   const registeraxios = () => {
 
     if (!inputname || !inputemail || !inputpassword || !inputid) {
-      alert('모든 정보를 입력하세요.'); // Display an alert
-      return; // Return early if any field is missing
+      alert('모든 정보를 입력하세요.');
+      return;
     }
   
     
@@ -41,17 +40,10 @@ function Signup() {
     })
    
       .then((response) => {
-      //   let accessToken = response.headers['authorization']; // 응답헤더에서 토큰 받기
-      //   let refreshToken = response.headers['refresh'];
-      //   console.log('access 토큰 :', accessToken);
-      //   console.log('refresh 토큰 :', refreshToken);
-      //   localStorage.setItem('token',response.data.result.token);
-      // // token이 필요한 API 요청 시 header Authorization에 token 담아서 보내기
-      //   axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`
       
         console.log(response.data.result.token);
-        sessionStorage.setItem('name', inputname);
-        // console.log(response);
+        sessionStorage.setItem('userName', inputname);
+
         alert("회원가입성공");
         if ((response.status = 200)) {
           return document.location.href ="/";
