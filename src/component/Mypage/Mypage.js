@@ -1,4 +1,4 @@
-import userImg from '../../img/user.png'
+import user from '../../img/user.png'
 import Advice1 from '../../img/advice2.png'
 import {Routes, Route, Link} from "react-router-dom";
 import PwCheck from "./PwCheck"
@@ -9,7 +9,6 @@ import Modal from "../Modal/Modal";
 import Follower from "./Follower";
 import Following from './Following';
 import CommentDa from "./CommentDa";
-import axiosInstance from "../../axiosConfig"
 // import axios from 'axios';
 // import { PureComponent } from 'react';
 import React, { useState,useEffect } from 'react';
@@ -18,32 +17,22 @@ const Mypage = () => {
 
 
     const [follower, setWer] = useState(false);
-    const [following, setWing] = useState(false);
+    const [fallowing, setWing] = useState(false);
     const [comment, setCommen] = useState(false);
     
     const [userId, setUserId] = useState('');
     const [userName, setUserName] = useState('');
 
-    useEffect(() => {
+  useEffect(() => {
     // sessionStorage에서 사용자 아이디를 가져옵니다.
     const storedUserId = sessionStorage.getItem('userId');
     const storedUserName = sessionStorage.getItem('userName');
     
     if (storedUserId) {
-        setUserId(storedUserId);
-        setUserName(storedUserName);
+      setUserId(storedUserId);
+      setUserName(storedUserName);
     }
-}, []);
-        axiosInstance.get('api/v1/users/my') // axiosConfig에서 baseURL을 설정하였으므로 상대 경로 사용
-            .then((res) => {
-                const { userId, userName } = res.data;
-                setUserId(userId);
-                setUserName(userName);
-            })
-            .catch((error) => {
-                console.error('개인정보 가져오기 실패:', error);
-            });
-    }, []);
+  }, []);
 
     return (
         <main className='mypage_main'>
@@ -58,18 +47,21 @@ const Mypage = () => {
                     <div className="square1">        
                         <div className='bold1'>
                             <div className='space'>
-                                <img className ="mypage_profile" src={userImg} alt='프로필'></img>
+                                <img className ="mypage_profile" src={user} alt='프로필'></img>
+                               
                                     <div className="nickname">
                                         {/* <h4>{users && <textarea value={JSON.stringify(users)} readOnly={true}/>} */}
+                                        {user ? (
                                         <h4>{userName}</h4>
+                                        ) : (
+                                            <p>사용자 정보를 불러오는 중입니다...</p>
+                                          )}
                                         {user ? (
                                             <p className='userid'>{userId}</p>
                                             ) : (
                                                 <p>사용자 정보를 불러오는 중입니다...</p>
-                                            )}
-
-                                            <p className='userid'>{userId}</p>
-
+                                              )}
+                                            
                                         {/* <h4> {inputId.id} */}
                                             {/* <p className='userid'> {userId.id} </p> */}
                                         {/* </h4> */}
@@ -82,7 +74,17 @@ const Mypage = () => {
                         </div>
 
                         <div className="advice">
-                            <img className ="mypage_advice" src={Advice1} alt='프로필'></img>
+                        <img className ="mypage_advice" src={Advice1} alt='프로필'></img>
+                            {/* <div className="inner_content">
+                                <div className='comment_box'>
+                                    너 전교 몇등이야?
+                                    <p className='user_comment'>- 국연수</p>
+                                </div>
+                                <div className='comment_box'>
+                                    다시 찍자고, 다큐멘터리
+                                    <p className='user_comment'>- 김지웅</p>
+                                </div>
+                            </div> */}
                         </div>
                     </div>
                     <main className='square2'>
@@ -97,9 +99,9 @@ const Mypage = () => {
                                     <div className='cntnum'><strong>0</strong></div>
                                     <div className='follower_following_comment'>팔로워</div>
                                 </div>
-                                <div className='count' onClick={() => setWing(!following)}>
-                                {following && (
-                                    <Modal closeModal={() => setWing(!following)}>
+                                <div className='count' onClick={() => setWing(!fallowing)}>
+                                {fallowing && (
+                                    <Modal closeModal={() => setWing(!fallowing)}>
                                         <Following />
                                     </Modal>
                                     )}
@@ -175,7 +177,7 @@ const Mypage = () => {
                             </div>
                         </div>                          
                     </div>
-                        </div>
+                         </div>
                             </div>
                         </main>
                     <div className='Mains-left'></div>

@@ -71,9 +71,9 @@ const Modify = () => {
     }
 }, []);
 
-    const [username, setUsername] = useState('');
+    const [userName, setUsername] = useState('');
     useEffect(() => {
-        const storedUserName = sessionStorage.getItem('username');
+        const storedUserName = sessionStorage.getItem('userName');
     if (storedUserName) {
         setUsername(storedUserName);
     }
@@ -173,7 +173,7 @@ const Modify = () => {
                                 <p className='oneline_font'>닉네임</p>
                             </td>
                             <td>
-                            <p className='intro'>{username}</p>
+                            <p className='intro'>{userName}</p>
                                 <Link to="/editNickname">
                                     <button className='nickname_edit_button'> 수정</button>
                                 </Link>
