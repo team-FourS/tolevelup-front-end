@@ -9,7 +9,7 @@ import Modal from "../Modal/Modal";
 import Follower from "./Follower";
 import Following from './Following';
 import CommentDa from "./CommentDa";
-import axiosInstance from "../../axiosConfig"
+import axiosInstance from "../../axiosConfig";
 // import axios from 'axios';
 // import { PureComponent } from 'react';
 import React, { useState,useEffect } from 'react';
@@ -25,23 +25,23 @@ const Mypage = () => {
     const [userName, setUserName] = useState('');
     const [userIntro, setUserIntro] = useState(null);
 
-  useEffect(() => {
+    useEffect(() => {
 
-      axiosInstance.get('api/v1/users/my' , {// 서버의 사용자 정보 엔드포인트
-      headers: {
-        Authorization: `Bearer ${sessionStorage.getItem('token')}`,
-      },
+        axiosInstance.get('api/v1/users/my' , {// 서버의 사용자 정보 엔드포인트
+        headers: {
+            Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+        },
     })
         .then((res) => {
             //사용자의 정보 가져오기
-          setUserName(res.data.result.userData.name);
-          setUserId(res.data.result.userData.id);
-          setUserIntro(res.data.result.userData.intro);
-          console.log(res.data);
+            setUserName(res.data.result.userData.name);
+            setUserId(res.data.result.userData.id);
+            setUserIntro(res.data.result.userData.intro);
+            console.log(res.data);
 
         })
         .catch((error) => {
-          console.log('Failed to fetch user info:', error);
+            console.log('Failed to fetch user info:', error);
         });
     }, []);
 

@@ -1,8 +1,10 @@
 import React, {useState, useEffect } from 'react';
+import {Routes, Route, Link,useNavigate} from "react-router-dom";
+import axiosInstance from "../../axiosConfig";
+
+import Mypage from "../Mypage/Mypage";
 import user2 from '../../img/user.png';
 import "../../css/mypage/Modify.css";
-import Mypage from "../Mypage/Mypage";
-import {Routes, Route, Link,useNavigate} from "react-router-dom";
 import Profile from './Profile';
 import styled from 'styled-components';
 import back from '../../img/back.png';
@@ -61,24 +63,32 @@ export const ModalView = styled.div.attrs((props) => ({
 `;
 
 const Modify = () => {
-
-    /* id 정보 불러오기 */
-    const [userId, setUserId] = useState('');
-    useEffect(() => {
-    const storedUserId = sessionStorage.getItem('userId');
-    if (storedUserId) {
-        setUserId(storedUserId);
-    }
-}, []);
-
-    const [userName, setUsername] = useState('');
-    useEffect(() => {
-        const storedUserName = sessionStorage.getItem('userName');
-    if (storedUserName) {
-        setUsername(storedUserName);
-    }
-}, []);
     
+    //연동
+    const [userName, setUserName] = useState('');
+    const [userIntro, setUserIntro] = useState('');
+    const [userId, setUserId] = useState('');
+    //const [userPw, setUserPw] = useState('');
+    const [userEmail, setUserEmail] = useState('');
+
+    useEffect(() =>{
+        axiosInstance.get('api/v1/users/my' , {
+            headers: {
+                Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+            },
+    })
+        .then((res) => {
+            setUserName(res.data.result.userData.name);
+            setUserIntro(res.data.result.userData.intro);
+            setUserId(res.data.result.userData.id);
+            setUserEmail(res.data.result.userData.email);
+            console.log(res.data);
+
+        })
+        .catch((error) => {
+            console.log('Failed to fetch user info:', error);
+        });
+    }, []);
 
     const [selectedImage, setSelectedImage] = useState(user2);
     const handleImageSelection = (imageName) => {
@@ -185,7 +195,7 @@ const Modify = () => {
                                 <p className='oneline_font'>한줄소개</p>
                             </td>
                             <td>
-                            <p className='intro'> 한줄소개 불러오기</p>
+                            <p className='intro'> {userIntro}</p>
                                 <Link to="/editOneline">
                                     <button className='intro_edit_button'> 수정</button>
                                 </Link>
@@ -220,7 +230,7 @@ const Modify = () => {
                                 <p className='email_font'>이메일</p>
                             </td>
                                 <td className='intro2'>
-                                <p className='intro'> 이메일 값 불러오기</p>
+                                <p className='intro'> {userEmail}</p>
                                         <Link to="/editEmail">
                                             <button className='email_edit_button'> 수정</button>
                                         </Link>
