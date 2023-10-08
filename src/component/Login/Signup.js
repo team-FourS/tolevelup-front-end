@@ -39,15 +39,15 @@ function Signup() {
       
     })
   
-      .then((response) => {
+      .then((res) => {
       
-        console.log(response.data.result.token);
+        console.log(res.data.result.token);
 
         // console.log(response);
         sessionStorage.setItem('userName', inputname);
 
         alert("회원가입성공");
-        if ((response.status = 200)) {
+        if ((res.status = 200)) {
           return document.location.href ="/";
         }
       }).catch((err)=>{
