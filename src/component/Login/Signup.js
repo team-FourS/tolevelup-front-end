@@ -102,7 +102,7 @@ function Signup() {
         
 
           <Button type="submit" className="btnLogin" onClick={registeraxios}>
-            회원가입
+            회원가입 
           </Button> <br/><br/>
 
         </div>
