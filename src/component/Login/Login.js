@@ -44,13 +44,12 @@ function Login() {
         
         //Token 설정
         axios.defaults.headers.common['Authorization'] = `Bearer ${Token}`;
-        localStorage.setItem('token',Token);
+        sessionStorage.setItem('token',Token);
         sessionStorage.setItem('userId', inputId);      
         console.log(res.data.result);
         console.log(sessionStorage);
         // 사용자 아이디를 세션에 저장
 
-        // sessionStorage.setItem('userId', inputId);
         document.location.href = "/Mission";
         // return Token;
 

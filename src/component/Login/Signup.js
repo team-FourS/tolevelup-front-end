@@ -39,7 +39,7 @@ function Signup() {
       },
       
     })
-   
+  
       .then((response) => {
       //   let accessToken = response.headers['authorization']; // 응답헤더에서 토큰 받기
       //   let refreshToken = response.headers['refresh'];
@@ -50,7 +50,7 @@ function Signup() {
       //   axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`
       
         console.log(response.data.result.token);
-        sessionStorage.setItem('name', inputname);
+        sessionStorage.setItem('Name', inputname);
         // console.log(response);
         alert("회원가입성공");
         if ((response.status = 200)) {
@@ -105,7 +105,7 @@ function Signup() {
             }} /> <br/>  
         </div>
 
-           
+        
 
           <Button type="submit" className="btnLogin" onClick={registeraxios}>
             회원가입
