@@ -6,9 +6,9 @@ import { Button } from '@mui/base';
 import {Routes, Route, Link, useLocation} from "react-router-dom";
 import Mission from "../Mission/Mission";
 import Signup from "../Login/Signup";
-import axios from 'axios';
+// import axios from 'axios';
 import fullnameLogo from '../../img/logo/fullname-logo.png';
-
+import axiosInstance from "../../axiosConfig"
 import naver from '../../img/naver.png';
 import google from '../../img/google.png';
 import kakao from '../../img/kakao.png';
@@ -31,7 +31,7 @@ function Login() {
     console.log("click login");
     console.log("ID : ", inputId);
     console.log("PW : ", inputPw);
-    axios({
+    axiosInstance({
       url:'api/v1/users/login',
       method: 'POST',
       data: {
@@ -40,17 +40,14 @@ function Login() {
       },
       })
       .then((res) => {
-        const { Token } = res.data.result.token;
+        // const { Token } = res.data.result.token;
         
         //Token 설정
-        axios.defaults.headers.common['Authorization'] = `Bearer ${Token}`;
-        sessionStorage.setItem('token',Token);
-
+        axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${res.data.result.token}`;
+        sessionStorage.setItem('token',res.data.result.token);
         // 사용자 아이디를 세션에 저장
-        sessionStorage.setItem('userId', inputId);
-      
-        console.log(res.data.result);
-        console.log(sessionStorage);
+        // sessionStorage.setItem('userId', inputId);
+        console.log(res.data.result.token);
 
         document.location.href = "/Mission";
 

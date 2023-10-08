@@ -1,4 +1,4 @@
-import user from '../../img/user.png'
+import userImg from '../../img/user.png'
 import Advice1 from '../../img/advice2.png'
 import {Routes, Route, Link} from "react-router-dom";
 import PwCheck from "./PwCheck"
@@ -9,6 +9,7 @@ import Modal from "../Modal/Modal";
 import Follower from "./Follower";
 import Following from './Following';
 import CommentDa from "./CommentDa";
+import axiosInstance from "../../axiosConfig"
 // import axios from 'axios';
 // import { PureComponent } from 'react';
 import React, { useState,useEffect } from 'react';
@@ -22,17 +23,28 @@ const Mypage = () => {
     
     const [userId, setUserId] = useState('');
     const [userName, setUserName] = useState('');
+    const [userIntro, setUserIntro] = useState(null);
 
   useEffect(() => {
-    // sessionStorage에서 사용자 아이디를 가져옵니다.
-    const storedUserId = sessionStorage.getItem('userId');
-    const storedUserName = sessionStorage.getItem('userName');
-    
-    if (storedUserId) {
-      setUserId(storedUserId);
-      setUserName(storedUserName);
-    }
-  }, []);
+
+      axiosInstance.get('api/v1/users/my' , {// 서버의 사용자 정보 엔드포인트
+      headers: {
+        Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+      },
+    })
+        .then((res) => {
+            //사용자의 정보 가져오기
+          setUserName(res.data.result.userData.name);
+          setUserId(res.data.result.userData.id);
+          setUserIntro(res.data.result.userData.intro);
+          console.log(res.data);
+
+        })
+        .catch((error) => {
+          console.log('Failed to fetch user info:', error);
+        });
+    }, []);
+
 
     return (
         <main className='mypage_main'>
@@ -47,25 +59,12 @@ const Mypage = () => {
                     <div className="square1">        
                         <div className='bold1'>
                             <div className='space'>
-                                <img className ="mypage_profile" src={user} alt='프로필'></img>
+                                <img className ="mypage_profile" src={userImg} alt='프로필'></img>
                                
-                                    <div className="nickname">
-                                        {/* <h4>{users && <textarea value={JSON.stringify(users)} readOnly={true}/>} */}
-                                        {user ? (
+                                    <div className="nickname">                                      
                                         <h4>{userName}</h4>
-                                        ) : (
-                                            <p>사용자 정보를 불러오는 중입니다...</p>
-                                          )}
-                                        {user ? (
                                             <p className='userid'>{userId}</p>
-                                            ) : (
-                                                <p>사용자 정보를 불러오는 중입니다...</p>
-                                              )}
-                                            
-                                        {/* <h4> {inputId.id} */}
-                                            {/* <p className='userid'> {userId.id} </p> */}
-                                        {/* </h4> */}
-                                        {/* <h5 className='userint'> {userId.intro} </h5> */}
+                                            <h5 className='userint'> {userIntro} </h5>
                                     </div>
                             <Link to="/pwcheck">    
                                 <button className='btnpro'>프로필 편집</button>
