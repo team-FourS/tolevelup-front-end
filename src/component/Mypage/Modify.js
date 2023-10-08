@@ -235,7 +235,7 @@ const Modify = () => {
                 <button className='btnstyle' onClick={confirmSave} >저장</button>
 
                 <Link to='/mypage'>
-                    <button className='btnstyle'>취소</button>
+                    <button className='btnstyle'>취소 </button>
                 </Link>
             </div>
             </div>
