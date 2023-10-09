@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import '../../css/mission/MissionCheck03.css';
+import axiosInstance from "../../axiosConfig";
+import React, { useState, useEffect } from 'react';
+import '../../css/mission/MissionCheck.css';
 
 function TodoItem({ todo, index, toggleComplete }) {
   const textStyle = {
@@ -7,42 +8,64 @@ function TodoItem({ todo, index, toggleComplete }) {
   };
 
   return (
-    <label className="checkbox-container3">
+    <label className="checkbox-container">
       <input
-      type="checkbox"
-      className="checkbox3"
+        type="checkbox"
+        className="checkbox"
         checked={todo.completed}
-        onChange={() => toggleComplete(index)}/>
-        <span className="custom-checkbox3"></span>
-        <p className="text-underline">
-        <span className="todo-text3" style={textStyle}> {todo.text} </span>
-        </p>
+        onChange={() => toggleComplete(index)}
+      />
+      <span className="custom-checkbox"></span>
+      <p className="text-underline">
+        <span className="todo-text" style={textStyle}> {todo.text} </span>
+      </p>
     </label>
-
   );
 }
 
   function MissionCheck03() {
-    const [todos, setTodos] = useState([
-      { text: '전시회 다녀오기', completed: false } , 
-      { text: '영화 한 편 감상하기', completed: true },
-      { text: '독서 200페이지 이상하기', completed: false },
-    ]);
+  const [todos3, setTodos3] = useState([]);
+  const [missionCulture1, setmissionCulture1] = useState('');
+  const [missionCulture2, setmissionCulture2] = useState('');
+  const [missionCulture3, setmissionCulture3] = useState('');
+
+  useEffect(() => {
+    // 서버의 미션 정보 가져오기
+    axiosInstance.get('api/v1/missions/themes/3')
+      .then((res) => {
+        console.log(res.data);
+
+        setmissionCulture1(res.data.result[0].content);
+        setmissionCulture2(res.data.result[1].content);
+        setmissionCulture3(res.data.result[2].content);
+        // console.log(res.data.result.dailyMissions[0].content);
+
+        // 서버에서 가져온 미션 정보를 하나의 항목으로 설정
+        setTodos3([
+          { text: missionCulture1, completed: false },
+          { text: missionCulture2, completed: false },
+          { text: missionCulture3, completed: false },
+        ]);
+      })
+      .catch((error) => {
+        console.log('Failed to fetch user info:', error);
+      });
+  }, [missionCulture1,missionCulture2,missionCulture3,]);
 
   const toggleComplete = (index) => {
-    const updatedTodos = todos.map((todo, i) =>
+    const updatedTodos = todos3.map((todo, i) =>
       i === index ? { ...todo, completed: !todo.completed } : todo
     );
-    setTodos(updatedTodos);
+    setTodos3(updatedTodos);
   };
 
   return (
     <div>
       <div className="checklist-border">
-        <button className="btnMissionCheck3">문화생활</button>
+        <button className="btnMissionCheck">문화생활</button>
         <div className="missionList3">
           <ul>
-            {todos.map((todo, index) => (
+            {todos3.map((todo, index) => (
               <TodoItem
                 key={index}
                 todo={todo}

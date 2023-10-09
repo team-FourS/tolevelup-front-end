@@ -19,6 +19,16 @@
   .health_font1{
     color: rgb(141, 139, 139);
     text-align: center;
+    margin-right: 10px;
+  }
+  .edit_name_icon{
+    font-size: 17px;
+    color: rgb(141, 139, 139);
+  }
+  .name_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .health_font2{
     color: rgb(141, 139, 139);

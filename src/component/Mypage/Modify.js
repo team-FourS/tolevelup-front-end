@@ -67,7 +67,6 @@ const Modify = () => {
     //연동
     const [userName, setUserName] = useState('');
     const [userIntro, setUserIntro] = useState('');
-    const [userId, setUserId] = useState('');
     //const [userPw, setUserPw] = useState('');
     const [userEmail, setUserEmail] = useState('');
 
@@ -80,7 +79,6 @@ const Modify = () => {
         .then((res) => {
             setUserName(res.data.result.userData.name);
             setUserIntro(res.data.result.userData.intro);
-            setUserId(res.data.result.userData.id);
             setUserEmail(res.data.result.userData.email);
             console.log(res.data);
 
@@ -201,19 +199,7 @@ const Modify = () => {
                                 </Link>
                             </td>
                         </tr>
-
-                        <tr className='pass_bold'>
-                            <td className='id_bold' colspan="2">
-                                <p className='id_font'>아이디</p></td>
-                            <td>
-                                <p className='intro'>{userId}</p>
-                                <Link to="/editID">
-                                    <button className='id_edit_button'> 수정</button>
-                                </Link>
-                            </td>
-                        </tr>
-                        
-
+                    
                         <tr className='pass_bold'>
                             <td className='id_bold' colspan="2">
                                 <p className='password_font'>비밀번호</p></td>

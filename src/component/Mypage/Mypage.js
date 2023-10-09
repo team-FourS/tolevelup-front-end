@@ -32,6 +32,7 @@ const Mypage = () => {
 
     //코멘트용 const
     const [userComment, setuserComment] = useState('');
+    const [userCommenterName, setuserCommenterName] = useState('');
 
     useEffect(() => {
 
@@ -51,8 +52,8 @@ const Mypage = () => {
             setexpHobby(res.data.result.expData[3].expData);
 
             //코멘트 가져오기
-            // setuserComment(res.data.result.content.comment);
-
+            setuserComment(res.data.result.content.comment);
+            setuserCommenterName(res.data.result.content.nanme); /* 서현 코멘터 연동 시도 */
             //사용자 정보 출력
             console.log(res.data);
 
@@ -184,18 +185,24 @@ const Mypage = () => {
                             <div className="scroll_box">
                                 <div className="inner_content">
                                     <div className='comment_box'>
-                                    {userComment} 
-                                    <p className='user_comment'>- 국연수</p>
+                                        {userComment} 
+                                        <p className='user_comment'> { userCommenterName}</p>  
+                                    </div>
+
+                                    <div className='comment_box'>
+                                        {userComment} 
+                                        <p className='user_comment'>- 국연수</p>
+                                    </div>
+                                    <div className='comment_box'>
+                                        나랑 뮤지컬 보러가자! 문화생활 해야지ㅋㅋㅋ
+                                        <p className='user_comment'>- 김지웅</p>
+                                    </div>
+
+                                    <div className='comment_box'>
+                                        분발해~~ 오늘 한 게 뭐야
+                                        <p className='user_comment'>- 이수현</p>
+                                    </div>
                                 </div>
-                                <div className='comment_box'>
-                                    나랑 뮤지컬 보러가자! 문화생활 해야지ㅋㅋㅋ
-                                    <p className='user_comment'>- 김지웅</p>
-                                </div>
-                                <div className='comment_box'>
-                                    분발해~~ 오늘 한 게 뭐야
-                                    <p className='user_comment'>- 이수현</p>
-                                </div>
-                            </div>
                         </div>                          
                     </div>
                          </div>
