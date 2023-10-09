@@ -10,34 +10,74 @@ import Follower from "./Follower";
 import Following from './Following';
 import CommentDa from "./CommentDa";
 import axiosInstance from "../../axiosConfig";
-// import axios from 'axios';
-// import { PureComponent } from 'react';
 import React, { useState,useEffect } from 'react';
 
 const Mypage = () => {
 
-
+    //모달용const
     const [follower, setWer] = useState(false);
     const [fallowing, setWing] = useState(false);
-    const [comment, setCommen] = useState(false);
+    const [comments, setComments] = useState(false);
     
+    //사용자의 정보 const
     const [userId, setUserId] = useState('');
     const [userName, setUserName] = useState('');
     const [userIntro, setUserIntro] = useState(null);
 
+    //exp용 const
+    const [expExercise, setexpExercise] = useState('');
+    const [expCulture, setexpCulture] = useState('');
+    const [expHobby, setexpHobby] = useState('');
+    const [expEat, setexpEat] = useState('');
+
+    //코멘트용 const
+    const [userComment, setuserComment] = useState('');
+
     useEffect(() => {
 
-        axiosInstance.get('api/v1/users/my' , {// 서버의 사용자 정보 엔드포인트
+        // 서버의 사용자 정보 가져오기
+        axiosInstance.get('api/v1/users/my' , { 
         headers: {
             Authorization: `Bearer ${sessionStorage.getItem('token')}`,
         },
     })
         .then((res) => {
+
             //사용자의 정보 가져오기
             setUserName(res.data.result.userData.name);
             setUserId(res.data.result.userData.id);
             setUserIntro(res.data.result.userData.intro);
+
+            //exp 가져오기
+            setexpExercise(res.data.result.expData[0].expData);
+            setexpEat(res.data.result.expData[1].expData);
+            setexpCulture(res.data.result.expData[2].expData);
+            setexpHobby(res.data.result.expData[3].expData);
+
+            //코멘트 가져오기
+            // setuserComment(res.data.result.content.comment);
+
+            //사용자 정보 출력
             console.log(res.data);
+
+        })
+        .catch((error) => {
+            console.log('Failed to fetch user info:', error);
+        });
+   
+        // 서버의 코멘트가져오기
+        axiosInstance.get('api/v1/users/comments/receive?page=0&size=2' , {
+        headers: {
+            Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+        },
+    })
+        .then((res) => {
+
+            //코멘트 가져오기
+            setuserComment(res.data.result.content[0].comment);
+
+            //사용자 정보 출력
+            console.log(res.data.result.content[0].comment);
 
         })
         .catch((error) => {
@@ -62,7 +102,7 @@ const Mypage = () => {
                                 <img className ="mypage_profile" src={userImg} alt='프로필'></img>
                                
                                     <div className="nickname">                                      
-                                        <h4>{userName}</h4>
+                                        <h4 className='userName'>{userName}</h4>
                                             <p className='userid'>{userId}</p>
                                             <h5 className='userint'> {userIntro} </h5>
                                     </div>
@@ -73,17 +113,7 @@ const Mypage = () => {
                         </div>
 
                         <div className="advice">
-                        <img className ="mypage_advice" src={Advice1} alt='프로필'></img>
-                            {/* <div className="inner_content">
-                                <div className='comment_box'>
-                                    너 전교 몇등이야?
-                                    <p className='user_comment'>- 국연수</p>
-                                </div>
-                                <div className='comment_box'>
-                                    다시 찍자고, 다큐멘터리
-                                    <p className='user_comment'>- 김지웅</p>
-                                </div>
-                            </div> */}
+                            <img className ="mypage_advice" src={Advice1} alt='프로필'></img>
                         </div>
                     </div>
                     <main className='square2'>
@@ -109,9 +139,9 @@ const Mypage = () => {
                                     <div className='follower_following_comment'>팔로잉</div>
                                 </div>
 
-                                <div className='count' onClick={() => setCommen(!comment)}>
-                                    {comment && (
-                                        <Modal closeModal={() => setCommen(!comment)}>
+                                <div className='count' onClick={() => setComments(!comments)}>
+                                    {comments && (
+                                        <Modal closeModal={() => setComments(!comments)}>
                                             <CommentDa />
                                         </Modal>
                                         )}
@@ -132,25 +162,25 @@ const Mypage = () => {
                             <div className="main_bar">
                             <div className="status-hp">
                                     <div className="mypageBar">
-                                        <div className="exercise_currentBar" style={{width:'48px'}}></div>    
+                                        <div className="exercise_currentBar" style={{ width: `${expExercise}%` }}></div>    
                                     </div>
                                 </div>
                 
                                 <div className="status-hp">
                                     <div className="mypageBar">
-                                        <div className="eat_currentBar" style={{width:'120px'}}></div>    
+                                        <div className="eat_currentBar" style={{ width: `${expEat}%` }}></div>    
                                     </div>
                                 </div>
 
                                 <div className="status-hp">
                                     <div className="mypageBar">
-                                        <div className="culture_currentBar" style={{width:'80px'}}></div>    
+                                        <div className="culture_currentBar" style={{ width: `${expCulture}%` }}></div>    
                                     </div>
                                 </div>
 
                                 <div className="status-hp">
                                     <div className="mypageBar">
-                                        <div className="hobby_currentBar" style={{width:'180px'}}></div>    
+                                        <div className="hobby_currentBar" style={{ width: `${expHobby}%` }}></div>    
                                     </div>
                                 </div>
                             </div>
@@ -162,7 +192,7 @@ const Mypage = () => {
                             <div className="scroll_box">
                                 <div className="inner_content">
                                     <div className='comment_box'>
-                                    운동 안 해? 제일 적잖아. 운동좀 해. 
+                                    {userComment} 
                                     <p className='user_comment'>- 국연수</p>
                                 </div>
                                 <div className='comment_box'>
@@ -181,7 +211,6 @@ const Mypage = () => {
                         </main>
                     <div className='Mains-left'></div>
                 </div>
-                {/* </motion.div> */}
             <Footer/>
         </main>
         )
