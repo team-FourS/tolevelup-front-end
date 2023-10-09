@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import axiosInstance from "../../axiosConfig";
+import React, { useState, useEffect } from 'react';
 import '../../css/mission/MissionCheck.css';
 
 function TodoItem({ todo, index, toggleComplete }) {
@@ -9,25 +10,47 @@ function TodoItem({ todo, index, toggleComplete }) {
   return (
     <label className="checkbox-container">
       <input
-      type="checkbox"
-      className="checkbox"
+        type="checkbox"
+        className="checkbox"
         checked={todo.completed}
-        onChange={() => toggleComplete(index)}/>
-        <span className="custom-checkbox"></span>
-        <p className="text-underline">
+        onChange={() => toggleComplete(index)}
+      />
+      <span className="custom-checkbox"></span>
+      <p className="text-underline">
         <span className="todo-text" style={textStyle}> {todo.text} </span>
-        </p>
+      </p>
     </label>
-
   );
 }
 
-  function MissionCheck01() {
-    const [todos, setTodos] = useState([
-      { text: '줄넘기 100회 하기', completed: false } , 
-      { text: '30분 이상 산책하기', completed: true },
-      { text: '자기 전 스트레칭하기', completed: false },
-    ]);
+function MissionCheck01() {
+  const [todos, setTodos] = useState([]);
+  const [missionExercise1, setmissionExercise1] = useState('');
+  const [missionExercise2, setmissionExercise2] = useState('');
+  const [missionExercise3, setmissionExercise3] = useState('');
+
+  useEffect(() => {
+    // 서버의 미션 정보 가져오기
+    axiosInstance.get('api/v1/missions')
+      .then((res) => {
+        console.log(res.data);
+
+        setmissionExercise1(res.data.result.dailyMissions[0].content);
+        setmissionExercise2(res.data.result.dailyMissions[1].content);
+        setmissionExercise3(res.data.result.dailyMissions[2].content);
+        // console.log(res.data.result.dailyMissions[0].content);
+
+        // 서버에서 가져온 미션 정보를 하나의 항목으로 설정
+        setTodos([
+          { text: missionExercise1, completed: false },
+          { text: missionExercise2, completed: false },
+          { text: missionExercise3, completed: false },
+        ]);
+      })
+      .catch((error) => {
+        console.log('Failed to fetch user info:', error);
+      });
+  }, [missionExercise1,missionExercise2,missionExercise3,]);
 
   const toggleComplete = (index) => {
     const updatedTodos = todos.map((todo, i) =>
@@ -41,6 +64,7 @@ function TodoItem({ todo, index, toggleComplete }) {
       <div className="checklist-border">
         <button className="btnMissionCheck3">운동</button>
         <div className="missionList3">
+        {/* <p className="mission-exercise">{missionexercise}</p> */}
           <ul>
             {todos.map((todo, index) => (
               <TodoItem

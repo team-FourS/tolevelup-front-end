@@ -36,11 +36,7 @@ const Mypage = () => {
     useEffect(() => {
 
         // 서버의 사용자 정보 가져오기
-        axiosInstance.get('api/v1/users/my' , { 
-        headers: {
-            Authorization: `Bearer ${sessionStorage.getItem('token')}`,
-        },
-    })
+        axiosInstance.get('api/v1/users/my')
         .then((res) => {
 
             //사용자의 정보 가져오기
@@ -66,11 +62,7 @@ const Mypage = () => {
         });
    
         // 서버의 코멘트가져오기
-        axiosInstance.get('api/v1/users/comments/receive?page=0&size=2' , {
-        headers: {
-            Authorization: `Bearer ${sessionStorage.getItem('token')}`,
-        },
-    })
+        axiosInstance.get('api/v1/users/comments/receive?page=0&size=2')
         .then((res) => {
 
             //코멘트 가져오기

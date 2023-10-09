@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-// import { motion } from "framer-motion";
+// import axiosInstance from "../../axiosConfig";
+import React, { useState} from 'react';
 import '../../css/mission/Mission.css'
 
 import culture from '../../img/main-culture.png';
-// import exercise from '../../img/yoga-pose.png';
 import exercise from '../../img/main-exercise.png';
 import eat from '../../img/main-eat.png';
 import hobby from '../../img/main-hobby.png';
@@ -22,14 +21,10 @@ const Mission = () => {
     const [missionEat, setCheck02] = useState(false);
     const [missionCulture, setCheck03] = useState(false);
     const [missionHobby, setCheck04] = useState(false);
+
     return(
     <main className="layout_mission">
     <Header/>
-    {/* <motion.div
-      className="box_anima"
-      initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
-    > */}
     <div className="MissionComponent">
         <div className="missionBlock">
             <p className="missionTitle">데일리 미션</p>
@@ -83,7 +78,6 @@ const Mission = () => {
             </div>
         </div>
     </div>
-    {/* </motion.div> */}
     <Footer/>    
     </main>
     )

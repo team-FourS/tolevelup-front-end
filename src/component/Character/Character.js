@@ -1,5 +1,7 @@
-import React, { useState } from "react";
-// import { motion } from "framer-motion";
+// import React, { useState} from 'react';
+import React, { useState,useEffect } from 'react';
+import axiosInstance from "../../axiosConfig";
+
 import "../../css/character/Character.css"
 import Header from "../Header/Header";
 import Footer from "../Footer";
@@ -15,21 +17,35 @@ import HobbyLv01 from '../../img/Hobby-Lv01.png'
 import CultureLv01 from '../../img/Culture-Lv01.png'
 import ExerciseLv01 from '../../img/Exercise-Lv01.png'
 
+
 const Character = () => {
 
   const [health, setHealth] = useState(false);
   const [eat, setEat] = useState(false);
   const [culture, setPlay] = useState(false);
   const [hobby, setHobby] = useState(false);
+
+//   세연 캐릭터 연동 코드 start 삭제금지
+
+  useEffect(() => {
+
+    
+    // 서버의 캐릭터 정보 가져오기
+
+    axiosInstance.get('api/v1/users/character')
+    .then((res) => {
+      console.log('Image data:', res.data);
+    })
+    .catch((error) => {
+        console.log('Failed to fetch user info:', error);
+    });
+}, []);
+
+//  세연 캐릭터 연동 코드 end 삭제금지
     
   return (
     <div className="layout_char">
       <Header />
-      {/* <motion.div
-      className="box_anima"
-      initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
-    >     */}
         <main className="main_character">
           <button className="btn_exercise_character">
             <span id ="health" onClick={() => setHealth(!health)}>
@@ -86,7 +102,6 @@ const Character = () => {
       </button>
 
   </main>
-  {/* </motion.div> */}
   <Footer/>
 </div>
     );
