@@ -11,6 +11,7 @@ import Following from './Following';
 import CommentDa from "./CommentDa";
 import axiosInstance from "../../axiosConfig";
 import React, { useState,useEffect } from 'react';
+import Graph from '../../img/growth.png'
 
 const Mypage = () => {
 
@@ -141,6 +142,17 @@ const Mypage = () => {
                                         <div className='cntnum'><strong>0</strong></div>
                                         <div className='follower_following_comment'>코멘트</div>
                                 </div>
+                                <div className='count'>
+                                {/* <div className='count' onClick={() => setComments(!comments)}> */}
+                                    {/* {comments && (
+                                        <Modal closeModal={() => setComments(!comments)}>
+                                            <CommentDa />
+                                        </Modal>
+                                        )} */}
+
+                                        <img className='cntnum_img' src={Graph} alt='통계'></img>
+                                        <div className='follower_following_comment'>나의기록</div>
+                                </div>
                         
                     <div className="mission_bar_group">
                     <div className="mission_bar">
@@ -184,9 +196,8 @@ const Mypage = () => {
                                 <div className="inner_content">
                                     <div className='comment_box'>
                                         {userComment} 
-                                        <p className='user_comment'> {userCommenterName}</p>  
+                                        <p className='user_comment'>{userCommenterName}</p>  
                                     </div>
-                                    
                                     <div className='comment_box'>
                                         {userComment} 
                                         <p className='user_comment'>- 국연수</p>
