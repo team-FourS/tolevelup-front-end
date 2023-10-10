@@ -5,6 +5,19 @@
     align-items: center;
     min-height: 95vh;
 }
+
+.character_name{
+  color: #2a2b3a;
+}
+.character_img{
+  width: 140px;
+  height: 150px;
+  margin-left: 30px; margin-right: 30px;
+}
+.character_theme{
+  font-size: 18px;  font-weight: bold;
+  color: #79a58b;
+}
 .home {
     width: 140px;
     height: 150px;

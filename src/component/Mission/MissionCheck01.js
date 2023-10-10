@@ -24,24 +24,24 @@ function TodoItem({ todo, index, toggleComplete }) {
 }
 
 function MissionCheck01() {
-  const [todos, setTodos] = useState([]);
+  const [todos1, setTodos1] = useState([]);
   const [missionExercise1, setmissionExercise1] = useState('');
   const [missionExercise2, setmissionExercise2] = useState('');
   const [missionExercise3, setmissionExercise3] = useState('');
 
   useEffect(() => {
     // 서버의 미션 정보 가져오기
-    axiosInstance.get('api/v1/missions')
+    axiosInstance.get('api/v1/missions/themes/1')
       .then((res) => {
         console.log(res.data);
 
-        setmissionExercise1(res.data.result.dailyMissions[0].content);
-        setmissionExercise2(res.data.result.dailyMissions[1].content);
-        setmissionExercise3(res.data.result.dailyMissions[2].content);
+        setmissionExercise1(res.data.result[0].content);
+        setmissionExercise2(res.data.result[1].content);
+        setmissionExercise3(res.data.result[2].content);
         // console.log(res.data.result.dailyMissions[0].content);
 
         // 서버에서 가져온 미션 정보를 하나의 항목으로 설정
-        setTodos([
+        setTodos1([
           { text: missionExercise1, completed: false },
           { text: missionExercise2, completed: false },
           { text: missionExercise3, completed: false },
@@ -53,20 +53,20 @@ function MissionCheck01() {
   }, [missionExercise1,missionExercise2,missionExercise3,]);
 
   const toggleComplete = (index) => {
-    const updatedTodos = todos.map((todo, i) =>
+    const updatedTodos = todos1.map((todo, i) =>
       i === index ? { ...todo, completed: !todo.completed } : todo
     );
-    setTodos(updatedTodos);
+    setTodos1(updatedTodos);
   };
 
   return (
     <div>
       <div className="checklist-border">
-        <button className="btnMissionCheck3">운동</button>
+        <button className="btnMissionCheck">운동</button>
         <div className="missionList3">
         {/* <p className="mission-exercise">{missionexercise}</p> */}
           <ul>
-            {todos.map((todo, index) => (
+            {todos1.map((todo, index) => (
               <TodoItem
                 key={index}
                 todo={todo}

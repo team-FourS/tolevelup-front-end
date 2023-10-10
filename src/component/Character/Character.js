@@ -54,8 +54,9 @@ const Character = () => {
                   <Exercise />
                 </CModal>
             )}
-            <img className ="home" src={ExerciseLv01} alt='운동'></img>
-            <h2 className="h2">운동</h2>
+            <h2 className="character_name">운동이</h2>
+            <img className ="character_img" src={ExerciseLv01} alt='운동'></img>
+            <p className="character_theme">운동</p>
       </span>
 </button>
 </main>
@@ -67,8 +68,9 @@ const Character = () => {
               <Eat />
             </CModal>
           )}
-            <img className ="home" src={EatCharacter} alt='식습관'></img>
-            <h2 className="h2">식습관</h2>
+          <h2 className="character_name">냠냠이</h2>
+            <img className ="character_img" src={EatCharacter} alt='식습관'></img>
+            <p className="character_theme">식습관</p>
         </span>
         
         </button>
