@@ -11,7 +11,7 @@ import AllFeed from "./component/Feed/AllFeed"
 import FollowFeed from "./component/Feed/FollowFeed"
 
 import Rank from "./component/Ranking/MainRanking"
-import Char from "./component/Character/Character"
+import Character from "./component/Character/Character"
 import Mypage from "./component/Mypage/Mypage"
 import Modify from "./component/Mypage/Modify";
 
@@ -56,7 +56,7 @@ function App() {
               <Route path="/AllFeed" element={<AllFeed />} />
                 <Route path="/FollowFeed" element={<FollowFeed />} />
               <Route path="/rank" element={<Rank />} />
-              <Route path="/char" element={<Char />} />
+              <Route path="/character" element={<Character />} />
               <Route path="/mypage" element={<Mypage />} />
               <Route path="/Modify" element={<Modify />} />
               <Route path="/edit" element={<Edit />} />

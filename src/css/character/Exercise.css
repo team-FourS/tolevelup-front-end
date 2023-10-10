@@ -57,9 +57,9 @@
     border-radius: 5px;
   
     }
-  .currentBar_char {
+  .currentBar_char1 {
     height: 100%;
-    background-color: rgb(142, 68, 173);
+    background-color: rgb(239, 98, 182);
     border-radius: 5px;
   
   }
@@ -68,7 +68,7 @@
   }
   .currentBar_char2 {
     height: 100%;
-    background-color: rgb(235, 81, 173);
+    background-color: rgb(64, 164, 231);
     border-radius: 5px;
   }
   .currentBar_char3 {
@@ -78,7 +78,7 @@
   }
   .currentBar_char4 {
     height: 100%;
-    background-color: rgb(41, 128, 185);
+    background-color: rgb(67, 184, 58);
     border-radius: 5px;
   }
   

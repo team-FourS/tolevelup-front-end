@@ -12,10 +12,10 @@ import Eat from "./Eat";
 import Culture from "./Culture";
 import Hobby from "./Hobby";
 
+import ExerciseCharacter from '../../img/Exercise-Lv01.png'
 import EatCharacter from '../../img/Eat-Lv01.png'
-import HobbyLv01 from '../../img/Hobby-Lv01.png'
-import CultureLv01 from '../../img/Culture-Lv01.png'
-import ExerciseLv01 from '../../img/Exercise-Lv01.png'
+import HobbyCharacter from '../../img/Hobby-Lv01.png'
+import CultureCharacter from '../../img/Culture-Lv01.png'
 
 
 const Character = () => {
@@ -55,7 +55,7 @@ const Character = () => {
                 </CModal>
             )}
             <h2 className="character_name">운동이</h2>
-            <img className ="character_img" src={ExerciseLv01} alt='운동'></img>
+            <img className ="character_img" src={ExerciseCharacter} alt='운동'></img>
             <p className="character_theme">운동</p>
       </span>
 </button>
@@ -69,8 +69,8 @@ const Character = () => {
             </CModal>
           )}
           <h2 className="character_name">냠냠이</h2>
-            <img className ="character_img" src={EatCharacter} alt='식습관'></img>
-            <p className="character_theme">식습관</p>
+          <img className ="character_img" src={EatCharacter} alt='식습관'></img>
+          <p className="character_theme">식습관</p>
         </span>
         
         </button>
@@ -85,8 +85,9 @@ const Character = () => {
               <Culture />
             </CModal>
           )}
-          <img className ="home" src={CultureLv01} alt='문화생활'></img>
-          <h2 className="h2">문화생활</h2>
+          <h2 className="character_name">문생이</h2>
+          <img className ="character_img" src={CultureCharacter} alt='문화생활'></img>
+          <p className="character_theme">문화생활</p>
       </span>
       </button>
       </main>
@@ -98,8 +99,9 @@ const Character = () => {
               <Hobby />
             </CModal>
           )}
-          <img className ="home" src={HobbyLv01} alt='취미'></img>
-          <h2 className="h2">취미</h2>
+          <h2 className="character_name">취밍이</h2>
+            <img className ="character_img" src={HobbyCharacter} alt='취미'></img>
+            <p className="character_theme">취미</p>
       </span>
       </button>
 

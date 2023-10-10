@@ -1,19 +1,23 @@
 import React from "react";
 import "../../css/character/Exercise.css"
 import CultureLv01 from '../../img/Culture-Lv01.png'
+import { FiEdit } from "react-icons/fi";
 
 const Culture = () => {
     return (
       <main className="layout_health">
         <div className="health_lay">
-        <div className="however">
-          <h2 className="health_font1"><strong>문화생활</strong></h2>
+          <div className="however">
+            <div className="name_container">
+                <h2 className="health_font1">문생이</h2> 
+                <FiEdit className="edit_name_icon"/>
+            </div>
             <img className ="Lv_health" src={CultureLv01} alt='운동레벨'></img>
-              <h4 className="health_font2">당신의 레벨은 현재</h4>
+              <h4 className="health_font2">현재 당신의 레벨은</h4>
                 <h2 className="health_font3"><strong>&#10024; Lv. _&#10024;</strong></h2>
                   <div className="status-hpchar">
                       <div className="bar_char">
-                          <div className="currentBar_char2" style={{width:'70px'}}></div>    
+                          <div className="currentBar_char3" style={{width:'70px'}}></div>    
                       </div>
                     </div>
                   <hr />
