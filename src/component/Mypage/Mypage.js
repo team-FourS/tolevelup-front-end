@@ -51,11 +51,9 @@ const Mypage = () => {
             setexpCulture(res.data.result.expData[2].expData);
             setexpHobby(res.data.result.expData[3].expData);
 
-            //코멘트 가져오기
-            setuserComment(res.data.result.content.comment);
-            setuserCommenterName(res.data.result.content.nanme); /* 서현 코멘터 연동 시도 */
+            
             //사용자 정보 출력
-            console.log(res.data);
+            // console.log(res.data);
 
         })
         .catch((error) => {
@@ -66,11 +64,12 @@ const Mypage = () => {
         axiosInstance.get('api/v1/users/comments/receive?page=0&size=2')
         .then((res) => {
 
-            //코멘트 가져오기
+            
             setuserComment(res.data.result.content[0].comment);
+            setuserCommenterName(res.data.result.content[0].fromUserDate.name);
 
             //사용자 정보 출력
-            console.log(res.data.result.content[0].comment);
+            console.log(setuserComment);
 
         })
         .catch((error) => {
@@ -181,14 +180,13 @@ const Mypage = () => {
                         </div>
                         </div>
                         <div className='statistics'>
-                        
                             <div className="scroll_box">
                                 <div className="inner_content">
                                     <div className='comment_box'>
                                         {userComment} 
-                                        <p className='user_comment'> { userCommenterName}</p>  
+                                        <p className='user_comment'> {userCommenterName}</p>  
                                     </div>
-
+                                    
                                     <div className='comment_box'>
                                         {userComment} 
                                         <p className='user_comment'>- 국연수</p>
