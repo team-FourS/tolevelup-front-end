@@ -2,9 +2,9 @@ import axiosInstance from "../../axiosConfig";
 import React, { useState, useEffect } from 'react';
 import '../../css/mission/MissionCheck.css';
 
-function TodoItem({ todo, index, toggleComplete }) {
+function TodoItem({ todo, toggleComplete }) {
   const textStyle = {
-    color: todo.completed ? 'rgb(204, 204, 204)' : 'black',
+    color: todo.checked === 'DAILY_COMPLETE' ? 'rgb(204, 204, 204)' : 'black',
   };
 
   return (
@@ -12,51 +12,58 @@ function TodoItem({ todo, index, toggleComplete }) {
       <input
         type="checkbox"
         className="checkbox"
-        checked={todo.completed}
-        onChange={() => toggleComplete(index)}
+        checked={todo.checked === 'DAILY_COMPLETE'}
+        onChange={() => toggleComplete(todo.missionId, todo.checked)}
       />
       <span className="custom-checkbox"></span>
       <p className="text-underline">
-        <span className="todo-text" style={textStyle}> {todo.text} </span>
+        <span className="todo-text" style={textStyle}> {todo.content} </span>
       </p>
     </label>
   );
 }
 
+async function fetchMissions() {
+  try {
+    const response = await axiosInstance.get('api/v1/missions/themes/1');
+    return response.data.result;
+  } catch (error) {
+    console.log('Failed to fetch missions:', error);
+    return [];
+  }
+}
+
 function MissionCheck01() {
-  const [todos1, setTodos1] = useState([]);
-  const [missionExercise1, setmissionExercise1] = useState('');
-  const [missionExercise2, setmissionExercise2] = useState('');
-  const [missionExercise3, setmissionExercise3] = useState('');
+  const [missions, setMissions] = useState([]);
 
   useEffect(() => {
-    // 서버의 미션 정보 가져오기
-    axiosInstance.get('api/v1/missions/themes/1')
-      .then((res) => {
-        console.log(res.data);
+    const fetchMissionsAndLoadLocalStorage = async () => {
+      const serverMissions = await fetchMissions();
+      const storedMissions = JSON.parse(localStorage.getItem('missionStatus')) || [];
 
-        setmissionExercise1(res.data.result[0].content);
-        setmissionExercise2(res.data.result[1].content);
-        setmissionExercise3(res.data.result[2].content);
-        // console.log(res.data.result.dailyMissions[0].content);
-
-        // 서버에서 가져온 미션 정보를 하나의 항목으로 설정
-        setTodos1([
-          { text: missionExercise1, completed: false },
-          { text: missionExercise2, completed: false },
-          { text: missionExercise3, completed: false },
-        ]);
-      })
-      .catch((error) => {
-        console.log('Failed to fetch user info:', error);
+      // 서버에서 가져온 미션과 로컬 스토리지의 미션을 합치기
+      const mergedMissions = serverMissions.map(serverMission => {
+        const storedMission = storedMissions.find(m => m.missionId === serverMission.missionId);
+        return storedMission ? storedMission : serverMission;
       });
-  }, [missionExercise1,missionExercise2,missionExercise3,]);
 
-  const toggleComplete = (index) => {
-    const updatedTodos = todos1.map((todo, i) =>
-      i === index ? { ...todo, completed: !todo.completed } : todo
+      setMissions(mergedMissions);
+    };
+
+    fetchMissionsAndLoadLocalStorage();
+  }, []); // 빈 배열을 넣어 한 번만 실행되도록 설정
+
+  const toggleComplete = (missionId, currentStatus) => {
+    const updatedMissions = missions.map((mission) =>
+      mission.missionId === missionId
+        ? { ...mission, checked: currentStatus === 'DAILY_ONGOING' ? 'DAILY_COMPLETE' : 'DAILY_ONGOING' }
+        : mission
     );
-    setTodos1(updatedTodos);
+
+    setMissions(updatedMissions);
+
+    // 로컬 스토리지에 미션 상태 저장
+    localStorage.setItem('missionStatus', JSON.stringify(updatedMissions));
   };
 
   return (
@@ -64,16 +71,14 @@ function MissionCheck01() {
       <div className="checklist-border">
         <button className="btnMissionCheck">운동</button>
         <div className="missionList3">
-        {/* <p className="mission-exercise">{missionexercise}</p> */}
           <ul>
-            {todos1.map((todo, index) => (
+            {missions.map((mission) => (
               <TodoItem
-                key={index}
-                todo={todo}
-                index={index}
-                toggleComplete={toggleComplete} 
-              /> 
-            ))} 
+                key={mission.missionId}
+                todo={mission}
+                toggleComplete={toggleComplete}
+              />
+            ))}
           </ul>
         </div>
       </div>

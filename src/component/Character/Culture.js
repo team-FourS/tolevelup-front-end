@@ -14,7 +14,7 @@ const Culture = () => {
             </div>
             <img className ="Lv_health" src={CultureLv01} alt='운동레벨'></img>
               <h4 className="health_font2">현재 당신의 레벨은</h4>
-                <h2 className="health_font3"><strong>&#10024; Lv. _&#10024;</strong></h2>
+                <h2 className="health_font3">&#10024; Lv. _&#10024;</h2>
                   <div className="status-hpchar">
                       <div className="bar_char">
                           <div className="currentBar_char3" style={{width:'70px'}}></div>    
