@@ -32,8 +32,7 @@ const Mypage = () => {
     const [expEat, setexpEat] = useState('');
 
     //코멘트용 const
-    const [userComment, setuserComment] = useState('');
-    const [userCommenterName, setuserCommenterName] = useState('');
+    const [userComments, setuserComments] = useState([]);
 
     useEffect(() => {
 
@@ -62,16 +61,10 @@ const Mypage = () => {
         });
    
         // 서버의 코멘트가져오기
-        axiosInstance.get('api/v1/users/comments/receive?page=0&size=2')
+        axiosInstance.get('api/v1/users/comments/receive?page=0&size=5')
         .then((res) => {
-
-            
-            setuserComment(res.data.result.content[0].comment);
-            setuserCommenterName(res.data.result.content[0].fromUserDate.name);
-
-            //사용자 정보 출력
-            console.log(setuserComment);
-
+            const commentsData = res.data.result.content;
+            setuserComments(commentsData);
         })
         .catch((error) => {
             console.log('Failed to fetch user info:', error);
@@ -93,7 +86,6 @@ const Mypage = () => {
                         <div className='bold1'>
                             <div className='space'>
                                 <img className ="mypage_profile" src={userImg} alt='프로필'></img>
-                               
                                     <div className="nickname">                                      
                                         <h4 className='userName'>{userName}</h4>
                                             <p className='userid'>{userId}</p>
@@ -143,13 +135,13 @@ const Mypage = () => {
                                         <div className='follower_following_comment'>코멘트</div>
                                 </div>
                                 <div className='count'>
+                                    {/* 세연 -  */}
                                 {/* <div className='count' onClick={() => setComments(!comments)}> */}
                                     {/* {comments && (
                                         <Modal closeModal={() => setComments(!comments)}>
                                             <CommentDa />
                                         </Modal>
                                         )} */}
-
                                         <img className='cntnum_img' src={Graph} alt='통계'></img>
                                         <div className='follower_following_comment'>나의기록</div>
                                 </div>
@@ -194,23 +186,12 @@ const Mypage = () => {
                         <div className='statistics'>
                             <div className="scroll_box">
                                 <div className="inner_content">
-                                    <div className='comment_box'>
-                                        {userComment} 
-                                        <p className='user_comment'>{userCommenterName}</p>  
-                                    </div>
-                                    <div className='comment_box'>
-                                        {userComment} 
-                                        <p className='user_comment'>- 국연수</p>
-                                    </div>
-                                    <div className='comment_box'>
-                                        나랑 뮤지컬 보러가자! 문화생활 해야지ㅋㅋㅋ
-                                        <p className='user_comment'>- 김지웅</p>
-                                    </div>
-
-                                    <div className='comment_box'>
-                                        분발해~~ 오늘 한 게 뭐야
-                                        <p className='user_comment'>- 이수현</p>
-                                    </div>
+                                    {userComments.map((commentData, index) => (
+                                        <div className='comment_box' key={index}>
+                                            {commentData.comment} 
+                                            <p className='user_comment'>{commentData.fromUserDate.name}</p>  
+                                        </div>
+                                    ))}
                                 </div>
                         </div>                          
                     </div>
