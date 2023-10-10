@@ -43,10 +43,10 @@ const Footer = () => {
           <BiTrophy size={30} className="icon" style={{marginLeft:'30px',marginRight:'30px'}}/>
         </NavLink>
         <NavLink
-          to="/char"
+          to="/character"
           ClassName="active"
-          isActive={() => activeTab === "char"}
-          onClick={() => handleTabClick("char")}
+          isActive={() => activeTab === "character"}
+          onClick={() => handleTabClick("character")}
         >
           <AiFillAliwangwang size={30} className="icon" style={{marginLeft:'30px',marginRight:'30px'}}/>
         </NavLink>

@@ -1,19 +1,23 @@
 import React from "react";
 import "../../css/character/Exercise.css"
 import HobbyLv01 from '../../img/Hobby-Lv01.png'
+import { FiEdit } from "react-icons/fi";
 
 const Hobby = () => {
     return (
       <main className="layout_health">
         <div className="health_lay">
-        <div className="however">
-          <h2 className="health_font1"><strong>취미</strong></h2>
-            <img className ="Lv_health" src={HobbyLv01} alt='운동레벨'></img>
-              <h4 className="health_font2">당신의 레벨은 현재</h4>
+          <div className="however">
+            <div className="name_container">
+              <h2 className="health_font1">습관이</h2> 
+              <FiEdit className="edit_name_icon"/>
+            </div>
+            <img className ="Lv_health" src={HobbyLv01} alt='식습관레벨'></img>
+              <h4 className="health_font2">현재 당신의 레벨은</h4>
                 <h2 className="health_font3"><strong>&#10024;Lv. _&#10024;</strong></h2>
                   <div className="status-hpchar">
                       <div className="bar_char">
-                          <div className="currentBar_char3" style={{width:'70px'}}></div>    
+                          <div className="currentBar_char4" style={{width:'70px'}}></div>    
                       </div>
                     </div>
                   <hr />
