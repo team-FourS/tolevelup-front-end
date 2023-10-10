@@ -70,7 +70,7 @@ function MissionCheck01() {
     <div>
       <div className="checklist-border">
         <button className="btnMissionCheck">운동</button>
-        <div className="missionList3">
+        <div className="missionList">
           <ul>
             {missions.map((mission) => (
               <TodoItem
