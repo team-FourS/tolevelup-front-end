@@ -112,20 +112,28 @@
   background-color: #ffffff99;
   overflow-y: scroll;
 }
+.heart_bold{
+  border: solid 2px rgb(202, 202, 202);
+  border-Radius: 5px;
+  margin-top: 15px;
+  height: 110px;
+}
+.heart_count_numbert{
+  font-size:xx-large;
+  font-weight: 900;
+  color: #FFB9B9;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
 .advice {
-  /* line-Height: 40px; */
-  /* border: solid 2px gray; */
-  /* border-Radius: 5px; */
-  margin-top: 30px;
+  margin-top: 15px;
   width: auto;
-  /* height: 200px; */
   background-color: #ffffff99;
 }
 .mypage_advice{
-  /* border: solid 2px rgb(202, 202, 202); */
   border-Radius: 5px;
   width: 230px;
-  height: 230px;
+  height: 110px;
   display: block;
   align-items: center;
   margin: auto;
@@ -145,6 +153,7 @@
   width: 0;
   height: 0;
 }
+
 .user_comment{
   text-Align: right;
   margin-bottom: 2px;

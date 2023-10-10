@@ -32,7 +32,7 @@ const Mypage = () => {
     const [expEat, setexpEat] = useState('');
 
     //코멘트용 const
-    const [userComments, setuserComments] = useState([]);
+    const [userComments, setuserComments] = useState([]);//배열 끌고오기
 
     useEffect(() => {
 
@@ -63,7 +63,7 @@ const Mypage = () => {
         // 서버의 코멘트가져오기
         axiosInstance.get('api/v1/users/comments/receive?page=0&size=5')
         .then((res) => {
-            const commentsData = res.data.result.content;
+            const commentsData = res.data.result.content;//content의 정보를 담음
             setuserComments(commentsData);
         })
         .catch((error) => {
@@ -97,6 +97,13 @@ const Mypage = () => {
                             </div>
                         </div>
 
+                        {/* 좋아요 수 카운드*/}
+                        <div className="heart_bold">
+                            <p className ="heart_count">이번달 좋아요 수는?💖</p>
+                            <p className ="heart_count_numbert">47</p>
+                        </div>
+
+                        {/* 명언 이미지*/}
                         <div className="advice">
                             <img className ="mypage_advice" src={Advice1} alt='프로필'></img>
                         </div>
@@ -135,13 +142,14 @@ const Mypage = () => {
                                         <div className='follower_following_comment'>코멘트</div>
                                 </div>
                                 <div className='count'>
-                                    {/* 세연 -  */}
+                        {/* 세연 -  통계페이지 활용 코드(예정)start */}
                                 {/* <div className='count' onClick={() => setComments(!comments)}> */}
                                     {/* {comments && (
                                         <Modal closeModal={() => setComments(!comments)}>
                                             <CommentDa />
                                         </Modal>
                                         )} */}
+                        {/* 세연 -  통계페이지 활용 코드(예정)end */}
                                         <img className='cntnum_img' src={Graph} alt='통계'></img>
                                         <div className='follower_following_comment'>나의기록</div>
                                 </div>
