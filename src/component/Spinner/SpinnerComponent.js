@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import SpinnerImg from "../img/Spinners.gif";
-import Mypage from "../component/Mypage/Mypage";
-import "../css/SpinnerComponent.css";
+import SpinnerImg from "../../img/Spin.gif";
+import Mypage from "../Mypage/Mypage";
+import "../../css/spinner/SpinnerComponent.css";
 
 const SpinnerComponent = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -23,9 +23,8 @@ const SpinnerComponent = () => {
   if (isLoading) {
     // 로딩 중일 때 스피너를 표시
     return (
-      <div className="spinner_lay">
-        <p className="load_lay">로딩 중입니다..</p>
-        <img src={SpinnerImg} alt="로딩" width="10%" />
+      <div className="spinner_lay2">
+        <img src={SpinnerImg} alt="로딩" width="20%"/>
       </div>
     );
   }

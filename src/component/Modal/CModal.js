@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/CModal.css"
+import "../../css/modal/CModal.css"
 
 function CModal(props) {
 

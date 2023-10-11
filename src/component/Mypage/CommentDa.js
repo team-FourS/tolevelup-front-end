@@ -1,8 +1,12 @@
 import axiosInstance from "../../axiosConfig";
 import React, { useState,useEffect } from 'react';
 import "../../css/mypage/CommentDa.css"
+import LoadSpinner from '../Spinner/SpinnerComponent';
 
 const CommentDa = () => {
+
+  //스피너
+  const [Loading,setLoading] = useState(true);
 
   const [userCommentModal, setuserComment] = useState([]);
 
@@ -17,25 +21,32 @@ const CommentDa = () => {
                 setuserComment(CommentModal);
 
                 console.log(res.data);
+
+                //스피너
+                setLoading(false);
             })
             .catch((error) => {
                 console.log('Failed to fetch user info:', error);
+
+                //스피너
+                setLoading(true);
             });
     
     
         }, []);
 
     return (
-      <main className="layout_alr" onClick={(e) => e.stopPropagation()}>
+      <main className="layout_commentmodal" onClick={(e) => e.stopPropagation()}>
         <div className="alarm_lay">
           <h4 className="alarm_font">코멘트</h4>
             <hr />
             <div className="scroll_box_comment">
               <div className="inner_content_comment">
+              {Loading ? ( // 로딩 중인 경우 스피너를 렌더링
+                <LoadSpinner />
+            ) : (
               <table>
-                    <tr>
-                      <th></th>
-                    </tr>
+                    <tr><th></th></tr>
                     <tr className="comment_data">
                         <td>
                           <td className="td_comment">
@@ -51,7 +62,7 @@ const CommentDa = () => {
                         </td>
                       </tr>
               </table>
-              </div>
+            )}</div>
             </div>
         </div>
     </main>  

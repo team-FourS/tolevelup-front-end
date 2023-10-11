@@ -3,7 +3,12 @@ import React, { useEffect, useState } from 'react';
 import "../../css/mypage/Follower.css"
 import user from '../../img/user.png';
 
+import LoadSpinner from '../Spinner/SpinnerComponent';
+
 const Follower = () => {
+
+  //스피너
+  const [Loading,setLoading] = useState(true);
 
   const [userfollower, setfollower] = useState([]);
 
@@ -17,9 +22,13 @@ const Follower = () => {
                 const followerData = res.data.result.content;
                 setfollower(followerData);
                 console.log(res.data);
+
+                //스피너
+                setLoading(false);
             })
             .catch((error) => {
                 console.log('Failed to fetch user info:', error);
+                setLoading(true);
             });
     
     
@@ -27,10 +36,15 @@ const Follower = () => {
 
 
   return (
+    
     <main className="layout_wer" onClick={(e) => e.stopPropagation()}>
+      
       <div className="wer_lay">
         <h4 className="wer_font">팔로워</h4>
           <hr />
+          {Loading ? ( // 로딩 중인 경우 스피너를 렌더링
+                <LoadSpinner />
+            ) : (
           <table>
             <thead>
                   <tr />
@@ -53,8 +67,9 @@ const Follower = () => {
                   </div>
                 </tbody>
           </table>
-        </div>
-      </main>  
+        )}</div>
+      </main>
+      
     );
   }
 

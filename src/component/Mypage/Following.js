@@ -2,8 +2,12 @@ import axiosInstance from "../../axiosConfig";
 import React, { useEffect, useState } from 'react';
 import "../../css/mypage/Following.css"
 import user from '../../img/user.png';
+import LoadSpinner from '../Spinner/SpinnerComponent';
 
 const Following = () => {
+
+//스피너
+const [Loading,setLoading] = useState(true);
   
 const [userfollowing, setfollowing] = useState([]);
 
@@ -16,10 +20,15 @@ const [userfollowing, setfollowing] = useState([]);
               //팔로잉 정보 저장
                 const followingData = res.data.result.content;
                 setfollowing(followingData);
+
+                //스피너
+                setLoading(false);
+
                 // console.log(res.data);
             })
             .catch((error) => {
                 console.log('Failed to fetch user info:', error);
+                setLoading(true);
             });
     
     
@@ -27,10 +36,12 @@ const [userfollowing, setfollowing] = useState([]);
 
     return (
       <main className="layout_wing" onClick={(e) => e.stopPropagation()}>
-
         <div className="following_lay">
           <h4 className="alarm_font">팔로잉</h4>
             <hr />
+            {Loading ? ( // 로딩 중인 경우 스피너를 렌더링
+                <LoadSpinner />
+            ) : (
               <table>
                 <thead>
                   <tr />
@@ -53,10 +64,8 @@ const [userfollowing, setfollowing] = useState([]);
                     </div>
                   </div>
                 </tbody>
-
               </table>
-            </div>
-
+            )}</div>
           </main>
         );
       }
