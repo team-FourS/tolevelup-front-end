@@ -101,6 +101,7 @@
   font-size: 15px;
   text-align: left;
   background-color: #e9f4e6;
+  padding: 5px;
 }
 .scroll_box {
   line-Height: 40px;
@@ -166,7 +167,8 @@
 }
 .user_comment{
   text-Align: right;
-  margin-bottom: 2px;
+  margin-bottom: 0;
+  margin-right: 5px;
 }
 .cntnum {
   display: block;

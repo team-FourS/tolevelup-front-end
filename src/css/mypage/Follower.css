@@ -49,3 +49,23 @@
 .followerbox{
   margin: auto;
 }
+.follwer_array{
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+}
+.wer_lay{
+  align-items: left;
+  text-align: left;
+}
+
+.follower_id{
+  display: inline-block;
+  margin-left: 20px;
+  font-weight: 500;
+}
+
+.table_follower_lay{
+  display: block;
+  align-items: center;
+}

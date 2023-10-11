@@ -1,7 +1,7 @@
 import userImg from '../../img/user.png'
 import Advice1 from '../../img/advice2.png'
 import {Routes, Route, Link} from "react-router-dom";
-import PwCheck from "./PwCheck"
+import PwCheck from "./PwCheck";
 import MainRecord from "../Record/MainRecord"
 import "../../css/mypage/Mypage.css"
 import Header from "../Header/Header";
@@ -14,7 +14,12 @@ import axiosInstance from "../../axiosConfig";
 import React, { useState,useEffect } from 'react';
 import Graph from '../../img/bar-graph.png'
 
+import LoadSpinner from '../SpinnerComponent';
+
 const Mypage = () => {
+
+    //스피너(로딩중)
+    const [Loading,setLoading] = useState(true);
 
     //모달용const
     const [follower, setWer] = useState(false);
@@ -37,22 +42,22 @@ const Mypage = () => {
 
     useEffect(() => {
 
-        // 서버의 사용자 정보 가져오기
+// 서버의 사용자 정보 가져오기
         axiosInstance.get('api/v1/users/my')
         .then((res) => {
 
-            //사용자의 정보 가져오기
+        //사용자의 정보 가져오기
             setUserName(res.data.result.userData.name);
             setUserId(res.data.result.userData.id);
             setUserIntro(res.data.result.userData.intro);
 
-            //exp 가져오기
+        //exp 가져오기
             setexpExercise(res.data.result.expData[0].expData);
             setexpEat(res.data.result.expData[1].expData);
             setexpCulture(res.data.result.expData[2].expData);
             setexpHobby(res.data.result.expData[3].expData);
             
-            //사용자 정보 출력
+        //사용자 정보 출력
             // console.log(res.data);
 
         })
@@ -60,11 +65,17 @@ const Mypage = () => {
             console.log('Failed to fetch user info:', error);
         });
 
-        // 서버의 코멘트가져오기
+// 서버의 코멘트가져오기
         axiosInstance.get('api/v1/users/comments/receive?page=0&size=5')
         .then((res) => {
-            const commentsData = res.data.result.content;//content의 정보를 담음
+
+        //content의 모든 정보를 commentsData에 담음
+            const commentsData = res.data.result.content;
             setuserComments(commentsData);
+
+        //스피너
+            setLoading(false);
+
         })
         .catch((error) => {
             console.log('Failed to fetch user info:', error);
@@ -75,11 +86,14 @@ const Mypage = () => {
         <main className='mypage_main'>
             
             <Header />
+            
             <Routes>
                 <Route path="/pwcheck" element={<PwCheck />} />
                 <Route path="../Record/MainRecord" element={<MainRecord />} />
             </Routes>
-            
+            {Loading ? ( // 로딩 중인 경우 스피너를 렌더링
+                <LoadSpinner />
+            ) : (
             <div className='set'>
                 <div className='Mains-right'></div>
                     <div className="square1">        
@@ -212,6 +226,7 @@ const Mypage = () => {
                         </main>
                     <div className='Mains-left'></div>
                 </div>
+                )}
             <Footer/>
         </main>
         )
