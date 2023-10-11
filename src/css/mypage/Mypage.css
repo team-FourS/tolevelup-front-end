@@ -112,19 +112,30 @@
   background-color: #ffffff99;
   overflow-y: scroll;
 }
+
+/* 좋아요 수 카운트 박스 */
 .heart_bold{
   border: solid 2px rgb(202, 202, 202);
   border-Radius: 5px;
   margin-top: 15px;
-  height: 110px;
+  height: 105px;
 }
 .heart_count_numbert{
+  font-family: 'ChosunCentennial';
   font-size:xx-large;
   font-weight: 900;
   color: #FFB9B9;
   margin-top: 10px;
-  margin-bottom: 20px;
 }
+.heart_count{
+  /* font-family: 'DOSSaemmul'; */
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
 .advice {
   margin-top: 15px;
   width: auto;
@@ -153,7 +164,6 @@
   width: 0;
   height: 0;
 }
-
 .user_comment{
   text-Align: right;
   margin-bottom: 2px;
@@ -176,8 +186,8 @@
 }
 .cntnum_img{
   
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
 }
 .main_counter{
   display: block;
@@ -255,3 +265,9 @@ ul,li{
   .mission_complete{
     text-align: left;
   }
+  @font-face {
+    font-family: 'ChosunCentennial';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/ChosunCentennial.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}

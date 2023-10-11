@@ -12,7 +12,7 @@ import Following from './Following';
 import CommentDa from "./CommentDa";
 import axiosInstance from "../../axiosConfig";
 import React, { useState,useEffect } from 'react';
-import Graph from '../../img/growth.png'
+import Graph from '../../img/bar-graph.png'
 
 const Mypage = () => {
 
@@ -105,7 +105,7 @@ const Mypage = () => {
 
                         {/* 좋아요 수 카운드*/}
                         <div className="heart_bold">
-                            <p className ="heart_count">이번달 좋아요 수는?💖</p>
+                            <p className ="heart_count">이번달 좋아요 수는?<img width="20" height="20" src="https://img.icons8.com/fluency/48/pixel-heart.png" alt="pixel-heart"/></p>
                             <p className ="heart_count_numbert">47</p>
                         </div>
 
