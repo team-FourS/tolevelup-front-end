@@ -7,7 +7,6 @@ import "../../css/feed/AllFeed.css";
 import { Routes, Route, Link } from "react-router-dom";
 import user from "../../img/user.png";
 
-import { BiSearchAlt2 } from "react-icons/bi";
 import { HiHeart } from "react-icons/hi";
 import { LiaCommentSolid } from "react-icons/lia";
 
@@ -49,17 +48,12 @@ const AllFeed = () => {
         <Route path="/AllFeed" element={<AllFeed />} />
         <Route path="/FollowFeed" element={<FollowFeed />} />
       </Routes>
-      {/* <motion.div
-          className="box_anima"
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-        >     */}
+
         <Link to ="/AllFeed">
           <button
           className={`allFeed ${isActive ? 'allfeed_active' : ''}`}
           onClick={FeedClick}> 전체 </button>
         </Link>
-
 
         <Link to ="/FollowFeed">
         <button
@@ -67,20 +61,7 @@ const AllFeed = () => {
           onClick={FeedClick}> 팔로우 중 </button>
         </Link>
 
-        <label className="searching">
-          <div className="input-container">
-          <BiSearchAlt2 className="search-icon" />
-            <input 
-              className="searchBox"
-              type="text" 
-              placeholder="닉네임을 입력해주세요"             
-              required 
-            />
-          </div>    
-        </label>
-
         <div className="feed_scrollbox">
-
         <div className="feedBox01">
           <img className="user_profile" src={user} alt="프로필" />
           <div className="feedContent">
