@@ -1,5 +1,5 @@
 .layout_wing{
-    display: flex;
+    /* display: flex; */
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -11,30 +11,47 @@
     align-items: left;
     text-align: left;
   }
+  
+
+  /* 팔로잉 목록 css */
   .profil2{
-    display: block;
+    display: inline-flex;
     width: 40px;
     height: 40px;
   }
+  .td_following{
+    display: block;
+    margin-right: 100px;
+}
   .table_following_lay{
-    display: inline-flex;
+    display: block;
     align-items: center;
   }
+  .following_id{
+    display: inline-block;
+    margin-left: 20px;
+    font-weight: 500;
+}
+.following_lay{
+    align-items: left;
+    text-align: left;
+}
+.following_array{
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+}
+
   .table{
     border-spacing: 0;
     width: 100%;
   }
-.id_alarm{
-    margin-left: 20px;
-    font-weight: 500;
-}
-.td1{
-    display: block;
-    margin-right: 100px;
-}
+
+
 .alarm_font{
-    font-size: 15px;
-    font-weight: 800;
+  font-size: 15px;
+  font-weight: 800;
+  text-align: left
 }
 .following_scrollbox{
   width: auto;

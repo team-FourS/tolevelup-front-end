@@ -1,128 +1,68 @@
-import React from "react";
+import axiosInstance from "../../axiosConfig";
+import React, { useState,useEffect } from 'react';
 import "../../css/mypage/CommentDa.css"
+import LoadSpinner from '../Spinner/SpinnerComponent';
 
 const CommentDa = () => {
+
+  //스피너
+  const [Loading,setLoading] = useState(true);
+
+  const [userCommentModal, setuserComment] = useState([]);
+
+  useEffect(() => {
+    
+    // 모달 속 코맨트
+            axiosInstance.get('api/v1/users/comments/receive?page=0&size=5')
+            .then((res) => {
+
+              //팔로잉 정보 저장
+                const CommentModal = res.data.result.content;
+                setuserComment(CommentModal);
+
+                console.log(res.data);
+
+                //스피너
+                setLoading(false);
+            })
+            .catch((error) => {
+                console.log('Failed to fetch user info:', error);
+
+                //스피너
+                setLoading(true);
+            });
+    
+    
+        }, []);
+
     return (
-      <main className="layout_alr" onClick={(e) => e.stopPropagation()}>
+      <main className="layout_commentmodal" onClick={(e) => e.stopPropagation()}>
         <div className="alarm_lay">
           <h4 className="alarm_font">코멘트</h4>
             <hr />
             <div className="scroll_box_comment">
               <div className="inner_content_comment">
+              {Loading ? ( // 로딩 중인 경우 스피너를 렌더링
+                <LoadSpinner />
+            ) : (
               <table>
-                    <tr>
-                      <th></th>
-                      <th></th>
-                    </tr>
+                    <tr><th></th></tr>
                     <tr className="comment_data">
-                      {/* 테이블1 */}
                         <td>
                           <td className="td_comment">
                             <div className="table_lay">
-                              <div className='comment_box_click'>
-                                너 전교 몇등이야?
-                                <p className='user_comment'>- 국연수</p>
+                            {userCommentModal.map((commentmodal, commentkey) => (
+                            <div className="" key={commentkey}>
+                                <div className='comment_box_click'>{commentmodal.comment} 
+                                <p className='user_comment'>{commentmodal.fromUserDate.name}</p>
                               </div>
-                            </div>
-                          </td>
-
-                          <td className="td_comment">
-                            <div className="table_lay">
-                              <div className='comment_box_click'>
-                                바보네 바보
-                                <p className='user_comment'>- 국연수</p>
+                            </div>))}
                               </div>
-                            </div>
-                          </td>
-
-                          <td className="td_comment">
-                            <div className="table_lay">
-                              <div className='comment_box_click'>
-                                떡볶이 먹으러 가자
-                                <p className='user_comment'>- 김지웅</p>
-                              </div>
-                            </div>
-                          </td>
-                          <td className="td_comment">
-                            <div className="table_lay">
-                              <div className='comment_box_click'>
-                                떡볶이 먹으러 가자
-                                <p className='user_comment'>- 김지웅</p>
-                              </div>
-                            </div>
-                          </td>
-                          <td className="td_comment">
-                            <div className="table_lay">
-                              <div className='comment_box_click'>
-                                떡볶이 먹으러 가자
-                                <p className='user_comment'>- 김지웅</p>
-                              </div>
-                            </div>
-                          </td>
-                          <td className="td_comment">
-                            <div className="table_lay">
-                              <div className='comment_box_click'>
-                                떡볶이 먹으러 가자
-                                <p className='user_comment'>- 김지웅</p>
-                              </div>
-                            </div>
                           </td>
                         </td>
-
-                      {/* 테이블2 */}
-                      <td>
-                      <td className="td_comment">
-                        <div className="table_lay">
-                          <div className='comment_box_click'>
-                            너 전교 몇등이야?
-                            <p className='user_comment'>- 국연수</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td className="td_comment">
-                        <div className="table_lay">
-                          <div className='comment_box_click'>
-                            다시 찍자고, 다큐멘터리
-                            <p className='user_comment'>- 김지웅</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td className="td_comment">
-                        <div className="table_lay">
-                          <div className='comment_box_click'>
-                            가을이 온다
-                            <p className='user_comment'>- 아마도</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td className="td_comment">
-                        <div className="table_lay">
-                          <div className='comment_box_click'>
-                            가을이 온다
-                            <p className='user_comment'>- 아마도</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td className="td_comment">
-                        <div className="table_lay">
-                          <div className='comment_box_click'>
-                            가을이 온다
-                            <p className='user_comment'>- 아마도</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td className="td_comment">
-                        <div className="table_lay">
-                          <div className='comment_box_click'>
-                            가을이 온다
-                            <p className='user_comment'>- 아마도</p>
-                          </div>
-                        </div>
-                      </td>
-                      </td>
                       </tr>
               </table>
-              </div>
+            )}</div>
             </div>
         </div>
     </main>  
