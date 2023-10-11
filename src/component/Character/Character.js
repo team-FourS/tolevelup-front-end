@@ -1,6 +1,7 @@
 // import React, { useState} from 'react';
-import React, { useState,useEffect } from 'react';
-import axiosInstance from "../../axiosConfig";
+import React, { useState} from 'react';
+// import React, { useState,useEffect } from 'react';
+// import axiosInstance from "../../axiosConfig";
 
 import "../../css/character/Character.css"
 import Header from "../Header/Header";
@@ -27,19 +28,19 @@ const Character = () => {
 
 //   세연 캐릭터 연동 코드 start 삭제금지
 
-  useEffect(() => {
+//   useEffect(() => {
 
     
-    // 서버의 캐릭터 정보 가져오기
+//     // 서버의 캐릭터 정보 가져오기
 
-    axiosInstance.get('api/v1/users/character')
-    .then((res) => {
-      console.log('Image data:', res.data);
-    })
-    .catch((error) => {
-        console.log('Failed to fetch user info:', error);
-    });
-}, []);
+//     axiosInstance.get('api/v1/users/character')
+//     .then((res) => {
+//       console.log('Image data:', res.data);
+//     })
+//     .catch((error) => {
+//         console.log('Failed to fetch user info:', error);
+//     });
+// }, []);
 
 //  세연 캐릭터 연동 코드 end 삭제금지
     
