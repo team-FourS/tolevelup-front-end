@@ -1,6 +1,7 @@
 import userImg from '../../img/user.png'
 import Advice1 from '../../img/advice2.png'
 import {Routes, Route, Link} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import PwCheck from "./PwCheck"
 import "../../css/mypage/Mypage.css"
 import Header from "../Header/Header";
@@ -34,6 +35,12 @@ const Mypage = () => {
     //코멘트용 const
     const [userComments, setuserComments] = useState([]);//배열 끌고오기
 
+    // 나의 기록 페이지 이동
+    const movePage = useNavigate();
+    function goRecord(){
+        movePage('../Record/MainRecord');
+    }
+
     useEffect(() => {
 
         // 서버의 사용자 정보 가져오기
@@ -50,7 +57,6 @@ const Mypage = () => {
             setexpEat(res.data.result.expData[1].expData);
             setexpCulture(res.data.result.expData[2].expData);
             setexpHobby(res.data.result.expData[3].expData);
-
             
             //사용자 정보 출력
             // console.log(res.data);
@@ -59,7 +65,7 @@ const Mypage = () => {
         .catch((error) => {
             console.log('Failed to fetch user info:', error);
         });
-   
+
         // 서버의 코멘트가져오기
         axiosInstance.get('api/v1/users/comments/receive?page=0&size=5')
         .then((res) => {
@@ -150,8 +156,11 @@ const Mypage = () => {
                                         </Modal>
                                         )} */}
                         {/* 세연 -  통계페이지 활용 코드(예정)end */}
+
+                                    <div onClick={goRecord}>        
                                         <img className='cntnum_img' src={Graph} alt='통계'></img>
                                         <div className='follower_following_comment'>나의기록</div>
+                                    </div>    
                                 </div>
                         
                     <div className="mission_bar_group">

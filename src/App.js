@@ -36,6 +36,8 @@ import EditNickname from "./component/Mypage/EditProfile/editNickname";
 import EditOneline from "./component/Mypage/EditProfile/editOneline";
 import EditPW from "./component/Mypage/EditProfile/editPW";
 
+import MainRecord from "./component/Record/MainRecord"
+
 function App() {
   return (
       <div className="App">
@@ -67,6 +69,7 @@ function App() {
               <Route path="/editNickname" element={<EditNickname />} />
               <Route path="/editOneline" element={<EditOneline />} />
               <Route path="/editPW" element={<EditPW />} />
+              <Route path="/MainRecord" element={<MainRecord/>} />
               {/* <Route path="/alarm" element={<Alarm />} /> */}
               {/* <Route path="/modal" element={<Modal />} /> */}
           </Routes>                       
