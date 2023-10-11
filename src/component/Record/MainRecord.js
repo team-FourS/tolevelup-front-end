@@ -34,14 +34,17 @@ const MainRecord = () => {
     margin-left:55vh;
   `;
 
-  const CustomButton = styled.button`
+  const CustomButton = styled.button` 
     color: ${props => (props.active ? 'white' : '#237A24')}; /* 버튼 활성화 시 색 변경 */
     background-color: ${props => (props.active ? '#a9d28c' : '#fff')}; /* 버튼 활성화 시 색 변경 */
+    font-size: 18px; font-weight: bolder;
     cursor: pointer;
+    border: none;
+    display: flex;
   `;
 
   const Content = styled.div`
-    {props => props.theme.flex('center', 'center')}
+    
   `;
 
   return (

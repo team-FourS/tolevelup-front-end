@@ -43,39 +43,6 @@
   color: white;
 }
 
-/*닉네임 검색창*/
-.searching{
-  float: right;
-  margin-top: 15px;
-  margin-right: 120px;
-}
-.searchBox{
-  width: 200px; height: 33px;
-  border-radius: 10px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgb(173, 173, 173);
-  outline: none;
-  padding-right: 30px;
-}
-.input-container {
-  display: flex;  position: relative;
-  align-items: center;
-  padding: 5px;
-  border-radius: 5px;  border: none;
-  outline: none;
-}
-.input-container {
-  display: inline-block;
-}
-.search-icon {
-  font-size: 23px; color: rgb(88, 88, 88);
-  position: absolute; 
-  top: 22px; left: 210px;
-  transform: translateY(-50%);
-  pointer-events: none;
-
-}
 
 /*피드 박스 스크롤*/
 .feed_scrollbox::-webkit-scrollbar {
@@ -86,8 +53,8 @@
   height: 0;
 }
 .feed_scrollbox{
-  width: auto; height: 470px;
-  margin-top: 15px;
+  width: auto; height: 520px;
+  margin-top: 25px;
   overflow-y: scroll;
 }
 /*피드 박스*/

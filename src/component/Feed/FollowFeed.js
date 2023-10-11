@@ -6,7 +6,6 @@ import "../../css/feed/AllFeed.css";
 import {Routes, Route, Link} from "react-router-dom";
 import user from '../../img/user.png';
 
-import {BiSearchAlt2} from "react-icons/bi";
 import {HiHeart} from "react-icons/hi";
 import {LiaCommentSolid} from "react-icons/lia";
 
@@ -55,15 +54,6 @@ const FollowFeed = () => {
           className={`followFeed ${isActive ? 'followfeed_active' : ''}`}
           onClick={FeedClick}> 팔로우 중 </button>
         </Link>
-
-        <label className="searching">
-          <div className="input-container">
-            <input className="searchBox"
-              type="text" placeholder="닉네임을 입력해주세요"             
-            required />
-              <BiSearchAlt2 className="search-icon"/>
-          </div>    
-        </label>
 
       <div className="feed_scrollbox">
         <div className="feedBox01">
