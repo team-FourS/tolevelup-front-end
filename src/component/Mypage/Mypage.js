@@ -14,7 +14,7 @@ import axiosInstance from "../../axiosConfig";
 import React, { useState,useEffect } from 'react';
 import Graph from '../../img/bar-graph.png'
 
-import LoadSpinner from '../SpinnerComponent';
+import LoadSpinner from '../Spinner/SpinnerCompo';
 
 const Mypage = () => {
 
@@ -63,6 +63,7 @@ const Mypage = () => {
         })
         .catch((error) => {
             console.log('Failed to fetch user info:', error);
+            setLoading(true);
         });
 
 // 서버의 코멘트가져오기
@@ -79,6 +80,7 @@ const Mypage = () => {
         })
         .catch((error) => {
             console.log('Failed to fetch user info:', error);
+            setLoading(true);//오류시 스피너 무한재생
         });
     }, []);
 
