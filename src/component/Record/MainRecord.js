@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer";
-import "../../css/ranking/Ranking.css";
 import styled from 'styled-components';
 import { RECORD_DATA } from './RecordData';
 import RecordMission from './RecordMission';
@@ -28,30 +27,34 @@ const MainRecord = () => {
 
   console.log(content);
 
-  const Container = styled.div`
+  const Container = styled.div` /* 기록 카테고리 */
     {props => props.theme.flex('center', 'center')}
-    height: 10vh;
-    margin-left:55vh;
+    margin-top: 150px;  margin-left: 80px;
+    width: 160px; height: 300px; 
+
   `;
 
   const CustomButton = styled.button` 
-    color: ${props => (props.active ? 'white' : '#237A24')}; /* 버튼 활성화 시 색 변경 */
-    background-color: ${props => (props.active ? '#a9d28c' : '#fff')}; /* 버튼 활성화 시 색 변경 */
+    color: ${props => (props.active ? '#0B7903' : '#4C4C4C')}; /* 버튼 활성화 글자색 변경 */
+    background-color: ${props => (props.active ? '#E0FFDB' : 'white')}; /* 버튼 활성화 배경색 변경 */
     font-size: 18px; font-weight: bolder;
-    cursor: pointer;
+    width:150px; height: 33px;
+    margin-bottom: 10px;
     border: none;
     display: flex;
+    cursor: pointer; 
   `;
 
   const Content = styled.div`
-    
+    width: 850px; 
+    margin-left:350px;  margin-top: -340px;
   `;
 
   return (
-    <main className="layout_ranking">
+    <main>
       <Header />
-      <div>
-        <Container>
+      <div className="record_All">
+        <Container className="record_Menu">
           {RECORD_DATA.map((data) => {
             return (
               <CustomButton
@@ -64,7 +67,10 @@ const MainRecord = () => {
             );
           })}
         </Container>
-        {content && <Content>{selectComponent[content]}</Content>}
+        {content && 
+          <Content className="record_Content">
+            {selectComponent[content]}
+          </Content>}
       </div>
       <Footer />
     </main>

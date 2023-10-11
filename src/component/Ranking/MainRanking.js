@@ -31,7 +31,7 @@ const Rank = () => {
   const Container = styled.div`
     {props => props.theme.flex('center', 'center')}
     height: 10vh;
-    margin-left:55vh;
+    margin-left:38vh;
     
   `;
 
