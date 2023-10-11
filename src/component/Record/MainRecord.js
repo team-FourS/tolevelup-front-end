@@ -13,7 +13,7 @@ import GetComment from './GetComment';
 const MainRecord = () => {
   const [content, setContent] = useState('record01');
 
-  const handleClickButton = e => {
+  const handleClickButtons = e => {
     const { name } = e.target;
     setContent(name);
   };
@@ -52,7 +52,7 @@ const MainRecord = () => {
           {RECORD_DATA.map((data) => {
             return (
               <CustomButton
-                onClick={handleClickButton}
+                onClick={handleClickButtons}
                 name={data.name}
                 key={data.id}
                 active={content === data.name} >

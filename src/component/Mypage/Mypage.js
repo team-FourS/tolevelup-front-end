@@ -1,8 +1,8 @@
 import userImg from '../../img/user.png'
 import Advice1 from '../../img/advice2.png'
 import {Routes, Route, Link} from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import PwCheck from "./PwCheck"
+import MainRecord from "../Record/MainRecord"
 import "../../css/mypage/Mypage.css"
 import Header from "../Header/Header";
 import Footer from "../Footer";
@@ -34,12 +34,6 @@ const Mypage = () => {
 
     //코멘트용 const
     const [userComments, setuserComments] = useState([]);//배열 끌고오기
-
-    // 나의 기록 페이지 이동
-    const movePage = useNavigate();
-    function goRecord(){
-        movePage('../Record/MainRecord');
-    }
 
     useEffect(() => {
 
@@ -77,13 +71,13 @@ const Mypage = () => {
         });
     }, []);
 
-
     return (
         <main className='mypage_main'>
             
             <Header />
             <Routes>
                 <Route path="/pwcheck" element={<PwCheck />} />
+                <Route path="../Record/MainRecord" element={<MainRecord />} />
             </Routes>
             
             <div className='set'>
@@ -106,7 +100,7 @@ const Mypage = () => {
                         {/* 좋아요 수 카운드*/}
                         <div className="heart_bold">
                             <p className ="heart_count">이번달 좋아요 수는?<img width="20" height="20" src="https://img.icons8.com/fluency/48/pixel-heart.png" alt="pixel-heart"/></p>
-                            <p className ="heart_count_numbert">47</p>
+                            <p className ="heart_count_numbert">97</p>
                         </div>
 
                         {/* 명언 이미지*/}
@@ -156,11 +150,12 @@ const Mypage = () => {
                                         </Modal>
                                         )} */}
                         {/* 세연 -  통계페이지 활용 코드(예정)end */}
-
-                                    <div onClick={goRecord}>        
+                        <Link to="/MainRecord">
+                                    <div>        
                                         <img className='cntnum_img' src={Graph} alt='통계'></img>
                                         <div className='follower_following_comment'>나의기록</div>
-                                    </div>    
+                                    </div>
+                                    </Link> 
                                 </div>
                         
                     <div className="mission_bar_group">
