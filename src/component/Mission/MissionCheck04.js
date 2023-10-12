@@ -1,6 +1,7 @@
 import axiosInstance from "../../axiosConfig";
 import React, { useState, useEffect } from 'react';
 import '../../css/mission/MissionCheck.css';
+import LoadSpinner from '../Spinner/SpinnerMission';
 
 function TodoItem({ todo, index, toggleComplete }) {
   const textStyle = {
@@ -29,6 +30,9 @@ function TodoItem({ todo, index, toggleComplete }) {
   const [missionHobby2, setmissionHobby2] = useState('');
   const [missionHobby3, setmissionHobby3] = useState('');
 
+  //스피너
+  const [Loading,setLoading] = useState(true);
+
   useEffect(() => {
     // 서버의 미션 정보 가져오기
     axiosInstance.get('api/v1/missions/themes/4')
@@ -46,9 +50,12 @@ function TodoItem({ todo, index, toggleComplete }) {
           { text: missionHobby2, completed: false },
           { text: missionHobby2, completed: false },
         ]);
+         //스피너
+        setLoading(false);
       })
       .catch((error) => {
         console.log('Failed to fetch user info:', error);
+        setLoading(true);
       });
   }, [missionHobby1,missionHobby2,missionHobby3,]);
 
@@ -63,6 +70,9 @@ function TodoItem({ todo, index, toggleComplete }) {
     <div>
       <div className="checklist-border">
         <button className="btnMissionCheck">취미</button>
+        {Loading ? ( // 로딩 중인 경우 스피너를 렌더링
+                <LoadSpinner />
+            ) : (
         <div className="missionList">
           <ul>
             {todos4.map((todo, index) => (
@@ -75,6 +85,7 @@ function TodoItem({ todo, index, toggleComplete }) {
             ))} 
           </ul>
         </div>
+        )}
       </div>
     </div>
   );
