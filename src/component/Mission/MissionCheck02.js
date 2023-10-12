@@ -13,12 +13,12 @@ function TodoItem({ todo, index, toggleComplete }) {
         type="checkbox"
         className="checkbox"
         checked={todo.completed}
-        onChange={() => toggleComplete(index)}
+        onChange={() => toggleComplete(index, todo.completed)}
       />
-        <span className="custom-checkbox"></span>
-        <p className="text-underline">
+      <span className="custom-checkbox"></span>
+      <p className="text-underline">
         <span className="todo-text" style={textStyle}> {todo.text} </span>
-        </p>
+      </p>
     </label>
   );
 }
@@ -30,6 +30,10 @@ function MissionCheck02() {
   const [missionEat3, setmissionEat3] = useState('');
 
   useEffect(() => {
+
+    const savedTodos = JSON.parse(localStorage.getItem('missionStatus')) || [];
+    setTodos2(savedTodos);
+
     // 서버의 미션 정보 가져오기
     axiosInstance.get('api/v1/missions/themes/2')
       .then((res) => {
@@ -41,24 +45,37 @@ function MissionCheck02() {
 
 
         // 서버에서 가져온 미션 정보를 하나의 항목으로 설정
-        setTodos2([
-          { text: missionEat1, completed: false },
-          { text: missionEat2, completed: false },
-          { text: missionEat3, completed: false },
-        ]);
-      })
-      .catch((error) => {
-        console.log('Failed to fetch user info:', error);
+          const missionData = res.data.result;
+          const updatedTodos = missionData.map((mission, index) => ({
+            text: mission.content,
+            completed: savedTodos[index] ? savedTodos[index].completed : mission.completed,
+          }));
+  
+          setTodos2(updatedTodos);
+        })
+        .catch((error) => {
+          console.log('Failed to fetch user info:', error);
+        });
+    }, []);
+  
+
+    const toggleComplete = (index) => {
+      const updatedTodos = todos2.map((todo, i) => {
+        if (i === index) {
+          return {
+            ...todo,
+            completed: !todo.completed,
+          };
+        }
+        return todo;
       });
-  }, [missionEat1,missionEat2,missionEat3,]);
+  
+      setTodos2(updatedTodos);
+  
+      // 변경된 상태를 localStorage에 저장
+      localStorage.setItem('missionStatus', JSON.stringify(updatedTodos));
 
-  const toggleComplete = (index) => {
-    const updatedTodos = todos2.map((todo, i) =>
-      i === index ? { ...todo, completed: !todo.completed } : todo
-    );
-    setTodos2(updatedTodos);
-
-    const updatedMission = updatedTodos[0];
+      const updatedMission = updatedTodos[index];
     axiosInstance.put('api/v1/missions/2', {
       mission1: missionEat1,
       mission2: missionEat2,
@@ -66,13 +83,12 @@ function MissionCheck02() {
       completed: updatedMission.completed
     })
     .then((res) => {
-      // PUT 요청이 성공했을 때 할 일을 추가합니다.
-      console.log('Mission updated:', res.data);
+      // PUT 요청이 성공했을 때 할 일을 추가
+      console.log('Mission updated:');
     })
     .catch((error) => {
       console.log('Failed to update mission:', error);
     });
-
   };
 
   return (
@@ -97,5 +113,3 @@ function MissionCheck02() {
 }
 
 export default MissionCheck02;
-
-
