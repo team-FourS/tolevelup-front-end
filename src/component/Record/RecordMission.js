@@ -15,7 +15,7 @@ const RecordMission = () => {
     axiosInstance.get('api/v1/users/missions/counts')
     .then((res) => {
 
-      console.log(res.data);
+      // console.log(res.data);
 
       const totalData = res.data.result;
       setTotalCount(totalData);

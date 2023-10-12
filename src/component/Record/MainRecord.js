@@ -9,6 +9,13 @@ import RecordRanking from './RecordRanking';
 import SendComment from './SendComment';
 import GetComment from './GetComment';
 
+const Container = styled.div` /* 기록 카테고리 */
+    {props => props.theme.flex('center', 'center')}
+    margin-top: 150px;  margin-left: 80px;
+    width: 160px; height: 300px; 
+
+  `;
+
 const MainRecord = () => {
   const [content, setContent] = useState('record01');
 
@@ -26,13 +33,6 @@ const MainRecord = () => {
   };
 
   console.log(content);
-
-  const Container = styled.div` /* 기록 카테고리 */
-    {props => props.theme.flex('center', 'center')}
-    margin-top: 150px;  margin-left: 80px;
-    width: 160px; height: 300px; 
-
-  `;
 
   const CustomButton = styled.button` 
     color: ${props => (props.active ? '#0B7903' : '#4C4C4C')}; /* 버튼 활성화 글자색 변경 */
