@@ -17,6 +17,7 @@ const RecordMission = () => {
       setTotalCount(res.data.result);
       console.log(res.data);
     })
+
     .catch((error) => {
       console.log('Failed to fetch user info:', error);
     });
@@ -52,7 +53,7 @@ const RecordMission = () => {
       
   return(
     <div>
-      <p className="mission_totalCount">누적 미션 수행 : {totalCount} 개</p>
+      <p className="mission_totalCount">누적 미션 수행: {totalCount}개</p>
         <div className="mission_parent01">
           <div className="ExerciseCount">
             <p className="mission_theme">운동</p>
