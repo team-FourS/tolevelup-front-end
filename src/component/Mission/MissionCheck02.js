@@ -57,6 +57,22 @@ function MissionCheck02() {
       i === index ? { ...todo, completed: !todo.completed } : todo
     );
     setTodos2(updatedTodos);
+
+    const updatedMission = updatedTodos[0];
+    axiosInstance.put('api/v1/missions/2', {
+      mission1: missionEat1,
+      mission2: missionEat2,
+      mission3: missionEat3,
+      completed: updatedMission.completed
+    })
+    .then((res) => {
+      // PUT 요청이 성공했을 때 할 일을 추가합니다.
+      console.log('Mission updated:', res.data);
+    })
+    .catch((error) => {
+      console.log('Failed to update mission:', error);
+    });
+
   };
 
   return (

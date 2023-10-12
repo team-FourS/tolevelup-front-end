@@ -4,23 +4,27 @@ import "../../css/record/RecordMission.css"
 
 const RecordMission = () => {
   const [totalCount, setTotalCount] = useState('');
-  const [exerciseCount, setExerciseCount] = useState('');
-  const [eatCount, setEatCount] = useState('');
-  const [cultureCount, setCultureCount] = useState('');
-  const [hobbyCount, setHobbyCount] = useState('');
+  // const [exerciseCount, setExerciseCount] = useState([]);
+  // const [eatCount, setEatCount] = useState([]);
+  // const [cultureCount, setCultureCount] = useState([]);
+  // const [hobbyCount, setHobbyCount] = useState([]);
 
   useEffect(() => {
 
     // 전체 누적 미션 개수 가져오기
     axiosInstance.get('api/v1/users/missions/counts')
     .then((res) => {
+
+      console.log(res.data);
+
       const totalData = res.data.result;
       setTotalCount(totalData);
     })
+
     .catch((error) => {
       console.log('Failed to fetch user info:', error);
     });
-  })
+  }, []);
 
     // 테마 별 누적 미션 개수 가져오기
     /*
@@ -36,7 +40,7 @@ const RecordMission = () => {
       
   return(
     <div>
-      <p className="mission_totalCount">누적 미션 수행: {totalCount} 개</p>
+      <p className="mission_totalCount">누적 미션 수행: {totalCount}개</p>
         <div className="mission_parent01">
           <div className="ExerciseCount">
             <p className="mission_theme">운동</p>
