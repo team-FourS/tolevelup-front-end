@@ -11,7 +11,7 @@ export const RECORD_DATA = [
   },
   {
     id: 3,
-    text: '월별 랭킹 순위',
+    text: '월 별 랭킹 순위',
     name:'record03',
   },
   {

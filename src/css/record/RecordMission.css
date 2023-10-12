@@ -1,0 +1,48 @@
+.mission_totalCount{
+  font-size: 22px;
+  font-weight: bold;
+  text-align:center;
+}
+.mission_parent01, .mission_parent02{
+  display: flex;
+  margin: 50px 0 40px 0;
+  justify-content: center;
+}
+
+
+.ExerciseCount{
+  width: 140px; height: 120px;
+  border-Radius: 8px;
+  background-color: rgb(237, 120, 194);
+  text-align: center; 
+  margin: 0 30px 0 30px;
+}
+.EatCount{
+  width: 140px; height: 120px;
+  border-Radius: 8px;
+  background-color: rgb(129, 185, 235);
+  text-align: center; 
+  margin: 0 30px 0 30px;
+}
+.CultureCount{
+  width: 140px; height: 120px;
+  border-Radius: 8px;
+  background-color: rgb(237, 227, 113);
+  text-align: center;
+  margin: 0 30px 0 30px;
+}
+.HoobyCount{
+  width: 140px; height: 120px;
+  border-Radius: 8px;
+  background-color: rgb(82, 183, 104);
+  text-align: center;
+  margin: 0 30px 0 30px;
+}
+
+.mission_theme{
+  font-size: 22px; font-weight: bold;
+  
+}
+.mission_count{
+  font-size: 20px;
+}
