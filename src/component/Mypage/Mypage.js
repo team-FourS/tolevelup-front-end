@@ -40,6 +40,9 @@ const Mypage = () => {
     //코멘트용 const
     const [userComments, setuserComments] = useState([]);//배열 끌고오기
 
+    //좋아요 수 카운트
+    const [userHeart, setuserHeart] = useState('');//배열 끌고오기
+
     useEffect(() => {
 
 // 서버의 사용자 정보 가져오기
@@ -59,6 +62,8 @@ const Mypage = () => {
             
         //사용자 정보 출력
             // console.log(res.data);
+
+            setLoading(false);
 
         })
         .catch((error) => {
@@ -80,6 +85,24 @@ const Mypage = () => {
         })
         .catch((error) => {
             console.log('Failed to fetch user info:', error);
+            setLoading(true);//오류시 스피너 무한재생
+        });
+
+// 좋아요 수 가져오기
+        axiosInstance.get('api/v1/users/likes')
+        .then((res) => {
+
+        //content의 모든 정보를 commentsData에 담음
+            const HeartData = res.data.result;
+            setuserHeart(HeartData);
+
+        //스피너
+            setLoading(false);
+
+        })
+        .catch((error) => {
+            console.log('Failed to fetch user info:', error);
+            
             setLoading(true);//오류시 스피너 무한재생
         });
     }, []);
@@ -116,7 +139,7 @@ const Mypage = () => {
                         {/* 좋아요 수 카운드*/}
                         <div className="heart_bold">
                             <p className ="heart_count">이번달 좋아요 수는?<img width="20" height="20" src="https://img.icons8.com/fluency/48/pixel-heart.png" alt="pixel-heart"/></p>
-                            <p className ="heart_count_numbert">97</p>
+                            <p className ="heart_count_numbert">{userHeart}</p>
                         </div>
 
                         {/* 명언 이미지*/}
