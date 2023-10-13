@@ -1,0 +1,16 @@
+.calendar {
+  display: flex;
+  justify-content: space-around;
+}
+.month {
+  width: 60px;  height: 40px;
+  border-radius: 50%; border: none;
+  background-color: #bbc3c7;
+  color: #fff;  font-size: 16px;
+  align-items: center;  justify-content: center;
+  display: flex;
+  cursor: pointer;
+}
+.month.active {
+  background-color: #5ca763;
+}

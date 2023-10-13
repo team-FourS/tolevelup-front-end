@@ -1,6 +1,7 @@
 import axiosInstance from "../../axiosConfig";
 import React, { useState, useEffect } from 'react';
 import '../../css/mission/MissionCheck.css';
+import LoadSpinner from '../Spinner/SpinnerMission';
 
 function TodoItem({ todo, index, toggleComplete }) {
   const textStyle = {
@@ -29,6 +30,9 @@ function MissionCheck02() {
   const [missionEat2, setmissionEat2] = useState('');
   const [missionEat3, setmissionEat3] = useState('');
 
+  //스피너
+  const [Loading,setLoading] = useState(true);
+
   useEffect(() => {
 
     const savedTodos = JSON.parse(localStorage.getItem('missionStatus')) || [];
@@ -52,9 +56,12 @@ function MissionCheck02() {
           }));
   
           setTodos2(updatedTodos);
+           //스피너
+          setLoading(false);
         })
         .catch((error) => {
           console.log('Failed to fetch user info:', error);
+          setLoading(true);
         });
     }, []);
   
@@ -95,6 +102,9 @@ function MissionCheck02() {
     <div>
       <div className="checklist-border">
         <button className="btnMissionCheck">식습관</button>
+        {Loading ? ( // 로딩 중인 경우 스피너를 렌더링
+                <LoadSpinner />
+            ) : (
         <div className="missionList">
           <ul>
             {todos2.map((todo, index) => (
@@ -107,6 +117,7 @@ function MissionCheck02() {
             ))} 
           </ul>
         </div>
+        )}
       </div>
     </div>
   );

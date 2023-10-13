@@ -1,6 +1,7 @@
 import axiosInstance from "../../axiosConfig";
 import React, { useState, useEffect } from 'react';
-import "../../css/record/RecordMission.css"
+import LoadSpinner from '../Spinner/SpinnerRecord';
+import '../../css/record/RecordMission.css';
 
 const RecordMission = () => {
   const [totalCount, setTotalCount] = useState(0);
@@ -9,6 +10,9 @@ const RecordMission = () => {
   const [cultureCount, setCultureCount] = useState(0);
   const [hobbyCount, setHobbyCount] = useState(0);
 
+  //스피너
+  const [Loading,setLoading] = useState(true);
+
   useEffect(() => {
 
     // 전체 누적 미션 개수 가져오기
@@ -16,8 +20,9 @@ const RecordMission = () => {
     .then((res) => {
       setTotalCount(res.data.result);
       console.log(res.data);
+      //스피너
+      setLoading(false);
     })
-
     .catch((error) => {
       console.log('Failed to fetch user info:', error);
     });
@@ -53,6 +58,10 @@ const RecordMission = () => {
       
   return(
     <div>
+      {Loading ? ( // 로딩 중인 경우 스피너를 렌더링
+                <LoadSpinner />
+            ) : (
+      <div>
       <p className="mission_totalCount">누적 미션 수행: {totalCount}개</p>
         <div className="mission_parent01">
           <div className="ExerciseCount">
@@ -77,6 +86,8 @@ const RecordMission = () => {
             <p className="mission_count">{ hobbyCount }개</p>
           </div>
         </div>
+      </div>
+      )}
     </div>
   );
 }

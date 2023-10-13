@@ -2,6 +2,7 @@ import axiosInstance from "../../axiosConfig";
 import React, { useState, useEffect } from 'react';
 import '../../css/mission/MissionCheck.css';
 
+
 function TodoItem({ todo, toggleComplete }) {
   const textStyle = {
     color: todo.checked === 'DAILY_COMPLETE' ? 'rgb(204, 204, 204)' : 'black',
