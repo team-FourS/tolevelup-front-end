@@ -1,11 +1,11 @@
 import axiosInstance from "../../axiosConfig";
 import React, { useState, useEffect } from 'react';
 import '../../css/mission/MissionCheck.css';
+import LoadSpinner from '../Spinner/SpinnerMission';
 
-
-function TodoItem({ todo, toggleComplete }) {
+function TodoItem({ todo, index, toggleComplete }) {
   const textStyle = {
-    color: todo.checked === 'DAILY_COMPLETE' ? 'rgb(204, 204, 204)' : 'black',
+    color: todo.completed ? 'rgb(204, 204, 204)' : 'black',
   };
 
   return (
@@ -13,75 +13,119 @@ function TodoItem({ todo, toggleComplete }) {
       <input
         type="checkbox"
         className="checkbox"
-        checked={todo.checked === 'DAILY_COMPLETE'}
-        onChange={() => toggleComplete(todo.missionId, todo.checked)}
+        checked={todo.completed}
+        onChange={() => toggleComplete(index, todo.completed)}
       />
       <span className="custom-checkbox"></span>
       <p className="text-underline">
-        <span className="todo-text" style={textStyle}> {todo.content} </span>
+        <span className="todo-text" style={textStyle}> {todo.text} </span>
       </p>
     </label>
   );
 }
 
-async function fetchMissions() {
-  try {
-    const response = await axiosInstance.get('api/v1/missions/themes/1');
-    return response.data.result;
-  } catch (error) {
-    console.log('Failed to fetch missions:', error);
-    return [];
-  }
-}
-
 function MissionCheck01() {
-  const [missions, setMissions] = useState([]);
+  const [todos1, setTodos1] = useState([]);
+  const [missionExercise1, setmissionExercise1] = useState([]);
+  const [missionExercise2, setmissionExercise2] = useState([]);
+  const [missionExercise3, setmissionExercise3] = useState([]);
+
+  //스피너
+  const [Loading,setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchMissionsAndLoadLocalStorage = async () => {
-      const serverMissions = await fetchMissions();
-      const storedMissions = JSON.parse(localStorage.getItem('missionStatus')) || [];
 
-      // 서버에서 가져온 미션과 로컬 스토리지의 미션을 합치기
-      const mergedMissions = serverMissions.map(serverMission => {
-        const storedMission = storedMissions.find(m => m.missionId === serverMission.missionId);
-        return storedMission ? storedMission : serverMission;
+    const savedTodos = JSON.parse(localStorage.getItem('ExerciseMissionStatus')) || [];
+    setTodos1(savedTodos);
+
+    // 서버의 미션 정보 가져오기
+    axiosInstance.get('api/v1/missions/themes/1')
+      .then((res) => {
+        console.log(res.data);
+
+        setmissionExercise1(res.data.result[0].missionId);
+        setmissionExercise2(res.data.result[1].missionId);
+        setmissionExercise3(res.data.result[2].missionId);
+
+
+        // 서버에서 가져온 미션 정보를 하나의 항목으로 설정
+          const missionData = res.data.result;
+          const updatedTodos = missionData.map((mission, index) => ({
+            text: mission.content,
+            completed: savedTodos[index] ? savedTodos[index].completed : mission.completed,
+          }));
+  
+          setTodos1(updatedTodos);
+           //스피너
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.log('Failed to fetch user info:', error);
+          setLoading(true);
+        });
+        
+    }, []);
+  
+
+    const toggleComplete = (index, currentStatus) => {
+      const updatedTodos = todos1.map((todo, i) => {
+        if (i === index) {
+          return {
+            ...todo,
+            completed: !currentStatus, // 현재 상태의 반대로 설정
+          };
+        }
+        return todo;
       });
-
-      setMissions(mergedMissions);
+    
+      setTodos1(updatedTodos);
+    
+      // 변경된 상태를 localStorage에 저장
+      localStorage.setItem('ExerciseMissionStatus', JSON.stringify(updatedTodos));
+    
+      let missionId;
+      if (index === 0) {
+        missionId = missionExercise1;
+      } else if (index === 1) {
+        missionId = missionExercise2;
+      } else if (index === 2) {
+        missionId = missionExercise3;
+      }
+    
+      // PUT 요청 보내기
+      const updatedMission = updatedTodos[index];
+      axiosInstance.put(`api/v1/missions/${missionId}`, {
+        completed: updatedMission.completed
+      })
+        .then((res) => {
+          // PUT 요청이 성공했을 때 할 일을 추가
+          console.log('Mission updated:', res.data);
+        })
+        .catch((error) => {
+          console.log('Failed to update mission:', error);
+        });
     };
-
-    fetchMissionsAndLoadLocalStorage();
-  }, []); // 빈 배열을 넣어 한 번만 실행되도록 설정
-
-  const toggleComplete = (missionId, currentStatus) => {
-    const updatedMissions = missions.map((mission) =>
-      mission.missionId === missionId
-        ? { ...mission, checked: currentStatus === 'DAILY_ONGOING' ? 'DAILY_COMPLETE' : 'DAILY_ONGOING' }
-        : mission
-    );
-
-    setMissions(updatedMissions);
-
-    // 로컬 스토리지에 미션 상태 저장
-    localStorage.setItem('missionStatus', JSON.stringify(updatedMissions));
-  };
 
   return (
     <div>
       <div className="checklist-border">
         <button className="btnMissionCheck">운동</button>
-        <div className="missionList3">
+        {Loading ? ( // 로딩 중인 경우 스피너를 렌더링
+                <LoadSpinner />
+            ) : (
+        <div className="missionList">
           <ul>
-            {missions.map((mission) => (
+            {todos1.map((todo, index) => (
               <TodoItem
-                key={mission.missionId}
-                todo={mission}
-                toggleComplete={toggleComplete}
-              />
-            ))}
+                key={index}
+                todo={todo}
+                index={index}
+                toggleComplete={toggleComplete} 
+              /> 
+            ))} 
           </ul>
         </div>
+        )}
       </div>
     </div>
   );
