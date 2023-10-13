@@ -20,7 +20,7 @@ const Header = () => {
         localStorage.removeItem("Token");// localstorage에 저장되어 있던 토큰을 지운다.
         sessionStorage.removeItem("name");// localstorage에 저장되어 있던 토큰을 지운다.
         sessionStorage.removeItem("id");// localstorage에 저장되어 있던 토큰을 지운다.
-        localStorage.removeItem("missionStatus");
+        // localStorage.removeItem("missionStatus");
         document.location.href = "/";
     }
 
