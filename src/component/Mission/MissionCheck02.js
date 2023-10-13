@@ -26,9 +26,9 @@ function TodoItem({ todo, index, toggleComplete }) {
 
 function MissionCheck02() {
   const [todos2, setTodos2] = useState([]);
-  const [missionEat1, setmissionEat1] = useState('');
-  const [missionEat2, setmissionEat2] = useState('');
-  const [missionEat3, setmissionEat3] = useState('');
+  const [missionEat1, setmissionEat1] = useState([]);
+  const [missionEat2, setmissionEat2] = useState([]);
+  const [missionEat3, setmissionEat3] = useState([]);
 
   //스피너
   const [Loading,setLoading] = useState(true);
@@ -43,9 +43,9 @@ function MissionCheck02() {
       .then((res) => {
         console.log(res.data);
 
-        setmissionEat1(res.data.result[0].content);
-        setmissionEat2(res.data.result[1].content);
-        setmissionEat3(res.data.result[2].content);
+        setmissionEat1(res.data.result[0].missionId);
+        setmissionEat2(res.data.result[1].missionId);
+        setmissionEat3(res.data.result[2].missionId);
 
 
         // 서버에서 가져온 미션 정보를 하나의 항목으로 설정
@@ -63,40 +63,49 @@ function MissionCheck02() {
           console.log('Failed to fetch user info:', error);
           setLoading(true);
         });
+        
     }, []);
   
 
-    const toggleComplete = (index) => {
+    const toggleComplete = (index, currentStatus) => {
       const updatedTodos = todos2.map((todo, i) => {
         if (i === index) {
           return {
             ...todo,
-            completed: !todo.completed,
+            completed: !currentStatus, // 현재 상태의 반대로 설정
           };
         }
         return todo;
       });
-  
+    
       setTodos2(updatedTodos);
-  
+    
       // 변경된 상태를 localStorage에 저장
       localStorage.setItem('missionStatus', JSON.stringify(updatedTodos));
-
+    
+      let missionId;
+      if (index === 0) {
+        missionId = missionEat1;
+      } else if (index === 1) {
+        missionId = missionEat2;
+      } else if (index === 2) {
+        missionId = missionEat3;
+      }
+    
+      // PUT 요청 보내기
       const updatedMission = updatedTodos[index];
-    axiosInstance.put('api/v1/missions/2', {
-      mission1: missionEat1,
-      mission2: missionEat2,
-      mission3: missionEat3,
-      completed: updatedMission.completed
-    })
-    .then((res) => {
-      // PUT 요청이 성공했을 때 할 일을 추가
-      console.log('Mission updated:');
-    })
-    .catch((error) => {
-      console.log('Failed to update mission:', error);
-    });
-  };
+      axiosInstance.put(`api/v1/missions/${missionId}`, {
+        completed: updatedMission.completed
+      })
+        .then((res) => {
+          // PUT 요청이 성공했을 때 할 일을 추가
+          console.log('Mission updated:', res.data);
+        })
+        .catch((error) => {
+          console.log('Failed to update mission:', error);
+        });
+    };
+
 
   return (
     <div>
