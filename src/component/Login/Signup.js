@@ -82,7 +82,7 @@ function Signup() {
 
 <div className="signUpPassword">
           <TextField className="loginBox"
-            label="Name" name="Name"
+            label="Nickname" name="Name"
             autoComplete="Name"
             autoFocus
             onChange={(e) => {

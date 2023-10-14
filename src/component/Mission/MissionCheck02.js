@@ -35,7 +35,7 @@ function MissionCheck02() {
 
   useEffect(() => {
 
-    const savedTodos = JSON.parse(localStorage.getItem('status')) || [];
+  const savedTodos = JSON.parse(localStorage.getItem('status')) || [];
   setTodos2(savedTodos);
 
     // 서버의 미션 정보 가져오기

@@ -5,7 +5,7 @@ import LoadSpinner from '../Spinner/SpinnerMission';
 
 function TodoItem({ todo, index, toggleComplete }) {
   const textStyle = {
-    color: todo.completed ? 'rgb(204, 204, 204)' : 'black',
+    color: todo.completed === "DAILY_COMPLETE" ? 'rgb(204, 204, 204)' : 'black',
   };
 
   return (
@@ -35,7 +35,7 @@ function MissionCheck01() {
 
   useEffect(() => {
 
-    const savedTodos = JSON.parse(localStorage.getItem('ExerciseMissionStatus')) || [];
+    const savedTodos = JSON.parse(localStorage.getItem('status')) || [];
     setTodos1(savedTodos);
 
     // 서버의 미션 정보 가져오기
@@ -49,11 +49,11 @@ function MissionCheck01() {
 
 
         // 서버에서 가져온 미션 정보를 하나의 항목으로 설정
-          const missionData = res.data.result;
-          const updatedTodos = missionData.map((mission, index) => ({
-            text: mission.content,
-            completed: savedTodos[index] ? savedTodos[index].completed : mission.completed,
-          }));
+        const missionData = res.data.result;
+        const updatedTodos = missionData.map((mission, index) => ({
+          text: mission.content,
+          completed: savedTodos[index] ? savedTodos[index].completed : mission.checked === 'DAILY_COMPLETE',
+        }));
   
           setTodos1(updatedTodos);
            //스피너
@@ -81,7 +81,7 @@ function MissionCheck01() {
       setTodos1(updatedTodos);
     
       // 변경된 상태를 localStorage에 저장
-      localStorage.setItem('ExerciseMissionStatus', JSON.stringify(updatedTodos));
+      localStorage.setItem('missionStatus', JSON.stringify(updatedTodos));
     
       let missionId;
       if (index === 0) {
@@ -99,7 +99,8 @@ function MissionCheck01() {
       })
         .then((res) => {
           // PUT 요청이 성공했을 때 할 일을 추가
-          console.log('Mission updated:', res.data);
+          console.log('Mission updated:',res.data.result);
+  
         })
         .catch((error) => {
           console.log('Failed to update mission:', error);
