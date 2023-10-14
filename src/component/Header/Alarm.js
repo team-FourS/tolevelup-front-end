@@ -9,7 +9,6 @@ const Alarm = () => {
   useEffect(() => {
     axiosInstance.get('api/v1/users/alarm?page=0&size=5')
       .then((res) => {
-        // 받아온 알람 데이터를 state에 설정
         setAlarms(res.data.result.content);
       })
       .catch((error) => {
@@ -17,7 +16,7 @@ const Alarm = () => {
       });
   }, []);
 
-  // alarmType에 따른 알람 메시지를 반환하는 함수
+  // alarmType에 따라 메시지를 반환
   const getAlarmMessage = (alarmType, fromUserId) => {
     switch (alarmType) {
       case 'FOLLOW':
