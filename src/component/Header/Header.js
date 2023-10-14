@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../../css/header/Header.css'
 // import {Link} from "react-router-dom";
 // import Logo from '../../img/ToLevelUp_logo.png'
@@ -12,7 +12,7 @@ import ManualModal from "../Modal/ManualModal";
 import Alarm from "./Alarm";
 import Manual from "./Manual";
 import { useNavigate } from "react-router-dom";
-
+import axiosInstance from "../../axiosConfig";
 
 const Header = () => {
 
@@ -23,7 +23,13 @@ const Header = () => {
         // localStorage.removeItem("missionStatus");
         document.location.href = "/";
     }
-
+    const [userName, setUserName] = useState('');
+    useEffect(() => {
+        axiosInstance.get('api/v1/users/my')
+        .then((res) => {
+            setUserName(res.data.result.userData.name);
+        })
+    })
     const [alarm, setAlarm] = useState(false);
     const [manual, setManual] = useState(false);
 
@@ -42,6 +48,7 @@ const Header = () => {
                         <img onClick={gohome} className ="logoimg" src={fullnameLogo} alt='로고' />
                     </div>
                 </div>
+                <p className='header_id'> {userName} 님</p>
                     <FcInfo onClick={() => setManual(!manual)} className='manual_icon'/>
                     {manual && (
                         <ManualModal closeModal={() => setManual(!manual)}>

@@ -5,7 +5,7 @@ import LoadSpinner from '../Spinner/SpinnerMission';
 
 function TodoItem({ todo, index, toggleComplete }) {
   const textStyle = {
-    color: todo.completed ? 'rgb(204, 204, 204)' : 'black',
+    color: todo.completed === "WEEKLY_COMPLETE" ? 'rgb(204, 204, 204)' : 'black',
   };
 
   return (
@@ -14,7 +14,7 @@ function TodoItem({ todo, index, toggleComplete }) {
         type="checkbox"
         className="checkbox"
         checked={todo.completed}
-        onChange={() => toggleComplete(index)}
+        onChange={() => toggleComplete(index, todo.completed)}
       />
       <span className="custom-checkbox"></span>
       <p className="text-underline">
@@ -24,43 +24,85 @@ function TodoItem({ todo, index, toggleComplete }) {
   );
 }
 
-  function MissionCheck03() {
+function MissionCheck03() {
   const [todos3, setTodos3] = useState([]);
-  const [missionCulture1, setmissionCulture1] = useState('');
-  const [missionCulture2, setmissionCulture2] = useState('');
-  
+  const [missionCulture1, setmissionCulture1] = useState([]);
+  const [missionCulture2, setmissionCulture2] = useState([]);
+
   //스피너
   const [Loading,setLoading] = useState(true);
-  
+
   useEffect(() => {
+
+  const savedTodos = JSON.parse(localStorage.getItem('status')) || [];
+  setTodos3(savedTodos);
+
     // 서버의 미션 정보 가져오기
     axiosInstance.get('api/v1/missions/themes/3')
       .then((res) => {
         console.log(res.data);
 
-        setmissionCulture1(res.data.result[0].content);
-        setmissionCulture2(res.data.result[1].content);
+        setmissionCulture1(res.data.result[0].missionId);
+        setmissionCulture2(res.data.result[1].missionId);
+
 
         // 서버에서 가져온 미션 정보를 하나의 항목으로 설정
-        setTodos3([
-          { text: missionCulture1, completed: false },
-          { text: missionCulture2, completed: false },
+          const missionData = res.data.result;
+          const updatedTodos = missionData.map((mission, index) => ({
+            text: mission.content,
+            completed: savedTodos[index] ? savedTodos[index].completed : mission.checked === 'WEEKLY_COMPLETE',
+          }));
+  
+          setTodos3(updatedTodos);
+           //스피너
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.log('Failed to fetch user info:', error);
+          setLoading(true);
+        });
+        
+    }, []);
+  
 
-        ]);
-         //스피너
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.log('Failed to fetch user info:', error);
+    const toggleComplete = (index, currentStatus) => {
+      const updatedTodos = todos3.map((todo, i) => {
+        if (i === index) {
+          return {
+            ...todo,
+            completed: !currentStatus, // 현재 상태의 반대로 설정
+          };
+        }
+        return todo;
       });
-  }, [missionCulture1,missionCulture2]);
+    
+      setTodos3(updatedTodos);
+    
+      // 변경된 상태를 localStorage에 저장
+      localStorage.setItem('missionStatus', JSON.stringify(updatedTodos));
+    
+      let missionId;
+      if (index === 0) {
+        missionId = missionCulture1;
+      } else if (index === 1) {
+        missionId = missionCulture2;
+      } 
+    
+      // PUT 요청 보내기
+      const updatedMission = updatedTodos[index];
+      axiosInstance.put(`api/v1/missions/${missionId}`, {
+        completed: updatedMission.completed
+      })
+        .then((res) => {
+          // PUT 요청이 성공했을 때 할 일을 추가
+          console.log('Mission updated:',res.data.result);
+  
+        })
+        .catch((error) => {
+          console.log('Failed to update mission:', error);
+        });
+    };
 
-  const toggleComplete = (index) => {
-    const updatedTodos = todos3.map((todo, i) =>
-      i === index ? { ...todo, completed: !todo.completed } : todo
-    );
-    setTodos3(updatedTodos);
-  };
 
   return (
     <div>
@@ -69,7 +111,7 @@ function TodoItem({ todo, index, toggleComplete }) {
         {Loading ? ( // 로딩 중인 경우 스피너를 렌더링
                 <LoadSpinner />
             ) : (
-        <div className="missionList3">
+        <div className="missionList">
           <ul>
             {todos3.map((todo, index) => (
               <TodoItem
@@ -88,5 +130,3 @@ function TodoItem({ todo, index, toggleComplete }) {
 }
 
 export default MissionCheck03;
-
-
