@@ -9,6 +9,7 @@ import { FcInfo } from "react-icons/fc";
 
 import { useState } from "react";
 import ManualModal from "../Modal/ManualModal";
+import AlarmlModal from "../Modal/AlarmModal";
 import Alarm from "./Alarm";
 import Manual from "./Manual";
 import { useNavigate } from "react-router-dom";
@@ -58,9 +59,9 @@ const Header = () => {
                     
                     <BiBell onClick={() => setAlarm(!alarm)} className='bell_icon'/>
                     {alarm && (
-                        <ManualModal closeModal={() => setAlarm(!alarm)}>
+                        <AlarmlModal closeModal={() => setAlarm(!alarm)}>
                             <Alarm />
-                        </ManualModal>
+                        </AlarmlModal>
                     )}
             
                     <div className='header_logout' onClick={handlelogOut}> | 로그아웃</div>

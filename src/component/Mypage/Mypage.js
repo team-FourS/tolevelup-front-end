@@ -239,14 +239,14 @@ const Mypage = () => {
                                 <div className="inner_content">
                                     {userComments.map((commentData, index) => (
                                         <div className='comment_box' key={index}>
-                                            {commentData.comment} 
+                                            <p className='mypage_comment_text'> {commentData.comment}  </p>
                                             <p className='user_comment'>{commentData.fromUserDate.name}</p>  
                                         </div>
                                     ))}
                                 </div>
                         </div>                          
                     </div>
-                         </div>
+                        </div>
                             </div>
                         </main>
                     <div className='Mains-left'></div>

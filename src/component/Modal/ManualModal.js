@@ -9,9 +9,9 @@ function closeModal() {
  
   return (
     
-    <div className="header_Modal" >
-      <div className="header_modalBody" onClick={(e) => e.stopPropagation()}>
-        <button className="header_modalCloseBtn" onClick={closeModal}>
+    <div className="Manual_Modal" >
+      <div className="Manual_modalBody" onClick={(e) => e.stopPropagation()}>
+        <button className="Manual_modalCloseBtn" onClick={closeModal}>
           ✖
         </button>
         {props.children}
