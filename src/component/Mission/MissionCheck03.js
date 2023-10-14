@@ -28,7 +28,6 @@ function TodoItem({ todo, index, toggleComplete }) {
   const [todos3, setTodos3] = useState([]);
   const [missionCulture1, setmissionCulture1] = useState('');
   const [missionCulture2, setmissionCulture2] = useState('');
-  const [missionCulture3, setmissionCulture3] = useState('');
   
   //스피너
   const [Loading,setLoading] = useState(true);
@@ -41,14 +40,12 @@ function TodoItem({ todo, index, toggleComplete }) {
 
         setmissionCulture1(res.data.result[0].content);
         setmissionCulture2(res.data.result[1].content);
-        setmissionCulture3(res.data.result[2].content);
-        // console.log(res.data.result.dailyMissions[0].content);
 
         // 서버에서 가져온 미션 정보를 하나의 항목으로 설정
         setTodos3([
           { text: missionCulture1, completed: false },
           { text: missionCulture2, completed: false },
-          { text: missionCulture3, completed: false },
+
         ]);
          //스피너
         setLoading(false);
@@ -56,7 +53,7 @@ function TodoItem({ todo, index, toggleComplete }) {
       .catch((error) => {
         console.log('Failed to fetch user info:', error);
       });
-  }, [missionCulture1,missionCulture2,missionCulture3,]);
+  }, [missionCulture1,missionCulture2]);
 
   const toggleComplete = (index) => {
     const updatedTodos = todos3.map((todo, i) =>

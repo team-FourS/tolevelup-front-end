@@ -5,7 +5,7 @@ import LoadSpinner from '../Spinner/SpinnerMission';
 
 function TodoItem({ todo, index, toggleComplete }) {
   const textStyle = {
-    color: todo.completed ? 'rgb(204, 204, 204)' : 'black',
+    color: todo.completed === "DAILY_COMPLETE" ? 'rgb(204, 204, 204)' : 'black',
   };
 
   return (
@@ -35,8 +35,8 @@ function MissionCheck02() {
 
   useEffect(() => {
 
-    const savedTodos = JSON.parse(localStorage.getItem('missionStatus')) || [];
-    setTodos2(savedTodos);
+    const savedTodos = JSON.parse(localStorage.getItem('status')) || [];
+  setTodos2(savedTodos);
 
     // 서버의 미션 정보 가져오기
     axiosInstance.get('api/v1/missions/themes/2')
@@ -52,7 +52,7 @@ function MissionCheck02() {
           const missionData = res.data.result;
           const updatedTodos = missionData.map((mission, index) => ({
             text: mission.content,
-            completed: savedTodos[index] ? savedTodos[index].completed : mission.completed,
+            completed: savedTodos[index] ? savedTodos[index].completed : mission.checked === 'DAILY_COMPLETE',
           }));
   
           setTodos2(updatedTodos);
@@ -99,7 +99,8 @@ function MissionCheck02() {
       })
         .then((res) => {
           // PUT 요청이 성공했을 때 할 일을 추가
-          console.log('Mission updated:', res.data);
+          console.log('Mission updated:',res.data.result);
+  
         })
         .catch((error) => {
           console.log('Failed to update mission:', error);
