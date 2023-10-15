@@ -1,7 +1,5 @@
-// import React, { useState} from 'react';
-import React, { useState} from 'react';
-// import React, { useState,useEffect } from 'react';
-// import axiosInstance from "../../axiosConfig";
+import axiosInstance from "../../axiosConfig";
+import React, { useState,useEffect } from 'react';
 
 import "../../css/character/Character.css"
 import Header from "../Header/Header";
@@ -26,23 +24,53 @@ const Character = () => {
   const [culture, setPlay] = useState(false);
   const [hobby, setHobby] = useState(false);
 
-//   세연 캐릭터 연동 코드 start 삭제금지
+  //캐릭터 정보가져오기
+  const [charactername1, setcharactername1] = useState([]);//캐릭터 이름
+  const [charactername2, setcharactername2] = useState([]);//캐릭터 이름
+  const [charactername3, setcharactername3] = useState([]);//캐릭터 이름
+  const [charactername4, setcharactername4] = useState([]);//캐릭터 이름
 
-//   useEffect(() => {
 
+  useEffect(() => {
+
+    // 서버의 캐릭터 정보 가져오기
+    axiosInstance.get('/userCharacter')
+    .then((res) => {
+
+      setcharactername1(res.data[0].character_name);
+      setcharactername2(res.data[1].character_name);
+      setcharactername3(res.data[2].character_name);
+      // setcharactername4(res.data[3].character_name);
+
+      console.log(res.data[0]);
+      console.log(res.data[1]);
+      console.log(res.data[2]);
+      // console.log(res.data[3]);
+      console.log(res.data);
+    })
+    .catch((error) => {
+        console.log('Failed to fetch user info:', error);
+    });
     
-//     // 서버의 캐릭터 정보 가져오기
+    axiosInstance.get('/userCharacter')
+    .then((res) => {
 
-//     axiosInstance.get('api/v1/users/character')
-//     .then((res) => {
-//       console.log('Image data:', res.data);
-//     })
-//     .catch((error) => {
-//         console.log('Failed to fetch user info:', error);
-//     });
-// }, []);
+      setcharactername1(res.data[0].character_name);
+      setcharactername2(res.data[1].character_name);
+      setcharactername3(res.data[2].character_name);
+      // setcharactername4(res.data[3].character_name);
 
-//  세연 캐릭터 연동 코드 end 삭제금지
+      console.log(res.data[0]);
+      console.log(res.data[1]);
+      console.log(res.data[2]);
+      // console.log(res.data[3]);
+      console.log(res.data);
+    })
+    .catch((error) => {
+        console.log('Failed to fetch user info:', error);
+    });
+
+}, []);
     
   return (
     <div className="layout_char">
@@ -55,7 +83,7 @@ const Character = () => {
                   <Exercise />
                 </CModal>
             )}
-            <h2 className="character_name">운동이</h2>
+            <h2 className="character_name">{charactername1}</h2>
             <img className ="character_img" src={ExerciseCharacter} alt='운동'></img>
             <p className="character_theme">운동</p>
       </span>
@@ -69,7 +97,7 @@ const Character = () => {
               <Eat />
             </CModal>
           )}
-          <h2 className="character_name">냠냠이</h2>
+          <h2 className="character_name">{charactername2}</h2>
           <img className ="character_img" src={EatCharacter} alt='식습관'></img>
           <p className="character_theme">식습관</p>
         </span>
@@ -86,7 +114,7 @@ const Character = () => {
               <Culture />
             </CModal>
           )}
-          <h2 className="character_name">문생이</h2>
+          <h2 className="character_name">{charactername3}</h2>
           <img className ="character_img" src={CultureCharacter} alt='문화생활'></img>
           <p className="character_theme">문화생활</p>
       </span>
@@ -100,7 +128,7 @@ const Character = () => {
               <Hobby />
             </CModal>
           )}
-          <h2 className="character_name">취밍이</h2>
+          <h2 className="character_name">{charactername4}</h2>
             <img className ="character_img" src={HobbyCharacter} alt='취미'></img>
             <p className="character_theme">취미</p>
       </span>

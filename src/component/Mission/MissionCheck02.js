@@ -36,7 +36,7 @@ function MissionCheck02() {
   useEffect(() => {
 
     const savedTodos = JSON.parse(localStorage.getItem('status')) || [];
-  setTodos2(savedTodos);
+    setTodos2(savedTodos);
 
     // 서버의 미션 정보 가져오기
     axiosInstance.get('api/v1/missions/themes/2')
@@ -50,11 +50,11 @@ function MissionCheck02() {
 
         // 서버에서 가져온 미션 정보를 하나의 항목으로 설정
           const missionData = res.data.result;
-          const updatedTodos = missionData.map((mission, index) => ({
-            text: mission.content,
-            completed: savedTodos[index] ? savedTodos[index].completed : mission.checked === 'DAILY_COMPLETE',
+          const updatedTodos = missionData.map((todo, index) => ({
+            text: todo.content,
+            completed: savedTodos[index] ? savedTodos[index].completed : todo.checked === 'DAILY_COMPLETE',
           }));
-  
+          
           setTodos2(updatedTodos);
            //스피너
           setLoading(false);
@@ -81,7 +81,7 @@ function MissionCheck02() {
       setTodos2(updatedTodos);
     
       // 변경된 상태를 localStorage에 저장
-      localStorage.setItem('missionStatus', JSON.stringify(updatedTodos));
+      // localStorage.setItem('missionStatus', JSON.stringify(updatedTodos));
     
       let missionId;
       if (index === 0) {
