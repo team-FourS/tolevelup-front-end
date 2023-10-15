@@ -1,5 +1,5 @@
 /* modal창 외부화면 */
-.Manual_Modal {
+.comment_Modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -12,18 +12,18 @@
   z-index: 2050;
   cursor: auto;
 }
- 
+
 /* modal창 */
-.Manual_modalBody {
+.commentBody {
   position: absolute;
-  padding: 40px;
+  padding: 20px;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
   box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
-  width: 700px;
+  width: 620px; height: 420px;
 }
- 
-.Manual_modalCloseBtn {
+
+.comment_modalCloseBtn {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -33,6 +33,6 @@
   font-size: 20px;
 }
  
-.Manual_modalCloseBtn:hover {
+.modalCloseBtn:hover {
   cursor: pointer;
 }

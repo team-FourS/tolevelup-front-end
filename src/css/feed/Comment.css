@@ -1,0 +1,68 @@
+.feed_comment_box{
+  border-radius: 5px; 
+  font-size: 15px;
+  text-align: left;
+  background-color: #e9f4e6;
+
+}
+.comment_scroll_box{
+  line-Height: 40px;
+  border-Radius: 5px;
+  margin-top: 30px;
+  width: auto;
+  height: 320px;
+  background-color: #ffffff99;
+  overflow-y: scroll;
+}
+.comment_scroll_box::-webkit-scrollbar {
+  width: 6px;
+}
+.comment_scroll_box::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.comment_scroll_box::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: gray;
+}
+
+.feed_comment_box{
+  border-radius: 5px;
+  margin: 10px; 
+  font-size: 15px;
+  text-align: left;
+  background-color: #e9f4e6;
+}
+.comment_text{
+  margin: 5px 0 0 10px;
+}
+.user_feed_comment{
+  text-Align: right;
+  margin: 0 10px 0 0;
+}
+
+/* 댓글 입력란 */
+.comment_write_box{
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  width: 575px;   height: 35px; 
+  margin: 15px 0 0 10px;
+}
+.input_comment_textarea{
+  flex: 1; /*버튼 안으로 넣기*/
+  resize: none;   border: none;  outline: none;
+  padding: 8px;
+  margin-right: 8px;
+  border-radius: 4px;
+}
+.comment_button{
+  color: rgb(44, 168, 91);
+  font-weight: bold;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}

@@ -10,7 +10,6 @@
 .set{
   display: flex;
   margin-top: 12vh;
-
 }
 
 .bold1{
@@ -165,10 +164,12 @@
   width: 0;
   height: 0;
 }
+.mypage_comment_text{
+  margin: 5px 0 0 10px;
+}
 .user_comment{
   text-Align: right;
-  margin-bottom: 0;
-  margin-right: 5px;
+  margin: 0 10px 0 0;
 }
 .cntnum {
   display: block;
