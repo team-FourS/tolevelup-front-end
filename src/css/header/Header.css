@@ -18,12 +18,16 @@
     width: 170px;
     height: 43px;
     margin-top: 6px;
-    margin-right: 960px;
+    margin-right: 880px;
     cursor: pointer;
 }
 .header_logout {
     color:gray;
     display: inline;    
+}
+.header_id{
+    font-size: 18px; font-weight: 500;
+    margin-right: 20px;
 }
 .manual_icon{
     margin-right: 20px;

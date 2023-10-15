@@ -31,16 +31,10 @@
   border: none; border-radius: 5px;
   font-size: 15px;
   color:white; background-color: #65C28E;
-  margin-top: 10px;
 }
 .keepLogin{
   text-align: left;
 }
-/* a {
-  font-size: 14px;
-  text-decoration: none;
-  color: inherit;
-} */
 .signup_body{
   background: #c2e59c;
   background: -webkit-linear-gradient(to right, #81bff1, #a8e59c); 

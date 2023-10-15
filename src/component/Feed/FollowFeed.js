@@ -1,164 +1,104 @@
-import React, { useState }  from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Header from "../../component/Header/Header";
 import Footer from "../../component/Footer";
 import AllFeed from "./AllFeed";
 import "../../css/feed/AllFeed.css";
-import {Routes, Route, Link} from "react-router-dom";
-import user from '../../img/user.png';
+import { Routes, Route, Link } from "react-router-dom";
+import user from "../../img/user.png";
 
-import {HiHeart} from "react-icons/hi";
-import {LiaCommentSolid} from "react-icons/lia";
+import { HiHeart } from "react-icons/hi";
+import { LiaCommentSolid } from "react-icons/lia";
 
-import CommentModal from "./CommentModal";
+import CommentModal from "../Modal/CommentModal";
+import Comment from "../Feed/Comment";
 
 const FollowFeed = () => {
-  const [isActive, setIsActive] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const location = useLocation();
+  const [isActive, setIsActive] = useState(location.pathname === "/AllFeed");
+  const [isFollowActive, setIsFollowActive] = useState(
+    location.pathname === "/FollowFeed"
+  );
+  const [isHeartActive, setIsHeartActive] = useState(false);
+  const [comment, setComment] = useState(false);
 
-  // 각 체크박스의 상태를 useState를 사용하여 관리 / ***오류 수정 예졍***
-  const [checkbox1, ] = useState(true);
+  useEffect(() => {
+    setIsActive(location.pathname === "/AllFeed");
+    setIsFollowActive(location.pathname === "/FollowFeed");
+  }, [location.pathname]);
 
   const FeedClick = () => {
-    setIsActive(!isActive);
+    setIsActive(true);
+    setIsFollowActive(false);
   };
 
-  const handleCommentIconClick = () => {
-    setIsModalOpen(!isModalOpen); // 댓글 창 열고 닫기
+  const FollowFeedClick = () => {
+    setIsActive(false);
+    setIsFollowActive(true);
   };
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
-
-  const handleCommentSubmit = (comment) => { //댓글 창 닫기
-    handleCloseModal();
+  const handleHeartIconClick = () => {
+    setIsHeartActive(!isHeartActive);
   };
 
   return (
     <div className="layout_feed">
-      <Header/>     
+      <Header />
+
       <Routes>
         <Route path="/AllFeed" element={<AllFeed />} />
         <Route path="/FollowFeed" element={<FollowFeed />} />
       </Routes>
-      
-        <Link to ="/AllFeed">
-          <button
-          className={`allFeed ${isActive ? 'allfeed_active' : ''}`}
-          onClick={FeedClick}> 전체 </button>
-        </Link>
 
-
-        <Link to ="/FollowFeed">
+      <Link to="/AllFeed">
         <button
-          className={`followFeed ${isActive ? 'followfeed_active' : ''}`}
-          onClick={FeedClick}> 팔로우 중 </button>
-        </Link>
+          className={`allFeed ${isActive ? "allfeed_active" : ""}`}
+          onClick={FeedClick}
+        >
+          전체
+        </button>
+      </Link>
+
+      <Link to="/FollowFeed">
+        <button
+          className={`followFeed ${isFollowActive ? "followfeed_active" : ""}`}
+          onClick={FollowFeedClick}
+        >
+          팔로우 중
+        </button>
+      </Link>
 
       <div className="feed_scrollbox">
         <div className="feedBox01">
-          <img className ="user_profile" src={user} alt='프로필' /> 
-          <div className="feedContent">  
+          <img className="user_profile" src={user} alt="프로필" />
+          <div className="feedContent">
             <div className="userInfo">
-              <h4> Lv2. 여기는 팔로우 </h4> 
-                <p className="oneLine">팔로팔로 미!!</p>
-            </div>     
-            <div className="feedChecklist">          
-            <input type="checkbox" id="btn1"  checked={checkbox1} />
-              <label htmlFor="btn3"> 운동 | 줄넘기 200회 하기 </label> <br/>
-            <input type="checkbox" id="btn1"  checked={checkbox1} />
-              <label htmlFor="btn3"> 취미 | 캠핑 여행 다녀오기 </label> 
+              <h4> Lv2. 여기는 팔로우 </h4>
+              <p className="oneLine">매일을 성실하게!!</p>
             </div>
-            <HiHeart className="heart_icon"/>
-            <LiaCommentSolid
-            className="comment_icon"
-            onClick={handleCommentIconClick}
-          />
-          {isModalOpen && (
-            <CommentModal
-              onClose={handleCloseModal}
-              onSubmit={handleCommentSubmit}
+            <div className="feedChecklist">
+              <input type="checkbox" id="btn1" checked={true} />
+              <label htmlFor="btn3"> 식습관 | 물 6잔 이상 마시기 </label> <br />
+            </div>
+            <HiHeart
+              className={`heart_icon ${isHeartActive ? "green" : "gray"}`}
+              onClick={handleHeartIconClick}
             />
-          )}
-          </div>
-        </div>
-        
-        <div className="feedBox02">
-          <img className ="user_profile" src={user} alt='프로필' /> 
-          <div className="feedContent">  
-            <div className="userInfo">
-              <h4> Lv4. 베스킨라빈스 </h4> 
-                <p className="oneLine">이번 한 달도 홧팅하자~</p>
-            </div>     
-            <div className="feedChecklist">          
-            <input type="checkbox" id="btn1"  checked={checkbox1} />
-              <label htmlFor="btn3"> 문화생활 | 로맨스 영화 1편 보기 </label> <br/>
-            <input type="checkbox" id="btn1"  checked={checkbox1} />
-              <label htmlFor="btn3"> 취미 | 뜨개질 하기 </label>
-            </div>
-            <HiHeart className="heart_icon"/>
-            <LiaCommentSolid className="comment_icon"/>
-          </div>
-        </div>
-        
-        <div className="feedBox03">
-          <img className ="user_profile" src={user} alt='프로필' /> 
-          <div className="feedContent">  
-            <div className="userInfo">
-              <h4> Lv3. 엘사와 안나 </h4> 
-                <p className="oneLine">렛츠고 렛잇고!!</p>
-            </div>     
-            <div className="feedChecklist">          
-            <input type="checkbox" id="btn1"  checked={checkbox1} />
-              <label htmlFor="btn3"> 운동 | 줄넘기 100회 하기 </label> <br/>
-            <input type="checkbox" id="btn1"  checked={checkbox1} />
-              <label htmlFor="btn3"> 취미 | 캠핑 여행 다녀오기 </label>
-            </div>
-            <HiHeart className="heart_icon"/>
             <LiaCommentSolid
-            className="comment_icon"
-            onClick={handleCommentIconClick}
-          />
-          {isModalOpen && (
-            <CommentModal
-              onClose={handleCloseModal}
-              onSubmit={handleCommentSubmit}
+              className="comment_icon"
+              onClick={() => setComment(!comment)}
             />
-          )}
+            {comment && (
+              <CommentModal closeModal={() => setComment(!CommentModal)}>
+                <Comment />
+              </CommentModal>
+            )}
           </div>
         </div>
-
-
-        <div className="feedBox04">
-          <img className ="user_profile" src={user} alt='프로필' /> 
-          <div className="feedContent">  
-            <div className="userInfo">
-              <h4> Lv1. 천사맛 쿠키 </h4> 
-                <p className="oneLine">화이팅~! 해야지~</p>
-            </div>     
-            <div className="feedChecklist">          
-            <input type="checkbox" id="btn1"  checked={checkbox1} />
-              <label htmlFor="btn3"> 식습관 | 물 6잔 이상 마시기 </label> <br/>
-            <input type="checkbox" id="btn1"  checked={checkbox1} />
-              <label htmlFor="btn3"> 취미 | 오늘 하루 이상 일기에 담기 </label>
-            </div>
-            <HiHeart className="heart_icon"/>
-            <LiaCommentSolid
-            className="comment_icon"
-            onClick={handleCommentIconClick}
-          />
-          {isModalOpen && (
-            <CommentModal
-              onClose={handleCloseModal}
-              onSubmit={handleCommentSubmit}
-            />
-          )}
-          </div>
-        </div>
-
       </div>
-      <Footer/>
-    </div>  
+      <Footer />
+    </div>
   );
-}
+};
+
 export default FollowFeed;
