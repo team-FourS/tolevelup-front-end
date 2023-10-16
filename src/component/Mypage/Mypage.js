@@ -45,7 +45,7 @@ const Mypage = () => {
 
     useEffect(() => {
 
-// 서버의 사용자 정보 가져오기
+    // 서버의 사용자 정보 가져오기
         axiosInstance.get('api/v1/users/my')
         .then((res) => {
 

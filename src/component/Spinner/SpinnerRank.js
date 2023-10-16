@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import SpinnerImg from "../../img/Spin.gif";
 import Mypage from "../Mypage/Mypage";
-import "../../css/spinner/SpinnerCompo.css";
+import "../../css/spinner/SpinnerRank.css";
 
-const SpinnerCompo = () => {
+const SpinnerRank = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showMypage, setShowMypage] = useState(false);
 
@@ -35,4 +35,4 @@ const SpinnerCompo = () => {
   }
 };
 
-export default SpinnerCompo;
+export default SpinnerRank;
