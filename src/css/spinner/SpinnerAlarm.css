@@ -1,0 +1,11 @@
+.spinner_lay{  
+    display: flex;
+    width: 587px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 80%; */
+    position: relative;
+    overflow: hidden;
+    margin-top: 35vh;
+}

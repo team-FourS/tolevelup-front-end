@@ -25,10 +25,11 @@ const Character = () => {
   const [hobby, setHobby] = useState(false);
 
   //캐릭터 정보가져오기
-  const [charactername1, setcharactername1] = useState([]);//캐릭터 이름
-  const [charactername2, setcharactername2] = useState([]);//캐릭터 이름
-  const [charactername3, setcharactername3] = useState([]);//캐릭터 이름
-  const [charactername4, setcharactername4] = useState([]);//캐릭터 이름
+  //캐릭터 이름
+  const [charactername1, setcharactername1] = useState([]);
+  const [charactername2, setcharactername2] = useState([]);
+  const [charactername3, setcharactername3] = useState([]);
+  const [charactername4, setcharactername4] = useState([]);
 
 
   useEffect(() => {
@@ -37,38 +38,12 @@ const Character = () => {
     axiosInstance.get('/userCharacter')
     .then((res) => {
 
-      setcharactername1(res.data[0].character_name);
-      setcharactername2(res.data[1].character_name);
-      setcharactername3(res.data[2].character_name);
-      // setcharactername4(res.data[3].character_name);
+      setcharactername1(res.data[0].userCharacter.character_name);//문화
+      setcharactername2(res.data[1].userCharacter.character_name);//식습관
+      setcharactername3(res.data[2].userCharacter.character_name);//운동
+      setcharactername4(res.data[3].userCharacter.character_name);//취미
 
-      console.log(res.data[0]);
-      console.log(res.data[1]);
-      console.log(res.data[2]);
-      // console.log(res.data[3]);
-      console.log(res.data);
     })
-    .catch((error) => {
-        console.log('Failed to fetch user info:', error);
-    });
-    
-    axiosInstance.get('/userCharacter')
-    .then((res) => {
-
-      setcharactername1(res.data[0].character_name);
-      setcharactername2(res.data[1].character_name);
-      setcharactername3(res.data[2].character_name);
-      // setcharactername4(res.data[3].character_name);
-
-      console.log(res.data[0]);
-      console.log(res.data[1]);
-      console.log(res.data[2]);
-      // console.log(res.data[3]);
-      console.log(res.data);
-    })
-    .catch((error) => {
-        console.log('Failed to fetch user info:', error);
-    });
 
 }, []);
     
@@ -83,7 +58,7 @@ const Character = () => {
                   <Exercise />
                 </CModal>
             )}
-            <h2 className="character_name">{charactername1}</h2>
+            <h2 className="character_name">{charactername3}</h2>
             <img className ="character_img" src={ExerciseCharacter} alt='운동'></img>
             <p className="character_theme">운동</p>
       </span>
@@ -114,7 +89,7 @@ const Character = () => {
               <Culture />
             </CModal>
           )}
-          <h2 className="character_name">{charactername3}</h2>
+          <h2 className="character_name">{charactername1}</h2>
           <img className ="character_img" src={CultureCharacter} alt='문화생활'></img>
           <p className="character_theme">문화생활</p>
       </span>

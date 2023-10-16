@@ -143,7 +143,7 @@ const Mypage = () => {
                         </div>
 
                         {/* 명언 이미지*/}
-                        <div className="advice">
+                        <div className="time1">
                             <img className ="mypage_advice" src={Advice1} alt='프로필'></img>
                         </div>
                     </div>
