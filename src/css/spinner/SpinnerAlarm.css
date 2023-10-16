@@ -1,11 +1,12 @@
-.spinner_lay{  
+.spinner_alarm{  
     display: flex;
-    width: 587px;
-    height: 400px;
+    /* width: 587px; */
+    /* line-height: 10px; */
     justify-content: center;
     align-items: center;
     /* min-height: 80%; */
     position: relative;
     overflow: hidden;
-    margin-top: 35vh;
+    margin-left: 8vh;
+    margin-top: 12vh;
 }

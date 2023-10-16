@@ -23,7 +23,7 @@ const SpinnerAlarm = () => {
   if (isLoading) {
     // 로딩 중일 때 스피너를 표시
     return (
-      <div className="spinner_lay2">
+      <div className="spinner_alarm">
         <img src={SpinnerImg} alt="로딩" width="20%"/>
       </div>
     );
