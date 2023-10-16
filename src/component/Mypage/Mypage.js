@@ -107,6 +107,16 @@ const Mypage = () => {
         });
     }, []);
 
+    // 등록일 변경 함수
+  const formatDate = (dateString) => {
+    const options = { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+    const formattedDate = new Date(dateString).toLocaleDateString('ko-KR', options)
+      .replace(/\//g, '.')  // .로 변경
+      .replace(/\. /g, '.') 
+      .replace(',', '');    
+    return formattedDate;
+  };
+
     return (
         <main className='mypage_main'>
             
@@ -236,14 +246,19 @@ const Mypage = () => {
                         </div>
                         <div className='statistics'>
                             <div className="scroll_box">
-                                <div className="inner_content">
-                                    {userComments.map((commentData, index) => (
-                                        <div className='comment_box' key={index}>
-                                            <p className='mypage_comment_text'> {commentData.comment}  </p>
-                                            <p className='user_comment'>{commentData.fromUserDate.name}</p>  
-                                        </div>
-                                    ))}
-                                </div>
+                            <div className="inner_content">
+  {userComments.length === 0 ? (
+    // 코멘트 목록이 비어 있는 경우 '받은 코멘트가 없습니다.' 메시지를 표시
+    <div className="no-comments">받은 코멘트가 없습니다.</div>
+  ) : (
+    userComments.map((commentData, index) => (
+      <div className='comment_box' key={index}>
+        <p className='mypage_comment_text'> {commentData.comment}  </p>
+        <p className='user_comment'><p className="get-registered-mypage">{`등록일: ${formatDate(commentData.registeredAt)}`}</p>{commentData.fromUserDate.name}</p>
+      </div>
+    ))
+  )}
+</div>
                         </div>                          
                     </div>
                         </div>

@@ -5,11 +5,13 @@
     align-items: center;
     min-height: 80%;
     position: relative;
+    float: left;
   }
-  .alarm_lay{
+  .alarm_lay_madal{
     align-items: left;
     text-align: left;
-    width: auto;
+    width: 330px;
+    display: block;
   }
   .id_alarm_delete{
     margin: 8px;
@@ -80,4 +82,15 @@
 .alarmbox{
   margin: auto;
   width: 320px;
+}
+.alarm_font_modal{
+  font-size: 15px;
+    font-weight: 800;
+    text-align: left;
+    margin-bottom: 10px;
+}
+.no-alarms{
+  color: #bdbdbd;
+  margin-left: 10vh;
+  margin-top: 20vh;
 }

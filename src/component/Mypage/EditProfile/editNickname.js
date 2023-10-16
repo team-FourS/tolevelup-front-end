@@ -8,7 +8,10 @@ const EditNickname = () => {
     const [name, setName] = useState('');
 
     const handleConfirmClick =() => {
-        axiosInstance.put('api/v1/users/information')
+        axiosInstance.put('api/v1/users/information',{
+            type:"name",
+            data: name
+        })
             .then((res) => {
                 setName(''); 
                 // console.log(res.type);

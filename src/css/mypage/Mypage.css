@@ -270,6 +270,20 @@ ul,li{
   .mission_complete{
     text-align: left;
   }
+  .get-registered-mypage {
+    font-size: 0.8em;
+    color: #bdbdbd;
+    margin-top: 5px;
+    margin-left: 10px;
+    float:left;
+  }
+  .no-comments{
+    color: #bdbdbd;
+  /* margin-left: 10vh;*/
+  margin-top: 10vh; 
+  text-align: center;
+  justify-content: center;
+  }
   @font-face {
     font-family: 'ChosunCentennial';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/ChosunCentennial.woff2') format('woff2');

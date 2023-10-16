@@ -67,28 +67,34 @@ const Alarm = () => {
       {Loading ? ( // 로딩 중인 경우 스피너를 렌더링
                 <LoadSpinner />
             ) : (
-      <div className="alarm_lay">
-        <h4 className="alarm_font">알람</h4>
-        <div>
-        <h6 className="alarm_alldelete" onClick={()=>onClickhandleAllrdelete()}>전체삭제</h6>
-        </div>
-        <hr />
+      <div className="alarm_lay_madal">
+        <h4 className="alarm_font_modal">알람</h4>
+          <div>
+            <h6 className="alarm_alldelete" onClick={()=>onClickhandleAllrdelete()}>전체삭제</h6>
+            <hr />
+          </div>
+        
         <table>
-          <tbody>
+        <tbody>
             <div className="Alarm_scrollbox">
-              {alarms.map((alarm) => (
-                <div key={alarm.alarmId} className="alarmbox">
-                  <tr>
-                    <td className="td">
-                      <div className="table_alarm_lay">
-                        <img className="profil2" src={user} alt="프로필" />
-                        <h5 className="id_alarm">{getAlarmMessage(alarm.alarmType, alarm.fromUserId)}</h5>
-                        <h6 className="id_alarm_delete" onClick={()=>onClickhandlerdelete(alarm.alarmId)}>삭제</h6>
-                      </div>
-                    </td>
-                  </tr>
-                </div>
-              ))}
+              {alarms.length === 0 ? (
+                // 알람 목록이 비어 있는 경우 '받은 알림이 없습니다.' 메시지를 표시
+                <div className="no-alarms">받은 알림이 없습니다.</div>
+              ) : (
+                alarms.map((alarm) => (
+                  <div key={alarm.alarmId} className="alarmbox">
+                    <tr>
+                      <td className="td">
+                        <div className="table_alarm_lay">
+                          <img className="profil2" src={user} alt="프로필" />
+                          <h5 className="id_alarm">{getAlarmMessage(alarm.alarmType, alarm.fromUserId)}</h5>
+                          <h6 className="id_alarm_delete" onClick={() => onClickhandlerdelete(alarm.alarmId)}>삭제</h6>
+                        </div>
+                      </td>
+                    </tr>
+                  </div>
+                ))
+              )}
             </div>
           </tbody>
         </table>

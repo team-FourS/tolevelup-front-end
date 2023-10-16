@@ -1,9 +1,28 @@
-import React from 'react';
+import React, {  useState } from 'react';
+import axiosInstance from "../../../axiosConfig";
 import "../../../css/mypage/EditProfile.css"
 import { TextField } from '@mui/material';
 import {Link} from "react-router-dom";
 
-const eidtPW = () => {
+const EidtPW = () => {
+
+    const [password, setpassword] = useState('');
+
+    const handlePasswordClick =() => {
+        axiosInstance.put('api/v1/users/information',{
+            type:"password",
+            data: password
+        })
+            .then((res) => {
+                setpassword(''); 
+                // console.log(res.type);
+                window.location.href = '/mypage';
+                // setLoading(false);
+            })
+            .catch((error) => {
+                console.error('닉네임수정중 오류발생:', error);
+            });
+    }; 
 
 return (
     <body className='check_body1'>
@@ -15,10 +34,12 @@ return (
                     <TextField className="editField1"
                         placeholder='비밀번호'
                         name="Secure"
+                        value={password}
+                        onChange={(e)=>setpassword(e.target.value)}
                         autoComplete="Secure"
                         autoFocus />
                 <Link to="/modify">
-                    <button className='check_button1'>확인</button>
+                    <button className='check_button1' onClick={handlePasswordClick}>확인</button>
                 </Link>
                 <Link to="/modify">
                     <button className='check_button1'>취소</button>
@@ -30,4 +51,4 @@ return (
 )
 }
 
-export default eidtPW;
+export default EidtPW;
