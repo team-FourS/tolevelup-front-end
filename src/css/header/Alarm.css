@@ -32,7 +32,6 @@
   .table_alarm_lay{
     display: inline-flex;
     align-items: center;
-    margin-right: -500px;
   }
   .table{
     border-spacing: 0;
@@ -70,7 +69,7 @@
   margin-left: 5px;
 }
 .Alarm_scrollbox{
-  width: auto;
+  width: 500px;
   height: 400px;
   overflow-y: scroll;
 }
@@ -83,7 +82,8 @@
 }
 .alarmbox{
   margin: auto;
-  width: 320px;
+  width: 360px;
+  margin: 0 0 0 0;
 }
 .alarm_font_modal{
   font-size: 20px;

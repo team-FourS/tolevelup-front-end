@@ -21,8 +21,8 @@ const GetComment = () => {
           commentId: comment.commentId,
           commentText: comment.comment,
           userInfo: {
-            level: comment.fromUserDate.level,
-            name: comment.fromUserDate.name
+            level: comment.fromUserData.level,
+            name: comment.fromUserData.name
           },
           registeredAt: formatDate(comment.registeredAt) // 등록일 날짜 변경
         })));
