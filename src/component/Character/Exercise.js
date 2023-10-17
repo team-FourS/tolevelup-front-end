@@ -33,9 +33,9 @@ const Health = () => {
     axiosInstance.get('/userCharacter')
     .then((res) => {
 
-      setExercisecharactername(res.data[2].userCharacter.character_name);
-      setExerciseexp(res.data[2].exp);
-      setExerciselevel(res.data[2].level);
+      setExercisecharactername(res.data[3].userCharacter.character_name);
+      setExerciseexp(res.data[3].exp);
+      setExerciselevel(res.data[3].level);
 
       console.log(res.data[2]);
 
