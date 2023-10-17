@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axiosInstance from "../../axiosConfig";
 import { useLocation } from "react-router-dom";
 import Header from "../../component/Header/Header";
 import Footer from "../../component/Footer";
@@ -18,6 +19,20 @@ const AllFeed = () => {
   const [isActive, setIsActive] = useState(location.pathname === "/AllFeed");
   const [isHeartActive, setIsHeartActive] = useState(false);
   const [comment, setComment] = useState(false);
+  const [feedData, setFeedData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axiosInstance.get("api/v1/feeds");
+        setFeedData(response.data.result);
+      } catch (error) {
+        console.error("API 호출 에러:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const FeedClick = () => {
     setIsActive(true);
@@ -42,49 +57,56 @@ const AllFeed = () => {
 
       <Link to="/AllFeed">
         <button
-          className={`allFeed ${isActive ? 'allfeed_active' : ''}`}
-          onClick={FeedClick}
-        >
-          전체
-        </button>
+          className={`allFeed ${isActive ? "allfeed_active" : ""}`}
+          onClick={FeedClick} > 전체 </button>
       </Link>
 
       <Link to="/FollowFeed">
         <button
-          className={`followFeed ${isActive ? '' : 'followfeed_active'}`}
-          onClick={FollowFeedClick}
-        >
-          팔로우 중
-        </button>
+          className={`followFeed ${isActive ? "" : "followfeed_active"}`}
+          onClick={FollowFeedClick} > 팔로우 중 </button>
       </Link>
 
       <div className="feed_scrollbox">
-        <div className="feedBox01">
-          <img className="user_profile" src={user} alt="프로필" />
-          <div className="feedContent">
-            <div className="userInfo">
-              <h4> Lv2. 여기는 전체 </h4>
-              <p className="oneLine">매일을 성실하게!!</p>
+        {feedData.map((feedItem, index) => (
+          <div key={index} className="feedBox01">
+            <img className="user_profile" src={user} alt="프로필" />
+            <div className="feedContent">
+              <div className="userInfo">
+                <h4> Lv{feedItem.userData.level}. {feedItem.userData.name} </h4>
+                <p className="oneLine">{feedItem.userData.intro}</p>
+              </div>
+              <div className="feedChecklist">
+                {feedItem.userCompleteMissions.map((mission, missionIndex) => (
+                  <div key={missionIndex}>
+                    <input
+                      type="checkbox"
+                      id={`btn${missionIndex}`}
+                      checked={mission.checked === "DAILY_COMPLETE"}
+                    />
+                    <label htmlFor={`btn${missionIndex}`}>
+                      {mission.themeName} | {mission.content}
+                    </label>
+                    <br />
+                  </div>
+                ))}
+              </div>
+              <HiHeart
+                className={`heart_icon ${isHeartActive ? "green" : "gray"}`}
+                onClick={handleHeartIconClick}
+              />
+              <LiaCommentSolid
+                className="comment_icon"
+                onClick={() => setComment(!comment)}
+              />
+              {comment && (
+                <CommentModal closeModal={() => setComment(!CommentModal)}>
+                  <Comment />
+                </CommentModal>
+              )}
             </div>
-            <div className="feedChecklist">
-              <input type="checkbox" id="btn1" checked={true} />
-              <label htmlFor="btn3"> 식습관 | 물 6잔 이상 마시기 </label> <br />
-            </div>
-            <HiHeart
-              className={`heart_icon ${isHeartActive ? 'green' : 'gray'}`}
-              onClick={handleHeartIconClick}
-            />
-            <LiaCommentSolid
-              className="comment_icon"
-              onClick={() => setComment(!comment)}
-            />
-            {comment && (
-              <CommentModal closeModal={() => setComment(!CommentModal)}>
-                <Comment />
-              </CommentModal>
-            )}
           </div>
-        </div>
+        ))}
       </div>
       <Footer />
     </div>

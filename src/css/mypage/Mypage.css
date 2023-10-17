@@ -272,7 +272,7 @@ ul,li{
   }
   .get-registered-mypage {
     font-size: 0.8em;
-    color: #bdbdbd;
+    color: rgb(138, 138, 138);
     margin-top: 5px;
     margin-left: 10px;
     float:left;

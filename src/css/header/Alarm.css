@@ -18,6 +18,7 @@
     cursor: pointer;
     color: rgb(138, 138, 138);
     font-weight: 500;
+    font-size: 13px;
   }
   .id_alarm_delete:hover{
     text-decoration: underline;
@@ -38,6 +39,7 @@
     width: 100%;
   }
 .id_alarm{
+  font-size: 15px;
     margin-left: 20px;
     font-weight: 500;
 }
@@ -50,7 +52,7 @@
     margin-bottom: 0px;
 }
 .alarm_alldelete{
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 500;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -84,13 +86,13 @@
   width: 320px;
 }
 .alarm_font_modal{
-  font-size: 15px;
-    font-weight: 800;
-    text-align: left;
-    margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 800;
+  text-align: left;
+  margin: 15px 0 10px 0;
 }
 .no-alarms{
   color: #bdbdbd;
-  margin-left: 10vh;
+  margin-left: 90px;
   margin-top: 20vh;
 }
