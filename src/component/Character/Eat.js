@@ -34,9 +34,9 @@ const Eat = () => {
     axiosInstance.get('/userCharacter')
     .then((res) => {
 
-      setEatcharactername1(res.data[1].userCharacter.character_name);
-      setEatexp(res.data[1].exp);
-      setEatlevel(res.data[1].level);
+      setEatcharactername1(res.data[3].userCharacter.character_name);
+      setEatexp(res.data[3].exp);
+      setEatlevel(res.data[3].level);
       // console.log(res.data[1].userCharacter.character.id);
 
     })
@@ -46,14 +46,16 @@ const Eat = () => {
     
 //캐릭터 이미지 가져오기
   axiosInstance.get('/image?imageName=%EB%AC%B8%ED%99%941.png', { responseType: 'arraybuffer' })
-  .then((response) => {
+  .then((res) => {
   // ArrayBuffer를 Blob으로 변환
-    const blob = new Blob([response.data], { type: 'image/png' });
+  console.log(res);
+    const blob = new Blob([res.data], { type: 'image/png' });
 
   // Blob을 Data URL로 변환 (Base64)
     const reader = new FileReader();
     reader.onload = () => {
       setImageSrc(reader.result);
+      
     };
     reader.readAsDataURL(blob);
   })
@@ -92,7 +94,7 @@ const Eat = () => {
       )}
             </div>
             {imageSrc ? (
-        <img src={imageSrc} alt="이미지" />
+        <img src={imageSrc} alt="이미지" className="Lv_health"/>
       ) : (
         <p>이미지를 불러오는 중입니다...</p>
       )}

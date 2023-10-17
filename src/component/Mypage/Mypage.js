@@ -80,7 +80,7 @@ const Mypage = () => {
             setuserComments(commentsData);
 
         //스피너
-            setLoading(false);
+            // setLoading(false);
 
         })
         .catch((error) => {
@@ -97,7 +97,7 @@ const Mypage = () => {
             setuserHeart(HeartData);
 
         //스피너
-            setLoading(false);
+            // setLoading(false);
 
         })
         .catch((error) => {

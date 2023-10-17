@@ -6,21 +6,38 @@ import RankingNum2 from '../../img/medal2.png';
 import RankingNum3 from '../../img/medal3.png';
 import "../../css/ranking/Fifth.css";
 import LoadSpinner from '../Spinner/SpinnerRank';
+import { format, addMonths, subMonths } from 'date-fns';
 
 const RankAll = () => {
-  const [rankList, setRankList] = useState([]);  // 랭킹 정보를 저장할 state
+
+  const currentDate = new Date();
+
+// 원하는 날짜 계산
+  const year = format(currentDate, 'yyyy'); // 연도 추출
+  const month = format(currentDate, 'MM'); // 월 추출
+  //const nextMonth = addMonths(currentDate, 1);// 한 달 더하기
+  //const previousMonth = subMonths(currentDate, 1);// 한 달 빼기
+  const formattedDate = format(currentDate, 'yyyy-MM-dd');// 날짜 형식 지정
+
+  // 랭킹 정보를 저장할 state
+  const [rankList, setRankList] = useState([]);  
   
   //스피너
   const [Loading,setLoading] = useState(true);
 
+
   useEffect(() => {
+
+    
     const fetchData = async () => {
       try {
         // API 호출
-        const response = await axiosInstance.get('api/v1/users/rank/?year=2023&month=10');
-
+        const response = await axiosInstance.get(`api/v1/users/rank/?year=${year}&month=${month}`);
+        
         // API 호출 성공 시 데이터를 state에 저장
         setRankList(response.data.result.rankList);
+        console.log(formattedDate);
+
         //스피너
         setLoading(false);
 
