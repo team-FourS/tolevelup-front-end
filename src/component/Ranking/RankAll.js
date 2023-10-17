@@ -6,7 +6,8 @@ import RankingNum2 from '../../img/medal2.png';
 import RankingNum3 from '../../img/medal3.png';
 import "../../css/ranking/Fifth.css";
 import LoadSpinner from '../Spinner/SpinnerRank';
-import { format, addMonths, subMonths } from 'date-fns';
+import { format } from 'date-fns';
+// import { format, addMonths, subMonths } from 'date-fns';
 
 const RankAll = () => {
 
@@ -16,7 +17,7 @@ const RankAll = () => {
   const year = format(currentDate, 'yyyy'); // 연도 추출
   const month = format(currentDate, 'MM'); // 월 추출
   //const nextMonth = addMonths(currentDate, 1);// 한 달 더하기
-  //const previousMonth = subMonths(currentDate, 1);// 한 달 빼기
+  //Cconst previousMonth = subMonths(currentDate, 1);// 한 달 빼기
   const formattedDate = format(currentDate, 'yyyy-MM-dd');// 날짜 형식 지정
 
   // 랭킹 정보를 저장할 state
@@ -37,6 +38,7 @@ const RankAll = () => {
         // API 호출 성공 시 데이터를 state에 저장
         setRankList(response.data.result.rankList);
         console.log(formattedDate);
+        console.log(response.data.result.rankList);
 
         //스피너
         setLoading(false);
@@ -47,7 +49,7 @@ const RankAll = () => {
     };
 
     fetchData();
-  }, []);  
+  });  
 
   const getRankingImage = (rank) => {
     if (rank === 1) {

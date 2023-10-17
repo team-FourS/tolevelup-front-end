@@ -79,20 +79,24 @@ const AllFeed = () => {
               <div className="feedChecklist">
                 {feedItem.userCompleteMissions.map((mission, missionIndex) => (
                   <div key={missionIndex}>
-                    <input
-                      type="checkbox"
-                      id={`btn${missionIndex}`}
-                      checked={mission.checked === "DAILY_COMPLETE"}
-                    />
-                    <label htmlFor={`btn${missionIndex}`}>
-                      {mission.themeName} | {mission.content}
-                    </label>
-                    <br />
-                  </div>
+                  {mission.checked ==="DAILY_COMPLETE" | mission.checked === "WEEKLY_COMPLETE" && (
+                    <div>
+                      <input
+                        type="checkbox"
+                        id={`btn${missionIndex}`}
+                        checked={true} // checked 속성을 항상 true로 설정
+                      />
+                      <label htmlFor={`btn${missionIndex}`}>
+                        {mission.themeName} | {mission.content}
+                      </label>
+                      <br />
+                    </div>
+                  )}
+                </div>
                 ))}
               </div>
               <HiHeart
-                className={`heart_icon ${isHeartActive ? "green" : "gray"}`}
+                className={`heart_icon ${isHeartActive ? "redfh" : "gray"}`}
                 onClick={handleHeartIconClick}
               />
               <LiaCommentSolid
