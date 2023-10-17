@@ -52,7 +52,7 @@ const Alarm = () => {
   const getAlarmMessage = (alarmType, fromUserId) => {
     switch (alarmType) {
       case 'FOLLOW':
-        return `${fromUserId}님이 팔로우 중입니다.`;
+        return `${fromUserId}님이 팔로우하기 시작했습니다.`;
       case 'NEW_LIKE':
         return `${fromUserId}님이 좋아요를 눌렀습니다.`;
       case 'NEW_COMMENT':
