@@ -66,10 +66,10 @@ const RecordRanking = () => {
       </div>
 
       <div className="square-box">
-        {/* 네모칸 안에 들어갈 내용을 추가하세요 */}
+        
       </div>
 
-      {/* 여기에 Record 데이터를 표시하는 컴포넌트 추가 */}
+      
     </div>
   );
 };
