@@ -34,18 +34,21 @@
     font-size: 15px;
     font-weight: 800;
 }
+.comment_modal_box{
+  margin-left: -10px;
+}
 .comment_box_click{
-  border: solid 2px gray;
+  background-color: #f0f0f0;
   border-radius: 5px;
   margin: 5px;
   padding: 5px;
   font-size: small;
   text-align: left;
-  width: 200px;
+  width: 240px;
 }
 .scroll_box_comment{
-  width: auto;
-  height: 300px;
+  width: 290px;
+  height: 340px;
   overflow-y: scroll;
 
 }
@@ -60,4 +63,5 @@
   font-size: 0.8em;
   color: #888;
   margin-top: 5px;
+  margin-left: 5px;
 }

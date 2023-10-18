@@ -61,7 +61,7 @@ const CommentDa = () => {
   <td className="td_comment">
     <div className="table_lay">
       {userCommentModal.map((commentmodal, commentkey) => (
-        <div className="" key={commentkey}>
+        <div className="comment_modal_box" key={commentkey}>
           <div className='comment_box_click'>{commentmodal.comment}
             <p className='user_comment'>{commentmodal.fromUserDate.name}</p>
           </div>
