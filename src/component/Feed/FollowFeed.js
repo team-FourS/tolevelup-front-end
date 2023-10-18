@@ -78,7 +78,7 @@ const FollowFeed = () => {
             </div>
             <div className="feedChecklist">
               <input type="checkbox" id="btn1" checked={true} />
-              <label htmlFor="btn3"> 식습관 | 물 6잔 이상 마시기 </label> <br />
+              <label htmlFor="btn3"> 식습관 | 물 6잔 이상 마시기  </label> <br />
             </div>
             <HiHeart
               className={`heart_icon ${isHeartActive ? "green" : "gray"}`}
