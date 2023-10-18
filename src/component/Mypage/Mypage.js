@@ -236,19 +236,19 @@ const Mypage = () => {
                     <div className="main_bar">
                       <div className="status-hp">
                         <div className="mypageBar">
-                          <div className="exercise_currentBar" style={{ width: `${expExercise}%` }}></div>
+                          <div className="exercise_currentBar" style={{ width: `${expExercise}px` }}></div>
                         </div>
                       </div>
 
                       <div className="status-hp">
                         <div className="mypageBar">
-                          <div className="eat_currentBar" style={{ width: `${expEat}%` }}></div>
+                          <div className="eat_currentBar" style={{ width: `${expEat}px` }}></div>
                         </div>
                       </div>
 
                       <div className="status-hp">
                         <div className="mypageBar">
-                          <div className="culture_currentBar" style={{ width: `${expCulture}%` }}></div>
+                          <div className="culture_currentBar" style={{ width: `${expCulture}px` }}></div>
                         </div>
                       </div>
 
