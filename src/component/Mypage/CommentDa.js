@@ -63,7 +63,7 @@ const CommentDa = () => {
       {userCommentModal.map((commentmodal, commentkey) => (
         <div className="comment_modal_box" key={commentkey}>
           <div className='comment_box_click'>{commentmodal.comment}
-            <p className='user_comment'>{commentmodal.fromUserDate.name}</p>
+            <p className='user_comment'>{commentmodal.fromUserData.name}</p>
           </div>
           <p className="get-registered-comment">{`등록일: ${formatDate(commentmodal.registeredAt)}`}</p> {/* 여기에 추가 */}
         </div>
