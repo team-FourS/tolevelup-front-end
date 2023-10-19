@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import '../../css/record/RecordRanking.css';
+import axiosInstance from "../../axiosConfig";
+import "../../css/record/RecordRanking.css"
 
 const RecordRanking = () => {
   const [years, setYears] = useState([]);
   const [selectedYear, setSelectedYear] = useState('');
   const [months, setMonths] = useState([]);
   const [selectedMonth, setSelectedMonth] = useState('');
+  const [totalRank, setTotalRank] = useState(null);
 
   useEffect(() => {
     const currentDate = new Date();
@@ -24,6 +26,28 @@ const RecordRanking = () => {
 
     setMonths(monthList);
   }, [selectedYear]);
+
+  useEffect(() => {
+    const fetchTotalRank = async () => {
+      try {
+        const response = await axiosInstance.get(`/api/v1/users/rank?year=${selectedYear}&month=${selectedMonth}`);
+        const { rankList } = response.data.result;
+
+        if (rankList.length > 0) {
+          const totalRankData = rankList[0];
+          setTotalRank(totalRankData.rank);
+        } else {
+          console.log('No data found for total rank.');
+        }
+      } catch (error) {
+        console.error('Error fetching total rank:', error);
+      }
+    };
+
+    if (selectedYear && selectedMonth) {
+      fetchTotalRank();
+    }
+  }, [selectedYear, selectedMonth]);
 
   const handleYearChange = (event) => {
     const selectedYear = event.target.value;
@@ -47,7 +71,7 @@ const RecordRanking = () => {
     <div className="record-ranking-container">
       <div className="dropdown-container">
         <select className="dropdown" value={selectedYear} onChange={handleYearChange}>
-          <option value="">Select Year</option>
+          <option value=""> 연도  </option>
           {years.map((year, index) => (
             <option key={index} value={year}>
               {year}
@@ -56,7 +80,7 @@ const RecordRanking = () => {
         </select>
 
         <select className="dropdown" value={selectedMonth} onChange={handleMonthChange} disabled={!selectedYear}>
-          <option value="">Select Month</option>
+          <option value=""> 월  </option>
           {months.map((month, index) => (
             <option key={index} value={month}>
               {month}
@@ -65,11 +89,28 @@ const RecordRanking = () => {
         </select>
       </div>
 
-      <div className="square-box">
-        
-      </div>
+      <div>
+        <p className="rank_totalRank"> 전체 랭킹 : {totalRank ? `${totalRank}위` : ' - '}</p>
+        <div className="ExerciseRank">
+          <p className="rank_theme">운동</p>
+          <p className="rank_count">n위</p>
+        </div>
 
-      
+        <div className="EatRank">
+          <p className="rank_theme">식습관</p>
+          <p className="rank_count">n위</p>
+        </div>
+
+        <div className="CultureRank">
+          <p className="rank_theme">문화생활</p>
+          <p className="rank_count">n위</p>
+        </div>
+
+        <div className="HobbyRank">
+          <p className="rank_theme">취미</p>
+          <p className="rank_count">n위</p>
+        </div>
+      </div>
     </div>
   );
 };

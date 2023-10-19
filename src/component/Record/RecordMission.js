@@ -63,7 +63,6 @@ const RecordMission = () => {
             ) : (
       <div>
       <p className="mission_totalCount">누적 미션 수행: {totalCount}개</p>
-        <div className="mission_parent01">
           <div className="ExerciseCount">
             <p className="mission_theme">운동</p>
             <p className="mission_count">{ exerciseCount }개</p>
@@ -73,9 +72,7 @@ const RecordMission = () => {
             <p className="mission_theme">식습관</p>
             <p className="mission_count">{ eatCount }개</p>
           </div>
-        </div>
 
-        <div className="mission_parent02">
           <div className="CultureCount">
             <p className="mission_theme">문화생활</p>
             <p className="mission_count">{ cultureCount }개</p>
@@ -86,7 +83,6 @@ const RecordMission = () => {
             <p className="mission_count">{ hobbyCount }개</p>
           </div>
         </div>
-      </div>
       )}
     </div>
   );
