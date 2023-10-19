@@ -271,7 +271,9 @@ const Mypage = () => {
                       userComments.map((commentData, index) => (
                         <div className='comment_box' key={index}>
                           <p className='mypage_comment_text'> {commentData.comment}  </p>
-                          <p className='user_comment'><p className="get-registered-mypage">{`등록일: ${formatDate(commentData.registeredAt)}`}</p>{commentData.fromUserDate.name}</p>
+                          <p className='user_comment'><p className="get-registered-mypage">
+                            {`등록일: ${formatDate(commentData.registeredAt)}`}
+                          </p>{commentData.fromUserData.name }</p>
                         </div>
                       ))
                     )}
