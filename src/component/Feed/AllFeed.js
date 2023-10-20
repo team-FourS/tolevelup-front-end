@@ -119,7 +119,8 @@ const AllFeed = () => {
                       <input
                         type="checkbox"
                         id={`btn${missionIndex}`}
-                        checked={true} // checked 속성을 항상 true로 설정
+                        checked={true}
+                        readOnly // checked 속성을 항상 true로 설정
                       />
                       <label htmlFor={`btn${missionIndex}`}>
                         {mission.themeName} | {mission.content}

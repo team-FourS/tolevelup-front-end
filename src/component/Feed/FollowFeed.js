@@ -27,7 +27,7 @@ const FollowFeed = () => {
     setIsFollowActive(location.pathname === "/FollowFeed");
 
     axiosInstance
-      .get("/api/v1/feeds/follow")
+      .get("api/v1/feeds/follow")
       .then((response) => {
         if (response.data.resultCode === "SUCCESS") {
           setFollowData(response.data.result);
