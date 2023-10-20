@@ -70,10 +70,11 @@ const FollowFeed = () => {
 
       <div className="feed_scrollbox">
         <div className="feedBox01">
-          <img className="user_profile" src={user} alt="프로필" />
+          <img className="user_profile" src={user} alt="프로필"  />
           <div className="feedContent">
             <div className="userInfo">
               <h4> Lv2. 여기는 팔로우 </h4>
+              <button className="followButton">팔로우</button>
               <p className="oneLine">매일을 성실하게!!</p>
             </div>
             <div className="feedChecklist">
