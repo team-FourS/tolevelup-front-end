@@ -1,5 +1,5 @@
 import userImg from '../../img/user.png';
-import Advice1 from '../../img/advice2.png';
+// import Advice1 from '../../img/advice2.png';
 import { Routes, Route, Link } from 'react-router-dom';
 import PwCheck from './PwCheck';
 import MainRecord from '../Record/MainRecord';
@@ -9,7 +9,7 @@ import Footer from '../Footer';
 import Modal from '../Modal/Modal';
 import Follower from './Follower';
 import Following from './Following';
-import CommentDa from './CommentDa';
+// import CommentDa from './CommentDa';
 import axiosInstance from '../../axiosConfig';
 import React, { useState, useEffect } from 'react';
 import Graph from '../../img/bar-graph.png';
@@ -22,7 +22,7 @@ const Mypage = () => {
   // 모달용 const
   const [follower, setWer] = useState(false);
   const [fallowing, setWing] = useState(false);
-  const [comments, setComments] = useState(false);
+  // const [comments, setComments] = useState(false);
 
   // 사용자의 정보 const
   const [userId, setUserId] = useState('');
@@ -44,7 +44,9 @@ const Mypage = () => {
   // Follower와 Following 수, 받은 코멘트 수
   const [followerCount, setFollowerCount] = useState(0);
   const [followingCount, setFollowingCount] = useState(0);
-  const [getCommentCount, setGetCommentCount] = useState(0);
+
+  const [myRank, setmyRank] = useState([]);
+  const [CompleteMission, setCompleteMission] = useState([]);
 
   useEffect(() => {
     // 서버의 사용자 정보 가져오기
@@ -55,14 +57,31 @@ const Mypage = () => {
         setUserName(res.data.result.userData.name);
         setUserId(res.data.result.userData.id);
         setUserIntro(res.data.result.userData.intro);
+        console.log(res.data);
 
         // exp 가져오기
         setexpExercise(res.data.result.expData[0].expData);
         setexpEat(res.data.result.expData[1].expData);
         setexpCulture(res.data.result.expData[2].expData);
         setexpHobby(res.data.result.expData[3].expData);
-
         setLoading(false);
+        const currentUserID = res.data.result.userData.id;
+
+        axiosInstance
+        .get('api/v1/users/rank?year=2023&month=10')
+        .then((rankRes) => {
+          // 랭킹 정보 배열에서 현재 로그인한 사용자의 ID와 일치하는 항목을 찾기
+          const userRank = rankRes.data.result.rankList.find(item => item.userData.userId === currentUserID);
+          if (userRank) {
+            console.log('유저 랭킹:', userRank.rank);
+            setmyRank(userRank.rank);
+          }
+        })
+        .catch((error) => {
+          console.log('Failed to fetch rank:', error);
+        });
+
+        
       })
       .catch((error) => {
         console.log('Failed to fetch user info:', error);
@@ -117,16 +136,17 @@ const Mypage = () => {
         console.log('Failed to fetch following count:', error);
       });
 
-      //받은 코멘트 수 가져오기
-      axiosInstance
-        .get('api/v1/users/comments/send/count')
-        .then((res) => {
-          const getCommentCount = res.data.result;
-          setGetCommentCount(getCommentCount);
-        })
-        .catch((error) => {
-          console.log('Failed to fetch get comment count:', error);
-        })
+    // 전체 완료 미션가져오기
+    axiosInstance.get('api/v1/users/missions/counts')
+    .then((res) => {
+      setCompleteMission(res.data.result);
+      // console.log(res.data);
+      //스피너
+      // setLoading(false);
+    })
+    .catch((error) => {
+      console.log('Failed to fetch user info:', error);
+    });
 
   }, []);
 
@@ -177,8 +197,10 @@ const Mypage = () => {
             </div>
 
             {/* 명언 이미지*/}
-            <div className="time1">
-              <img className="mypage_advice" src={Advice1} alt='프로필'></img>
+            <div className="heart_bold">
+            <p className="heart_count"><img width="20" height="20" src="https://img.icons8.com/emoji/48/trophy-emoji.png" alt="pixel-heart" />
+            이달 랭킹<img width="20" height="20" src="https://img.icons8.com/emoji/48/trophy-emoji.png" alt="pixel-heart" /></p>
+              <p className="heart_count_numbert">{myRank}위</p>
             </div>
           </div>
           <main className='square2'>
@@ -203,15 +225,9 @@ const Mypage = () => {
                   <div className='follower_following_comment'>팔로잉</div>
                 </div>
 
-                <div className='count' onClick={() => setComments(!comments)}>
-                  {comments && (
-                    <Modal closeModal={() => setComments(!comments)}>
-                      <CommentDa />
-                    </Modal>
-                  )}
-
-                  <div className='cntnum'><strong>{getCommentCount}</strong></div>
-                  <div className='follower_following_comment'>코멘트</div>
+                <div className='count'>
+                  <div className='cntnum'><strong>{CompleteMission}</strong></div>
+                  <div className='follower_following_comment'>완료미션</div>
                 </div>
 
                 <div className='count'>
