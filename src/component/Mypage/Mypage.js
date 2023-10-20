@@ -192,14 +192,18 @@ const Mypage = () => {
 
             {/* 좋아요 수 카운트*/}
             <div className="heart_bold">
-              <p className="heart_count">이번달 좋아요 수는?<img width="20" height="20" src="https://img.icons8.com/fluency/48/pixel-heart.png" alt="pixel-heart" /></p>
+              <p className="heart_count">
+                <img width="20" height="20" src="https://img.icons8.com/fluency/48/pixel-heart.png" alt="pixel-heart" />
+                이번 달 좋아요 수 
+                <img width="20" height="20" src="https://img.icons8.com/fluency/48/pixel-heart.png" alt="pixel-heart" />
+              </p>
               <p className="heart_count_numbert">{userHeart}</p>
             </div>
 
             {/* 명언 이미지*/}
             <div className="heart_bold">
             <p className="heart_count"><img width="20" height="20" src="https://img.icons8.com/emoji/48/trophy-emoji.png" alt="pixel-heart" />
-            이달 랭킹<img width="20" height="20" src="https://img.icons8.com/emoji/48/trophy-emoji.png" alt="pixel-heart" /></p>
+            이번 달 랭킹<img width="20" height="20" src="https://img.icons8.com/emoji/48/trophy-emoji.png" alt="pixel-heart" /></p>
               <p className="heart_count_numbert">{myRank}위</p>
             </div>
           </div>
