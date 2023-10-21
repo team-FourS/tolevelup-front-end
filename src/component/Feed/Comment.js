@@ -1,53 +1,88 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect} from 'react';
+import axiosInstance from "../../axiosConfig";
 import "../../css/feed/Comment.css"
-// import axiosInstance from '../../axiosConfig';
-const Comment = () => {
+import LoadSpinner from '../Spinner/SpinnerfeedComment';
+const Comment = (props) => {
 
     const [comment, setComment] = useState('');
+    const [userComments, setuserComments] = useState([]);
+    const userId = props.userId;
+     const [Loading, setLoading] = useState(true);
 
-//   const postComment = (userId) => {
-//     // 댓글 게시 요청
-//     axiosInstance.post(`api/v1/feeds/${userId}/comments`, {
-//         comment: comment
-//     })
-//     .then((res) => {
-//         console.log('댓글 게시 완료:', res.data);
-//         // 댓글 내용 초기화
-//         setComment('');
-//     })
-//     .catch((error) => {
-//         console.error('댓글 게시 실패:', error);
-//     });
-// };
 
   const handleCommentChange = (e) => {
     setComment(e.target.value);
   };
 
+  const postComment = () => {
+    // userId를 사용하여 코멘트를 게시하는 axios 요청
+    axiosInstance.post(`api/v1/feeds/${userId}/comments`, { 
+      comment:comment 
+    })
+      .then((res) => {
+        console.log("Comment posted successfully:", res.data);
+
+      })
+      .catch((error) => {
+        console.error("Failed to post comment:", error);
+        console.log(props.userId);
+
+      });
+
+    };
+
+      useEffect(() => {
+        axiosInstance.get(`api/v1/feeds/${userId}/comments?page=0&size=5`)
+        .then((res) => {
+
+          // content의 모든 정보를 commentsData에 담음
+          const commentsData = res.data.result.content;
+          setuserComments(commentsData);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.log('Failed to fetch user info:', error);
+          setLoading(true); // 오류시 스피너 무한재생
+        });
+    });
+
+
+  const formatDate = (dateString) => {
+    const options = { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+    const formattedDate = new Date(dateString)
+      .toLocaleDateString('ko-KR', options)
+      .replace(/\//g, '.') // .로 변경
+      .replace(/\. /g, '.')
+      .replace(',', '');
+    return formattedDate;
+  };
+
   return(
     <div>
+      {Loading ? (
+        // 로딩 중인 경우 스피너를 렌더링
+        <LoadSpinner />
+      ) : (
       <div className='all_comment_box'>
+      
         <div className="comment_scroll_box">
-            <div className='feed_comment_box'>
-            <p className='comment_text'>여기 코멘트 내용 값 불러오기</p>
-              <p className='user_feed_comment'>닉네임</p>  
-            </div>
+            <div className="inner_content">
+            {userComments.length === 0 ? (
+                      // 코멘트 목록이 비어 있는 경우 '받은 코멘트가 없습니다.' 메시지를 표시
+                      <div className="no-comments">받은 코멘트가 없습니다.</div>
+                    ) : (
+                      userComments.map((commentData, index) => (
+                        <div className='comment_box_feed' key={index}>
+                          <p className='mypage_comment_text'> {commentData.comment}  </p>
+                          <p className='user_comment'><p className="get-registered-mypage">
+                            {`등록일: ${formatDate(commentData.registeredAt)}`}
+                          </p>{commentData.fromUserData.name }</p>
+                        </div>
+                      ))
+                    )}
+                    </div>
+              </div>
 
-            <div className='feed_comment_box'>
-            <p className='comment_text'>코멘트 내용 가져오기</p>
-              <p className='user_feed_comment'>닉네임</p>  
-            </div>
-
-            <div className='feed_comment_box'>
-            <p className='comment_text'>여기 코멘트 내용 값 불러오기</p>
-              <p className='user_feed_comment'>닉네임</p>  
-            </div>
-
-            <div className='feed_comment_box'>
-            <p className='comment_text'>여기 코멘트 코멘트 내용 불러오기</p>
-              <p className='user_feed_comment'>닉네임</p>  
-            </div>
-        </div>
         
         <div className="comment_write_box">
           <input type='text'
@@ -56,12 +91,13 @@ const Comment = () => {
             value={comment}
             onChange={handleCommentChange} />
           <button className='comment_button'
-            // onClick={postComment}>
-            >
+            onClick={postComment}>
+            
             게시
             </button>
         </div>
       </div>
+      )}
     </div>
   )
 

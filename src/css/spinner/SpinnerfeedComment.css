@@ -1,0 +1,11 @@
+.spinner_feed_comment{  
+    margin-top: 20vh;   
+}
+.arrayloadging{
+    align-items: center;
+    text-align: center;
+
+}
+.loading_comment{
+    color: rgb(127, 126, 126);
+}
