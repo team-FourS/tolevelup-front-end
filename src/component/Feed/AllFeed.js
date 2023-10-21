@@ -17,7 +17,6 @@ import Comment from "../Feed/Comment";
 const AllFeed = () => {
   const location = useLocation();
   const [isActive, setIsActive] = useState(location.pathname === "/AllFeed");
-  // const [isHeartActive, setIsHeartActive] = useState(false);
   const [comment, setComment] = useState(false);
   const [feedData, setFeedData] = useState([]);
   const [userId,setuserId] = useState(null);

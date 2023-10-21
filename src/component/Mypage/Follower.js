@@ -51,6 +51,10 @@ const Follower = () => {
             </thead>
             <tbody>
                   <div className="following_scrollbox">
+                  {userfollower.length === 0 ? (
+                      <div className="no-follower">나를 팔로우 중인 사람이 <br/>없습니다.</div>
+                    ) : (
+                      <>
                     <div className="followingbox">
                       <tr>
                       <td className="td_following">
@@ -64,6 +68,8 @@ const Follower = () => {
                         </td>
                       </tr>
                     </div>
+                    </>
+                    )}
                   </div>
                 </tbody>
           </table>

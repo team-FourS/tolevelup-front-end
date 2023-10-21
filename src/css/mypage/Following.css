@@ -68,3 +68,9 @@
 .followingbox{
   margin: auto;
 }
+.no-following{
+  color: #bdbdbd;
+  font-size: 15px;
+  margin: 120px 0 0 30px; 
+  text-align: center;
+}

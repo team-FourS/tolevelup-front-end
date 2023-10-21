@@ -286,6 +286,7 @@ ul,li{
   }
   .no-comments{
     color: #bdbdbd;
+    font-size: 18px;
   /* margin-left: 10vh;*/
   margin-top: 10vh; 
   text-align: center;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SpinnerGreenImg from "../../img/SpinGreen.gif";
+import SpinnerImg from "../../img/Spin.gif";
 
 const SpinnerMission = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -21,7 +21,7 @@ const SpinnerMission = () => {
     // 로딩 중일 때 스피너를 표시
     return (
       <div>
-        <img className="SpinnerGreenImg" src={SpinnerGreenImg} alt="로딩" width="12%"
+        <img className="SpinnerGreenImg" src={SpinnerImg} alt="로딩" width="12%"
           style={{ marginLeft:'330px', marginTop: '150px'}}/>
       </div>
     );

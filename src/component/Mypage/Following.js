@@ -49,6 +49,10 @@ const [userfollowing, setfollowing] = useState([]);
 
                 <tbody>
                   <div className="following_scrollbox">
+                  {userfollowing.length === 0 ? (
+                      <div className="no-following">팔로우 중인 사람이 없습니다.</div>
+                    ) : (
+                      <>
                     <div className="followingbox">
                       <tr>
                         <td className="td_following">
@@ -62,7 +66,9 @@ const [userfollowing, setfollowing] = useState([]);
                         </td>
                       </tr>
                     </div>
-                  </div>
+                    </>
+                    )}
+                  </div>               
                 </tbody>
               </table>
             )}</div>
