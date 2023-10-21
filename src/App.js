@@ -16,7 +16,6 @@ import Mypage from "./component/Mypage/Mypage"
 import Modify from "./component/Mypage/Modify";
 
 import Login from "./component/Login/Login";
-import Logout from "./component/Login/Logout"
 import FindID from "./component/Login/FindID"
 import FindPassword from "./component/Login/FindPassword"
 import Signup from "./component/Login/Signup"
@@ -47,7 +46,6 @@ function App() {
             
               <Route path="/" element={<Login />} />
                 <Route path="/Signup" element={<Signup />} />
-                <Route path="/Logout" element={<Logout />} />
                 <Route path="/FindID" element={<FindID />} />
                 <Route path="/FindPassword" element={<FindPassword />} />
               <Route path="/Mission" element={<Mission />} />

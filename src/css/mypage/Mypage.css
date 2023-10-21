@@ -120,11 +120,18 @@
   margin-top: 15px;
   height: 105px;
 }
-.heart_count_numbert{
+.heart_count_number{
   font-family: 'ChosunCentennial';
   font-size:xx-large;
   font-weight: 900;
   color: #FFB9B9;
+  margin-top: 10px;
+}
+.Rank_number{
+  font-family: 'IAMAPLAYER';
+  font-size:xx-large;
+  font-weight: 900;
+  color: #969595;
   margin-top: 10px;
 }
 .heart_count{

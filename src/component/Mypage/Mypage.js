@@ -14,8 +14,19 @@ import axiosInstance from '../../axiosConfig';
 import React, { useState, useEffect } from 'react';
 import Graph from '../../img/bar-graph.png';
 import LoadSpinner from '../Spinner/SpinnerCompo';
+import { format } from 'date-fns';
 
 const Mypage = () => {
+
+  const currentDate = new Date();
+
+// 원하는 날짜 계산
+  const year = format(currentDate, 'yyyy'); // 연도 추출
+  const month = format(currentDate, 'MM'); // 월 추출
+  //const nextMonth = addMonths(currentDate, 1);// 한 달 더하기
+  //Cconst previousMonth = subMonths(currentDate, 1);// 한 달 빼기
+  const formattedDate = format(currentDate, 'yyyy-MM-dd');// 날짜 형식 지정
+
   // 스피너(로딩중)
   const [Loading, setLoading] = useState(true);
 
@@ -57,6 +68,7 @@ const Mypage = () => {
         setUserName(res.data.result.userData.name);
         setUserId(res.data.result.userData.id);
         setUserIntro(res.data.result.userData.intro);
+        console.log(formattedDate);//오늘날짜확인
         console.log(res.data);
 
         // exp 가져오기
@@ -67,15 +79,17 @@ const Mypage = () => {
         setLoading(false);
         const currentUserID = res.data.result.userData.id;
 
+        //사용자의 월 별 랭킹 가져오기
         axiosInstance
-        .get('api/v1/users/rank?year=2023&month=10')
+        .get(`api/v1/users/rank?year=${year}&month=${month}`)
         .then((rankRes) => {
           // 랭킹 정보 배열에서 현재 로그인한 사용자의 ID와 일치하는 항목을 찾기
           const userRank = rankRes.data.result.rankList.find(item => item.userData.userId === currentUserID);
+
           if (userRank) {
-            console.log('유저 랭킹:', userRank.rank);
             setmyRank(userRank.rank);
           }
+          setLoading(false);
         })
         .catch((error) => {
           console.log('Failed to fetch rank:', error);
@@ -148,7 +162,7 @@ const Mypage = () => {
       console.log('Failed to fetch user info:', error);
     });
 
-  }, []);
+  }, [formattedDate, month, year]);
 
   // 등록일 변경 함수
   const formatDate = (dateString) => {
@@ -197,14 +211,13 @@ const Mypage = () => {
                 이번 달 좋아요 수 
                 <img width="20" height="20" src="https://img.icons8.com/fluency/48/pixel-heart.png" alt="pixel-heart" />
               </p>
-              <p className="heart_count_numbert">{userHeart}</p>
+              <p className="heart_count_number">{userHeart}</p>
             </div>
 
-            {/* 명언 이미지*/}
             <div className="heart_bold">
             <p className="heart_count"><img width="20" height="20" src="https://img.icons8.com/emoji/48/trophy-emoji.png" alt="pixel-heart" />
             이번 달 랭킹<img width="20" height="20" src="https://img.icons8.com/emoji/48/trophy-emoji.png" alt="pixel-heart" /></p>
-              <p className="heart_count_numbert">{myRank}위</p>
+              <p className="Rank_number">{myRank}위</p>
             </div>
           </div>
           <main className='square2'>
@@ -274,7 +287,7 @@ const Mypage = () => {
 
                       <div className="status-hp">
                         <div className="mypageBar">
-                          <div className="hobby_currentBar" style={{ width: `${expHobby}%` }}></div>
+                          <div className="hobby_currentBar" style={{ width: `${expHobby}px` }}></div>
                         </div>
                       </div>
                     </div>

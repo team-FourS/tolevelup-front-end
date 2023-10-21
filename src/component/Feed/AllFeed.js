@@ -21,6 +21,7 @@ const AllFeed = () => {
   const [comment, setComment] = useState(false);
   const [feedData, setFeedData] = useState([]);
   const [userId,setuserId] = useState(null);
+  const [commentedUserId, setCommentedUserId] = useState("");
   const [likeStatus, setLikeStatus] = useState(feedData.map(() => false));
 
   useEffect(() => {
@@ -36,6 +37,9 @@ const AllFeed = () => {
       if (userId) {
         setuserId(userId);
       }
+      //좋아요 색상유지
+      const likeStatus = res.data.result.map(item => item.likeSent);
+      setLikeStatus(likeStatus);
       } catch (error) {
         console.error("API 호출 에러:", error);
       }
@@ -57,25 +61,31 @@ const AllFeed = () => {
   newLikeStatus[index] = !newLikeStatus[index];
   setLikeStatus(newLikeStatus);
 
-  const id = userId[index];
+  const selectedUserId = userId[index];
 
   // 이미 좋아요를 누른 경우에만 좋아요 취소 요청을 보냅니다.
   if (newLikeStatus[index]) {
-    axiosInstance.post(`api/v1/feeds/${id}/likes`)
+    axiosInstance.post(`api/v1/feeds/${selectedUserId}/likes`)
       .then((res) => {
         console.log(res.data);
+        setCommentedUserId(selectedUserId);
+
       })
       .catch((error) => {
-        console.log(`Failed to fetch likes for ${id}:`, error);
+        console.log(`Failed to fetch likes for ${selectedUserId}:`, error);
+        setCommentedUserId(selectedUserId);
+
       });
   } else {
     // 이미 좋아요를 취소한 경우 DELETE 요청을 보냅니다.
-    axiosInstance.delete(`api/v1/feeds/${id}/likes`)
+    axiosInstance.delete(`api/v1/feeds/${selectedUserId}/likes`)
       .then((res) => {
         console.log(res.data);
+        setCommentedUserId(selectedUserId);
+
       })
       .catch((error) => {
-        console.log(`Failed to delete like for ${id}:`, error);
+        console.log(`Failed to delete like for ${selectedUserId}:`, error);
       });
   }
 
@@ -137,11 +147,12 @@ const AllFeed = () => {
               />
               <LiaCommentSolid
                 className="comment_icon"
-                onClick={() => setComment(!comment)}
+                onClick={() => {setComment(!comment);
+                setCommentedUserId(userId[index]);}}
               />
               {comment && (
                 <CommentModal closeModal={() => setComment(!CommentModal)}>
-                  <Comment />
+                  <Comment userId={commentedUserId}/>
                 </CommentModal>
               )}
             </div>
