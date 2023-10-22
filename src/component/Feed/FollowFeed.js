@@ -15,28 +15,34 @@ import Comment from "../Feed/Comment";
 const FollowFeed = () => {
   const location = useLocation();
   const [isActive, setIsActive] = useState(location.pathname === "/AllFeed");
-  const [isFollowActive, setIsFollowActive] = useState(
-    location.pathname === "/FollowFeed"
-  );
-  const [isHeartActive, setIsHeartActive] = useState(false);
+  const [isFollowActive, setIsFollowActive] = useState(location.pathname === "/FollowFeed");
   const [comment, setComment] = useState(false);
-  const [followData, setFollowData] = useState([]); 
+  const [feedData, setFeedData] = useState([]);
+  const [userId, setUserId] = useState(null);
+  const [commentedUserId, setCommentedUserId] = useState("");
+  const [likeStatus, setLikeStatus] = useState([]);
 
   useEffect(() => {
-    setIsActive(location.pathname === "/AllFeed");
-    setIsFollowActive(location.pathname === "/FollowFeed");
+    const fetchData = async () => {
+      try {
+        const res = await axiosInstance.get("api/v1/feeds/follow");
+        setFeedData(res.data.result);
 
-    axiosInstance
-      .get("api/v1/feeds/follow")
-      .then((response) => {
-        if (response.data.resultCode === "SUCCESS") {
-          setFollowData(response.data.result);
+        const userId = res.data.result.map(item => item.userData.userId);
+
+        if (userId) {
+          setUserId(userId);
         }
-      })
-      .catch((error) => {
-        console.error("데이터를 가져오는 중 오류 발생:", error);
-      });
-  }, [location.pathname]);
+
+        const likeStatus = res.data.result.map(item => item.likeSent);
+        setLikeStatus(likeStatus);
+      } catch (error) {
+        console.error("API 호출 에러:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const FeedClick = () => {
     setIsActive(true);
@@ -48,8 +54,33 @@ const FollowFeed = () => {
     setIsFollowActive(true);
   };
 
-  const handleHeartIconClick = () => {
-    setIsHeartActive(!isHeartActive);
+  const handleHeartIconClick = (index) => {
+    const newLikeStatus = [...likeStatus];
+    newLikeStatus[index] = !newLikeStatus[index];
+    setLikeStatus(newLikeStatus);
+
+    const selectedUserId = userId[index];
+
+    if (newLikeStatus[index]) {
+      axiosInstance.post(`api/v1/feeds/follow/${selectedUserId}/likes`)
+        .then((res) => {
+          console.log(res.data);
+          setCommentedUserId(selectedUserId);
+        })
+        .catch((error) => {
+          console.log(`Failed to fetch likes for ${selectedUserId}:`, error);
+          setCommentedUserId(selectedUserId);
+        });
+    } else {
+      axiosInstance.delete(`api/v1/feeds/follow/${selectedUserId}/likes`)
+        .then((res) => {
+          console.log(res.data);
+          setCommentedUserId(selectedUserId);
+        })
+        .catch((error) => {
+          console.log(`Failed to delete like for ${selectedUserId}:`, error);
+        });
+    }
   };
 
   return (
@@ -80,7 +111,7 @@ const FollowFeed = () => {
       </Link>
 
       <div className="feed_scrollbox">
-        {followData.map((followItem, index) => (
+        {feedData.map((followItem, index) => (
           <div key={index} className="feedBox01">
             <img className="user_profile" src={user} alt="프로필" />
             <div className="feedContent">
@@ -91,34 +122,37 @@ const FollowFeed = () => {
               <div className="feedChecklist">
                 {followItem.userCompleteMissions.map((mission, missionIndex) => (
                   <div key={missionIndex}>
-                    {mission.checked === "DAILY_COMPLETE" ||
-                    mission.checked === "WEEKLY_COMPLETE" ? (
+                    {mission.checked === "DAILY_COMPLETE" || (mission.checked === "WEEKLY_COMPLETE" && (
                       <div>
                         <input
                           type="checkbox"
                           id={`btn${missionIndex}`}
                           checked={true}
+                          readOnly // checked 속성을 항상 true로 설정
                         />
                         <label htmlFor={`btn${missionIndex}`}>
                           {mission.themeName} | {mission.content}
                         </label>
                         <br />
                       </div>
-                    ) : null}
+                    ))}
                   </div>
                 ))}
               </div>
               <HiHeart
-                className={`heart_icon ${isHeartActive ? "green" : "gray"}`}
-                onClick={handleHeartIconClick}
+                className={`heart_icon ${likeStatus[index] ? "redfh" : "gray"}`}
+                onClick={() => handleHeartIconClick(index)}
               />
               <LiaCommentSolid
                 className="comment_icon"
-                onClick={() => setComment(!comment)}
+                onClick={() => {
+                  setComment(!comment);
+                  setCommentedUserId(userId[index]);
+                }}
               />
               {comment && (
                 <CommentModal closeModal={() => setComment(!comment)}>
-                  <Comment />
+                  <Comment userId={commentedUserId} />
                 </CommentModal>
               )}
             </div>

@@ -57,6 +57,10 @@ const SendComment = () => {
                 <LoadSpinner />
             ) : (
       <div className="get-container">
+        {comments.length === 0 ? (
+            <div className="noComments">보낸 코멘트가 없습니다.</div>
+          ) : (
+            <>
       {comments.map((comment, index) => (
         <div key={index} className="get-comment-container">
           <div className="get-comment-box">
@@ -93,6 +97,8 @@ const SendComment = () => {
             {'>'}
           </button>
         </div>
+        </>
+        )}
       </div>
       )}
     </div>

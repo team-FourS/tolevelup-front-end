@@ -70,3 +70,9 @@
   background-color: #bdc3c7;
   cursor: not-allowed;
 }
+.noComments{
+  color: #bdbdbd;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 170px;
+}
