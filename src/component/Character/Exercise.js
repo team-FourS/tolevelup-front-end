@@ -4,7 +4,7 @@ import "../../css/character/Exercise.css"
 import ExerciseLv01 from '../../img/Exercise-Lv01.png'
 import { FiEdit } from "react-icons/fi";
 
-const Health = () => {
+const Health = (props) => {
 
   const [Exercisecharactername, setExercisecharactername] = useState([]);//캐릭터 이름
   const [Exercisecomplete, setExercisecomplete] = useState([]);//캐릭터 완료 미션
@@ -13,14 +13,23 @@ const Health = () => {
   // const [imageSrc, setImageSrc] = useState([]);//캐릭터 이미지
 
   const [ExerciseisEditing, setExerciseEditing] = useState(false);
+  const character_id = props.userId;
 
   const handleExEditClick = () => {
     setExerciseEditing(true);
   };
 
   const handleExSaveClick = () => {
-    setExerciseEditing(false);
-    // 여기에서 이름을 저장하거나 다른 작업을 수행할 수 있다.
+    axiosInstance.put(`characterName/?character_id=${character_id}`,{
+      character_name:Exercisecharactername
+    })
+    .then((res) => {
+      setExerciseEditing('');
+      console.log('캐릭터이름 저장완료',res.data)
+    })
+    .catch((error) => {
+      console.log('캐릭터 이름변경중 에러', error);
+    });
   };
 
   const handleExNameChange = (e) => {
@@ -33,11 +42,9 @@ const Health = () => {
     axiosInstance.get('/userCharacter')
     .then((res) => {
 
-      setExercisecharactername(res.data[3].userCharacter.character_name);
-      setExerciseexp(res.data[3].exp);
-      setExerciselevel(res.data[3].level);
-
-      console.log(res.data[2]);
+      setExercisecharactername(res.data[2].userCharacter.character_name);
+      setExerciseexp(res.data[2].exp);
+      setExerciselevel(res.data[2].level);
 
     })
     .catch((error) => {
@@ -86,9 +93,7 @@ const Health = () => {
           저장
         </button>
       ) : (
-        <button className="edit_name_button" onClick={handleExEditClick}>
-          <FiEdit className="edit_name_icon" />
-        </button>
+          <FiEdit className="edit_name_icon" onClick={handleExEditClick}/>
       )}
             </div>  
             <img className ="Lv_health" src={ExerciseLv01} alt='운동레벨'></img>
@@ -96,7 +101,7 @@ const Health = () => {
                 <h2 className="health_font3">&#10024;Lv. {Exerciselevel}&#10024;</h2>
                   <div className="status-hpchar">
                       <div className="bar_char">
-                          <div className="currentBar_char1" style={{width:`${Exerciseexp}%`}}></div>    
+                          <div className="currentBar_char1" style={{width:`${Exerciseexp}px`}}></div>    
                       </div>
                     </div>
                   <hr />

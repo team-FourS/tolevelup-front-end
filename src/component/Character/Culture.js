@@ -1,23 +1,115 @@
-import React from "react";
+import axiosInstance from "../../axiosConfig";
+import React, { useState,useEffect } from 'react';
 import "../../css/character/Exercise.css"
 import CultureLv01 from '../../img/Culture-Lv01.png'
 import { FiEdit } from "react-icons/fi";
 
-const Culture = () => {
+const Culture = (props) => {
+
+  const [Culturename, setCulturename] = useState([]);//캐릭터 이름
+  const [Culturecomplete, setCulturecomplete] = useState([]);//캐릭터 완료 미션
+  const [Cultureexp, setCultureexp] = useState([]);//캐릭터 exp
+  const [Culturelevel, setCulturelevel] = useState([]);//캐릭터 level
+  // const [imageSrc, setImageSrc] = useState([]);//캐릭터 이미지
+
+  const [CultureisEditing, setCultureEditing] = useState(false);
+
+  const character_id = props.userId;
+
+  const handleExEditClick = () => {
+    setCultureEditing(true);
+  };
+
+  const handleExSaveClick = () => {
+    axiosInstance.put(`characterName/?character_id=${character_id}`,{
+      character_name:Culturename
+    })
+    .then((res) => {
+      setCultureEditing('');
+      console.log('캐릭터이름 저장완료',res.data)
+      // console.log(res.data);
+
+    })
+    .catch((error) => {
+      console.log('캐릭터 이름변경중 에러', error);
+
+
+    });
+  };
+
+  const handleExNameChange = (e) => {
+    setCulturename(e.target.value);
+  };
+
+  useEffect(() => {
+
+// 서버의 캐릭터 정보 가져오기
+    axiosInstance.get('/userCharacter')
+    .then((res) => {
+
+      setCulturename(res.data[0].userCharacter.character_name);
+      setCultureexp(res.data[0].exp);
+      setCulturelevel(res.data[0].level);
+
+      // console.log('문화',res.data[0]);
+
+    })
+    .catch((error) => {
+        console.log('Failed to fetch user info:', error);
+    });
+    
+//캐릭터 이미지 가져오기
+  // axiosInstance.get('/image?imageName=%EB%AC%B8%ED%99%941.png', { responseType: 'arraybuffer' })
+  // .then((response) => {
+  // // ArrayBuffer를 Blob으로 변환
+  //   const blob = new Blob([response.data], { type: 'image/png' });
+
+  // // Blob을 Data URL로 변환 (Base64)
+  //   const reader = new FileReader();
+  //   reader.onload = () => {
+  //     setImageSrc(reader.result);
+  //   };
+  //   reader.readAsDataURL(blob);
+  // })
+  //   .catch((error) => {
+  //       console.log('이미지 불러오기 실패:', error);
+  //   });
+
+//캐릭터 완료미션 가져오기
+    axiosInstance.get('api/v1/users/missions/themes/counts')
+    .then((res) => {
+      setCulturecomplete(res.data.result[2].completeTotal);
+      // console.log('완료미션',res.data.result[2]);
+    })
+    .catch((error) => {
+        console.log('Failed to fetch user info:', error);
+    });
+}, []);
+
     return (
       <main className="layout_health">
         <div className="health_lay">
           <div className="however">
             <div className="name_container">
-                <h2 className="health_font1">문생이</h2> 
-                <FiEdit className="edit_name_icon"/>
+            {CultureisEditing ? (
+        <input type="text" value={Culturename} onChange={handleExNameChange} />
+      ) : (
+        <h2 className="health_font1">{Culturename}</h2>
+      )}
+      {CultureisEditing ? (
+        <button className="save_name_button" onClick={handleExSaveClick}>
+          저장
+        </button>
+      ) : (
+          <FiEdit className="edit_name_icon" onClick={handleExEditClick}/>
+      )}
             </div>
             <img className ="Lv_health" src={CultureLv01} alt='운동레벨'></img>
               <h4 className="health_font2">현재 당신의 레벨은</h4>
-                <h2 className="health_font3">&#10024; Lv. _&#10024;</h2>
+                <h2 className="health_font3">&#10024; Lv. {Culturelevel}&#10024;</h2>
                   <div className="status-hpchar">
                       <div className="bar_char">
-                          <div className="currentBar_char3" style={{width:'70px'}}></div>    
+                          <div className="currentBar_char3" style={{width:`${Cultureexp}px`}}></div>    
                       </div>
                     </div>
                   <hr />
@@ -31,7 +123,7 @@ const Culture = () => {
                       </tr>
                       <tr>
                         <td>
-                        <h4 className="health_font4">200 개</h4>
+                        <h4 className="health_font4">{Culturecomplete} 개</h4>
                         </td>
                       </tr>
                     </tbody>
