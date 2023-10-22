@@ -40,10 +40,10 @@ const Character = () => {
 
       setcharactername1(res.data[0].userCharacter.character_name);//문화
       setcharactername2(res.data[1].userCharacter.character_name);//식습관
-      setcharactername4(res.data[2].userCharacter.character_name);//취미
-      setcharactername3(res.data[3].userCharacter.character_name);//운동
+      setcharactername3(res.data[2].userCharacter.character_name);//운동
+      setcharactername4(res.data[3].userCharacter.character_name);//취미
 
-      // console.log(res.data[2]);
+      // console.log(res.data);
 
     })
 
