@@ -34,10 +34,10 @@ const Eat = () => {
     axiosInstance.get('/userCharacter')
     .then((res) => {
 
-      setEatcharactername1(res.data[3].userCharacter.character_name);
-      setEatexp(res.data[3].exp);
-      setEatlevel(res.data[3].level);
-      // console.log(res.data[1].userCharacter.character.id);
+      setEatcharactername1(res.data[1].userCharacter.character_name);
+      setEatexp(res.data[1].exp);
+      setEatlevel(res.data[1].level);
+      // console.log(res.data[1]);
 
     })
     .catch((error) => {
@@ -88,9 +88,7 @@ const Eat = () => {
           저장
         </button>
       ) : (
-        <button className="edit_name_button" onClick={handleEditClick}>
-          <FiEdit className="edit_name_icon" />
-        </button>
+          <FiEdit className="edit_name_icon" onClick={handleEditClick}/>
       )}
             </div>
             {imageSrc ? (
@@ -103,7 +101,7 @@ const Eat = () => {
                 <h2 className="health_font3">&#10024;Lv. {Eatlevel}&#10024;</h2>
                   <div className="status-hpchar">
                       <div className="bar_char">
-                          <div className="currentBar_char2" style={{width:`${Eatexp}%`}}></div>    
+                          <div className="currentBar_char2" style={{width:`${Eatexp}px`}}></div>    
                       </div>
                     </div>
                   <hr />

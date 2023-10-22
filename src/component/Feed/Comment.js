@@ -21,7 +21,7 @@ const Comment = (props) => {
     })
       .then((res) => {
         console.log("Comment posted successfully:", res.data);
-
+        setComment('');
       })
       .catch((error) => {
         console.error("Failed to post comment:", error);
