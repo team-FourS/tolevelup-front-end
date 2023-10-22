@@ -31,6 +31,11 @@ const Character = () => {
   const [charactername3, setcharactername3] = useState([]);
   const [charactername4, setcharactername4] = useState([]);
 
+  const [saveId, setsaveId] = useState('');
+  const [saveExerciseId, setsaveExerciseId] = useState('');
+  const [saveCulture, setsaveCultureId] = useState('');
+  const [saveHobbyId, setsaveHobbyId] = useState('');
+
 
   useEffect(() => {
 
@@ -38,12 +43,17 @@ const Character = () => {
     axiosInstance.get('/userCharacter')
     .then((res) => {
 
-      setcharactername1(res.data[0].userCharacter.character_name);//문화
       setcharactername2(res.data[1].userCharacter.character_name);//식습관
       setcharactername3(res.data[2].userCharacter.character_name);//운동
+      setcharactername1(res.data[0].userCharacter.character_name);//문화
       setcharactername4(res.data[3].userCharacter.character_name);//취미
 
-      // console.log(res.data);
+      setsaveId(res.data[1].userCharacter.character.id);//식습관
+      setsaveExerciseId(res.data[2].userCharacter.character.id);//운동
+      setsaveCultureId(res.data[0].userCharacter.character.id);//문화
+      setsaveHobbyId(res.data[3].userCharacter.character.id)//취미
+
+      // console.log(res.data[3]);
 
     })
 
@@ -57,7 +67,7 @@ const Character = () => {
             <span id ="health" onClick={() => setHealth(!health)}>
               {health && (
                 <CModal closeModal={() => setHealth(!health)}>
-                  <Exercise />
+                  <Exercise userId={saveExerciseId}/>
                 </CModal>
             )}
             <h2 className="character_name">{charactername3}</h2>
@@ -71,7 +81,7 @@ const Character = () => {
         <span className ="eat" style ={{display:'block'}} onClick={() => setEat(!eat)}>
           {eat && (
             <CModal closeModal={() => setEat(!eat)}>
-              <Eat />
+              <Eat userId={saveId}/>
             </CModal>
           )}
           <h2 className="character_name">{charactername2}</h2>
@@ -88,7 +98,7 @@ const Character = () => {
       <span id ="play" style ={{display:'block'}} onClick={() => setPlay(!culture)}>
           {culture && (
             <CModal closeModal={() => setPlay(!culture)}>
-              <Culture />
+              <Culture userId={saveCulture}/>
             </CModal>
           )}
           <h2 className="character_name">{charactername1}</h2>
@@ -102,7 +112,7 @@ const Character = () => {
       <span id ="hobby" style ={{display:'block'}} onClick={() => setHobby(!hobby)}>
           {hobby && (
             <CModal closeModal={() => setHobby(!hobby)}>
-              <Hobby />
+              <Hobby userId={saveHobbyId}/>
             </CModal>
           )}
           <h2 className="character_name">{charactername4}</h2>

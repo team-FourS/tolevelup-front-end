@@ -5,7 +5,7 @@ import "../../css/character/Exercise.css"
 // import EatLv01 from '../../img/Eat-Lv01.png'
 import { FiEdit } from "react-icons/fi";
 
-const Eat = () => {
+const Eat = (props) => {
 
   const [Eatcharactername1, setEatcharactername1] = useState([]);//캐릭터 이름
   const [Eatcomplete2, setcomplete2] = useState([]);//캐릭터 완료 미션
@@ -15,13 +15,25 @@ const Eat = () => {
 
   const [EatisEditing, setEatEditing] = useState(false);
 
+  const character_id = props.userId;
+
   const handleEditClick = () => {
     setEatEditing(true);
   };
 
   const handleSaveClick = () => {
-    setEatEditing(false);
-    // 여기에서 이름을 저장하거나 다른 작업을 수행할 수 있다.
+
+    axiosInstance.put(`characterName/?character_id=${character_id}`,{
+      character_name:Eatcharactername1
+    })
+    .then((res) => {
+      setEatEditing('');
+    })
+    .catch((error) => {
+      console.log('캐릭터 이름변경중 에러', error);
+
+
+    });
   };
 
   const handleNameChange = (e) => {
@@ -37,7 +49,6 @@ const Eat = () => {
       setEatcharactername1(res.data[1].userCharacter.character_name);
       setEatexp(res.data[1].exp);
       setEatlevel(res.data[1].level);
-      // console.log(res.data[1]);
 
     })
     .catch((error) => {
