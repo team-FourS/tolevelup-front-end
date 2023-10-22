@@ -7,7 +7,7 @@ const Comment = (props) => {
     const [comment, setComment] = useState('');
     const [userComments, setuserComments] = useState([]);
     const userId = props.userId;
-     const [Loading, setLoading] = useState(true);
+    const [Loading, setLoading] = useState(true);
 
 
   const handleCommentChange = (e) => {
