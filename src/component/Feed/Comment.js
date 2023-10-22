@@ -41,8 +41,7 @@ const Comment = (props) => {
           setLoading(false);
         })
         .catch((error) => {
-          console.log('Failed to fetch user info:', error);
-          setLoading(true); // 오류시 스피너 무한재생
+          console.log(`${userId}의 코멘트를 가져오던중 오류`, error);
         });
     });
 
