@@ -11,11 +11,12 @@ const Eat = (props) => {
   const [Eatcomplete2, setcomplete2] = useState([]);//캐릭터 완료 미션
   const [Eatexp, setEatexp] = useState([]);//캐릭터 exp
   const [Eatlevel, setEatlevel] = useState([]);//캐릭터 level
-  const [imageSrc, setImageSrc] = useState([]);//캐릭터 이미지
+  const [EatimageSrc, setEatimageSrc] = useState([]);//캐릭터 이미지
 
   const [EatisEditing, setEatEditing] = useState(false);
 
   const character_id = props.userId;
+  const Eatimg = props.userId2;
 
   const handleEditClick = () => {
     setEatEditing(true);
@@ -56,16 +57,16 @@ const Eat = (props) => {
     });
     
 //캐릭터 이미지 가져오기
-  axiosInstance.get('/image?imageName=%EB%AC%B8%ED%99%941.png', { responseType: 'arraybuffer' })
+  axiosInstance.get(`image?imageName=${Eatimg}.png`, { responseType: 'arraybuffer' })
   .then((res) => {
   // ArrayBuffer를 Blob으로 변환
-  console.log(res);
+  // console.log(res);
     const blob = new Blob([res.data], { type: 'image/png' });
 
   // Blob을 Data URL로 변환 (Base64)
     const reader = new FileReader();
     reader.onload = () => {
-      setImageSrc(reader.result);
+      setEatimageSrc(reader.result);
       
     };
     reader.readAsDataURL(blob);
@@ -82,7 +83,7 @@ const Eat = (props) => {
     .catch((error) => {
         console.log('Failed to fetch user info:', error);
     });
-}, []);
+},[Eatimg]);
 
     return (
       <main className="layout_health">
@@ -102,8 +103,8 @@ const Eat = (props) => {
           <FiEdit className="edit_name_icon" onClick={handleEditClick}/>
       )}
             </div>
-            {imageSrc ? (
-        <img src={imageSrc} alt="이미지" className="Lv_health"/>
+            {EatimageSrc ? (
+        <img src={EatimageSrc} alt="이미지" className="Lv_health"/>
       ) : (
         <p>이미지를 불러오는 중입니다...</p>
       )}
