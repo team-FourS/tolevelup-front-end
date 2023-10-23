@@ -14,7 +14,7 @@ import Hobby from "./Hobby";
 import ExerciseCharacter from '../../img/Exercise-Lv01.png'
 import EatCharacter from '../../img/Eat-Lv01.png'
 import HobbyCharacter from '../../img/Hobby-Lv01.png'
-import CultureCharacter from '../../img/Culture-Lv01.png'
+// import CultureCharacter from '../../img/Culture-Lv01.png'
 
 
 const Character = () => {
@@ -36,6 +36,11 @@ const Character = () => {
   const [saveCulture, setsaveCultureId] = useState('');
   const [saveHobbyId, setsaveHobbyId] = useState('');
 
+  const [getHobbyImg, setgetHobbyImg] = useState('');
+  const [getEatImg, setgetEatImg] = useState('');
+  const [getExerciseImg, setgetExerciseImg] = useState('');
+  const [getCultureImg, setgetCultureImg] = useState('');
+
 
   useEffect(() => {
 
@@ -53,6 +58,11 @@ const Character = () => {
       setsaveCultureId(res.data[0].userCharacter.character.id);//문화
       setsaveHobbyId(res.data[3].userCharacter.character.id)//취미
 
+      setgetExerciseImg(res.data[2].userCharacter.character.img)//운동
+      setgetEatImg(res.data[1].userCharacter.character.img)//식습관
+      setgetCultureImg(res.data[0].userCharacter.character.img)//문화
+      setgetHobbyImg(res.data[3].userCharacter.character.img)//취미
+      
       // console.log(res.data[3]);
 
     })
@@ -67,7 +77,7 @@ const Character = () => {
             <span id ="health" onClick={() => setHealth(!health)}>
               {health && (
                 <CModal closeModal={() => setHealth(!health)}>
-                  <Exercise userId={saveExerciseId}/>
+                  <Exercise userId={saveExerciseId} userId1={getExerciseImg}/>
                 </CModal>
             )}
             <h2 className="character_name">{charactername3}</h2>
@@ -81,7 +91,7 @@ const Character = () => {
         <span className ="eat" style ={{display:'block'}} onClick={() => setEat(!eat)}>
           {eat && (
             <CModal closeModal={() => setEat(!eat)}>
-              <Eat userId={saveId}/>
+              <Eat userId={saveId} userId2={getEatImg}/>
             </CModal>
           )}
           <h2 className="character_name">{charactername2}</h2>
@@ -98,11 +108,11 @@ const Character = () => {
       <span id ="play" style ={{display:'block'}} onClick={() => setPlay(!culture)}>
           {culture && (
             <CModal closeModal={() => setPlay(!culture)}>
-              <Culture userId={saveCulture}/>
+              <Culture userId={saveCulture} userId3={getCultureImg}/>
             </CModal>
           )}
           <h2 className="character_name">{charactername1}</h2>
-          <img className ="character_img" src={CultureCharacter} alt='문화생활'></img>
+          <img className ="character_img" src={getCultureImg} alt='문화생활'></img>
           <p className="character_theme">문화생활</p>
       </span>
       </button>
@@ -112,7 +122,7 @@ const Character = () => {
       <span id ="hobby" style ={{display:'block'}} onClick={() => setHobby(!hobby)}>
           {hobby && (
             <CModal closeModal={() => setHobby(!hobby)}>
-              <Hobby userId={saveHobbyId}/>
+              <Hobby userId={saveHobbyId} userIdimg={getHobbyImg}/>
             </CModal>
           )}
           <h2 className="character_name">{charactername4}</h2>

@@ -1,7 +1,6 @@
 import axiosInstance from "../../axiosConfig";
 import React, { useState,useEffect } from 'react';
 import "../../css/character/Exercise.css"
-import ExerciseLv01 from '../../img/Exercise-Lv01.png'
 import { FiEdit } from "react-icons/fi";
 
 const Health = (props) => {
@@ -10,10 +9,11 @@ const Health = (props) => {
   const [Exercisecomplete, setExercisecomplete] = useState([]);//캐릭터 완료 미션
   const [Exerciseexp, setExerciseexp] = useState([]);//캐릭터 exp
   const [Exerciselevel, setExerciselevel] = useState([]);//캐릭터 level
-  // const [imageSrc, setImageSrc] = useState([]);//캐릭터 이미지
+  const [imageSrc, setImageSrc] = useState([]);//캐릭터 이미지
 
   const [ExerciseisEditing, setExerciseEditing] = useState(false);
   const character_id = props.userId;
+  const Exerciseimg = props.userId1;
 
   const handleExEditClick = () => {
     setExerciseEditing(true);
@@ -52,21 +52,21 @@ const Health = (props) => {
     });
     
 //캐릭터 이미지 가져오기
-  // axiosInstance.get('/image?imageName=%EB%AC%B8%ED%99%941.png', { responseType: 'arraybuffer' })
-  // .then((response) => {
-  // // ArrayBuffer를 Blob으로 변환
-  //   const blob = new Blob([response.data], { type: 'image/png' });
+  axiosInstance.get(`image?imageName=${Exerciseimg}.png`, { responseType: 'arraybuffer' })
+  .then((response) => {
+  // ArrayBuffer를 Blob으로 변환
+    const blob = new Blob([response.data], { type: 'image/png' });
 
-  // // Blob을 Data URL로 변환 (Base64)
-  //   const reader = new FileReader();
-  //   reader.onload = () => {
-  //     setImageSrc(reader.result);
-  //   };
-  //   reader.readAsDataURL(blob);
-  // })
-  //   .catch((error) => {
-  //       console.log('이미지 불러오기 실패:', error);
-  //   });
+  // Blob을 Data URL로 변환 (Base64)
+    const reader = new FileReader();
+    reader.onload = () => {
+      setImageSrc(reader.result);
+    };
+    reader.readAsDataURL(blob);
+  })
+    .catch((error) => {
+        console.log('이미지 불러오기 실패:', error);
+    });
 
 //캐릭터 완료미션 가져오기
     axiosInstance.get('api/v1/users/missions/themes/counts')
@@ -76,7 +76,7 @@ const Health = (props) => {
     .catch((error) => {
         console.log('Failed to fetch user info:', error);
     });
-}, []);
+}, [Exerciseimg]);
 
     return (
       <main className="layout_health">
@@ -96,7 +96,11 @@ const Health = (props) => {
           <FiEdit className="edit_name_icon" onClick={handleExEditClick}/>
       )}
             </div>  
-            <img className ="Lv_health" src={ExerciseLv01} alt='운동레벨'></img>
+            {imageSrc ? (
+        <img src={imageSrc} alt="이미지" className="Lv_health"/>
+      ) : (
+        <p>이미지를 불러오는 중입니다...</p>
+      )}
               <h4 className="health_font2">현재 당신의 레벨은</h4>
                 <h2 className="health_font3">&#10024;Lv. {Exerciselevel}&#10024;</h2>
                   <div className="status-hpchar">
