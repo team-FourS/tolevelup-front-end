@@ -1,0 +1,9 @@
+.spinner_alarm{  
+    /* display: flex; */
+    /* justify-content: center;
+    align-items: center; */
+    position: relative;
+    overflow: hidden;
+    /* margin-left: 8vh;
+    margin-top: 12vh; */
+}

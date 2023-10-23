@@ -10,7 +10,7 @@
   .alarm_lay_madal{
     align-items: left;
     text-align: left;
-    width: 330px;
+    width: 370px;
     display: block;
   }
   .id_alarm_delete{
@@ -32,6 +32,7 @@
   .table_alarm_lay{
     display: inline-flex;
     align-items: center;
+    width: 380px;
   }
   .table{
     border-spacing: 0;

@@ -1,5 +1,6 @@
 import axiosInstance from "../../axiosConfig";
 import React, { useState,useEffect } from 'react';
+import LoadSpinner from '../Spinner/SpinnerCharacter';
 import "../../css/character/Exercise.css"
 import { FiEdit } from "react-icons/fi";
 
@@ -10,7 +11,7 @@ const Culture = (props) => {
   const [Cultureexp, setCultureexp] = useState([]);//캐릭터 exp
   const [Culturelevel, setCulturelevel] = useState([]);//캐릭터 level
   const [CultureimageSrc, setCultureimageSrc] = useState([]);//캐릭터 이미지
-
+  const [Loading, setLoading] = useState(true);
   const [CultureisEditing, setCultureEditing] = useState(false);
 
   const character_id = props.userId;
@@ -59,7 +60,7 @@ const Culture = (props) => {
     });
     
 //캐릭터 이미지 가져오기
-  axiosInstance.get('/image?imageName=%EB%AC%B8%ED%99%941.png', { responseType: 'arraybuffer' })
+  axiosInstance.get(`image?imageName=${Cultureimg}.png`, { responseType: 'arraybuffer' })
   .then((response) => {
   // ArrayBuffer를 Blob으로 변환
     const blob = new Blob([response.data], { type: 'image/png' });
@@ -68,6 +69,7 @@ const Culture = (props) => {
     const reader = new FileReader();
     reader.onload = () => {
       setCultureimageSrc(reader.result);
+      setLoading(false);
     };
     reader.readAsDataURL(blob);
   })
@@ -88,6 +90,10 @@ const Culture = (props) => {
 
     return (
       <main className="layout_health">
+        {Loading ? (
+        // 로딩 중인 경우 스피너를 렌더링
+        <LoadSpinner />
+      ) : (
         <div className="health_lay">
           <div className="however">
             <div className="name_container">
@@ -133,9 +139,8 @@ const Culture = (props) => {
                     </tbody>
                   </table>
               </div>
-</div>
-      </main> 
-
+            </div>
+      )}</main> 
     );
   }
 

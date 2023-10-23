@@ -1,6 +1,6 @@
 import axiosInstance from "../../axiosConfig";
 import React, { useState,useEffect } from 'react';
-
+import LoadSpinner from '../Spinner/SpinnerCharacter';
 import "../../css/character/Exercise.css"
 // import EatLv01 from '../../img/Eat-Lv01.png'
 import { FiEdit } from "react-icons/fi";
@@ -14,7 +14,7 @@ const Eat = (props) => {
   const [EatimageSrc, setEatimageSrc] = useState([]);//캐릭터 이미지
 
   const [EatisEditing, setEatEditing] = useState(false);
-
+  const [Loading, setLoading] = useState(true);
   const character_id = props.userId;
   const Eatimg = props.userId2;
 
@@ -67,7 +67,7 @@ const Eat = (props) => {
     const reader = new FileReader();
     reader.onload = () => {
       setEatimageSrc(reader.result);
-      
+      setLoading(false);
     };
     reader.readAsDataURL(blob);
   })
@@ -87,6 +87,10 @@ const Eat = (props) => {
 
     return (
       <main className="layout_health">
+        {Loading ? (
+        // 로딩 중인 경우 스피너를 렌더링
+        <LoadSpinner />
+      ) : (
         <div className="health_lay">
         <div className="however">
           <div className="name_container">
@@ -133,7 +137,7 @@ const Eat = (props) => {
                     </tbody>
                   </table>
               </div>
-</div>
+</div>)}
       </main> 
  
     );

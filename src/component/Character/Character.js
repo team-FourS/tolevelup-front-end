@@ -11,11 +11,7 @@ import Eat from "./Eat";
 import Culture from "./Culture";
 import Hobby from "./Hobby";
 
-import ExerciseCharacter from '../../img/Exercise-Lv01.png'
-import EatCharacter from '../../img/Eat-Lv01.png'
-import HobbyCharacter from '../../img/Hobby-Lv01.png'
-// import CultureCharacter from '../../img/Culture-Lv01.png'
-
+import LoadSpinner from '../Spinner/SpinnerCharacter';
 
 const Character = () => {
 
@@ -23,6 +19,8 @@ const Character = () => {
   const [eat, setEat] = useState(false);
   const [culture, setPlay] = useState(false);
   const [hobby, setHobby] = useState(false);
+
+  const [Loading, setLoading] = useState(true);
 
   //캐릭터 정보가져오기
   //캐릭터 이름
@@ -40,6 +38,11 @@ const Character = () => {
   const [getEatImg, setgetEatImg] = useState('');
   const [getExerciseImg, setgetExerciseImg] = useState('');
   const [getCultureImg, setgetCultureImg] = useState('');
+  
+  const [EatimageSrc, setEatimageSrc] = useState([]);
+  const [ExerciseimageSrc, setExerciseimageSrc] = useState([]);
+  const [HobbyImgimageSrc, setHobbyImgimageSrc] = useState([]);
+  const [CultureimageSrc, setCultureimageSrc] = useState([]);
 
 
   useEffect(() => {
@@ -62,18 +65,76 @@ const Character = () => {
       setgetEatImg(res.data[1].userCharacter.character.img)//식습관
       setgetCultureImg(res.data[0].userCharacter.character.img)//문화
       setgetHobbyImg(res.data[3].userCharacter.character.img)//취미
-      
-      // console.log(res.data[3]);
 
     })
 
-}, []);
+    //캐릭터 이미지 가져오기=식습관
+  axiosInstance.get(`image?imageName=${getEatImg}.png`, { responseType: 'arraybuffer' })
+  .then((res) => {
+    const blob = new Blob([res.data], { type: 'image/png' });
+    const reader = new FileReader();
+    reader.onload = () => {
+      setEatimageSrc(reader.result);
+    };
+    reader.readAsDataURL(blob);
+    setLoading(false);
+  })
+    .catch((error) => {
+    });
+
+    //캐릭터 이미지 가져오기=운동
+  axiosInstance.get(`image?imageName=${getExerciseImg}.png`, { responseType: 'arraybuffer' })
+  .then((res) => {
+    const blob = new Blob([res.data], { type: 'image/png' });
+    const reader = new FileReader();
+    reader.onload = () => {
+      setExerciseimageSrc(reader.result);
+    };
+    reader.readAsDataURL(blob);
+    setLoading(false);
+  })
+    .catch((error) => {
+
+    });
+
+  axiosInstance.get(`image?imageName=${getHobbyImg}.png`, { responseType: 'arraybuffer' })
+  .then((res) => {
+    const blob = new Blob([res.data], { type: 'image/png' });
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      setHobbyImgimageSrc(reader.result);
+    };
+    reader.readAsDataURL(blob);
+    setLoading(false);
+  })
+    .catch((error) => {
+
+    });
+
+  axiosInstance.get(`image?imageName=${getCultureImg}.png`, { responseType: 'arraybuffer' })
+  .then((res) => {
+    const blob = new Blob([res.data], { type: 'image/png' });
+    const reader = new FileReader();
+    reader.onload = () => {
+      setCultureimageSrc(reader.result);
+    };
+    reader.readAsDataURL(blob);
+    setLoading(false);
+  })
+    .catch((error) => {
+    });
+
+}, [getEatImg,getExerciseImg,getCultureImg,getHobbyImg]);
     
   return (
     <div className="layout_char">
       <Header />
         <main className="main_character">
           <button className="btn_exercise_character">
+          {Loading ? (
+        <LoadSpinner />
+      ) : (
             <span id ="health" onClick={() => setHealth(!health)}>
               {health && (
                 <CModal closeModal={() => setHealth(!health)}>
@@ -81,13 +142,21 @@ const Character = () => {
                 </CModal>
             )}
             <h2 className="character_name">{charactername3}</h2>
-            <img className ="character_img" src={ExerciseCharacter} alt='운동'></img>
+            {ExerciseimageSrc ? (
+        <img src={ExerciseimageSrc} alt="이미지" className="character_img"/>
+      ) : (
+        <p>이미지를 불러오는 중입니다...</p>
+      )}
             <p className="character_theme">운동</p>
       </span>
+      )}
 </button>
 </main>
 <main className="main_character">
       <button className="btn_eat_character" onClick={() => setEat(!eat)}>
+      {Loading ? (
+        <LoadSpinner />
+      ) : (
         <span className ="eat" style ={{display:'block'}} onClick={() => setEat(!eat)}>
           {eat && (
             <CModal closeModal={() => setEat(!eat)}>
@@ -95,16 +164,21 @@ const Character = () => {
             </CModal>
           )}
           <h2 className="character_name">{charactername2}</h2>
-          <img className ="character_img" src={EatCharacter} alt='식습관'></img>
+          {EatimageSrc ? (
+        <img src={EatimageSrc} alt="이미지" className="character_img"/>
+      ) : (
+        <p>이미지를 불러오는 중입니다...</p>
+      )}
           <p className="character_theme">식습관</p>
         </span>
-        
+        )}
         </button>
         </main>
-    
-
   <main className="main_character">
     <button className="btn_culture_character">
+    {Loading ? (
+        <LoadSpinner />
+      ) : (
       <span id ="play" style ={{display:'block'}} onClick={() => setPlay(!culture)}>
           {culture && (
             <CModal closeModal={() => setPlay(!culture)}>
@@ -112,13 +186,20 @@ const Character = () => {
             </CModal>
           )}
           <h2 className="character_name">{charactername1}</h2>
-          <img className ="character_img" src={getCultureImg} alt='문화생활'></img>
+          {CultureimageSrc ? (
+          <img src={CultureimageSrc} alt="이미지" className="character_img"/>
+      ) : (
+        <p>이미지를 불러오는 중입니다...</p>
+      )}
           <p className="character_theme">문화생활</p>
-      </span>
+      </span>)}
       </button>
       </main>
       <main className="main_character">
       <button className="btn_hobby_character">
+      {Loading ? (
+        <LoadSpinner />
+      ) : (
       <span id ="hobby" style ={{display:'block'}} onClick={() => setHobby(!hobby)}>
           {hobby && (
             <CModal closeModal={() => setHobby(!hobby)}>
@@ -126,11 +207,14 @@ const Character = () => {
             </CModal>
           )}
           <h2 className="character_name">{charactername4}</h2>
-            <img className ="character_img" src={HobbyCharacter} alt='취미'></img>
+          {HobbyImgimageSrc ? (
+          <img src={HobbyImgimageSrc} alt="이미지" className="character_img"/>
+      ) : (
+        <p>이미지를 불러오는 중입니다...</p>
+      )}
             <p className="character_theme">취미</p>
-      </span>
+      </span>)}
       </button>
-
   </main>
   <Footer/>
 </div>
