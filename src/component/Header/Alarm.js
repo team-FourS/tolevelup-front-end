@@ -36,7 +36,7 @@ const Alarm = () => {
   };
 
   useEffect(() => {
-    axiosInstance.get('api/v1/users/alarm?page=0&size=5')
+    axiosInstance.get('api/v1/users/alarm?page=0&size=10')
       .then((res) => {
         setAlarms(res.data.result.content);
         console.log(res.data.result.content);

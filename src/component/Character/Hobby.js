@@ -1,5 +1,6 @@
 import axiosInstance from "../../axiosConfig";
 import React, { useState,useEffect } from 'react';
+import LoadSpinner from '../Spinner/SpinnerCharacter';
 import "../../css/character/Exercise.css"
 import { FiEdit } from "react-icons/fi";
 
@@ -10,7 +11,7 @@ const Hobby = (props) => {
   const [Hobbyexp, setHobbyexp] = useState([]);//캐릭터 exp
   const [Hobbylevel, setHobbylevel] = useState([]);//캐릭터 level
   const [HobbyimageSrc, setHobbyImageSrc] = useState();//캐릭터 이미지
-
+  const [Loading, setLoading] = useState(true);
   const [HobbyisEditing, setHobbyEditing] = useState(false);
 
   const character_id = props.userId;
@@ -67,6 +68,7 @@ const Hobby = (props) => {
     const reader = new FileReader();
     reader.onload = () => {
       setHobbyImageSrc(reader.result);
+      setLoading(false);
     };
     reader.readAsDataURL(blob);
   })
@@ -87,6 +89,10 @@ const Hobby = (props) => {
 
     return (
       <main className="layout_health">
+        {Loading ? (
+        // 로딩 중인 경우 스피너를 렌더링
+        <LoadSpinner />
+      ) : (
         <div className="health_lay">
           <div className="however">
             <div className="name_container">
@@ -132,9 +138,8 @@ const Hobby = (props) => {
                     </tbody>
                   </table>
               </div>
-</div>
-      </main> 
- 
+            </div>
+      )}</main> 
     );
   }
 

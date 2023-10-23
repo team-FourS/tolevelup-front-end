@@ -1,5 +1,6 @@
 import axiosInstance from "../../axiosConfig";
 import React, { useState,useEffect } from 'react';
+import LoadSpinner from '../Spinner/SpinnerCharacter';
 import "../../css/character/Exercise.css"
 import { FiEdit } from "react-icons/fi";
 
@@ -10,7 +11,7 @@ const Health = (props) => {
   const [Exerciseexp, setExerciseexp] = useState([]);//캐릭터 exp
   const [Exerciselevel, setExerciselevel] = useState([]);//캐릭터 level
   const [imageSrc, setImageSrc] = useState([]);//캐릭터 이미지
-
+  const [Loading, setLoading] = useState(true);
   const [ExerciseisEditing, setExerciseEditing] = useState(false);
   const character_id = props.userId;
   const Exerciseimg = props.userId1;
@@ -61,6 +62,7 @@ const Health = (props) => {
     const reader = new FileReader();
     reader.onload = () => {
       setImageSrc(reader.result);
+      setLoading(false);
     };
     reader.readAsDataURL(blob);
   })
@@ -80,6 +82,10 @@ const Health = (props) => {
 
     return (
       <main className="layout_health">
+        {Loading ? (
+        // 로딩 중인 경우 스피너를 렌더링
+        <LoadSpinner />
+      ) : (
         <div className="health_lay">
           <div className="however"> 
             <div className="name_container">
@@ -125,9 +131,8 @@ const Health = (props) => {
                     </tbody>
                   </table>
               </div>
-              </div>
-      </main> 
- 
+            </div>
+      )}</main> 
     );
   }
 
