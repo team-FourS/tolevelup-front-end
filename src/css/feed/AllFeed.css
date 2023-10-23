@@ -75,13 +75,21 @@
   width: 50px; height: 50px;
   margin-top: 15px; margin-left: 15px;
 }
+
+/* 팔로우 버튼 */
 .followButton {
-  background-color: #3498db;
-  color: #ffffff;
+  background-color: #4baae9;
+  width: 60px; height: 28px;
+  color: #ffffff; 
   padding: 5px 10px;
   border: none;  border-radius: 5px;
-  margin: 0 0 0px 0;
+  margin-left: 5px;
   cursor: pointer;
+}
+/* 팔로잉 시 버튼 색 변경*/
+.followButton.following {
+  background-color: rgb(189, 189, 189);
+  color: white; 
 }
 
 .userInfo h4, .user_id{

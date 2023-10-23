@@ -122,20 +122,20 @@ const FollowFeed = () => {
               <div className="feedChecklist">
                 {followItem.userCompleteMissions.map((mission, missionIndex) => (
                   <div key={missionIndex}>
-                    {mission.checked === "DAILY_COMPLETE" || (mission.checked === "WEEKLY_COMPLETE" && (
+                    {mission.checked === "DAILY_COMPLETE" ||
+                    mission.checked === "WEEKLY_COMPLETE" ? (
                       <div>
                         <input
                           type="checkbox"
                           id={`btn${missionIndex}`}
                           checked={true}
-                          readOnly // checked 속성을 항상 true로 설정
                         />
                         <label htmlFor={`btn${missionIndex}`}>
                           {mission.themeName} | {mission.content}
                         </label>
                         <br />
                       </div>
-                    ))}
+                    ) : null}
                   </div>
                 ))}
               </div>
