@@ -29,13 +29,17 @@ const AllFeed = () => {
       try {
         const res = await axiosInstance.get("api/v1/feeds");
         setFeedData(res.data.result);
-
+  
         const userId = res.data.result.map((item) => item.userData.userId);
-
+  
         if (userId) {
           setUserId(userId);
         }
-
+  
+        // 좋아요 상태 초기화
+        const newLikeStatus = res.data.result.map((item) => item.likeSent);
+        setLikeStatus(newLikeStatus);
+  
         // 팔로우 상태 초기화
         const newFollowStatus = res.data.result.map((item) => item.followStatus);
         setFollowStatus(newFollowStatus);
@@ -43,9 +47,10 @@ const AllFeed = () => {
         console.error("API 호출 에러:", error);
       }
     };
-
+  
     fetchData();
   }, []);
+  
 
   const FeedClick = () => {
     setIsActive(true);
@@ -59,21 +64,27 @@ const AllFeed = () => {
     const newLikeStatus = [...likeStatus];
     newLikeStatus[index] = !newLikeStatus[index];
     setLikeStatus(newLikeStatus);
-
+  
     const selectedUserId = userId[index];
-
+  
     try {
-      // 이미 좋아요를 누른 경우에만 좋아요 취소 요청을 보냅니다.
+      // 이미 좋아요를 누른 경우에만 좋아요 취소 요청
       if (newLikeStatus[index]) {
         await axiosInstance.post(`api/v1/feeds/${selectedUserId}/likes`);
       } else {
         await axiosInstance.delete(`api/v1/feeds/${selectedUserId}/likes`);
       }
+  
+      // 좋아요 개수 다시 가져오기
+      const res = await axiosInstance.get("api/v1/feeds");
+      const updatedFeedData = res.data.result;
+      setFeedData(updatedFeedData);
     } catch (error) {
       console.log(`Failed to update likes for ${selectedUserId}:`, error);
     }
   };
-
+  
+  // 팔로우
   const handleFollowClick = async (index) => {
     const selectedUserId = userId[index];
 
@@ -86,14 +97,16 @@ const AllFeed = () => {
         const newFollowStatus = [...followStatus];
         newFollowStatus[index] = !newFollowStatus[index];
         setFollowStatus(newFollowStatus);
-        console.log(`Successfully followed user ${selectedUserId}`);
+        console.log(`사용자 ${selectedUserId}를 성공적으로 팔로우했습니다.`);
       } else {
-        console.log(`Failed to follow user ${selectedUserId}`);
+        console.log(`사용자 ${selectedUserId}를 팔로우하는 데 실패했습니다.`);
       }
     } catch (error) {
-      console.error(`Failed to follow user ${selectedUserId}:`, error);
+      console.error(`사용자 ${selectedUserId}를 팔로우하는 데 실패했습니다.:`, error);
     }
   };
+
+  // 언팔로우
   const handleUnfollowClick = async (index) => {
     const selectedUserId = userId[index];
   
@@ -127,19 +140,13 @@ const AllFeed = () => {
       <Link to="/AllFeed">
         <button
           className={`allFeed ${isActive ? "allfeed_active" : ""}`}
-          onClick={FeedClick}
-        >
-          전체
-        </button>
+          onClick={FeedClick}>  전체  </button>
       </Link>
 
       <Link to="/FollowFeed">
         <button
           className={`followFeed ${isActive ? "" : "followfeed_active"}`}
-          onClick={FollowFeedClick}
-        >
-          팔로우 중
-        </button>
+          onClick={FollowFeedClick}>  팔로우 중  </button>
       </Link>
 
       <div className="feed_scrollbox">
@@ -180,19 +187,23 @@ const AllFeed = () => {
                   </div>
                 ))}
               </div>
+
+              {/* 좋아요 아이콘 */}          
               <HiHeart
                 className={`heart_icon ${
                   likeStatus[index] ? "redfh" : "gray"
                 }`}
-                onClick={() => handleHeartIconClick(index)}
-              />
+                onClick={() => handleHeartIconClick(index)}/>
+              <span className="likeCount">{feedItem.thisLikeCounts}</span>
+
+              {/* 코멘트 아이콘 */} 
               <LiaCommentSolid
                 className="comment_icon"
                 onClick={() => {
                   setComment(!comment);
                   setCommentedUserId(userId[index]);
-                }}
-              />
+                }} />
+              <span className="commentCount">{feedItem.thisCommentCounts}</span>
               {comment && (
                 <CommentModal closeModal={() => setComment(!CommentModal)}>
                   <Comment userId={commentedUserId} />

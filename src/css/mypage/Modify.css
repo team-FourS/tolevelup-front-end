@@ -183,5 +183,7 @@
 .intro_edit_button, .nickname_edit_button,
 .id_edit_button, .password_edit_button, .email_edit_button{
   float: right;
-  margin-top: 12px;
+  margin: 12px 0 15px 10px;
+  background-color: #d8d8d8;
+  border: none; border-radius: 3px;
 }
