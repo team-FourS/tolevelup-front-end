@@ -88,7 +88,9 @@ const RankAll = () => {
                           <td>
                             <div className="rank_Info">
                               <h4 className="rank_user_name">{`Lv${rankItem.userData.level}. ${rankItem.userData.name}`}</h4>
+                              <p className="rank_exp">{rankItem.exp_total}</p>
                               <h4 className="rank_user_id">{rankItem.userData.userId}</h4>
+                              
                             </div>
                           </td>
                         </div>

@@ -34,17 +34,28 @@
     display: inline;
   }
 .rank_Info{
-    margin-left: 20px;
+    width: 650px;
+    margin-right: -500px;  margin-left: 20px;
     text-align: left;
-    margin-right: -500px;
 }
 .rank_user_name{
     margin:0;
+    font-size: 17px;
+    display: inline-block;
 }
 .rank_user_id{
     margin:0;
+    font-size: 17px;
     color: gray;
     font-weight: 400;
+}
+.rank_exp{
+  display: inline-block;
+  margin: 10px 0 0 0; 
+  float: right;
+  font-weight: 500;
+  font-size: 20px;
+  color: #79a58b;
 }
 .table_wer2{
     display: inline-flex;
