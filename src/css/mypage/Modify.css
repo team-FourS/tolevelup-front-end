@@ -28,7 +28,7 @@
 }
 .square{
   background-color: white;
-  margin-top: 10vh;
+  margin-top: 15vh;
   border-radius: 10px;
 }
 .square_in{
@@ -186,4 +186,12 @@
   margin: 12px 0 15px 10px;
   background-color: #d8d8d8;
   border: none; border-radius: 3px;
+}
+.Withdrawal{
+  float: right;
+  font-size:small;
+  color: #bf020283;
+}
+.out_margin{
+  margin-bottom: 10px;
 }

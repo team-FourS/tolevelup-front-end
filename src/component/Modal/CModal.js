@@ -5,6 +5,7 @@ function CModal(props) {
 
 function closeModal() {
     props.closeModal();
+    document.location.href = '';
   }
 
   return (

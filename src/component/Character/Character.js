@@ -44,7 +44,6 @@ const Character = () => {
   const [HobbyImgimageSrc, setHobbyImgimageSrc] = useState([]);
   const [CultureimageSrc, setCultureimageSrc] = useState([]);
 
-
   useEffect(() => {
 
     // 서버의 캐릭터 정보 가져오기
@@ -130,6 +129,10 @@ const Character = () => {
   return (
     <div className="layout_char">
       <Header />
+      {Loading ? (
+        <LoadSpinner />
+      ) : (
+      <div>
         <main className="main_character">
           <button className="btn_exercise_character">
           {Loading ? (
@@ -216,6 +219,8 @@ const Character = () => {
       </span>)}
       </button>
   </main>
+  </div>
+  )}
   <Footer/>
 </div>
     );
