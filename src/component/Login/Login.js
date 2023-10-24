@@ -9,9 +9,6 @@ import Signup from "../Login/Signup";
 // import axios from 'axios';
 import fullnameLogo from '../../img/logo/fullname-logo.png';
 import axiosInstance from "../../axiosConfig"
-import naver from '../../img/naver.png';
-import google from '../../img/google.png';
-import kakao from '../../img/kakao.png';
 
 function Login() {
 
@@ -95,13 +92,7 @@ function Login() {
             autoComplete="password" /> <br  />  
         </div>
 
-        <div>
-          <img className="naver" src={naver} alt="네이버" />
-          <a href="https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?client_id=343546408215-08e0d07mt7mfuj9ip5hcnta7udg1m5db.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Flogin%2Foauth_google_check&response_type=code&scope=email%20profile%20openid&access_type=offline&service=lso&o2v=2&theme=glif&flowName=GeneralOAuthFlow">
-            <img className="google" src={google} alt="구글" />
-          </a>
-          <img className="kakao" src={kakao} alt="카카오" />
-        </div>
+        
       
         {/* <Link to="/Mission"> */}
 

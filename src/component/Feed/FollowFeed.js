@@ -23,7 +23,7 @@ const FollowFeed = () => {
   const [feedData, setFeedData] = useState([]);
   const [userId, setUserId] = useState(null);
   const [commentedUserId, setCommentedUserId] = useState("");
-  const [likeStatus, setLikeStatus] = useState([]);
+  const [likeStatus, setLikeStatus] = useState(feedData.map(() => false));
   const [followStatus, setFollowStatus] = useState(feedData.map(() => false));
   
   //스피너
@@ -41,8 +41,8 @@ const FollowFeed = () => {
           setUserId(userId);
         }
 
-        const likeStatus = res.data.result.map(item => item.likeSent);
-        setLikeStatus(likeStatus);
+        const FlikeStatus = res.data.result.map(item => item.likeSent);
+        setLikeStatus(FlikeStatus);
 
         // 팔로우 상태 초기화
         const newFollowStatus = res.data.result.map(item => item.followStatus);
