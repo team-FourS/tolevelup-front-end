@@ -7,7 +7,7 @@ import LoadSpinner from '../Spinner/SpinnerAlarm';
 const Alarm = () => {
   const [alarms, setAlarms] = useState([]);
   const [Loading,setLoading] = useState(true);//스피너
-  const setallDeletes = useState('');//알람 전체 삭제
+  // const setallDeletes = useState('');//알람 전체 삭제
 
   //알람 부분삭제
   const onClickhandlerdelete = (alarmId) => {
@@ -25,7 +25,8 @@ const Alarm = () => {
   const onClickhandleAllrdelete = () => {
     axiosInstance.delete('api/v1/users/alarm')
       .then((res) => {
-        setallDeletes(res.data.result.content);
+        // setallDeletes(res.data.result.content);
+        setAlarms([]);
         // console.log(res.data.result.content);
         setLoading(false);
       })
