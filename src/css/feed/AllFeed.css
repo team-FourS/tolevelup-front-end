@@ -43,7 +43,6 @@
   color: white;
 }
 
-
 /*피드 박스 스크롤*/
 .feed_scrollbox::-webkit-scrollbar {
   width: 6px;
@@ -56,6 +55,15 @@
   width: auto; height: 520px;
   margin-top: 25px;
   overflow-y: scroll;
+}
+.followFeed-noData{
+  font-size: 20px;
+  color: rgb(180, 180, 180);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
 }
 /*피드 박스*/
 .feedBox01, .feedBox02, 

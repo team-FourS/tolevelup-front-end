@@ -7,6 +7,7 @@ import "../../css/feed/AllFeed.css";
 import { Routes, Route, Link } from "react-router-dom";
 import user from "../../img/user.png";
 import axiosInstance from "../../axiosConfig";
+import LoadSpinner from '../Spinner/SpinnerFeed';
 
 import { HiHeart } from "react-icons/hi";
 import { LiaCommentSolid } from "react-icons/lia";
@@ -24,6 +25,9 @@ const FollowFeed = () => {
   const [commentedUserId, setCommentedUserId] = useState("");
   const [likeStatus, setLikeStatus] = useState([]);
   const [followStatus, setFollowStatus] = useState(feedData.map(() => false));
+  
+  //스피너
+  const [Loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -45,6 +49,8 @@ const FollowFeed = () => {
         setFollowStatus(newFollowStatus);
       } catch (error) {
         console.error("API 호출 에러:", error);
+      } finally {
+        setLoading(false); // 스피너 종료
       }
     };
 
@@ -132,83 +138,89 @@ const FollowFeed = () => {
   return (
     <div className="layout_feed">
       <Header />
-
+  
       <Routes>
         <Route path="/AllFeed" element={<AllFeed />} />
         <Route path="/FollowFeed" element={<FollowFeed />} />
       </Routes>
-
+  
       <Link to="/AllFeed">
         <button
           className={`allFeed ${isActive ? "allfeed_active" : ""}`}
           onClick={FeedClick}>  전체  </button>
       </Link>
-
+  
       <Link to="/FollowFeed">
         <button
           className={`followFeed ${isFollowActive ? "followfeed_active" : ""}`}
           onClick={FollowFeedClick}>  팔로우 중  </button>
       </Link>
-
+  
       <div className="feed_scrollbox">
-        {feedData.map((followItem, index) => (
-          <div key={index} className="feedBox01">
-            <img className="user_profile" src={user} alt="프로필" />
-            <div className="feedContent">
-              <div className="userInfo">
-                <h4> Lv{followItem.userData.level}. {followItem.userData.name} </h4>
-                <button
-                  className={`followButton ${followStatus[index] ? "following" : ""}`}
-                  onClick={() => (followStatus[index] ? handleUnfollowClick(index) : handleFollowClick(index))}
-                >
-                  {followStatus[index] ? "팔로잉" : "팔로우"}
-                </button>
-                <p className="oneLine">{followItem.userData.intro}</p>
+        {Loading ? (
+          <LoadSpinner />
+        ) : feedData.length === 0 ? (
+          <p className="followFeed-noData">미션을 수행한 팔로워가 없습니다.</p>
+        ) : (
+          feedData.map((followItem, index) => (
+            <div key={index} className="feedBox01">
+              <img className="user_profile" src={user} alt="프로필" />
+              <div className="feedContent">
+                <div className="userInfo">
+                  <h4> Lv{followItem.userData.level}. {followItem.userData.name} </h4>
+                  <button
+                    className={`followButton ${followStatus[index] ? "following" : ""}`}
+                    onClick={() => (followStatus[index] ? handleUnfollowClick(index) : handleFollowClick(index))}
+                  >
+                    {followStatus[index] ? "팔로잉" : "팔로우"}
+                  </button>
+                  <p className="oneLine">{followItem.userData.intro}</p>
+                </div>
+                <div className="feedChecklist">
+                  {followItem.userCompleteMissions.map((mission, missionIndex) => (
+                    <div key={missionIndex}>
+                      {mission.checked === "DAILY_COMPLETE" ||
+                      mission.checked === "WEEKLY_COMPLETE" ? (
+                        <div>
+                          <input
+                            type="checkbox"
+                            id={`btn${missionIndex}`}
+                            checked={true}
+                            readOnly // checked 속성을 항상 true로 설정
+                          />
+                          <label htmlFor={`btn${missionIndex}`}>
+                            {mission.themeName} | {mission.content}
+                          </label>
+                          <br />
+                        </div>
+                      ) : null}
+                    </div>
+                  ))}
+                </div>
+  
+                {/* 좋아요 아이콘 */}      
+                <HiHeart
+                  className={`heart_icon ${likeStatus[index] ? "redfh" : "gray"}`}
+                  onClick={() => handleHeartIconClick(index)}/>
+                  <span className="likeCount">{followItem.thisLikeCounts}</span>
+  
+                {/* 코멘트 아이콘 */} 
+                <LiaCommentSolid
+                  className="comment_icon"
+                  onClick={() => {
+                    setComment(!comment);
+                    setCommentedUserId(userId[index]);
+                  }}/>
+                  <span className="commentCount">{followItem.thisCommentCounts}</span>
+                {comment && (
+                  <CommentModal closeModal={() => setComment(!CommentModal)}>
+                    <Comment userId={commentedUserId} />
+                  </CommentModal>
+                )}
               </div>
-              <div className="feedChecklist">
-                {followItem.userCompleteMissions.map((mission, missionIndex) => (
-                  <div key={missionIndex}>
-                    {mission.checked === "DAILY_COMPLETE" ||
-                    mission.checked === "WEEKLY_COMPLETE" ? (
-                      <div>
-                        <input
-                          type="checkbox"
-                          id={`btn${missionIndex}`}
-                          checked={true}
-                          readOnly // checked 속성을 항상 true로 설정
-                        />
-                        <label htmlFor={`btn${missionIndex}`}>
-                          {mission.themeName} | {mission.content}
-                        </label>
-                        <br />
-                      </div>
-                    ) : null}
-                  </div>
-                ))}
-              </div>
-
-              {/* 좋아요 아이콘 */}      
-              <HiHeart
-                className={`heart_icon ${likeStatus[index] ? "redfh" : "gray"}`}
-                onClick={() => handleHeartIconClick(index)}/>
-                <span className="likeCount">{followItem.thisLikeCounts}</span>
-
-              {/* 코멘트 아이콘 */} 
-              <LiaCommentSolid
-                className="comment_icon"
-                onClick={() => {
-                  setComment(!comment);
-                  setCommentedUserId(userId[index]);
-                }}/>
-                <span className="commentCount">{followItem.thisCommentCounts}</span>
-              {comment && (
-                <CommentModal closeModal={() => setComment(!CommentModal)}>
-                  <Comment userId={commentedUserId} />
-                </CommentModal>
-              )}
             </div>
-          </div>
-        ))}
+          ))
+        )}
       </div>
       <Footer />
     </div>

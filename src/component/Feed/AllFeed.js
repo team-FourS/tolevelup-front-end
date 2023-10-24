@@ -7,6 +7,7 @@ import FollowFeed from "./FollowFeed";
 import "../../css/feed/AllFeed.css";
 import { Routes, Route, Link } from "react-router-dom";
 import user from "../../img/user.png";
+import LoadSpinner from '../Spinner/SpinnerFeed';
 
 import { HiHeart } from "react-icons/hi";
 import { LiaCommentSolid } from "react-icons/lia";
@@ -23,6 +24,9 @@ const AllFeed = () => {
   const [commentedUserId, setCommentedUserId] = useState("");
   const [likeStatus, setLikeStatus] = useState(feedData.map(() => false));
   const [followStatus, setFollowStatus] = useState(feedData.map(() => false));
+
+  //스피너
+  const [Loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -45,6 +49,8 @@ const AllFeed = () => {
         setFollowStatus(newFollowStatus);
       } catch (error) {
         console.error("API 호출 에러:", error);
+      } finally {
+        setLoading(false); // 스피너 종료
       }
     };
   
@@ -150,7 +156,12 @@ const AllFeed = () => {
       </Link>
 
       <div className="feed_scrollbox">
-        {feedData.map((feedItem, index) => (
+      {Loading ? (
+        <LoadSpinner />
+        ) : feedData.length === 0 ? (
+          <p className="followFeed-noData">미션을 수행한 사람이 없습니다.</p>
+        ) : (
+        feedData.map((feedItem, index) => (
           <div key={index} className="feedBox01">
             <img className="user_profile" src={user} alt="프로필" />
             <div className="feedContent">
@@ -211,7 +222,8 @@ const AllFeed = () => {
               )}
             </div>
           </div>
-        ))}
+        ))
+      )}  
       </div>
       <Footer />
     </div>
