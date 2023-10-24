@@ -58,6 +58,7 @@ const Mypage = () => {
 
   const [myRank, setmyRank] = useState([]);
   const [CompleteMission, setCompleteMission] = useState([]);
+  const [userLevel, setuserLevel] = useState([]);
 
   useEffect(() => {
     // 서버의 사용자 정보 가져오기
@@ -68,6 +69,8 @@ const Mypage = () => {
         setUserName(res.data.result.userData.name);
         setUserId(res.data.result.userData.id);
         setUserIntro(res.data.result.userData.intro);
+
+        setuserLevel(res.data.result.userData.level);
         console.log(formattedDate);//오늘날짜확인
         console.log('얜마이',res.data);
 
@@ -194,7 +197,7 @@ const Mypage = () => {
               <div className='space'>
                 <img className="mypage_profile" src={userImg} alt='프로필'></img>
                 <div className="nickname">
-                  <h4 className='userName'>{userName}</h4>
+                  <h4 className='userName'>Lv.{userLevel} {userName}</h4>
                   <p className='userid'>{userId}</p>
                   <h5 className='userint'> {userIntro} </h5>
                 </div>
