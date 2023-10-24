@@ -77,9 +77,9 @@ const FollowFeed = () => {
     try {
       // 이미 좋아요를 누른 경우에만 좋아요 취소 요청
       if (newLikeStatus[index]) {
-        await axiosInstance.post(`api/v1/feeds/follow/${selectedUserId}/likes`);
+        await axiosInstance.post(`api/v1/feeds/${selectedUserId}/likes`);
       } else {
-        await axiosInstance.delete(`api/v1/feeds/follow/${selectedUserId}/likes`);
+        await axiosInstance.delete(`api/v1/feeds/${selectedUserId}/likes`);
       }
   
       // 좋아요 개수 다시 가져오기

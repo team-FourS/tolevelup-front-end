@@ -191,6 +191,7 @@
   float: right;
   font-size:small;
   color: #bf020283;
+  cursor: pointer;
 }
 .out_margin{
   margin-bottom: 10px;
