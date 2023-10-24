@@ -25,9 +25,15 @@ function Login() {
   };
 
   const onClickLogin = () => {
-    console.log("click login");
-    console.log("ID : ", inputId);
-    console.log("PW : ", inputPw);
+    if (!inputId) {
+      alert("아이디를 입력해주세요.");
+    } else if (!inputPw) {
+      alert("비밀번호를 입력해주세요.");
+    } else {
+      console.log("click login");
+      console.log("ID: ", inputId);
+      console.log("PW: ", inputPw);
+      
     axiosInstance({
       url:'api/v1/users/login',
       method: 'POST',
@@ -50,9 +56,10 @@ function Login() {
       })
       .catch((error)=>{
         console.log(error);
+        alert("아이디 또는 비밀번호를 확인해주세요.");
       });
+    }
   };
-
   // Enter 키로 로그인 넘기기
   const handleOnKeyPress = e => {
     if (e.key === 'Enter') {

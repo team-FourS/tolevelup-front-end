@@ -1,13 +1,19 @@
-import React, {useState, useEffect } from 'react';
+import React, {useState, useEffect, useMemo } from 'react';
 import {Routes, Route, Link,useNavigate} from "react-router-dom";
 import axiosInstance from "../../axiosConfig";
 
 import Mypage from "../Mypage/Mypage";
-import user2 from '../../img/user.png';
+// import user2 from '../../img/user.png';
 import "../../css/mypage/Modify.css";
-import Profile from './Profile';
 import styled from 'styled-components';
 import back from '../../img/back.png';
+
+import userImg1 from '../../img/mintUser.png';
+import userImg2 from '../../img/orangeUser.png';
+import userImg3 from '../../img/pinkUser.png';
+import userImg4 from '../../img/greenUser.png';
+import userImg5 from '../../img/purpleUser.png';
+
 
 
 export const ModalContainer = styled.div`
@@ -62,12 +68,20 @@ export const ModalView = styled.div.attrs((props) => ({
     }
 `;
 
+
+
+
 const Modify = () => {
-    
+    const [userImg, setUserImg] = useState('');
     //연동
     const [userName, setUserName] = useState('');
     const [userIntro, setUserIntro] = useState('');
     const [userEmail, setUserEmail] = useState('');
+    // const [userPassword, setuserPassword] = useState('');
+
+    const profileImages = useMemo(() => [
+        userImg1,userImg2,userImg3,userImg4,userImg5
+      ], []);
 
     useEffect(() =>{
         axiosInstance.get('api/v1/users/my' , {
@@ -86,13 +100,11 @@ const Modify = () => {
             console.log('Failed to fetch user info:', error);
         });
 
+        const randomIndex = Math.floor(Math.random() * profileImages.length);
+  const randomImageUrl = profileImages[randomIndex];
+  setUserImg(randomImageUrl);
 
-    }, []);
-
-    const [selectedImage, setSelectedImage] = useState(user2);
-    const handleImageSelection = (imageName) => {
-        setSelectedImage(imageName);
-    };
+    }, [profileImages]);
 
     const navigate = useNavigate();
     // 이전 페이지로 이동
@@ -101,11 +113,11 @@ const Modify = () => {
         navigate(-2); //뒤로가기
     };
 
-    const [isOpen, setIsOpen] = useState(false);
+    // const [isOpen, setIsOpen] = useState(false);
 
-    const openModalHandler = () => {
-    setIsOpen(!isOpen) 
-    };
+    // const openModalHandler = () => {
+    // setIsOpen(!isOpen) 
+    // };
 
     const onClickWithdrawal = () => {
         axiosInstance.delete('api/v1/users')
@@ -158,30 +170,7 @@ const Modify = () => {
                     <tbody>
                         <tr>
                             <td className="modify_img" rowspan="3">
-                                <img className ="profils" src={selectedImage} alt='프로필' rowspan="2"></img>
-
-                                <>
-                <ModalContainer>
-                    <ModalBtn onClick={openModalHandler}
-                    // 클릭하면 Modal이 열린 상태(isOpen)를 boolean 타입으로 변경하는 메소드가 실행되어야 합니다. 
-                    ><h4 className='profil_font'>프로필 이미지 편집</h4>
-                    {/* 조건부 렌더링을 활용해서 Modal이 열린 상태(isOpen이 true인 상태)일 때는 ModalBtn의 내부 텍스트가 'Opened!' 로 Modal이 닫힌 상태(isOpen이 false인 상태)일 때는 ModalBtn 의 내부 텍스트가 'Open Modal'이 되도록 구현 */}
-                    </ModalBtn>
-                        {/* 조건부 렌더링을 활용해서 Modal이 열린 상태(isOpen이 true인 상태)일 때만 모달창과 배경이 뜰 수 있게 구현 */}
-                        {isOpen ? 
-                            <ModalBackdrop onClick={(e) => e.stopPropagation()}>
-                                {/* //event 버블링을 막는 메소드  */}
-                                <ModalView onClick={(e) => e.stopPropagation()}>
-                                    <ExitBtn onClick={openModalHandler}>
-                                        완료
-                                    </ExitBtn>
-                                    <div className='desc'>
-                                        <Profile onSelectImage={handleImageSelection}/>
-                                    </div>
-                                </ModalView>
-                            </ModalBackdrop> : null }
-                </ModalContainer>
-                </>
+                                <img className ="profils" src={userImg} alt='프로필' rowspan="2"></img>
                             </td>
                         </tr>
                         
