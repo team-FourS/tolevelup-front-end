@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axiosInstance from "../../axiosConfig";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import Header from "../../component/Header/Header";
 import Footer from "../../component/Footer";
 import FollowFeed from "./FollowFeed";
@@ -16,8 +16,8 @@ import CommentModal from "../Modal/CommentModal";
 import Comment from "../Feed/Comment";
 
 const AllFeed = () => {
-  const location = useLocation();
-  const [isActive, setIsActive] = useState(location.pathname === "/AllFeed");
+  // const location = useLocation();
+  const [isActive, setIsActive] = useState("/AllFeed");
   const [comment, setComment] = useState(false);
   const [feedData, setFeedData] = useState([]);
   const [userId, setUserId] = useState(null);
