@@ -114,7 +114,7 @@ const Hobby = (props) => {
       ) : (
         <p>이미지를 불러오는 중입니다...</p>
       )}
-              <h4 className="health_font2">현재 당신의 레벨은</h4>
+              <h4 className="health_font2">현재 {Hobbyname}의 레벨은</h4>
                 <h2 className="health_font3"><strong>&#10024;Lv. {Hobbylevel}&#10024;</strong></h2>
                   <div className="status-hpchar">
                       <div className="bar_char">

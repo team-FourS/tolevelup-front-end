@@ -112,7 +112,7 @@ const Eat = (props) => {
       ) : (
         <p>이미지를 불러오는 중입니다...</p>
       )}
-              <h4 className="health_font2">현재 당신의 레벨은</h4>
+              <h4 className="health_font2">현재 {Eatcharactername1}의 레벨은</h4>
 
                 <h2 className="health_font3">&#10024;Lv. {Eatlevel}&#10024;</h2>
                   <div className="status-hpchar">

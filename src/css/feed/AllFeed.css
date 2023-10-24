@@ -107,34 +107,29 @@
 .feedChecklist{
   margin-bottom: 10px;
 }
-.feed-checkbox{
-  margin-right: 10px; 
-  width: 20px; height: 20px;
-  border: 2px solid rgb(34, 173, 120);
-  background-color: white;
-}
+
 /*아이콘*/
 .comment_icon{
   font-size: 28px;
   color: rgb(155, 154, 154);
-  margin-left: 9px;
+  margin-left: 10px;
+  margin-bottom: -7px;
   display: inline-block;
 }
 
 .heart_icon{
   font-size: 27px;
   color: rgb(155, 154, 154);
-  margin-left: 750px;
+  margin-left: 720px;
+  margin-bottom: -7px;
   display: inline-block;
 }
-.heart_icon.green {
-  color: rgb(0, 172, 55); 
-}
-.heart_icon.gray {
-  color: rgb(155, 154, 154); 
+.likeCount, .commentCount{
+  font-size: 17px;
+  color: rgb(155, 154, 154);
+  margin-left:4px;
 }
 
-/* AllFeed.css에 복사하여 적용할 스타일 */
 .feed_checkbox-container {
   display: flex;
   align-items: center;
