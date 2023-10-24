@@ -54,8 +54,8 @@ const SendComment = () => {
   return (
     <div>
       {Loading ? ( // 로딩 중인 경우 스피너를 렌더링
-                <LoadSpinner />
-            ) : (
+        <LoadSpinner />
+          ) : (
       <div className="get-container">
         {comments.length === 0 ? (
             <div className="noComments">보낸 코멘트가 없습니다.</div>
