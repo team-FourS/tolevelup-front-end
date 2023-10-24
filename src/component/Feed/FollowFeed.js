@@ -23,7 +23,7 @@ const FollowFeed = () => {
   const [feedData, setFeedData] = useState([]);
   const [userId, setUserId] = useState(null);
   const [commentedUserId, setCommentedUserId] = useState("");
-  const [likeStatus, setLikeStatus] = useState([]);
+  const [likeStatus, setLikeStatus] = useState(feedData.map(() => false));
   const [followStatus, setFollowStatus] = useState(feedData.map(() => false));
   
   //스피너
@@ -41,8 +41,8 @@ const FollowFeed = () => {
           setUserId(userId);
         }
 
-        const likeStatus = res.data.result.map(item => item.likeSent);
-        setLikeStatus(likeStatus);
+        const FlikeStatus = res.data.result.map(item => item.likeSent);
+        setLikeStatus(FlikeStatus);
 
         // 팔로우 상태 초기화
         const newFollowStatus = res.data.result.map(item => item.followStatus);
@@ -77,9 +77,9 @@ const FollowFeed = () => {
     try {
       // 이미 좋아요를 누른 경우에만 좋아요 취소 요청
       if (newLikeStatus[index]) {
-        await axiosInstance.post(`api/v1/feeds/follow/${selectedUserId}/likes`);
+        await axiosInstance.post(`api/v1/feeds/${selectedUserId}/likes`);
       } else {
-        await axiosInstance.delete(`api/v1/feeds/follow/${selectedUserId}/likes`);
+        await axiosInstance.delete(`api/v1/feeds/${selectedUserId}/likes`);
       }
   
       // 좋아요 개수 다시 가져오기
