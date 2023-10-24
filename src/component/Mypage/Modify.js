@@ -67,7 +67,6 @@ const Modify = () => {
     //연동
     const [userName, setUserName] = useState('');
     const [userIntro, setUserIntro] = useState('');
-    //const [userPw, setUserPw] = useState('');
     const [userEmail, setUserEmail] = useState('');
 
     useEffect(() =>{
@@ -86,6 +85,8 @@ const Modify = () => {
         .catch((error) => {
             console.log('Failed to fetch user info:', error);
         });
+
+
     }, []);
 
     const [selectedImage, setSelectedImage] = useState(user2);
@@ -103,36 +104,44 @@ const Modify = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const openModalHandler = () => {
-    // isOpen의 상태를 변경하는 메소드를 구현
-    // !false -> !true -> !false
     setIsOpen(!isOpen) 
     };
+
+    const onClickWithdrawal = () => {
+        axiosInstance.delete('api/v1/users')
+        .then((res) => {
+            document.location.href = '/';
+        })
+        .catch((error) => {
+            console.log('Failed to fetch user info:', error);
+        });
+    }
     // const [editprofile, setprofile] = useState(false);
 
-    const useConfirm = (message = null, onConfirm, onCancel) => {
-        if ((!onConfirm || typeof onConfirm !== "function") === true) {
-            return;
-        }
-    if (onCancel && typeof onCancel !== "function") {
-        return;
-    }
-    const confirmAction = () => {
-        if (window.confirm(message)) {
-        onConfirm();
-        } else {
-        onCancel();
-        }
-    };
-    return confirmAction;
-    };
+    // const useConfirm = (message = null, onConfirm, onCancel) => {
+    //     if ((!onConfirm || typeof onConfirm !== "function") === true) {
+    //         return;
+    //     }
+    // if (onCancel && typeof onCancel !== "function") {
+    //     return;
+    // }
+    // const confirmAction = () => {
+    //     if (window.confirm(message)) {
+    //     onConfirm();
+    //     } else {
+    //     onCancel();
+    //     }
+    // };
+    // return confirmAction;
+    // };
 
-    const deleteConfirm = () => {
-        alert("저장되었습니다.");
-        window.location.href = '/mypage';
-    };
-    const cancelConfirm = () => alert("취소되었습니다.");
-    const confirmSave = useConfirm("저장하시겠습니까?", deleteConfirm, cancelConfirm
-);
+//     const deleteConfirm = () => {
+//         alert("저장되었습니다.");
+//         window.location.href = '/mypage';
+//     };
+//     const cancelConfirm = () => alert("취소되었습니다.");
+//     const confirmSave = useConfirm("저장하시겠습니까?", deleteConfirm, cancelConfirm
+// );
 
     return (
         <body className='modify_body'>
@@ -222,18 +231,20 @@ const Modify = () => {
                                         </Link>
                                 </td>
                         </tr>
-        
+                        
                     </tbody>
             </table>
-                    
+            <div className='out_margin'>
+            <p className='Withdrawal' onClick={onClickWithdrawal}>회원탈퇴</p>
+            </div>
 
-            <div className='btn_modi'>
+            {/* <div className='btn_modi'>
                 <button className='btnstyle' onClick={confirmSave} >저장</button>
 
                 <Link to='/mypage'>
                     <button className='btnstyle'>취소 </button>
                 </Link>
-            </div>
+            </div> */}
             </div>
             </div>
         </div>

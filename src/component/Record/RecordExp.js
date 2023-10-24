@@ -98,7 +98,7 @@ const RecordExp = () => {
 
       <div>
       <p className="rank_totalRank"> Total Exp : {totalExp ? `${totalExp}` : ' - '}</p>
-        <div className="ExerciseRank">
+        {/* <div className="ExerciseRank">
           <p className="rank_theme">운동</p>
           <p className="rank_count">{getExpForTheme('운동')}</p>
         </div>
@@ -116,8 +116,51 @@ const RecordExp = () => {
         <div className="HobbyRank">
           <p className="rank_theme">취미</p>
           <p className="rank_count">{getExpForTheme('취미')}</p>
-        </div>
+        </div> */}
       </div>
+      <div className="Record_mission_bar_group">
+                <div className="mission_bar">
+                  <div className='bar_title'>
+                    <strong className="barName">운동</strong>
+                    <strong className="barName">식습관</strong>
+                    <strong className="barName">문화생활</strong>
+                    <strong className="barName">취미</strong>
+                  </div>
+                  <div>
+                    <div className="main_bar">
+                      <div className="status-hp">
+                        <div className="mypageBar">
+                          <div className="exercise_currentBar" style={{ width: `${getExpForTheme('운동')}px` }}></div>
+                        </div>
+                      </div>
+
+                      <div className="status-hp">
+                        <div className="mypageBar">
+                          <div className="eat_currentBar" style={{ width: `${getExpForTheme('식습관')}px` }}></div>
+                        </div>
+                      </div>
+
+                      <div className="status-hp">
+                        <div className="mypageBar">
+                          <div className="culture_currentBar" style={{ width: `${getExpForTheme('문화')}px` }}></div>
+                        </div>
+                      </div>
+
+                      <div className="status-hp">
+                        <div className="mypageBar">
+                          <div className="hobby_currentBar" style={{ width: `${getExpForTheme('취미')}px` }}></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='bar_title'>
+                    <strong className="barName">{getExpForTheme('운동')}</strong>
+                    <strong className="barName">{getExpForTheme('식습관')}</strong>
+                    <strong className="barName">{getExpForTheme('문화')}</strong>
+                    <strong className="barName">{getExpForTheme('취미')}</strong>
+                  </div>
+                </div>
+              </div>
     </div>
   );
 

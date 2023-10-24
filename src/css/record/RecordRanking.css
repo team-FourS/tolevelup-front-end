@@ -59,3 +59,8 @@
 .rank_count{
   font-size: 20px;
 }
+
+.Record_mission_bar_group{
+  display: block;
+  margin-left: 20vh;
+}
