@@ -12,6 +12,7 @@ import Culture from "./Culture";
 import Hobby from "./Hobby";
 
 import LoadSpinner from '../Spinner/SpinnerCharacter';
+import LoadSpinners from '../Spinner/SpinnerCharacterCompo';
 
 const Character = () => {
 
@@ -21,6 +22,7 @@ const Character = () => {
   const [hobby, setHobby] = useState(false);
 
   const [Loading, setLoading] = useState(true);
+  const [Loadings, setLoadings] = useState(true);
 
   //캐릭터 정보가져오기
   //캐릭터 이름
@@ -76,7 +78,7 @@ const Character = () => {
       setEatimageSrc(reader.result);
     };
     reader.readAsDataURL(blob);
-    setLoading(false);
+    setLoadings(false);
   })
     .catch((error) => {
     });
@@ -129,8 +131,8 @@ const Character = () => {
   return (
     <div className="layout_char">
       <Header />
-      {Loading ? (
-        <LoadSpinner />
+      {Loadings ? (
+        <LoadSpinners />
       ) : (
       <div>
         <main className="main_character">

@@ -1,0 +1,9 @@
+.spinner_lay_char{  
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 80%; */
+    position: relative;
+    overflow: hidden;
+}
