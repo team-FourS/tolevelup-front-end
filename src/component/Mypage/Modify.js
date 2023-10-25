@@ -1,20 +1,12 @@
-import React, {useState, useEffect, useMemo } from 'react';
+import React, {useState, useEffect } from 'react';
 import {Routes, Route, Link,useNavigate} from "react-router-dom";
 import axiosInstance from "../../axiosConfig";
 
 import Mypage from "../Mypage/Mypage";
-// import user2 from '../../img/user.png';
+import user from "../../img/T-logo.png";
 import "../../css/mypage/Modify.css";
 import styled from 'styled-components';
 import back from '../../img/back.png';
-
-import userImg1 from '../../img/mintUser.png';
-import userImg2 from '../../img/orangeUser.png';
-import userImg3 from '../../img/pinkUser.png';
-import userImg4 from '../../img/greenUser.png';
-import userImg5 from '../../img/purpleUser.png';
-
-
 
 export const ModalContainer = styled.div`
 // Modal을 구현하는데 전체적으로 필요한 CSS를 구현
@@ -72,16 +64,10 @@ export const ModalView = styled.div.attrs((props) => ({
 
 
 const Modify = () => {
-    const [userImg, setUserImg] = useState('');
     //연동
     const [userName, setUserName] = useState('');
     const [userIntro, setUserIntro] = useState('');
     const [userEmail, setUserEmail] = useState('');
-    // const [userPassword, setuserPassword] = useState('');
-
-    const profileImages = useMemo(() => [
-        userImg1,userImg2,userImg3,userImg4,userImg5
-      ], []);
 
     useEffect(() =>{
         axiosInstance.get('api/v1/users/my' , {
@@ -100,11 +86,7 @@ const Modify = () => {
             console.log('Failed to fetch user info:', error);
         });
 
-        const randomIndex = Math.floor(Math.random() * profileImages.length);
-  const randomImageUrl = profileImages[randomIndex];
-  setUserImg(randomImageUrl);
-
-    }, [profileImages]);
+    }, []);
 
     const navigate = useNavigate();
     // 이전 페이지로 이동
@@ -113,47 +95,20 @@ const Modify = () => {
         navigate(-2); //뒤로가기
     };
 
-    // const [isOpen, setIsOpen] = useState(false);
-
-    // const openModalHandler = () => {
-    // setIsOpen(!isOpen) 
-    // };
-
     const onClickWithdrawal = () => {
-        axiosInstance.delete('api/v1/users')
+        const confirmation = window.confirm('정말로 회원탈퇴를 하시겠습니까?');
+
+    if (confirmation) {
+      axiosInstance
+        .delete('api/v1/users')
         .then((res) => {
-            document.location.href = '/';
+          document.location.href = '/';
         })
         .catch((error) => {
-            console.log('Failed to fetch user info:', error);
+          console.log('사용자 정보를 가져오는 데 실패했습니다:', error);
         });
     }
-    // const [editprofile, setprofile] = useState(false);
-
-    // const useConfirm = (message = null, onConfirm, onCancel) => {
-    //     if ((!onConfirm || typeof onConfirm !== "function") === true) {
-    //         return;
-    //     }
-    // if (onCancel && typeof onCancel !== "function") {
-    //     return;
-    // }
-    // const confirmAction = () => {
-    //     if (window.confirm(message)) {
-    //     onConfirm();
-    //     } else {
-    //     onCancel();
-    //     }
-    // };
-    // return confirmAction;
-    // };
-
-//     const deleteConfirm = () => {
-//         alert("저장되었습니다.");
-//         window.location.href = '/mypage';
-//     };
-//     const cancelConfirm = () => alert("취소되었습니다.");
-//     const confirmSave = useConfirm("저장하시겠습니까?", deleteConfirm, cancelConfirm
-// );
+    }
 
     return (
         <body className='modify_body'>
@@ -170,7 +125,7 @@ const Modify = () => {
                     <tbody>
                         <tr>
                             <td className="modify_img" rowspan="3">
-                                <img className ="profils" src={userImg} alt='프로필' rowspan="2"></img>
+                                <img className ="profils" src={user} alt='프로필' rowspan="2"></img>
                             </td>
                         </tr>
                         
@@ -226,14 +181,6 @@ const Modify = () => {
             <div className='out_margin'>
             <p className='Withdrawal' onClick={onClickWithdrawal}>회원탈퇴</p>
             </div>
-
-            {/* <div className='btn_modi'>
-                <button className='btnstyle' onClick={confirmSave} >저장</button>
-
-                <Link to='/mypage'>
-                    <button className='btnstyle'>취소 </button>
-                </Link>
-            </div> */}
             </div>
             </div>
         </div>

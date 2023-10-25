@@ -5,7 +5,7 @@ import Footer from "../../component/Footer";
 import AllFeed from "./AllFeed";
 import "../../css/feed/AllFeed.css";
 import { Routes, Route, Link } from "react-router-dom";
-import user from "../../img/user.png";
+import user from '../../img/mintUser.png';
 import axiosInstance from "../../axiosConfig";
 import LoadSpinner from '../Spinner/SpinnerFeed';
 

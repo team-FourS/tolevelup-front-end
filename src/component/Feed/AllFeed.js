@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import axiosInstance from "../../axiosConfig";
 import Header from "../../component/Header/Header";
 import Footer from "../../component/Footer";
 import FollowFeed from "./FollowFeed";
+import user from '../../img/mintUser.png';
 import "../../css/feed/AllFeed.css";
 import { Routes, Route, Link } from "react-router-dom";
 import LoadSpinner from '../Spinner/SpinnerFeed';
@@ -12,12 +13,6 @@ import { LiaCommentSolid } from "react-icons/lia";
 
 import CommentModal from "../Modal/CommentModal";
 import Comment from "../Feed/Comment";
-
-import userImg1 from '../../img/mintUser.png';
-import userImg2 from '../../img/orangeUser.png';
-import userImg3 from '../../img/pinkUser.png';
-import userImg4 from '../../img/greenUser.png';
-import userImg5 from '../../img/purpleUser.png';
 
 const AllFeed = () => {
   const [isActive, setIsActive] = useState("/AllFeed");
@@ -30,11 +25,6 @@ const AllFeed = () => {
 
   //스피너
   const [Loading, setLoading] = useState(true);
-  const [userImg, setUserImg] = useState('');
-
-  const profileImages = useMemo(() => [
-    userImg1,userImg2,userImg3,userImg4,userImg5
-  ], []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -63,11 +53,7 @@ const AllFeed = () => {
     };
   
     fetchData();
-
-    const randomIndex = Math.floor(Math.random() * profileImages.length);
-    const randomImageUrl = profileImages[randomIndex];
-    setUserImg(randomImageUrl);
-  }, [profileImages]);
+  }, []);
   
 
   const FeedClick = () => {
@@ -175,7 +161,7 @@ const AllFeed = () => {
         ) : (
         feedData.map((feedItem, index) => (
           <div key={index} className="feedBox01">
-            <img className="user_profile" src={userImg} alt="프로필" />
+            <img className="user_profile" src={user} alt="프로필" />
             <div className="feedContent">
               <div className="userInfo">
                 <h4>
