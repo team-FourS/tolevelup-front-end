@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axiosInstance from '../../axiosConfig';
 import { format } from 'date-fns';
-import user from '../../img/user.png';
+import user from '../../img/mintUser.png';
 import RankingNum1 from '../../img/medal1.png';
 import RankingNum2 from '../../img/medal2.png';
 import RankingNum3 from '../../img/medal3.png';
