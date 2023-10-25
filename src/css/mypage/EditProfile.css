@@ -11,7 +11,8 @@
 .layout_check1{
   margin: auto;
   text-align: center;
-  width: 340px; height: 240px;
+  width: 360px;
+  height: 240px;
   border-radius: 20px;
   padding: 30px;
   background-color: #ffffff;
@@ -62,4 +63,8 @@
     border: none;
     border-radius: 5px;
     
+}
+.editFieldContainer{
+  display: inline-flex;
+  align-items: center;
 }

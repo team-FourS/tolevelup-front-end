@@ -21,7 +21,6 @@ import FindPassword from "./component/Login/FindPassword"
 import Signup from "./component/Login/Signup"
 
 import Edit from "./component/Mypage/Edit"
-import Profile from "./component/Mypage/Profile"
 
 // import Alarm from "./component/Alarm"
 // import Modal from "./component/Modal"
@@ -60,7 +59,6 @@ function App() {
               <Route path="/mypage" element={<Mypage />} />
               <Route path="/Modify" element={<Modify />} />
               <Route path="/edit" element={<Edit />} />
-              <Route path="/profile" element={<Profile />} />
               <Route path="/pwcheck" element={<PwCheck />} />
               <Route path="/editEmail" element={<EditEmail />} />
               <Route path="/editID" element={<EditID />} />

@@ -4,10 +4,17 @@ import axiosInstance from "../../axiosConfig"
 import "../../css/mypage/PwCheck.css"
 import { TextField } from '@mui/material';
 import {Link} from "react-router-dom";
+import { BiShow, BiHide } from 'react-icons/bi';
 
 const PwCheck = () => {
 
     const [password, setInputPw] = useState("");
+
+    const [showPswd, setShowPswd] = useState(false);
+
+    const toggleShowPswd = () => {
+        setShowPswd(!showPswd);
+    };
 
     const handleInputPw = (e) => {
         setInputPw(e.target.value);
@@ -35,17 +42,21 @@ return (
             <div className="checkForm">
                 <p className='user_check'>사용자 확인</p>
                 <p>* 사용자의 비밀번호를 입력해주세요</p>
-                    <TextField className="loginBox"
+                <div className="editFieldContainer">
+                    <TextField className="loginBox" type={showPswd ? "text" : "password"}
                         label="비밀번호"
                         value={password}
                         onChange={handleInputPw}
                         name="Secure"
                         autoComplete="Secure"
                         autoFocus />
-                {/* <Link to="/modify"> */}
-                    {/* <button className='check_button' onClick={onClickModify}>확인</button> */}
+                        <div className="absolute top-[16px] right-[20px] sm:right-[30px]" style={{display:'inline',marginLeft:'10px'}}>
+                            {showPswd ? (
+                            <BiShow onClick={toggleShowPswd} />
+                        ) : (
+                            <BiHide onClick={toggleShowPswd} />
+                        )}</div></div>
                     <button className='check_button' onClick={onClickHandler}>확인</button>
-                {/* </Link> */}
                 <Link to="/mypage">
                     <button className='check_button'>취소</button>
                 </Link>

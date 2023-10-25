@@ -1,5 +1,8 @@
-import userImg from '../../img/user.png';
-// import Advice1 from '../../img/advice2.png';
+import userImg1 from '../../img/mintUser.png';
+import userImg2 from '../../img/orangeUser.png';
+import userImg3 from '../../img/pinkUser.png';
+import userImg4 from '../../img/greenUser.png';
+import userImg5 from '../../img/purpleUser.png';
 import { Routes, Route, Link } from 'react-router-dom';
 import PwCheck from './PwCheck';
 import MainRecord from '../Record/MainRecord';
@@ -11,7 +14,7 @@ import Follower from './Follower';
 import Following from './Following';
 // import CommentDa from './CommentDa';
 import axiosInstance from '../../axiosConfig';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Graph from '../../img/bar-graph.png';
 import LoadSpinner from '../Spinner/SpinnerCompo';
 import { format } from 'date-fns';
@@ -33,7 +36,6 @@ const Mypage = () => {
   // 모달용 const
   const [follower, setWer] = useState(false);
   const [fallowing, setWing] = useState(false);
-  // const [comments, setComments] = useState(false);
 
   // 사용자의 정보 const
   const [userId, setUserId] = useState('');
@@ -60,7 +62,14 @@ const Mypage = () => {
   const [CompleteMission, setCompleteMission] = useState([]);
   const [userLevel, setuserLevel] = useState([]);
 
+  const [userImg, setUserImg] = useState('');
+
+
+  const profileImages = useMemo(() => [
+    userImg1,userImg2,userImg3,userImg4,userImg5
+  ], []);
   useEffect(() => {
+
     // 서버의 사용자 정보 가져오기
     axiosInstance
       .get('api/v1/users/my')
@@ -165,7 +174,11 @@ const Mypage = () => {
       console.log('Failed to fetch user info:', error);
     });
 
-  }, [formattedDate, month, year]);
+    const randomIndex = Math.floor(Math.random() * profileImages.length);
+  const randomImageUrl = profileImages[randomIndex];
+  setUserImg(randomImageUrl);
+
+  }, [formattedDate, month, year,profileImages]);
 
   // 등록일 변경 함수
   const formatDate = (dateString) => {
@@ -195,7 +208,7 @@ const Mypage = () => {
           <div className="square1">
             <div className='bold1'>
               <div className='space'>
-                <img className="mypage_profile" src={userImg} alt='프로필'></img>
+                <img className="mypage_profile profile-img" src={userImg} alt='프로필'></img>
                 <div className="nickname">
                   <h4 className='userName'>Lv.{userLevel} {userName}</h4>
                   <p className='userid'>{userId}</p>

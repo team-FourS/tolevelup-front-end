@@ -1,9 +1,9 @@
 .idField{
   padding-bottom: 10px;
 }
-.pwField{
+/* .pwField{
   padding-bottom: 20px;
-}
+} */
 .totalLogin{
   padding-top: 5%;
 }
@@ -29,7 +29,7 @@
   background-color: rgba(255, 255, 255, 0.884);
   width: 300px;  height: 320;
   border-radius: 15px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   padding-bottom: 10px;
 }
 .btnLogin{
