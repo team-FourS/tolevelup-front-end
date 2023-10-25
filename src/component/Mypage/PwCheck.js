@@ -52,9 +52,9 @@ return (
                         autoFocus />
                         <div className="absolute top-[16px] right-[20px] sm:right-[30px]" style={{display:'inline',marginLeft:'10px'}}>
                             {showPswd ? (
-                            <BiShow onClick={toggleShowPswd} />
+                            <BiShow  className='eye-icon' onClick={toggleShowPswd} />
                         ) : (
-                            <BiHide onClick={toggleShowPswd} />
+                            <BiHide className='eye-icon'  onClick={toggleShowPswd} />
                         )}</div></div>
                     <button className='check_button' onClick={onClickHandler}>확인</button>
                 <Link to="/mypage">

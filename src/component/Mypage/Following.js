@@ -1,7 +1,7 @@
 import axiosInstance from "../../axiosConfig";
 import React, { useEffect, useState } from 'react';
 import "../../css/mypage/Following.css"
-import user from '../../img/user.png';
+import user from '../../img/mintUser.png';
 import LoadSpinner from '../Spinner/SpinnerComponent';
 
 const Following = () => {
