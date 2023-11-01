@@ -21,7 +21,6 @@
   }
   .td_following{
     display: block;
-    margin-right: 100px;
 }
   .table_following_lay{
     display: block;
@@ -55,6 +54,7 @@
 }
 .following_scrollbox{
   width: auto;
+  width: 220px;
   height: 300px;
   overflow-y: scroll;
 }
@@ -67,10 +67,23 @@
 }
 .followingbox{
   margin: auto;
+  width: 210px;
 }
 .no-following{
   color: #bdbdbd;
   font-size: 15px;
   margin: 120px 0 0 30px; 
   text-align: center;
+}
+.following_delete{
+  /* margin-left: 85px; */
+  font-size: small;
+  display: inline;
+  float: right;
+  background-color: #46bca8;
+  color: #ffffff; 
+  padding: 5px 10px;
+  border: none;  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
 }
