@@ -11,9 +11,10 @@ import LoadSpinner from '../Spinner/SpinnerFeed';
 
 import { HiHeart } from "react-icons/hi";
 import { LiaCommentSolid } from "react-icons/lia";
-
+import UserFeedCharacter from "../Feed/FeedUserCharacter"
 import CommentModal from "../Modal/CommentModal";
 import Comment from "../Feed/Comment";
+import FeedModal from "../Modal/FeedCharacterModal"
 
 const FollowFeed = () => {
   const location = useLocation();
@@ -25,6 +26,7 @@ const FollowFeed = () => {
   const [commentedUserId, setCommentedUserId] = useState("");
   const [likeStatus, setLikeStatus] = useState(feedData.map(() => false));
   const [followStatus, setFollowStatus] = useState(feedData.map(() => false));
+  const [Usercharacter, setUsercharacter] = useState(false);
   
   //스피너
   const [Loading, setLoading] = useState(true);
@@ -164,7 +166,14 @@ const FollowFeed = () => {
         ) : (
           feedData.map((followItem, index) => (
             <div key={index} className="feedBox01">
-              <img className="user_profile" src={user} alt="프로필" />
+              <div className="Feed_character" onClick={() => setUsercharacter(!Usercharacter)}>
+            <img className="user_profile" src={user} alt="프로필" />
+            {Usercharacter && (
+                    <FeedModal closeModal={() => setUsercharacter(!Usercharacter)}>
+                      <UserFeedCharacter />
+                    </FeedModal>
+                  )}
+            </div>
               <div className="feedContent">
                 <div className="userInfo">
                   <h4> Lv{followItem.userData.level}. {followItem.userData.name} </h4>

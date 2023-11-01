@@ -13,6 +13,8 @@ import { LiaCommentSolid } from "react-icons/lia";
 
 import CommentModal from "../Modal/CommentModal";
 import Comment from "../Feed/Comment";
+import UserFeedCharacter from "../Feed/FeedUserCharacter"
+import FeedModal from "../Modal/FeedCharacterModal"
 
 const AllFeed = () => {
   const [isActive, setIsActive] = useState("/AllFeed");
@@ -22,6 +24,7 @@ const AllFeed = () => {
   const [commentedUserId, setCommentedUserId] = useState("");
   const [likeStatus, setLikeStatus] = useState(feedData.map(() => false));
   const [followStatus, setFollowStatus] = useState(feedData.map(() => false));
+  const [Usercharacter, setUsercharacter] = useState(false);
 
   //스피너
   const [Loading, setLoading] = useState(true);
@@ -161,7 +164,14 @@ const AllFeed = () => {
         ) : (
         feedData.map((feedItem, index) => (
           <div key={index} className="feedBox01">
+            <div className="Feed_character" onClick={() => setUsercharacter(!Usercharacter)}>
             <img className="user_profile" src={user} alt="프로필" />
+            {Usercharacter && (
+                    <FeedModal closeModal={() => setUsercharacter(!Usercharacter)}>
+                      <UserFeedCharacter />
+                    </FeedModal>
+                  )}
+            </div>
             <div className="feedContent">
               <div className="userInfo">
                 <h4>

@@ -55,15 +55,18 @@ const [userfollowing, setfollowing] = useState([]);
                       <>
                     <div className="followingbox">
                       <tr>
-                        <td className="td_following">
+                        
                           {userfollowing.map((userfollowings, followingkey) => (
+                            <td className="td_following">
                             <div className="table_following_lay" key={followingkey}>
                               <div className="following_array">
+                              <td>
+                                <button className="following_delete">삭제</button></td>
                                 <img className ="profil2" src={user} alt='프로필'></img>
                                 <h5 className="following_id">{userfollowings.userId}</h5>
                               </div>
-                            </div>))}
-                        </td>
+                            </div>
+                        </td>))}
                       </tr>
                     </div>
                     </>

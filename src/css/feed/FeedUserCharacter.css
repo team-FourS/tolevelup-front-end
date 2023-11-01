@@ -1,0 +1,45 @@
+.user_profile_feed_char{
+    width: 60px;
+    height: 60px;
+    margin: 20px 15px;
+}
+.Feed_char_username{
+    margin: 0px;
+    color: #a8a6a6;
+    font-size: x-large;
+    font-weight: 900;
+    height: 30px
+}
+.Feed_char_level{
+    margin: 0px;
+    font-weight: 900;
+    font-size: small;
+    height: 20px
+}
+.Feed_char_complete{
+    margin: 0px;
+    width: auto;
+    height: auto;
+    font-weight: 900;
+    font-size: small;
+}
+.char_name{
+    display: inline-block;
+}
+.feed_char_box{
+    /* border: solid 2px gray; */
+    border-radius: 5px;
+    margin: 10px; 
+    font-size: 15px;
+    text-align: left;
+    background-color: #e9f4e6;
+    padding: 5px;
+    width: 400px;
+    height: 110px;
+  }
+  .feed_char_text{
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-items: center;
+  }

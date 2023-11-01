@@ -192,3 +192,8 @@
 .redfh {
   color: #fd8888;
 }
+
+.Feed_character{
+  width:60px;
+  border-radius: 100px;
+}
