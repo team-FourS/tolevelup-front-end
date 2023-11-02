@@ -12,12 +12,11 @@
     text-align: left;
   }
   
-
   /* 팔로잉 목록 css */
   .profil2{
     display: inline-flex;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
   }
   .td_following{
     display: block;
@@ -28,8 +27,9 @@
   }
   .following_id{
     display: inline-block;
-    margin-left: 20px;
+    font-size: 15px;
     font-weight: 500;
+    margin-left: 20px;
 }
 .following_lay{
     align-items: left;
@@ -45,7 +45,6 @@
     border-spacing: 0;
     width: 100%;
   }
-
 
 .alarm_font{
   font-size: 15px;
@@ -69,21 +68,14 @@
   margin: auto;
   width: 210px;
 }
-.no-following{
-  color: #bdbdbd;
-  font-size: 15px;
-  margin: 120px 0 0 30px; 
-  text-align: center;
-}
-.following_delete{
-  /* margin-left: 85px; */
-  font-size: small;
-  display: inline;
-  float: right;
-  background-color: #46bca8;
+.unfollow_button{
+  width: 60px; height: 28px;
   color: #ffffff; 
   padding: 5px 10px;
   border: none;  border-radius: 5px;
-  margin-right: 10px;
-  cursor: pointer;
+  background-color: rgb(189, 189, 189);
+  margin-left: 10px;
+}
+.follow-table{
+  width: 450px;
 }

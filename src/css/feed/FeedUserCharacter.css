@@ -3,82 +3,81 @@
     height: 120px;
     margin: 10px 15px;
 }
+.feed-character-title{
+  font-size: 22px;
+  color: gray;
+}
 .Feed_char_username{
     margin: 0px;
     color: #ffffff;
-    font-size: x-large;
-    font-weight: 900;
-    height: 30px;
+    font-size: 26px;
+    font-weight: bold;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: rgb(0, 0, 0);
 }
 .Feed_char_level{
     margin: 0px;
-    font-weight: 900;
-    font-size: small;
+    font-size: 20px;
+    font-weight: 700;
     height: 20px
 }
 .Feed_char_complete{
     margin: 0px;
-    width: auto;
-    height: auto;
+    margin-top: 10px;
+    font-size: 18px;
     font-weight: 900;
-    font-size: small;
 }
 .char_name{
     display: inline-block;
+    margin-left: 30px;
 }
 .feed_char_box{
     /* border: solid 2px gray; */
     border-radius: 5px;
-    margin: 10px; 
+    margin: 15px; 
     font-size: 15px;
     text-align: left;
-    background-color: #e9f4e6;
     padding: 5px;
     width: 400px;
     height: 140px;
-    background-color: rgb(255, 168, 220);
-    border: solid 10px rgb(239, 98, 182);
+    background-color: rgb(250, 225, 239);
+    /*border: solid 7px rgb(239, 98, 182) ;  */
   }
 .feed_char_box2{
     /* border: solid 2px gray; */
     border-radius: 5px;
-    margin: 10px; 
+    margin: 15px; 
     font-size: 15px;
     text-align: left;
-    background-color: #e9f4e6;
     padding: 5px;
     width: 400px;
     height: 140px;
-    background-color: rgb(141, 209, 255);
-    border: solid 10px rgb(64, 164, 231);
+    background-color: rgb(218, 235, 248);
+    /*border: solid 10px rgb(64, 164, 231) ; */
   }
 .feed_char_box3{
     /* border: solid 2px gray; */
     border-radius: 5px;
-    margin: 10px; 
+    margin: 15px; 
     font-size: 15px;
     text-align: left;
-    background-color: #e9f4e6;
     padding: 5px;
     width: 400px;
     height: 140px;
-    background-color: rgb(255, 235, 154);
-    border: solid 10px rgb(241, 196, 15);
+    background-color: rgb(250, 246, 213);
+    /*border: solid 10px rgb(241, 196, 15); */
   }
 .feed_char_box4{
     /* border: solid 2px gray; */
     border-radius: 5px;
-    margin: 10px; 
+    margin: 15px; 
     font-size: 15px;
     text-align: left;
-    background-color: #e9f4e6;
     padding: 5px;
     width: 400px;
     height: 140px;
-    background-color: rgb(200, 255, 196);
-    border: solid 10px rgb(67, 184, 58);
+    background-color: rgb(224, 239, 223);
+    /*border: solid 10px rgb(67, 184, 58); */
   }
   .feed_char_text{
     margin: 0;
@@ -89,9 +88,9 @@
 
   .scroll_feed_box {
     border-Radius: 5px;
-    margin-top: 30px;
+    margin-top: 20px;
     width: auto;
-    height: 400px;
+    height: 430px;
     background-color: #ffffff99;
     overflow-y: scroll;
   }

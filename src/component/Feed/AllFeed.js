@@ -207,6 +207,7 @@ const AllFeed = () => {
                 ))}
               </div>
 
+            <div className="feed-icons">          
               {/* 좋아요 아이콘 */}          
               <HiHeart
                 className={`heart_icon ${
@@ -228,6 +229,7 @@ const AllFeed = () => {
                   <Comment userId={commentedUserId} />
                 </CommentModal>
               )}
+              </div>
             </div>
           </div>
         ))
