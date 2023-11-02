@@ -137,3 +137,40 @@
                 0 0 0 2px rgba(255,255,255,0.15) inset,
                 0 0 0 1px rgba(0,0,0,0.4);
 }
+
+@media screen and (max-width: 100%) {
+  .set {
+    flex-direction: column;
+    align-items: center;
+  }
+  .square1 {
+    margin-bottom: 20px;
+  }
+  .square2 {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 100%) {
+  .userName {
+    font-size: 1.5rem;
+  }
+  .userid {
+    font-size: 1rem;
+  }
+  .userint {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 100%) {
+  .userName {
+    font-size: 1.2rem;
+  }
+  .userid {
+    font-size: 0.8rem;
+  }
+  .userint {
+    font-size: 0.7rem;
+  }
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import user from '../../img/mintUser.png';
+import user from '../../img/main-exercise.png';
 import "../../css/feed/FeedUserCharacter.css";
 
 
@@ -8,7 +8,8 @@ const FeedUserCharacter = () => {
     return (
         <main className="FeedUserCharacter">
             <h3 style={{color:'gray'}}>__님의 캐릭터</h3>
-        
+            <div className="scroll_feed_box">
+                  <div className="inner_content">
                         <div className='feed_char_box'>
                           <div className='feed_char_text'>
                             <img className="user_profile_feed_char" src={user} alt="프로필" />
@@ -19,7 +20,7 @@ const FeedUserCharacter = () => {
                                 </div>
                           </div>
                         </div>
-                        <div className='feed_char_box'>
+                        <div className='feed_char_box2'>
                           <div className='feed_char_text'>
                             <img className="user_profile_feed_char" src={user} alt="프로필" />
                                 <div className='char_name'>
@@ -29,7 +30,7 @@ const FeedUserCharacter = () => {
                                 </div>
                           </div>
                         </div>
-                        <div className='feed_char_box'>
+                        <div className='feed_char_box3'>
                           <div className='feed_char_text'>
                             <img className="user_profile_feed_char" src={user} alt="프로필" />
                                 <div className='char_name'>
@@ -39,7 +40,7 @@ const FeedUserCharacter = () => {
                                 </div>
                           </div>
                         </div>
-                        <div className='feed_char_box'>
+                        <div className='feed_char_box4'>
                           <div className='feed_char_text'>
                             <img className="user_profile_feed_char" src={user} alt="프로필" />
                                 <div className='char_name'>
@@ -49,6 +50,7 @@ const FeedUserCharacter = () => {
                                 </div>
                           </div>
                         </div>
+                        </div></div>
         </main>
         
     )
