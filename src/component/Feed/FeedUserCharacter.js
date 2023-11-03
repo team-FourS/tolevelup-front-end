@@ -7,7 +7,7 @@ const FeedUserCharacter = () => {
     
     return (
         <main className="FeedUserCharacter">
-            <h3 style={{color:'gray'}}>__님의 캐릭터</h3>
+            <h3 className='feed-character-title'>__님의 캐릭터</h3>
             <div className="scroll_feed_box">
                   <div className="inner_content">
                         <div className='feed_char_box'>

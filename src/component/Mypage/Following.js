@@ -8,7 +8,6 @@ const Following = () => {
 
 //스피너
 const [Loading,setLoading] = useState(true);
-  
 const [userfollowing, setfollowing] = useState([]);
 
   useEffect(() => {
@@ -34,6 +33,25 @@ const [userfollowing, setfollowing] = useState([]);
     
         }, []);
 
+  // 언팔로우
+  const handleUnfollowClick = async (selectedUserId) => {
+    try {
+      const response = await axiosInstance.delete(`api/v1/users/follow/${selectedUserId}`);
+      const resultCode = response.data.resultCode;
+
+      if (resultCode === 'SUCCESS') {
+        // 언팔로우 성공 시 업데이트
+        const updatedFollowing = userfollowing.filter((user) => user.userId !== selectedUserId);
+        setfollowing(updatedFollowing);
+        console.log(`사용자 ${selectedUserId} 언팔로우 성공`);
+      } else {
+        console.log(`사용자 ${selectedUserId} 언팔로우 실패`);
+      }
+    } catch (error) {
+      console.error(`사용자 ${selectedUserId} 언팔로우 실패:`, error);
+    }
+  };
+
     return (
       <main className="layout_wing" onClick={(e) => e.stopPropagation()}>
         <div className="following_lay">
@@ -54,16 +72,19 @@ const [userfollowing, setfollowing] = useState([]);
                     ) : (
                       <>
                     <div className="followingbox">
-                      <tr>
-                        
+                      <tr className="follow-table">
                           {userfollowing.map((userfollowings, followingkey) => (
                             <td className="td_following">
                             <div className="table_following_lay" key={followingkey}>
                               <div className="following_array">
-                              <td>
-                                <button className="following_delete">삭제</button></td>
                                 <img className ="profil2" src={user} alt='프로필'></img>
                                 <h5 className="following_id">{userfollowings.userId}</h5>
+                                <button
+                                  className="unfollow_button"
+                                  onClick={() => handleUnfollowClick(userfollowings.userId)}
+                                >
+                                  삭제
+                                </button>
                               </div>
                             </div>
                         </td>))}
