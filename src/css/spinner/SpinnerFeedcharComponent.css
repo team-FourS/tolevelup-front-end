@@ -1,0 +1,8 @@
+.spinnerfeedchar_lay{  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 7vh;
+}

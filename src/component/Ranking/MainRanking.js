@@ -10,28 +10,10 @@ import RankAll from './RankAll';
 import RankEat from './RankEat';
 import RankCulture from './RankCulture';
 
-const Rank = () => {
-  const [content, setContent] = useState('first');
-
-  const handleClickButton = e => {
-    const { name } = e.target;
-    setContent(name);
-  };
-
-  const selectComponent = {
-    first: <RankAll />,
-    second: <RankExercise />,
-    third: <RankEat />,
-    fourth: <RankCulture />,
-    fifth: <RankHobby />,
-  };
-
-  console.log(content);
-
-  const Container = styled.div`
+const Container = styled.div`
     {props => props.theme.flex('center', 'center')}
     height: 10vh;
-    margin-left:38vh;
+    margin-left:57vh;
     
   `;
 
@@ -53,6 +35,22 @@ const Rank = () => {
 
   `;
 
+const Rank = () => {
+  const [content, setContent] = useState('first');
+
+  const handleClickButton = e => {
+    const { name } = e.target;
+    setContent(name);
+  };
+
+  const selectComponent = {
+    first: <RankAll />,
+    second: <RankExercise />,
+    third: <RankEat />,
+    fourth: <RankCulture />,
+    fifth: <RankHobby />,
+  };
+
   return (
     <main className="layout_ranking">
       <Header />
@@ -64,7 +62,7 @@ const Rank = () => {
                 onClick={handleClickButton}
                 name={data.name}
                 key={data.id}
-                active={content === data.name} >
+                active={content === data.name ? 1 : 0} >
                 {data.text}
               </CustomButton>
             );
