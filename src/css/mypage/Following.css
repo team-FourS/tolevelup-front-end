@@ -15,8 +15,8 @@
 /* 팔로잉 목록 css */
 .profil2{
   display: inline-flex;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
 }
 .td_following{
   display: inline-block;
@@ -30,6 +30,7 @@
   font-size: 15px;
   font-weight: 500;
   margin:0;
+  margin-left: 10px;
 }
 .following_lay{
   align-items: left;
@@ -68,14 +69,38 @@ height: 0;
 margin: auto;
 /* width: 210px; */
 }
-.unfollow_button{
-width: 60px; height: 28px;
-color: #ffffff; 
-padding: 5px 10px;
-border: none;  border-radius: 5px;
-background-color: rgb(189, 189, 189);
-margin-left: 10px;
+
+/* 팔로잉 상태의 버튼 */
+.unfollow_button {
+  background-color: rgb(189, 189, 189);
+  width: 55px;
+  height: 28px;
+  color: #ffffff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 5px;
+  cursor: pointer;
 }
+
+/* 언팔로우 시 버튼 색 변경 */
+.unfollow_button.following {
+  background-color: #46bca8;
+  color: white;
+}
+/* 팔로우 상태의 버튼 */
+.follow_button {
+  background-color: rgb(189, 189, 189);
+  width: 60px;
+  height: 28px;
+  color: #ffffff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
 .tr_following {
 display: flex;
 justify-content: space-between;

@@ -9,16 +9,15 @@ const Follower = () => {
 
   //스피너
   const [Loading,setLoading] = useState(true);
-
   const [userfollower, setfollower] = useState([]);
 
   useEffect(() => {
     
-    // 서버의 내가 팔로우하는 사람
-            axiosInstance.get('api/v1/users/follower?page=0&size=3')
+    // 서버의 나를 팔로우하는 사람
+            axiosInstance.get('api/v1/users/follower?page=0&size=0')
             .then((res) => {
 
-              //팔로잉 정보 저장
+              //팔로워 정보 저장
                 const followerData = res.data.result.content;
                 setfollower(followerData);
                 console.log(res.data);
@@ -30,10 +29,26 @@ const Follower = () => {
                 console.log('Failed to fetch user info:', error);
                 setLoading(true);
             });
-    
-    
         }, []);
 
+// 나를 팔로우 하는 유저 삭제
+const handleUnfollowClick = async (selectedUserId) => {
+  try {
+    const response = await axiosInstance.delete(`api/v1/users/follower/${selectedUserId}`);
+    const resultCode = response.data.resultCode;
+
+    if (resultCode === 'SUCCESS') {
+      // 언팔로우 성공 시 업데이트
+      const updatedFollowing = userfollower.filter((follower) => follower.userId !== selectedUserId);
+      setfollower(updatedFollowing);
+      console.log(`사용자 ${selectedUserId} 언팔로우 성공`);
+    } else {
+      console.log(`사용자 ${selectedUserId} 언팔로우 실패`);
+    }
+  } catch (error) {
+    console.error(`사용자 ${selectedUserId} 언팔로우 실패:`, error);
+  }
+};
 
   return (
     
@@ -71,10 +86,13 @@ const Follower = () => {
                                 </div>
                               </div>
                             </td>
-                                <td>
-                                  <button className="unfollow_button">삭제</button>
-                                </td>
-                                </tr>
+                          <td>
+                          <button
+                            className="unfollow_button"
+                            onClick={() => handleUnfollowClick(followers.userId)}>삭제</button>
+
+                            </td>
+                            </tr>
                                 ))}
                                 </div>
                     </>
