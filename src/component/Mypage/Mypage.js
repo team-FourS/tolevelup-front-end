@@ -70,8 +70,7 @@ const Mypage = () => {
         setUserIntro(res.data.result.userData.intro);
 
         setuserLevel(res.data.result.userData.level);
-        console.log(formattedDate);//오늘날짜확인
-        console.log('얜마이',res.data);
+        // console.log(formattedDate);//오늘날짜확인
 
         // exp 가져오기
         setexpExercise(res.data.result.expData[0].expData);
@@ -87,7 +86,6 @@ const Mypage = () => {
         .then((rankRes) => {
           // 랭킹 정보 배열에서 현재 로그인한 사용자의 ID와 일치하는 항목을 찾기
           const userRank = rankRes.data.result.rankList.find(item => item.userData.userId === currentUserID);
-          console.log('얜랭킹',rankRes.data);
           if (userRank) {
             setmyRank(userRank.rank);
           }

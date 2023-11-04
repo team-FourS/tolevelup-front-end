@@ -25,6 +25,7 @@ const AllFeed = () => {
   const [likeStatus, setLikeStatus] = useState(feedData.map(() => false));
   const [followStatus, setFollowStatus] = useState(feedData.map(() => false));
   const [Usercharacter, setUsercharacter] = useState(false);
+  const [Feedcharacter, setFeedcharacter] = useState("");
 
   //스피너
   const [Loading, setLoading] = useState(true);
@@ -41,17 +42,15 @@ const AllFeed = () => {
           setUserId(userId);
         }
   
-        // 좋아요 상태 초기화
         const newLikeStatus = res.data.result.map((item) => item.likeSent);
         setLikeStatus(newLikeStatus);
-  
-        // 팔로우 상태 초기화
+
         const newFollowStatus = res.data.result.map((item) => item.followStatus);
         setFollowStatus(newFollowStatus);
       } catch (error) {
         console.error("API 호출 에러:", error);
       } finally {
-        setLoading(false); // 스피너 종료
+        setLoading(false);
       }
     };
   
@@ -100,7 +99,6 @@ const AllFeed = () => {
       const resultCode = response.data.resultCode;
 
       if (resultCode === 'SUCCESS') {
-        // 팔로우 성공 시 팔로우 상태를 업데이트
         const newFollowStatus = [...followStatus];
         newFollowStatus[index] = !newFollowStatus[index];
         setFollowStatus(newFollowStatus);
@@ -164,11 +162,13 @@ const AllFeed = () => {
         ) : (
         feedData.map((feedItem, index) => (
           <div key={index} className="feedBox01">
-            <div className="Feed_character" onClick={() => setUsercharacter(!Usercharacter)}>
+            <div className="Feed_character" onClick={() => {
+            setUsercharacter(!Usercharacter);
+            setFeedcharacter(userId[index]);}}>
             <img className="user_profile" src={user} alt="프로필" />
             {Usercharacter && (
                     <FeedModal closeModal={() => setUsercharacter(!Usercharacter)}>
-                      <UserFeedCharacter />
+                      <UserFeedCharacter feedId={Feedcharacter}/>
                     </FeedModal>
                   )}
             </div>

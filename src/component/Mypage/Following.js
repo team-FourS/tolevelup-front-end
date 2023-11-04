@@ -13,7 +13,7 @@ const [userfollowing, setfollowing] = useState([]);
   useEffect(() => {
     
     // 서버의 내가 팔로우하는 사람
-            axiosInstance.get('api/v1/users/following?page=0&size=30')
+            axiosInstance.get('api/v1/users/following?page=0&size=0')
             .then((res) => {
 
               //팔로잉 정보 저장

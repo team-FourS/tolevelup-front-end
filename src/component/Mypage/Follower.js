@@ -46,9 +46,6 @@ const Follower = () => {
             ) : (
           <table>
             <thead>
-                  <tr />
-                  <tr />
-                  <tr />
             </thead>
             <tbody>
                   <div className="following_scrollbox">

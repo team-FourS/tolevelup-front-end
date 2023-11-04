@@ -24,6 +24,7 @@ const FollowFeed = () => {
   const [feedData, setFeedData] = useState([]);
   const [userId, setUserId] = useState(null);
   const [commentedUserId, setCommentedUserId] = useState("");
+  const [Feedcharacter, setFeedcharacter] = useState("");
   const [likeStatus, setLikeStatus] = useState(feedData.map(() => false));
   const [followStatus, setFollowStatus] = useState(feedData.map(() => false));
   const [Usercharacter, setUsercharacter] = useState(false);
@@ -140,7 +141,6 @@ const FollowFeed = () => {
   return (
     <div className="layout_feed">
       <Header />
-  
       <Routes>
         <Route path="/AllFeed" element={<AllFeed />} />
         <Route path="/FollowFeed" element={<FollowFeed />} />
@@ -166,11 +166,13 @@ const FollowFeed = () => {
         ) : (
           feedData.map((followItem, index) => (
             <div key={index} className="feedBox01">
-              <div className="Feed_character" onClick={() => setUsercharacter(!Usercharacter)}>
-            <img className="user_profile" src={user} alt="프로필" />
+              <div className="Feed_character" onClick={() => {
+                setUsercharacter(!Usercharacter);
+                setFeedcharacter(userId[index]);}}>
+            <img className="user_profile" src={user} alt="프로필"/>
             {Usercharacter && (
                     <FeedModal closeModal={() => setUsercharacter(!Usercharacter)}>
-                      <UserFeedCharacter />
+                      <UserFeedCharacter feedId={Feedcharacter}/>
                     </FeedModal>
                   )}
             </div>
