@@ -13,7 +13,7 @@ const [userfollowing, setfollowing] = useState([]);
   useEffect(() => {
     
     // 서버의 내가 팔로우하는 사람
-            axiosInstance.get('api/v1/users/following?page=0&size=5')
+            axiosInstance.get('api/v1/users/following?page=0&size=30')
             .then((res) => {
 
               //팔로잉 정보 저장
@@ -62,7 +62,6 @@ const [userfollowing, setfollowing] = useState([]);
             ) : (
               <table>
                 <thead>
-                  <tr />
                 </thead>
 
                 <tbody>
@@ -72,25 +71,32 @@ const [userfollowing, setfollowing] = useState([]);
                     ) : (
                       <>
                     <div className="followingbox">
-                      <tr className="follow-table">
-                          {userfollowing.map((userfollowings, followingkey) => (
-                            <td className="td_following">
-                            <div className="table_following_lay" key={followingkey}>
-                              <div className="following_array">
-                                <img className ="profil2" src={user} alt='프로필'></img>
-                                <h5 className="following_id">{userfollowings.userId}</h5>
-                                <button
-                                  className="unfollow_button"
-                                  onClick={() => handleUnfollowClick(userfollowings.userId)}
-                                >
-                                  삭제
-                                </button>
-                              </div>
-                            </div>
-                        </td>))}
+                    <tr className="follow-table">
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                    </tr>
+                    {userfollowing.map((userfollowings, followingkey) => (
+                    <tr key={followingkey} className="tr_following">
+                      <td>
+                        <img className="profil2" src={user} alt="프로필" />
+                      </td>
+                      <td className="td_following">
+                        <div className="table_following_lay">
+                          <div className="following_array">
+                            <h5 className="following_id">{userfollowings.userId}</h5>
+                          </div>
+                        </div>
+                      </td>
+                    <td>
+                      <button
+                      className="unfollow_button"
+                      onClick={() => handleUnfollowClick(userfollowings.userId)}>삭제</button>
+                      </td>
                       </tr>
-                    </div>
-                    </>
+                      ))}
+                      </div>
+                      </>
                     )}
                   </div>               
                 </tbody>

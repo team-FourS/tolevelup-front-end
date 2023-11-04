@@ -38,7 +38,6 @@ const Follower = () => {
   return (
     
     <main className="layout_wer" onClick={(e) => e.stopPropagation()}>
-      
       <div className="wer_lay">
         <h4 className="wer_font">팔로워</h4>
           <hr />
@@ -48,6 +47,8 @@ const Follower = () => {
           <table>
             <thead>
                   <tr />
+                  <tr />
+                  <tr />
             </thead>
             <tbody>
                   <div className="following_scrollbox">
@@ -56,18 +57,29 @@ const Follower = () => {
                     ) : (
                       <>
                     <div className="followingbox">
-                      <tr>
-                      <td className="td_following">
+                    <tr className="follow-table">
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                    </tr>
                           {userfollower.map((followers, followerkey) => (
-                            <div className="table_follower_lay" key={followerkey}>
-                              <div className="follwer_array">
+                            <tr className="tr_follower" key={followerkey}>
+                              <td>
                                 <img className ="profil2" src={user} alt='프로필'></img>
-                                <h5 className="follower_id">{followers.userId}</h5>
+                                </td>
+                                <td className="td_follower">
+                                  <div className="table_following_lay">
+                                    <div className="following_array">
+                                      <h5 className="follower_id">{followers.userId}</h5>
+                                </div>
                               </div>
-                            </div>))}
-                        </td>
-                      </tr>
-                    </div>
+                            </td>
+                                <td>
+                                  <button className="unfollow_button">삭제</button>
+                                </td>
+                                </tr>
+                                ))}
+                                </div>
                     </>
                     )}
                   </div>

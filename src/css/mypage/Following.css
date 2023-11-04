@@ -1,81 +1,93 @@
 .layout_wing{
-    /* display: flex; */
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    min-height: 80%;
-    position: relative;
-  }
-  .alarm_lay{
-    /* margin-top: 10vh; */
-    align-items: left;
-    text-align: left;
-  }
-  
-  /* 팔로잉 목록 css */
-  .profil2{
-    display: inline-flex;
-    width: 50px;
-    height: 50px;
-  }
-  .td_following{
-    display: block;
+  /* display: flex; */
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  min-height: 80%;
+  position: relative;
 }
-  .table_following_lay{
-    display: block;
-    align-items: center;
-  }
-  .following_id{
-    display: inline-block;
-    font-size: 15px;
-    font-weight: 500;
-    margin-left: 20px;
+.alarm_lay{
+  /* margin-top: 10vh; */
+  align-items: left;
+  text-align: left;
+}
+
+/* 팔로잉 목록 css */
+.profil2{
+  display: inline-flex;
+  width: 50px;
+  height: 50px;
+}
+.td_following{
+  display: inline-block;
+}
+.table_following_lay{
+  display: inline-block;
+  align-items: center;
+}
+.following_id{
+  /* display: inline-block; */
+  font-size: 15px;
+  font-weight: 500;
+  margin:0;
 }
 .following_lay{
-    align-items: left;
-    text-align: left;
+  align-items: left;
+  text-align: left;
 }
 .following_array{
-  display: inline-flex;
-  align-items: center;
-  text-align: center;
+display: inline-flex;
+align-items: center;
+text-align: center;
 }
 
-  .table{
-    border-spacing: 0;
-    width: 100%;
-  }
+.table{
+  border-spacing: 0;
+  width: 100%;
+}
 
 .alarm_font{
-  font-size: 15px;
-  font-weight: 800;
-  text-align: left
+font-size: 15px;
+font-weight: 800;
+text-align: left
 }
 .following_scrollbox{
-  width: auto;
-  width: 220px;
-  height: 300px;
-  overflow-y: scroll;
+width: auto;
+/* width: 220px; */
+height: 350px;
+overflow-y: scroll;
 }
 .following_scrollbox::-webkit-scrollbar {
-  width: 6px;
+width: 6px;
 }
 .following_scrollbox::-webkit-scrollbar-button {
-  width: 0;
-  height: 0;
+width: 0;
+height: 0;
 }
 .followingbox{
-  margin: auto;
-  width: 210px;
+margin: auto;
+/* width: 210px; */
 }
 .unfollow_button{
-  width: 60px; height: 28px;
-  color: #ffffff; 
-  padding: 5px 10px;
-  border: none;  border-radius: 5px;
-  background-color: rgb(189, 189, 189);
-  margin-left: 10px;
+width: 60px; height: 28px;
+color: #ffffff; 
+padding: 5px 10px;
+border: none;  border-radius: 5px;
+background-color: rgb(189, 189, 189);
+margin-left: 10px;
 }
-.follow-table{
-  width: 450px;
+.tr_following {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin: 10px;
+}
+
+.td_following {
+flex: 1;
+padding: 5px;
+display: flex;
+align-items: center;
+/* justify-content: center; */
+margin-right: 50px;
 }
