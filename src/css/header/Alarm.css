@@ -10,7 +10,7 @@
   .alarm_lay_madal{
     align-items: left;
     text-align: left;
-    width: 370px;
+    /* width: 370px; */
     display: block;
   }
   .id_alarm_delete{
@@ -30,9 +30,9 @@
     height: 40px;
   }
   .table_alarm_lay{
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    width: 380px;
+    /* width: 380px; */
   }
   .table{
     border-spacing: 0;
@@ -43,8 +43,11 @@
     margin-left: 20px;
     font-weight: 500;
 }
-.td{
-    display: block;
+.tr_alarm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
 }
 .alarm_font{
     font-size: 15px;
@@ -70,7 +73,7 @@
   margin-left: 5px;
 }
 .Alarm_scrollbox{
-  width: 500px;
+  /* width: 500px; */
   height: 400px;
   overflow-y: scroll;
 }
@@ -83,7 +86,7 @@
 }
 .alarmbox{
   margin: auto;
-  width: 360px;
+  /* width: 360px; */
   margin: 0 0 0 0;
 }
 .alarm_font_modal{

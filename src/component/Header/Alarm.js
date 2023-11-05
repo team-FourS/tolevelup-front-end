@@ -7,14 +7,12 @@ import LoadSpinner from '../Spinner/SpinnerAlarm';
 const Alarm = () => {
   const [alarms, setAlarms] = useState([]);
   const [Loading,setLoading] = useState(true);//스피너
-  // const setallDeletes = useState('');//알람 전체 삭제
 
   //알람 부분삭제
   const onClickhandlerdelete = (alarmId) => {
     axiosInstance.delete(`api/v1/users/alarm/${alarmId}`)
       .then((res) => {
         setAlarms(alarms.filter((alarm) => alarm.alarmId !== alarmId));
-        // setLoading(false);
       })
       .catch((error) => {
         console.error('알람 부분 데이터를 삭제하는 중 에러 발생:', error);
@@ -25,9 +23,7 @@ const Alarm = () => {
   const onClickhandleAllrdelete = () => {
     axiosInstance.delete('api/v1/users/alarm')
       .then((res) => {
-        // setallDeletes(res.data.result.content);
         setAlarms([]);
-        // console.log(res.data.result.content);
         setLoading(false);
       })
       .catch((error) => {
@@ -39,7 +35,6 @@ const Alarm = () => {
     axiosInstance.get('api/v1/users/alarm?page=0&size=20')
       .then((res) => {
         setAlarms(res.data.result.content);
-        console.log(res.data.result.content);
         setLoading(false);
       })
       .catch((error) => {
@@ -84,13 +79,21 @@ const Alarm = () => {
                 alarms.map((alarm) => (
                   <div key={alarm.alarmId} className="alarmbox">
                     <tr>
-                      <td className="td">
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    </tr>
+                    <tr className="tr_alarm">
+                      <td >
                         <div className="table_alarm_lay">
                           <img className="profil2" src={user} alt="프로필" />
-                          <h5 className="id_alarm">{getAlarmMessage(alarm.alarmType, alarm.fromUserId)}</h5>
-                          <h6 className="id_alarm_delete" onClick={() => onClickhandlerdelete(alarm.alarmId)}>삭제</h6>
-                        </div>
-                      </td>
+                          </div></td>
+                          <td className="td">
+                        <div className="table_alarm_lay">
+                          <h5 className="id_alarm">{getAlarmMessage(alarm.alarmType, alarm.fromUserId)}</h5></div></td>
+                          <td>
+                          <h6 className="id_alarm_delete" onClick={() => onClickhandlerdelete(alarm.alarmId)}>삭제</h6></td>
+                        
                     </tr>
                   </div>
                 ))
