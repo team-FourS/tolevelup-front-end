@@ -70,21 +70,21 @@ const RecordRanking = () => {
         });
 
       const fetchThemeRank = async (themeId) => {
-  try {
-    const themeRankRes = await axiosInstance.get(`api/v1/users/rank/${themeId}?year=${selectedYear}&month=${selectedMonth}`);
-    const themeRankDataList = themeRankRes.data.result.themeRankDataList || [];
-    setThemeRanks((prevThemeRanks) => ({
-      ...prevThemeRanks,
-      [themeId]: themeRankDataList,
-    }));
-  } catch (error) {
-    console.log(`Failed to fetch theme rank for ${themeId}:`, error);
-    setThemeRanks((prevThemeRanks) => ({
-      ...prevThemeRanks,
-      [themeId]: [], // 빈 배열로 설정
-    }));
-  }
-};
+        try {
+          const themeRankRes = await axiosInstance.get(`api/v1/users/rank/${themeId}?year=${selectedYear}&month=${selectedMonth}`);
+          const themeRankDataList = themeRankRes.data.result.themeRankDataList || [];
+          setThemeRanks((prevThemeRanks) => ({
+            ...prevThemeRanks,
+            [themeId]: themeRankDataList,
+          }));
+        } catch (error) {
+          console.log(`Failed to fetch theme rank for ${themeId}:`, error);
+          setThemeRanks((prevThemeRanks) => ({
+            ...prevThemeRanks,
+            [themeId]: [], // 빈 배열로 설정
+          }));
+        }
+      };
 
       fetchThemeRank(1); // 운동
       fetchThemeRank(2); // 식습관
@@ -137,7 +137,7 @@ const RecordRanking = () => {
             themeRanks[1]
               .filter(rankData => rankData.userData.userId === userId)
               .map((rankData, index) => (
-                <p key={index} className="rank_count">{`${rankData.rank}위`}</p>
+                <p key={index} className="rank_count">{rankData.rank !== null ? `${rankData.rank}위` : '-'}</p>
               ))}
           {themeRanks[1] === null && <p className="rank_count">-</p>}
         </div>
@@ -148,7 +148,7 @@ const RecordRanking = () => {
             themeRanks[2]
               .filter(rankData => rankData.userData.userId === userId)
               .map((rankData, index) => (
-                <p key={index} className="rank_count">{`${rankData.rank}위`}</p>
+                <p key={index} className="rank_count">{rankData.rank !== null ? `${rankData.rank}위` : '-'}</p>
               ))}
           {themeRanks[2] === null && <p className="rank_count">-</p>}
         </div>
@@ -159,7 +159,7 @@ const RecordRanking = () => {
             themeRanks[3]
               .filter(rankData => rankData.userData.userId === userId)
               .map((rankData, index) => (
-                <p key={index} className="rank_count">{`${rankData.rank}위`}</p>
+                <p key={index} className="rank_count">{rankData.rank !== null ? `${rankData.rank}위` : '-'}</p>
               ))}
           {themeRanks[3] === null && <p className="rank_count">-</p>}
         </div>
@@ -170,7 +170,7 @@ const RecordRanking = () => {
             themeRanks[4]
               .filter(rankData => rankData.userData.userId === userId)
               .map((rankData, index) => (
-                <p key={index} className="rank_count">{`${rankData.rank}위`}</p>
+                <p key={index} className="rank_count">{rankData.rank !== null ? `${rankData.rank}위` : '-'}</p>
               ))}
           {themeRanks[4] === null && <p className="rank_count">-</p>}
         </div>
