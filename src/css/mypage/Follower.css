@@ -9,9 +9,9 @@
     text-align: left;
   }
   .profil3{
-    display: block;
-    width: 40px;
-    height: 40px;
+    display: inline-flex;
+    width: 45px;
+    height: 45px;
   }
   .table_wer{
     display: inline-flex;
@@ -60,9 +60,11 @@
 }
 
 .follower_id{
-  display: inline-block;
-  margin-left: 20px;
+  /* display: inline-block; */
+  font-size: 15px;
   font-weight: 500;
+  margin:0;
+  margin-left: 10px;
 }
 
 .table_follower_lay{

@@ -63,7 +63,6 @@ const [userfollowing, setfollowing] = useState([]);
               <table>
                 <thead>
                 </thead>
-
                 <tbody>
                   <div className="following_scrollbox">
                   {userfollowing.length === 0 ? (
