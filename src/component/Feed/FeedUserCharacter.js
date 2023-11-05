@@ -8,6 +8,16 @@ const FeedUserCharacter = (props) => {
     
   const feeduserId = props.feedId;
   const [Loadingf, setLoadingf] = useState(true);
+
+  //유저네임
+  const [feedcharuserName, serfeedcharuserName] = useState("");
+
+  //완료미션개수
+  const [feedcharcomplete1, setfeedcharcomplete1] = useState("");
+  const [feedcharcomplete2, setfeedcharcomplete2] = useState("");
+  const [feedcharcomplete3, setfeedcharcomplete3] = useState("");
+  const [feedcharcomplete4, setfeedcharcomplete4] = useState("");
+
   //운동
   const [feedcharactername, setfeedcharactername] = useState("");
   const [feedcharacterlevel, setfeedcharacterlevel] = useState("");
@@ -31,13 +41,17 @@ const FeedUserCharacter = (props) => {
   useEffect(() => {
 
         axiosInstance
-        .get(`otherCharacter/${feeduserId}`)
+        .get(`api/v1/feeds/character/${feeduserId}`)
         .then((res) => {
-          //운동
-          setfeedcharactername(res.data[2].userCharacter.character_name);
-          setfeedcharacterlevel(res.data[2].level);
+          console.log(res.data);
+          serfeedcharuserName(res.data.result.characterDataList[0].feedUserData.name);
 
-          const imageUrl = res.data[2].userCharacter.character.img;
+          //운동
+          setfeedcharactername(res.data.result.characterDataList[2].userCharacterFeed.character_name);
+          setfeedcharacterlevel(res.data.result.characterDataList[2].level);
+          setfeedcharcomplete1(res.data.result.characterDataList[2].count);
+
+          const imageUrl = res.data.result.characterDataList[2].userCharacterFeed.character_id;
           const finalImageUrl = imageUrl.endsWith(".png") ? imageUrl : imageUrl + ".png";
           axiosInstance
           .get(`image?imageName=${finalImageUrl}`, { responseType: 'arraybuffer' })
@@ -55,10 +69,11 @@ const FeedUserCharacter = (props) => {
           });
 
           //식습관
-          setfeedcharactername2(res.data[1].userCharacter.character_name);
-          setfeedcharacterlevel2(res.data[1].level);
+          setfeedcharactername2(res.data.result.characterDataList[1].userCharacterFeed.character_name);
+          setfeedcharacterlevel2(res.data.result.characterDataList[1].level);
+          setfeedcharcomplete2(res.data.result.characterDataList[1].count);
 
-          const imageUrl2 = res.data[1].userCharacter.character.img;
+          const imageUrl2 = res.data.result.characterDataList[1].userCharacterFeed.character_id;
           const finalImageUrl2 = imageUrl2.endsWith(".png") ? imageUrl2 : imageUrl2 + ".png";
           axiosInstance
           .get(`image?imageName=${finalImageUrl2}`, { responseType: 'arraybuffer' })
@@ -75,10 +90,11 @@ const FeedUserCharacter = (props) => {
           });
 
           //문화
-          setfeedcharactername3(res.data[0].userCharacter.character_name);
-          setfeedcharacterlevel3(res.data[0].level);
+          setfeedcharactername3(res.data.result.characterDataList[0].userCharacterFeed.character_name);
+          setfeedcharacterlevel3(res.data.result.characterDataList[0].level);
+          setfeedcharcomplete3(res.data.result.characterDataList[0].count);
 
-          const imageUrl3 = res.data[0].userCharacter.character.img;
+          const imageUrl3 = res.data.result.characterDataList[0].userCharacterFeed.character_id;
           const finalImageUrl3 = imageUrl3.endsWith(".png") ? imageUrl3 : imageUrl3 + ".png";
           axiosInstance
           .get(`image?imageName=${finalImageUrl3}`, { responseType: 'arraybuffer' })
@@ -95,10 +111,11 @@ const FeedUserCharacter = (props) => {
           });
 
           //취미
-          setfeedcharactername4(res.data[3].userCharacter.character_name);
-          setfeedcharacterlevel4(res.data[3].level);
+          setfeedcharactername4(res.data.result.characterDataList[3].userCharacterFeed.character_name);
+          setfeedcharacterlevel4(res.data.result.characterDataList[3].level);
+          setfeedcharcomplete4(res.data.result.characterDataList[3].count);
 
-          const imageUrl4 = res.data[3].userCharacter.character.img;
+          const imageUrl4 = res.data.result.characterDataList[3].userCharacterFeed.character_id;
           const finalImageUrl4 = imageUrl4.endsWith(".png") ? imageUrl4 : imageUrl4 + ".png";
           axiosInstance
           .get(`image?imageName=${finalImageUrl4}`, { responseType: 'arraybuffer' })
@@ -120,7 +137,7 @@ const FeedUserCharacter = (props) => {
 
     return (
         <main className="FeedUserCharacter">
-            <h3 className='feed-character-title'>{feeduserId}님의 캐릭터</h3>
+            <h3 className='feed-character-title'>{feedcharuserName}님의 캐릭터</h3>
             <div className="scroll_feed_box">
                   <div className="inner_content">
                         <div className='feed_char_box'>
@@ -132,7 +149,7 @@ const FeedUserCharacter = (props) => {
                                 <div className='char_name'>
                                     <div className='Feed_char_username'>{feedcharactername}</div>
                                     <div className='Feed_char_level'>Lv. {feedcharacterlevel}</div>
-                                    <div className='Feed_char_complete'>완료미션 __개</div>
+                                    <div className='Feed_char_complete'>완료미션 {feedcharcomplete1}개</div>
                                 </div>
                           </div>)}
                         </div>
@@ -145,7 +162,7 @@ const FeedUserCharacter = (props) => {
                                 <div className='char_name'>
                                     <div className='Feed_char_username'>{feedcharactername2}</div>
                                     <div className='Feed_char_level'>Lv. {feedcharacterlevel2}</div>
-                                    <div className='Feed_char_complete'>완료미션 __개</div>
+                                    <div className='Feed_char_complete'>완료미션 {feedcharcomplete2}개</div>
                                 </div>
                           </div>)}
                         </div>
@@ -158,7 +175,7 @@ const FeedUserCharacter = (props) => {
                                 <div className='char_name'>
                                     <div className='Feed_char_username'>{feedcharactername3}</div>
                                     <div className='Feed_char_level'>Lv. {feedcharacterlevel3}</div>
-                                    <div className='Feed_char_complete'>완료미션 __개</div>
+                                    <div className='Feed_char_complete'>완료미션 {feedcharcomplete3}개</div>
                                 </div>
                           </div>)}
                         </div>
@@ -171,7 +188,7 @@ const FeedUserCharacter = (props) => {
                                 <div className='char_name'>
                                     <div className='Feed_char_username'>{feedcharactername4}</div>
                                     <div className='Feed_char_level'>Lv. {feedcharacterlevel4}</div>
-                                    <div className='Feed_char_complete'>완료미션 __개</div>
+                                    <div className='Feed_char_complete'>완료미션 {feedcharcomplete4}개</div>
                                 </div>
                           </div>)}
                         </div>
