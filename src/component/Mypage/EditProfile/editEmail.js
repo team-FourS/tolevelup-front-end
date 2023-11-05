@@ -14,9 +14,7 @@ const EditEmail = () => {
         })
             .then((res) => {
                 setemail(''); 
-                // console.log(res.type);
                 window.location.href = '/modify';
-                // setLoading(false);
             })
             .catch((error) => {
                 console.error('닉네임수정중 오류발생:', error);
@@ -36,9 +34,7 @@ return (
                         onChange={(e)=>setemail(e.target.value)}
                         autoComplete="Secure"
                         autoFocus />
-                {/* <Link to="/modify"> */}
                     <button className='check_button1' onClick={handleEmailClick}>확인</button>
-                {/* </Link> */}
                 <Link to="/modify">
                     <button className='check_button1'>취소</button>
                 </Link>

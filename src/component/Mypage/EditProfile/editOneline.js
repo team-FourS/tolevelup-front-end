@@ -15,9 +15,7 @@ const EidtOneline = () => {
             .then((res) => {
                 setIntro(''); 
                 console.log('Intro 데이터:', intro);
-                // console.log(res.type);
                 window.location.href = '/mypage';
-                // setLoading(false);
             })
             .catch((error) => {
                 console.error('한줄소개 수정중 오류발생:', error);
@@ -37,9 +35,7 @@ return (
                         onChange={(e)=>setIntro(e.target.value)}
                         autoComplete="Secure"
                         autoFocus />
-                {/* <Link to="/modify"> */}
                     <button className='check_button1' onClick={handleIntroClick}>확인</button>
-                {/* </Link> */}
                 <Link to="/modify">
                     <button className='check_button1'>취소</button>
                 </Link>

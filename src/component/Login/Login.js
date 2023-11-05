@@ -86,7 +86,12 @@ function Login() {
             onChange={handleInputId}
             name="ID"
             autoComplete="ID"
-            autoFocus /> <br />
+            autoFocus
+            onKeyPress={(e) => {
+              if (inputId.length >= 10 && e.key !== 'Backspace') {
+                e.preventDefault();
+              }
+            }} /> <br />
         </div>
 
         <div className="pwField">
