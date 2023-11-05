@@ -38,9 +38,8 @@ return (
                         onChange={(e)=>setName(e.target.value)}
                         autoComplete="Secure"
                         autoFocus />
-                {/* <Link to="/modify"> */}
                     <button className='check_button1' onClick={handleConfirmClick}>확인</button>
-                {/* </Link> */}
+
                 <Link to="/modify">
                     <button className='check_button1'>취소</button>
                 </Link>

@@ -21,9 +21,7 @@ const EidtPW = () => {
         })
             .then((res) => {
                 setpassword(''); 
-                // console.log(res.type);
                 window.location.href = '/mypage';
-                // setLoading(false);
             })
             .catch((error) => {
                 console.error('닉네임수정중 오류발생:', error);
@@ -51,9 +49,7 @@ return (
                         ) : (
                             <BiHide onClick={toggleShowPswd} />
                         )}</div></div>
-                <Link to="/modify">
                     <button className='check_button1' onClick={handlePasswordClick}>확인</button>
-                </Link>
                 <Link to="/modify">
                     <button className='check_button1'>취소</button>
                 </Link>

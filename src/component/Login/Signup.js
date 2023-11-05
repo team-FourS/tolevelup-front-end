@@ -12,6 +12,7 @@ function Signup() {
   const [inputemail, setEmailinput] = useState("");
   const [inputpassword, setPasswordinput] = useState("");
   const [inputid, setId] = useState("");
+  const [error, setError] = useState('');
 
 
   const registeraxios = () => {
@@ -56,6 +57,16 @@ function Signup() {
       ;
   };
 
+  const handleIdChange = (e) => {
+    const inputValue = e.target.value;
+    if (inputValue.length <= 10) {
+      setId(inputValue);
+      setError('※ 아이디는 변경불가하며, 10글자 이하로 가능합니다.');
+    } else {
+      setError('※ 아이디는 변경불가하며, 10글자 이하로 가능합니다.');
+    }
+  };
+
   return (
     <body className='signup_body'>
     <div className="LoginLayout">
@@ -68,9 +79,14 @@ function Signup() {
           <TextField className="loginBox" label="ID" id="id"
             type="ID" name="ID"
             autoComplete="ID"
-            onChange={(e) => {
-              setId(e.target.value);
-            }}/> <br/> 
+            onChange={handleIdChange}
+            onKeyPress={(e) => {
+              if (inputid.length >= 10 && e.key !== 'Backspace') {
+                e.preventDefault();
+              }
+            }}
+          /><br/>
+          <div style={{ color: 'red',fontSize:'10px',float:'right' }}>{error}</div>
         </div>
         
         <TextField className="loginBox" label="Password" id="pass"
