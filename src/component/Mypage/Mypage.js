@@ -89,6 +89,9 @@ const Mypage = () => {
           if (userRank) {
             setmyRank(userRank.rank);
           }
+          else if (userRank == null) {
+            setmyRank("?");
+          }
           setLoading(false);
         })
         .catch((error) => {
@@ -175,7 +178,7 @@ const Mypage = () => {
 
   return (
     <main className='mypage_main'>
-      <Header />
+      <Header userIdComment={userId}/>
 
       <Routes>
         <Route path="/pwcheck" element={<PwCheck />} />

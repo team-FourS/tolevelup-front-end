@@ -21,6 +21,12 @@ const EidtOneline = () => {
                 console.error('한줄소개 수정중 오류발생:', error);
             });
     }; 
+    const handleOnKeyPress = e => {
+        if (e.key === 'Enter') {
+            handleIntroClick(); 
+        }
+      };
+    
 return (
     <body className='check_body1'>
       <main className="check_main1">
@@ -33,6 +39,7 @@ return (
                         name="Secure"
                         value={intro}
                         onChange={(e)=>setIntro(e.target.value)}
+                        onKeyPress={handleOnKeyPress}
                         autoComplete="Secure"
                         autoFocus />
                     <button className='check_button1' onClick={handleIntroClick}>확인</button>

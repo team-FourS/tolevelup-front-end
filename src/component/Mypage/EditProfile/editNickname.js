@@ -22,6 +22,12 @@ const EditNickname = () => {
                 console.error('닉네임수정중 오류발생:', error);
             });
     }; 
+    const handleOnKeyPress = e => {
+        if (e.key === 'Enter') {
+            handleConfirmClick(); 
+        }
+      };
+    
     
 return (
     <body className='check_body1'>
@@ -35,6 +41,7 @@ return (
                         placeholder='닉네임'
                         name="Secure"
                         value={name}
+                        onKeyPress={handleOnKeyPress}
                         onChange={(e)=>setName(e.target.value)}
                         autoComplete="Secure"
                         autoFocus />
