@@ -61,9 +61,9 @@ function Signup() {
     const inputValue = e.target.value;
     if (inputValue.length <= 10) {
       setId(inputValue);
-      setError('※ 아이디는 변경불가하며, 10글자 이하로 가능합니다.');
+      setError('※ 아이디는 변경불가하며, 10글자 이내로 입력해 주세요.');
     } else {
-      setError('※ 아이디는 변경불가하며, 10글자 이하로 가능합니다.');
+      setError('※ 아이디는 변경불가하며, 10글자 이내로 입력해 주세요.');
     }
   };
 
