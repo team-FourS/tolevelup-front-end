@@ -34,6 +34,11 @@ const PwCheck = () => {
             alert("비밀번호가 올바르지 않습니다.");
           });
       };
+      const handleOnKeyPress = e => {
+        if (e.key === 'Enter') {
+            onClickHandler(); 
+        }
+      };
 
 return (
     <body className='check_body'>
@@ -47,6 +52,7 @@ return (
                         label="비밀번호"
                         value={password}
                         onChange={handleInputPw}
+                        onKeyPress={handleOnKeyPress}
                         name="Secure"
                         autoComplete="Secure"
                         autoFocus />

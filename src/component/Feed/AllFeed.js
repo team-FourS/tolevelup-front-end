@@ -35,6 +35,7 @@ const AllFeed = () => {
       try {
         const res = await axiosInstance.get("api/v1/feeds");
         setFeedData(res.data.result);
+        console.log(res.data);
   
         const userId = res.data.result.map((item) => item.userData.userId);
   

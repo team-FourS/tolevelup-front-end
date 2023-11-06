@@ -9,6 +9,8 @@ const Comment = (props) => {
     const userId = props.userId;
     const [Loading, setLoading] = useState(true);
 
+    // const myuserId = props.userIdComment;
+
 
   const handleCommentChange = (e) => {
     setComment(e.target.value);
@@ -32,11 +34,13 @@ const Comment = (props) => {
     };
 
       useEffect(() => {
-        axiosInstance.get(`api/v1/feeds/${userId}/comments?page=0&size=5`)
+        axiosInstance.get(`api/v1/feeds/${userId}/comments?page=0&size=0`)
         .then((res) => {
 
           // content의 모든 정보를 commentsData에 담음
           const commentsData = res.data.result.content;
+          // const userIdComments = res.data.result.content.map((item) => item.fromUserData.userId);
+          // console.log(res.data);
           setuserComments(commentsData);
           setLoading(false);
         })

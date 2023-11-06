@@ -10,7 +10,7 @@ function closeModal() {
 
   return (
     
-    <div className="Modal2" >
+    <div className="Modal2" onClick={(e) => e.stopPropagation()}>
       <div className="modalBody2" onClick={(e) => e.stopPropagation()}>
         <button className="modalCloseBtn2" onClick={closeModal}>
           ✖

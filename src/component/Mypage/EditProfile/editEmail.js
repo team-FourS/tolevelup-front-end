@@ -20,6 +20,11 @@ const EditEmail = () => {
                 console.error('닉네임수정중 오류발생:', error);
             });
     }; 
+    const handleOnKeyPress = e => {
+        if (e.key === 'Enter') {
+            handleEmailClick(); 
+        }
+      };
 return (
     <body className='check_body1'>
       <main className="check_main1">
@@ -31,6 +36,7 @@ return (
                         placeholder='이메일'
                         name="Secure"
                         value={email}
+                        onKeyPress={handleOnKeyPress}
                         onChange={(e)=>setemail(e.target.value)}
                         autoComplete="Secure"
                         autoFocus />

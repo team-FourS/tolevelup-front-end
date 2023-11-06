@@ -28,6 +28,12 @@ const EidtPW = () => {
             });
     }; 
 
+    const handleOnKeyPress = e => {
+        if (e.key === 'Enter') {
+            handlePasswordClick(); 
+        }
+      };
+
 return (
     <body className='check_body1'>
       <main className="check_main1">
@@ -42,6 +48,7 @@ return (
                         value={password}
                         onChange={(e)=>setpassword(e.target.value)}
                         autoComplete="Secure"
+                        onKeyPress={handleOnKeyPress}
                         autoFocus />
                         <div className="absolute top-[16px] right-[20px] sm:right-[30px]" style={{display:'inline',marginLeft:'10px'}}>
                             {showPswd ? (
