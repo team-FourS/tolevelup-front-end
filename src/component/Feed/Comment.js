@@ -22,12 +22,12 @@ const Comment = (props) => {
       comment:comment 
     })
       .then((res) => {
-        console.log("Comment posted successfully:", res.data);
+        //console.log("Comment posted successfully:", res.data);
         setComment('');
       })
       .catch((error) => {
-        console.error("Failed to post comment:", error);
-        console.log(props.userId);
+        //console.error("Failed to post comment:", error);
+        //console.log(props.userId);
 
       });
 
@@ -45,7 +45,7 @@ const Comment = (props) => {
           setLoading(false);
         })
         .catch((error) => {
-          console.log(`${userId}의 코멘트를 가져오던중 오류`, error);
+          //console.log(`${userId}의 코멘트를 가져오던중 오류`, error);
         });
     });
 

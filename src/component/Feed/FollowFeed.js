@@ -51,7 +51,7 @@ const FollowFeed = () => {
         const newFollowStatus = res.data.result.map(item => item.followStatus);
         setFollowStatus(newFollowStatus);
       } catch (error) {
-        console.error("API 호출 에러:", error);
+        //console.error("API 호출 에러:", error);
       } finally {
         setLoading(false); // 스피너 종료
       }
@@ -90,7 +90,7 @@ const FollowFeed = () => {
       const updatedFeedData = res.data.result;
       setFeedData(updatedFeedData);
     } catch (error) {
-      console.log(`Failed to update likes for ${selectedUserId}:`, error);
+      //console.log(`Failed to update likes for ${selectedUserId}:`, error);
     }
   };
 
@@ -107,12 +107,12 @@ const FollowFeed = () => {
         const newFollowStatus = [...followStatus];
         newFollowStatus[index] = true;
         setFollowStatus(newFollowStatus);
-        console.log(`사용자 ${selectedUserId}를 성공적으로 팔로우했습니다.`);
+        //console.log(`사용자 ${selectedUserId}를 성공적으로 팔로우했습니다.`);
       } else {
-        console.log(`사용자 ${selectedUserId}를 팔로우하는 데 실패했습니다.`);
+        //console.log(`사용자 ${selectedUserId}를 팔로우하는 데 실패했습니다.`);
       }
     } catch (error) {
-      console.error(`사용자 ${selectedUserId}를 팔로우하는 데 실패했습니다:`, error);
+      //console.error(`사용자 ${selectedUserId}를 팔로우하는 데 실패했습니다:`, error);
     }
   };
 
@@ -129,12 +129,12 @@ const FollowFeed = () => {
         const newFollowStatus = [...followStatus];
         newFollowStatus[index] = false;
         setFollowStatus(newFollowStatus);
-        console.log(`사용자 ${selectedUserId}의 팔로우를 성공적으로 취소했습니다.`);
+        //console.log(`사용자 ${selectedUserId}의 팔로우를 성공적으로 취소했습니다.`);
       } else {
-        console.log(`사용자 ${selectedUserId}의 팔로우를 취소하는 데 실패했습니다.`);
+        //console.log(`사용자 ${selectedUserId}의 팔로우를 취소하는 데 실패했습니다.`);
       }
     } catch (error) {
-      console.error(`사용자 ${selectedUserId}의 팔로우를 취소하는 데 실패했습니다:`, error);
+      //console.error(`사용자 ${selectedUserId}의 팔로우를 취소하는 데 실패했습니다:`, error);
     }
   };
 

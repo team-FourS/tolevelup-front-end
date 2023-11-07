@@ -43,7 +43,6 @@ const FeedUserCharacter = (props) => {
         axiosInstance
         .get(`api/v1/feeds/character/${feeduserId}`)
         .then((res) => {
-          console.log(res.data);
           serfeedcharuserName(res.data.result.characterDataList[0].feedUserData.name);
 
           //운동
