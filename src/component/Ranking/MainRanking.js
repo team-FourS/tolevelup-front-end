@@ -13,7 +13,7 @@ import RankCulture from './RankCulture';
 const Container = styled.div`
     {props => props.theme.flex('center', 'center')}
     height: 10vh;
-    margin-left:57vh;
+    margin-left:35vh;
     
   `;
 
