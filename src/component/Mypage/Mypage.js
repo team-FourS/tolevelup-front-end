@@ -111,7 +111,7 @@ const Mypage = () => {
         setuserComments(commentsData);
       })
       .catch((error) => {
-        console.log('Failed to fetch user info:', error);
+        //console.log('Failed to fetch user info:', error);
         setLoading(true); // 오류시 스피너 무한재생
       });
 
@@ -124,7 +124,7 @@ const Mypage = () => {
         setuserHeart(HeartData);
       })
       .catch((error) => {
-        console.log('Failed to fetch user info:', error);
+        //console.log('Failed to fetch user info:', error);
         setLoading(true); // 오류시 스피너 무한재생
       });
 
@@ -136,7 +136,7 @@ const Mypage = () => {
         setFollowerCount(followerCount);
       })
       .catch((error) => {
-        console.log('Failed to fetch follower count:', error);
+        //console.log('Failed to fetch follower count:', error);
       });
 
     // Following 수 가져오기
@@ -147,7 +147,7 @@ const Mypage = () => {
         setFollowingCount(followingCount);
       })
       .catch((error) => {
-        console.log('Failed to fetch following count:', error);
+        //console.log('Failed to fetch following count:', error);
       });
 
     // 전체 완료 미션가져오기
@@ -156,7 +156,7 @@ const Mypage = () => {
       setCompleteMission(res.data.result);
     })
     .catch((error) => {
-      console.log('Failed to fetch user info:', error);
+      //console.log('Failed to fetch user info:', error);
     });
 
 

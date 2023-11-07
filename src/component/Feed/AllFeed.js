@@ -48,7 +48,7 @@ const AllFeed = () => {
         const newFollowStatus = res.data.result.map((item) => item.followStatus);
         setFollowStatus(newFollowStatus);
       } catch (error) {
-        console.error("API 호출 에러:", error);
+        // console.error("API 호출 에러:", error);
       } finally {
         setLoading(false);
       }
@@ -86,7 +86,7 @@ const AllFeed = () => {
       const updatedFeedData = res.data.result;
       setFeedData(updatedFeedData);
     } catch (error) {
-      console.log(`Failed to update likes for ${selectedUserId}:`, error);
+      // console.log(`Failed to update likes for ${selectedUserId}:`, error);
     }
   };
   
@@ -102,12 +102,12 @@ const AllFeed = () => {
         const newFollowStatus = [...followStatus];
         newFollowStatus[index] = !newFollowStatus[index];
         setFollowStatus(newFollowStatus);
-        console.log(`사용자 ${selectedUserId}를 성공적으로 팔로우했습니다.`);
+        // console.log(`사용자 ${selectedUserId}를 성공적으로 팔로우했습니다.`);
       } else {
-        console.log(`사용자 ${selectedUserId}를 팔로우하는 데 실패했습니다.`);
+        // console.log(`사용자 ${selectedUserId}를 팔로우하는 데 실패했습니다.`);
       }
     } catch (error) {
-      console.error(`사용자 ${selectedUserId}를 팔로우하는 데 실패했습니다.:`, error);
+      // console.error(`사용자 ${selectedUserId}를 팔로우하는 데 실패했습니다.:`, error);
     }
   };
 
